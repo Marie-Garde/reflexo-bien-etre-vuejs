@@ -8,5 +8,13 @@ import Nav from "./navigation/views/Nav.vue";
     <Nav />
   </header>
 
-  <RouterView />
+  <div class="body">
+    <RouterView />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.body {
+  margin-top: 30px;
+}
+</style>
