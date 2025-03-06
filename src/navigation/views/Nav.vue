@@ -9,6 +9,8 @@ import { priceRoutesName } from "@/price/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
+import FacebookIcon from "@/assets/illustrations/icons/FacebookIcon.vue";
+import InstagramIcon from "@/assets/illustrations/icons/InstagramIcon.vue";
 
 const labelButton = "Prendre rendez-vous";
 
@@ -56,14 +58,20 @@ function goToAppointment() {
             :to="contactRoutesName.HOME"
           />
         </div>
-        <Button :label="labelButton" @click="goToAppointment()" />
+        <div class="right-nav">
+          <div class="right-nav-icon">
+            <InstagramIcon class="icon" />
+            <FacebookIcon class="icon" />
+          </div>
+          <Button class="right-nav-button" :label="labelButton" @click="goToAppointment()" />
+        </div>
       </nav>
     </div>
   </header>
 </template>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@use "@/assets/variables.scss" as *;
 
 .header {
   position: fixed;
@@ -110,6 +118,20 @@ function goToAppointment() {
         background: $brown-dark;
         height: 4px;
         border-radius: 15px;
+      }
+    }
+
+    .right-nav {
+      display: flex;
+      &-icon {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        .icon {
+          width: 20px;
+          fill: $brown-dark;
+          cursor: pointer;
+        }
       }
     }
   }

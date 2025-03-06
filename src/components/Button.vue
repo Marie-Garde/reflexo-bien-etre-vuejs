@@ -16,7 +16,7 @@ function OnClick() {
 </template>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@use "@/assets/variables.scss" as *;
 button {
   padding: 12px;
   border-radius: 8px;
