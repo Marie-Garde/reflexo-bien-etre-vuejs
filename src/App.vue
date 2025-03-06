@@ -15,6 +15,6 @@ import Nav from "./navigation/views/Nav.vue";
 
 <style lang="scss" scoped>
 .body {
-  margin-top: 30px;
+  margin-top: 70px;
 }
 </style>
