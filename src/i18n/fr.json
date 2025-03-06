@@ -1,0 +1,16 @@
+{
+  "navigation": {
+    "items": {
+      "about": "Présentation",
+      "seasons": "Ce qui bouge",
+      "practices": "Mes pratiques",
+      "prices": "Tarifs",
+      "contact": "Contact",
+      "takeAppointment": "Prendre rendez-vous"
+    },
+    "top": {
+      "adress": "31 rue des petits pois 24839 Nespouls",
+      "tel": "06 82 12 90 59"
+    }
+  }
+}

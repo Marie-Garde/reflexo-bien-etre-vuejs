@@ -11,11 +11,18 @@ import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
 import FacebookIcon from "@/assets/illustrations/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/illustrations/icons/InstagramIcon.vue";
-
-const labelButton = "Prendre rendez-vous";
+import { useI18n } from "vue-i18n";
 
 const router = useRouter();
 const route = useRoute();
+const { t } = useI18n();
+
+const about = t("navigation.items.about");
+const seasons = t("navigation.items.seasons");
+const practices = t("navigation.items.practices");
+const prices = t("navigation.items.prices");
+const contact = t("navigation.items.contact");
+const takeAppointment = t("navigation.items.takeAppointment");
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -26,35 +33,35 @@ function goToAppointment() {
   <header>
     <div class="header">
       <div class="header-info">
-        <p>12 rue des petits pois 24389 Nespouls</p>
-        <p>06 82 12 90 59</p>
+        <p>{{ t("navigation.top.adress") }}</p>
+        <p>{{ t("navigation.top.tel") }}</p>
       </div>
       <nav class="header-navigation">
         <LinkRouter label="Home" :to="homeRoutesName.HOME" />
         <div class="middle-nav">
           <LinkRouter
             :class="['link', { active: route.name === aboutRoutesName.HOME }]"
-            label="Présentation"
+            :label="about"
             :to="aboutRoutesName.HOME"
           />
           <LinkRouter
             :class="['link', { active: route.name === practicesRoutesName.HOME }]"
-            label="Mes pratiques"
+            :label="practices"
             :to="practicesRoutesName.HOME"
           />
           <LinkRouter
             :class="['link', { active: route.name === seasonsRoutesName.HOME }]"
-            label="Ce qui bouge"
+            :label="seasons"
             :to="seasonsRoutesName.HOME"
           />
           <LinkRouter
             :class="['link', { active: route.name === priceRoutesName.HOME }]"
-            label="Tarifs"
+            :label="prices"
             :to="priceRoutesName.HOME"
           />
           <LinkRouter
             :class="['link', { active: route.name === contactRoutesName.HOME }]"
-            label="Contact"
+            :label="contact"
             :to="contactRoutesName.HOME"
           />
         </div>
@@ -63,7 +70,7 @@ function goToAppointment() {
             <InstagramIcon class="icon" />
             <FacebookIcon class="icon" />
           </div>
-          <Button class="right-nav-button" :label="labelButton" @click="goToAppointment()" />
+          <Button class="right-nav-button" :label="takeAppointment" @click="goToAppointment()" />
         </div>
       </nav>
     </div>
