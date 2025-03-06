@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import Nav from "./navigation/views/Nav.vue";
+import Nav from "@/navigation/views/Nav.vue";
 </script>
 
 <template>
@@ -12,9 +12,3 @@ import Nav from "./navigation/views/Nav.vue";
     <RouterView />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.body {
-  margin-top: 70px;
-}
-</style>
