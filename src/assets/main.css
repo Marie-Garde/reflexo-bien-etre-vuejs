@@ -6,3 +6,29 @@
   padding: 2rem;
   font-weight: normal;
 }
+
+p {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.citation {
+  font-family: "Lobster", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+}
