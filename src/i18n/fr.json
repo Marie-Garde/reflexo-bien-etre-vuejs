@@ -12,5 +12,32 @@
       "adress": "31 rue des petits pois 24839 Nespouls",
       "tel": "06 82 12 90 59"
     }
+  },
+  "home": {
+    "citation": "\"Vous accompagner vers une meilleure version de vous-même par des méthodes douces: mon objectif\"",
+    "difficulties": [
+      "Anxiété",
+      "Fatigue",
+      "Digestion",
+      "Irritabilité",
+      "Mal-être",
+      "..."
+    ],
+    "solution": {
+      "title": "Une solution complète",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l",
+      "button": {
+        "takeAppointment": "Prendre rendez-vous",
+        "learnAboutActivities": "En savoir plus sur mes activités"
+      }
+    },
+    "presentation": {
+      "title": "Qui suis-je ?",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.",
+        "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+      ],
+      "learnAboutMe": "En savoir plus sur mon parcours"
+    }
   }
 }

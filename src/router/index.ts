@@ -59,6 +59,10 @@ const router = createRouter({
       name: seasonsRoutesName.HOME,
       component: Seasons,
     },
+    {
+      path: "/",
+      redirect: homeRoutesPath.HOME,
+    },
   ],
 });
 
