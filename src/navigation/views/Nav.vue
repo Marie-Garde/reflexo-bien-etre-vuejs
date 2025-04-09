@@ -9,8 +9,8 @@ import { priceRoutesName } from "@/price/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
-import FacebookIcon from "@/assets/illustrations/icons/FacebookIcon.vue";
-import InstagramIcon from "@/assets/illustrations/icons/InstagramIcon.vue";
+import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
+import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
 import { useI18n } from "vue-i18n";
 
 const router = useRouter();

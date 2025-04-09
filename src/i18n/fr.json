@@ -39,5 +39,47 @@
       ],
       "learnAboutMe": "En savoir plus sur mon parcours"
     }
+  },
+  "practices": {
+    "title": "Mes activités",
+    "citation": "\"Une multiplicité de possibilités pour vous aider\"",
+    "text": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.",
+      "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+    ],
+    "benefits": {
+      "title": "Quels sont ses bienfaits ?",
+      "list": [
+        {
+          "title": "Un meilleur sommeil",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+        },
+        {
+          "title": "Une meilleure digestion",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+        },
+        {
+          "title": "La réduction du stress",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+        },
+        {
+          "title": "La gestion de l'humeur",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+        }
+      ]
+    },
+    "pillars": {
+      "title": "Ma solution s'articule autour de trois piliers",
+      "list": [
+        "Réflexologie & accupression",
+        "Massage Tuina & accupression",
+        "Qi gong"
+      ],
+      "text": "Blabla qui dit qu’on peut réserver une séance spécifique sur ça. Mais, surtout pour la première séance, je conseille de réserver un bilan global "
+    },
+    "sessionProgress": {
+      "title": "Déroulé d'une séance",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+    }
   }
 }
