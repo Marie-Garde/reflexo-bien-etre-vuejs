@@ -20,14 +20,13 @@ const benefitsList = tm("practices.benefits.list");
       <p class="citation">{{ t("practices.citation") }}</p>
       <p class="text">{{ tm("practices.text")[0] }}</p>
       <p>{{ tm("practices.text")[1] }}</p>
+      <p>{{ tm("practices.text")[2] }}</p>
 
       <h2>{{ t("practices.benefits.title") }}</h2>
       <ul class="benefits-list">
         <li v-for="benefit in benefitsList">
           <AccordionItem :title="benefit.title">
-            <p>
-              {{ benefit.text }}
-            </p>
+            <div v-html="benefit.text"></div>
           </AccordionItem>
         </li>
       </ul>
@@ -63,6 +62,10 @@ const benefitsList = tm("practices.benefits.list");
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
+
+strong {
+  font-style: bold;
+}
 
 .container {
   display: flex;

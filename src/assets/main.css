@@ -12,6 +12,10 @@ p {
   font-style: normal;
 }
 
+strong {
+  font-weight: 900;
+}
+
 h1,
 h2,
 h3,

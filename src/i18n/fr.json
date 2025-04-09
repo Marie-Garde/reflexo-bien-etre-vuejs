@@ -44,27 +44,40 @@
     "title": "Mes activités",
     "citation": "\"Une multiplicité de possibilités pour vous aider\"",
     "text": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.",
-      "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+      "Je propose une réflexologie qui utilise les zones physiologiques mais aussi les zones énergétiques, soit sur les pieds, soit sur les mains. Je complète par un travail d’acupression sur les méridiens afin de favoriser la circulation de l’énergie, et par un travail sur le dos.",
+      "Sur le dos, j’apporte la détente par les techniques du massage Tuina, et le travail de l’énergie par l’acupression sur les points SHU.",
+      "Je finis par un massage du visage, un travail d’acupression à la fois sur le visage et le crâne."
     ],
     "benefits": {
       "title": "Quels sont ses bienfaits ?",
       "list": [
         {
-          "title": "Un meilleur sommeil",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+          "title": "<strong>Diminution du stress</strong>",
+          "text": "<strong>Le stress</strong>, cette réaction physiologique qui nous permet de mobiliser nos ressources afin de faire face à un danger ou à un inconfort, de manière ponctuelle, est désormais ancré au quotidien chez beaucoup. Une exposition prolongée au stress ébranle l’organisme. Il serait <strong>à l’origine de plus de 80% des déséquilibres.</strong> <br><br>Lors d’une <strong>séance de Réflexologie</strong>, notre corps rentre dans un état de <strong>détente profond</strong>, le système nerveux se rééquilibre, le mental s’apaise et <strong>les tensions s’éliminent.</strong>"
         },
         {
-          "title": "Une meilleure digestion",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+          "title": "<strong>Renforcement du système immunitaire</strong>",
+          "text": "La Réflexologie envoie au corps un message de régulation en <strong>mobilisant ses capacités d’auto-guérison</strong> par le biais de la relaxation. Ce processus vise à normaliser toutes nos fonctions corporelles, favorisant le renforcement de notre système immunitaire."
         },
         {
-          "title": "La réduction du stress",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+          "title": "<strong>Action sur les troubles respiratoires</strong>",
+          "text": "Relancer les mouvements internes de la sphère ORL et amélioration des allergies, bronchites, sinusites."
         },
         {
-          "title": "La gestion de l'humeur",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+          "title": "<strong>Régulation des troubles digestifs</strong>",
+          "text": "Relancer les <strong>mouvements internes des organes digestifs,</strong> aide à l’amélioration de ballonnement, constipation, diarrhée."
+        },
+        {
+          "title": "<strong>Régulation des troubles du petit bassin</strong>",
+          "text": "Relancer les mouvements internes des organes génitaux (problèmes prémenstruels, ménopause), des organes du système urinaire (cystite, infection uriniare..)."
+        },
+        {
+          "title": "<strong>Une meilleure circulation</strong>",
+          "text": "Lorsque nous sommes détendus, les plus petits vaisseaux sanguins de notre corps, <strong>les capillaires s’élargissent</strong> et apportent à nos cellules plus d’oxygène et de nutriments. Toutes les fonctions corporelles s’en trouvent renforcées."
+        },
+        {
+          "title": "<strong>Autres bienfaits de la réflexologie</strong>",
+          "text": "Calme l’esprit et les déséquilibres émotionnels, améliore le sommeil, aide à venir à bout d'une addiction, soulage les douleurs articulaires et musculaires, soulage les maux de tête et les migraines, régule les problèmes hormonaux, active l'élimination des déchets et toxines, améliore les problèmes de peaux et bien d'autres..."
         }
       ]
     },

@@ -16,7 +16,7 @@ const toggle = () => {
 <template>
   <div class="accordion-item">
     <button class="accordion-header" @click="toggle">
-      <span>{{ title }}</span>
+      <div v-html="title"></div>
       <Add_ring class="icon" v-if="!isOpen" />
       <Remove_ring class="icon" v-else />
     </button>
