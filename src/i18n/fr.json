@@ -13,6 +13,25 @@
       "tel": "06 82 12 90 59"
     }
   },
+  "footer": {
+    "warning": "Le réflexologue ne se substitue en aucun cas à un médecin généraliste, ne pose aucun diagnostic médical et n’intervient dans aucune décision thérapeutique.",
+    "informations": {
+      "name": "Isabelle Laporcherie",
+      "societyName": "Reflex’ô Bien-être",
+      "number": "06 00 00 00 00",
+      "mail": "isabelle_garde@yahoo.fr",
+      "adress": "36 rue des petits pois 31270 Nespouls"
+    },
+    "socialMedia": {
+      "title": "Retrouvez moi sur les réseaux sociaux"
+    },
+    "legal": {
+      "copyright": "Copyright - Tous droits réservés -",
+      "siteMap": "Plan du site - ",
+      "legalPage": " Mentions légales - ",
+      "creator": "Site créé par Marie Garde EI"
+    }
+  },
   "home": {
     "citation": "\"Vous accompagner vers une meilleure version de vous-même par des méthodes douces: mon objectif\"",
     "difficulties": [
