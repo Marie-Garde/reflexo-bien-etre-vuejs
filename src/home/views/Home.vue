@@ -8,9 +8,37 @@ import { practicesRoutesName } from "@/practices/routes/routesPath";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import { aboutRoutesName } from "@/about/routes/routesName";
+import Carrousel from "../components/Carousel.vue";
 
 const { t, tm } = useI18n();
 const router = useRouter();
+
+const slides = [
+  {
+    image: "https://picsum.photos/id/237/2000/500",
+    title: "Blablablabla",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+  },
+  {
+    image: "https://picsum.photos/id/238/2000/500",
+    title: "Blablablabla",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+  },
+  {
+    image: "https://picsum.photos/id/239/2000/500",
+    title: "Blablablabla",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+  },
+  {
+    image: "https://picsum.photos/id/240/2000/500",
+    title: "Blablablabla",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+  },
+];
 
 const difficultiesList = tm("home.difficulties");
 const takeAppointmentLabel = t("home.solution.button.takeAppointment");
@@ -29,6 +57,7 @@ function goToKnowMore() {
 </script>
 
 <template>
+  <Carrousel :slides="slides" />
   <p class="citation">{{ t("home.citation") }}</p>
 
   <div class="difficulties">
