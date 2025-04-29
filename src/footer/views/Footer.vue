@@ -5,12 +5,20 @@ import message from "@/assets/icons/message.vue";
 import location from "@/assets/icons/location.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+import { aboutRoutesName } from "@/about/routes/routesName";
 
 const { t } = useI18n();
+const route = useRoute();
+
+const isAboutPage = computed(() => {
+  return route.name === aboutRoutesName.HOME;
+});
 </script>
 
 <template>
-  <p class="warning">{{ t("footer.warning") }}</p>
+  <p :class="['warning', { orange: isAboutPage }]">{{ t("footer.warning") }}</p>
   <div class="container">
     <div class="first-line">
       <div class="informations">
@@ -54,6 +62,12 @@ const { t } = useI18n();
 .warning {
   text-align: center;
   margin-top: 2vw;
+}
+
+.orange {
+  background-color: $orange;
+  margin-top: 0;
+  color: $white-soft;
 }
 
 .container {
