@@ -82,7 +82,7 @@ function goToAppointment() {
 
 .header {
   position: fixed;
-  z-index: 2;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;

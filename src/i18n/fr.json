@@ -59,6 +59,60 @@
       "learnAboutMe": "En savoir plus sur mon parcours"
     }
   },
+  "about": {
+    "title": "Ma présentation",
+    "who": {
+      "title": "Qui suis-je ?",
+      "name": "Isabelle LAPORCHERIE",
+      "profession": "Praticienne de médecine chinoise",
+      "text": [
+        "Je suis à la recherche d’une seule chose :",
+        "Apporter écoute, douceur et bien-être à toutes personnes qui viennent me voir.",
+        "Dans mon cabinet, on oublie les préjuges, on se pose, on s’accorde du temps pour soi, et juste pour soi. On apprend à écouter son corps et son cœur."
+      ]
+    },
+    "approach": {
+      "title": "Mon approche",
+      "list": [
+        "Réflexologie & accupression",
+        "Massage Tuina & accupression",
+        "Qi gong"
+      ],
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ",
+      "link": "En savoir plus sur mes activités"
+    },
+    "parcours": {
+      "title": "Mon parcours",
+      "text": [
+        "Pendant 36 ans, j’ai travaillé dans le monde bancaire.",
+        "En allant à la salle de sport de la Banque, j’ai découvert le Qi gong, littéralement, le travail de l’Energie. Par les mouvements du corps, je mets en mouvement mon énergie, je la débloque, je la renforce. Par le Qi gong, j’ai découvert les méridiens, voies particulières du QI, qui parcourent notre corps. Et ce fut la rencontre avec l’IEQG Institut Européen de Qi Gong &Yang Sheng du Docteur Yves Réquéna.",
+        "J’ai voulu en savoir plus.",
+        "J’ai suivi ces enseignements ainsi que ceux de son équipe, J’ai découvert, appris et concrétiser par un diplôme l’acupuncture, le massage Tuina. Je continue de me former pour pouvoir utiliser cette belle pharmacopée mais en utilisant nos fleurs et plantes de région au sein de l’école Imderplan de Montpellier. En arrivant à Brive la gaillarde, j’ai découvert l’école ADNR et son parcours de Réflexologie auquel j’ai adhéré jusqu’à être diplômée.",
+        "La boucle est bouclée.",
+        "Je cherchais un moyen d’apporter les bienfaits du mieux-être issus de la MTC mais en utilisant des techniques plus accordées à nos concepts occidentaux."
+      ]
+    },
+    "training": {
+      "title": "Mes formations",
+      "list": [
+        {
+          "date": "Novembre 2020 - Septembre 2022",
+          "title": "Pracitienne en Qi Gong",
+          "subtitle": "Institut de truc"
+        },
+        {
+          "date": "Mars 2020 - Juin 2021",
+          "title": "Pracitienne en Massage Tuina",
+          "subtitle": "Institut de truc"
+        },
+        {
+          "date": "Août 2019 - Avril 2021",
+          "title": "Pracitienne en reflexologie",
+          "subtitle": "Institut de truc"
+        }
+      ]
+    }
+  },
   "practices": {
     "title": "Mes activités",
     "citation": "\"Une multiplicité de possibilités pour vous aider\"",
