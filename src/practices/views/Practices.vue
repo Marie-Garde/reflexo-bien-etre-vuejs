@@ -5,11 +5,13 @@ import AccordionItem from "@/components/AccordionItem.vue";
 import massageImage from "@/assets/illustrations/massage.jpg";
 import reflexoImage from "@/assets/illustrations/reflexo.jpg";
 import qiGongImage from "@/assets/illustrations/qi-gong.jpg";
+import reflexoPlantaireImage from "@/assets/illustrations/reflexo-plantaire.jpg";
 
 const { t, tm } = useI18n();
 
 const title = t("practices.title");
 const benefitsList = tm("practices.benefits.list");
+const sessionProgressList = tm("practices.sessionProgress.list");
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const benefitsList = tm("practices.benefits.list");
 
   <div class="container">
     <div class="content">
-      <p class="citation">{{ t("practices.citation") }}</p>
+      <p class="citation red">{{ t("practices.citation") }}</p>
       <p class="text">{{ tm("practices.text")[0] }}</p>
       <p>{{ tm("practices.text")[1] }}</p>
       <p>{{ tm("practices.text")[2] }}</p>
@@ -52,10 +54,23 @@ const benefitsList = tm("practices.benefits.list");
           </div>
         </li>
       </ul>
-      <p>{{ t("practices.pillars.text") }}</p>
+      <p class="red">{{ t("practices.pillars.text") }}</p>
 
-      <h2>{{ t("practices.sessionProgress.title") }}</h2>
-      <p>{{ t("practices.sessionProgress.text") }}</p>
+      <div class="sessionProgress">
+        <img class="background-image" :src="reflexoPlantaireImage" />
+        <div class="sessionProgress-content">
+          <h2>{{ t("practices.sessionProgress.title") }}</h2>
+
+          <div class="cards-container">
+            <div class="card" v-for="text in sessionProgressList">
+              <div class="card-content">
+                <h3>{{ text.title }}</h3>
+                <p>{{ text.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,7 +89,6 @@ strong {
   margin-top: 20px;
 
   .content {
-    max-width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,6 +97,7 @@ strong {
 
     .text {
       margin-top: 50px;
+      max-width: 70%;
     }
 
     h2 {
@@ -91,14 +106,14 @@ strong {
 
     .benefits-list {
       list-style: none;
-      width: 80%;
+      width: 70%;
       padding: 0;
     }
 
     .pillars {
       margin: 20px 0;
       list-style: none;
-      width: 80%;
+      width: 70%;
       height: fit-content;
       display: flex;
       justify-content: space-between;
@@ -140,6 +155,60 @@ strong {
         color: $black;
         text-align: center;
         font-size: 24px;
+      }
+    }
+  }
+}
+
+.sessionProgress {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+    h2 {
+      margin-bottom: 2vw;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding-bottom: 50px;
+      .card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 15%;
+        padding: 15px;
+        background: rgba(246, 246, 246, 0.6);
+        border-radius: 8px;
+        text-align: center;
+        &-content {
+          margin: 0 10px;
+          h3 {
+            margin-bottom: 5%;
+          }
+        }
       }
     }
   }

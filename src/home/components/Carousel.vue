@@ -96,7 +96,7 @@ function switchSlide(index: number) {
   .carousel-inner {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 60vh;
     overflow: hidden;
   }
 }

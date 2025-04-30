@@ -91,7 +91,7 @@ function goToAppointment() {
     color: $white-soft;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 5px 20px;
   }
   &-navigation {
     background-color: $orange-light;
@@ -100,7 +100,6 @@ function goToAppointment() {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0px 5px 5px $dark-grey;
 
     .middle-nav {
       display: flex;

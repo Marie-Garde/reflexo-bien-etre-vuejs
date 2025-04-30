@@ -15,25 +15,25 @@ const router = useRouter();
 
 const slides = [
   {
-    image: "https://picsum.photos/id/237/2000/500",
+    image: "https://picsum.photos/id/237/2000/1000",
     title: "Blablablabla",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
   },
   {
-    image: "https://picsum.photos/id/238/2000/500",
+    image: "https://picsum.photos/id/238/2000/1000",
     title: "Blablablabla",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
   },
   {
-    image: "https://picsum.photos/id/239/2000/500",
+    image: "https://picsum.photos/id/239/2000/1000",
     title: "Blablablabla",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
   },
   {
-    image: "https://picsum.photos/id/240/2000/500",
+    image: "https://picsum.photos/id/240/2000/1000",
     title: "Blablablabla",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
@@ -58,51 +58,65 @@ function goToKnowMore() {
 
 <template>
   <Carrousel :slides="slides" />
-  <p class="citation">{{ t("home.citation") }}</p>
+  <div class="container">
+    <div class="content">
+      <p class="citation red">{{ t("home.citation") }}</p>
 
-  <div class="difficulties">
-    <div v-for="(difficulty, index) in difficultiesList" :key="index" class="list-difficulties">
-      <img class="list-difficulties-img" :src="yinYangImage" />
-      <p>{{ difficulty }}</p>
-    </div>
-  </div>
+      <div class="difficulties">
+        <div v-for="(difficulty, index) in difficultiesList" :key="index" class="list-difficulties">
+          <img class="list-difficulties-img" :src="yinYangImage" />
+          <p>{{ difficulty }}</p>
+        </div>
+      </div>
 
-  <div class="solution-presentation">
-    <div class="solution-presentation-overlay">
-      <h2>{{ t("home.solution.title") }}</h2>
-      <p class="text">{{ t("home.solution.text") }}</p>
-      <div class="link-to">
-        <Button
-          class="link-to-button"
-          :label="takeAppointmentLabel"
-          background="orange"
-          @click="goToAppointment()"
-        />
-        <LinkRouter :label="learnMoreLabel" is-underline :to="practicesRouteName" />
+      <div class="solution-presentation">
+        <div class="solution-presentation-overlay">
+          <h2>{{ t("home.solution.title") }}</h2>
+          <p class="text red">{{ t("home.solution.text") }}</p>
+          <div class="link-to">
+            <Button
+              class="link-to-button"
+              :label="takeAppointmentLabel"
+              background="orange"
+              @click="goToAppointment()"
+            />
+            <LinkRouter :label="learnMoreLabel" is-underline :to="practicesRouteName" />
+          </div>
+        </div>
+      </div>
+
+      <div class="presentation">
+        <div class="green-box">
+          <div class="green-box-content">
+            <h2 class="title">{{ t("home.presentation.title") }}</h2>
+            <p class="text red">{{ tm("home.presentation.text")[0] }}</p>
+            <p class="red">{{ tm("home.presentation.text")[1] }}</p>
+            <Button
+              class="button"
+              :label="aboutMeLabel"
+              background="orange-light"
+              @click="goToKnowMore()"
+            />
+          </div>
+        </div>
+        <img :src="isabelleImage" class="overlapping-image" />
       </div>
     </div>
-  </div>
-
-  <div class="presentation">
-    <div class="green-box">
-      <div class="green-box-content">
-        <h2 class="title">{{ t("home.presentation.title") }}</h2>
-        <p class="text">{{ tm("home.presentation.text")[0] }}</p>
-        <p>{{ tm("home.presentation.text")[1] }}</p>
-        <Button
-          class="button"
-          :label="aboutMeLabel"
-          background="orange-light"
-          @click="goToKnowMore()"
-        />
-      </div>
-    </div>
-    <img :src="isabelleImage" class="overlapping-image" />
   </div>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .content {
+    width: 70%;
+  }
+}
 
 .citation {
   margin: 30px 0;

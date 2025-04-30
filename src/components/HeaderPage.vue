@@ -22,6 +22,7 @@ defineProps({
   width: 100%;
   height: 90px;
   overflow: hidden;
+  margin-top: 90px;
 }
 
 .left,

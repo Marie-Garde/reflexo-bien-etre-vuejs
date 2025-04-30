@@ -29,8 +29,8 @@ const transitionEffect = computed(() => {
     >
       <img :src="slide.image" />
       <div class="carousel-item-informations">
-        <h2>{{ slide.title }}</h2>
-        <p>{{ slide.description }}</p>
+        <h2 class="red">{{ slide.title }}</h2>
+        <p class="red">{{ slide.description }}</p>
       </div>
     </div>
   </Transition>

@@ -30,7 +30,7 @@ const parcoursText = tm("about.parcours.text");
           </div>
         </div>
         <div class="presentation-text" v-for="text in presentationText">
-          <p>{{ text }}</p>
+          <p class="red">{{ text }}</p>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ const parcoursText = tm("about.parcours.text");
             </div>
           </li>
         </ul>
-        <p class="approach-text">{{ t("about.approach.text") }}</p>
+        <p class="approach-text red">{{ t("about.approach.text") }}</p>
         <p class="approach-link">{{ t("about.approach.link") }}</p>
       </div>
 
@@ -214,17 +214,16 @@ const parcoursText = tm("about.parcours.text");
   padding-bottom: 50px;
   color: $white-soft;
 
-  // CERCLE EN FOND
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); // important
-    width: 120%; // 200% viewport width
-    height: 70vw; // même hauteur
-    background-color: $orange; // ta couleur
-    border-radius: 50%; // cercle parfait
+    transform: translateX(-50%);
+    width: 120%;
+    height: 70vw;
+    background-color: $orange;
+    border-radius: 50%;
     z-index: -1;
   }
 

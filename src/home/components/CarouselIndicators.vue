@@ -38,7 +38,7 @@ const emit = defineEmits<{
   background-color: $white-soft;
   opacity: 0.5;
   margin: 0.2em;
-  border-radius: 70%;
+  border-radius: 60%;
   cursor: pointer;
 }
 

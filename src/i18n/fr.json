@@ -64,7 +64,7 @@
     "who": {
       "title": "Qui suis-je ?",
       "name": "Isabelle LAPORCHERIE",
-      "profession": "Praticienne de médecine chinoise",
+      "profession": "Praticienne de médecine chinoise & réflexologue",
       "text": [
         "Je suis à la recherche d’une seule chose :",
         "Apporter écoute, douceur et bien-être à toutes personnes qui viennent me voir.",
@@ -165,7 +165,39 @@
     },
     "sessionProgress": {
       "title": "Déroulé d'une séance",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in."
+      "list": [
+        {
+          "title": "Un moment d'écoute et de partage",
+          "description": "Chaque séance débute par un échange attentif, où je prends le temps de vous écouter. Votre histoire, vos besoins et vos ressentis sont au cœur de cette rencontre. C'est un échange important  pour comprendre votre problématique  et trouver la meilleure approche pour y répondre."
+        },
+        {
+          "title": "Un bilan personnalisé",
+          "description": "En partant des 5 éléments chers à la MTC, je vais vous poser des questions en balayant le physique comme l’émotionnel. Je vais observer votre teint, prendre les pouls de 5 éléments, et examiner votre langue. Ces indicateurs me permettront de mieux cerner les déséquilibres de votre Energie physique et émotionnelle."
+        },
+        {
+          "title": "Le temps soin énergétique ",
+          "description": "Une fois les principes posés, je choisis les techniques les plus appropriées. Chaque méthode est utilisée avec précision pour rétablir l’équilibre énergétique."
+        },
+        {
+          "title": "Un suivi adapté",
+          "description": "Après chaque séance, nous faisons le point et déterminons la stratégie à suivre :  la prise d’un rendez-vous pour une séance de suivi, des conseils de diététique à mettre en place pour vous sentir mieux, des conseils de qi gong, de l’utilisation de plantes de notre région, etc. Je vous envoie sur votre adresse électronique un compte rendu de ce qui s’est fait pendant la séance et des conseils qui peuvent être donnés."
+        }
+      ]
+    }
+  },
+  "seasons": {
+    "title": "Saisonnalité",
+    "importance": {
+      "title": "Pourquoi est-ce si important de différencier les saisons ?",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in "
+    },
+    "list": {
+      "title": "Quelles sont les saisons à prendre en compte ?",
+      "summer": "Été",
+      "Fall": "Automne",
+      "Winter": "Hiver",
+      "Spring": "Printemps",
+      "interSaison": "Inter saison"
     }
   }
 }
