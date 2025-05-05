@@ -57,7 +57,6 @@ const sessionProgressList = tm("practices.sessionProgress.list");
       <p class="red">{{ t("practices.pillars.text") }}</p>
 
       <div class="sessionProgress">
-        <img class="background-image" :src="reflexoPlantaireImage" />
         <div class="sessionProgress-content">
           <h2>{{ t("practices.sessionProgress.title") }}</h2>
 
@@ -161,24 +160,19 @@ strong {
 }
 
 .sessionProgress {
-  position: relative;
   width: 100%;
-  height: fit-content;
-  overflow: hidden;
-
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
+  height: 70vh;
+  background-image: url("@/assets/illustrations/reflexo-plantaire.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0px 5px 5px $dark-grey;
+  display: flex;
+  justify-content: center;
 
   &-content {
     position: relative;
-    width: 100%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,7 +180,7 @@ strong {
     height: 100%;
     z-index: 1;
     h2 {
-      margin-bottom: 2vw;
+      margin-bottom: 3vw;
     }
 
     .cards-container {
@@ -198,9 +192,9 @@ strong {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 15%;
+        width: 20%;
         padding: 15px;
-        background: rgba(246, 246, 246, 0.6);
+        background: rgba(246, 246, 246, 0.9);
         border-radius: 8px;
         text-align: center;
         &-content {
