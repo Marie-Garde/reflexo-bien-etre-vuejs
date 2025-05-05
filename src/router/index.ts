@@ -20,6 +20,11 @@ import Price from "@/price/views/Price.vue";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import { seasonsRoutesPath } from "@/season/routes/routesPath";
 import Seasons from "@/season/views/Seasons.vue";
+import Fall from "@/season/views/Fall.vue";
+import Winter from "@/season/views/Winter.vue";
+import Spring from "@/season/views/Spring.vue";
+import Summer from "@/season/views/Summer.vue";
+import InterSeasons from "@/season/views/InterSeasons.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +63,31 @@ const router = createRouter({
       path: seasonsRoutesPath.HOME,
       name: seasonsRoutesName.HOME,
       component: Seasons,
+    },
+    {
+      path: seasonsRoutesPath.FALL,
+      name: seasonsRoutesName.FALL,
+      component: Fall,
+    },
+    {
+      path: seasonsRoutesPath.WINTER,
+      name: seasonsRoutesName.WINTER,
+      component: Winter,
+    },
+    {
+      path: seasonsRoutesPath.SPRING,
+      name: seasonsRoutesName.SPRING,
+      component: Spring,
+    },
+    {
+      path: seasonsRoutesPath.SUMMER,
+      name: seasonsRoutesName.SUMMER,
+      component: Summer,
+    },
+    {
+      path: seasonsRoutesPath.INTERSEASON,
+      name: seasonsRoutesName.INTERSEASON,
+      component: InterSeasons,
     },
     {
       path: "/",

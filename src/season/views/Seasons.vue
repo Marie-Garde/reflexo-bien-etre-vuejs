@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import HeaderPage from "@/components/HeaderPage.vue";
-import winterImage from "@/assets/illustrations/winter.jpg";
-import springImage from "@/assets/illustrations/spring.jpg";
-import fallImage from "@/assets/illustrations/fall.jpg";
-import summerImage from "@/assets/illustrations/ete.jpg";
+import { useRouter } from "vue-router";
+import { seasonsRoutesName } from "../routes/routesName";
 
 const { t } = useI18n();
+const router = useRouter();
 
 const title = t("seasons.title");
+
+function goToSeason(route: string) {
+  router.push({ name: route });
+}
 </script>
 
 <template>
@@ -24,20 +27,25 @@ const title = t("seasons.title");
       <div class="seasons-list">
         <h2>{{ t("seasons.list.title") }}</h2>
         <div class="circle">
-          <div class="quarter top-left">
+          <div class="quarter top-left" @click="goToSeason(seasonsRoutesName.SUMMER)">
             <h3 class="quarter-title quarter-title-top-left">Été</h3>
           </div>
-          <div class="quarter top-right">
+          <div class="quarter top-right" @click="goToSeason(seasonsRoutesName.FALL)">
             <h3 class="quarter-title quarter-title-top-right">Automne</h3>
           </div>
-          <div class="quarter bottom-right">
+          <div class="quarter bottom-right" @click="goToSeason(seasonsRoutesName.WINTER)">
             <h3 class="quarter-title quarter-title-bottom-right">Hiver</h3>
           </div>
-          <div class="quarter bottom-left">
+          <div class="quarter bottom-left" @click="goToSeason(seasonsRoutesName.SPRING)">
             <h3 class="quarter-title quarter-title-bottom-left">Printemps</h3>
           </div>
           <div class="center-circle">
-            <h3 class="quarter-title quarter-title-center">Inter saison</h3>
+            <h3
+              class="quarter-title quarter-title-center"
+              @click="goToSeason(seasonsRoutesName.INTERSEASON)"
+            >
+              Inter saison
+            </h3>
           </div>
         </div>
       </div>
@@ -52,7 +60,7 @@ const title = t("seasons.title");
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 60px;
 
   .content {
     display: flex;
@@ -63,6 +71,12 @@ const title = t("seasons.title");
     width: 70%;
   }
 
+  .importance {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
   .circle {
     position: relative;
     width: 40vw;
@@ -70,6 +84,13 @@ const title = t("seasons.title");
     border-radius: 50%;
     overflow: hidden;
     transform: rotate(45deg);
+  }
+
+  .seasons-list {
+    margin-top: 60px;
+    h2 {
+      margin-bottom: 20px;
+    }
   }
 
   .quarter {

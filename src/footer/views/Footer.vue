@@ -8,17 +8,43 @@ import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
+import { seasonsRoutesName } from "@/season/routes/routesName";
 
 const { t } = useI18n();
 const route = useRoute();
 
-const isAboutPage = computed(() => {
-  return route.name === aboutRoutesName.HOME;
+const isOrangeBackground = computed(() => {
+  const orangeRoutes = [aboutRoutesName.HOME, seasonsRoutesName.SUMMER, seasonsRoutesName.FALL];
+  return typeof route.name === "string" && orangeRoutes.includes(route.name);
+});
+
+const isBrownBackground = computed(() => {
+  return route.name === seasonsRoutesName.WINTER;
+});
+
+const isGreenBackground = computed(() => {
+  return route.name === seasonsRoutesName.SPRING;
+});
+
+const isYellowBackground = computed(() => {
+  return route.name === seasonsRoutesName.INTERSEASON;
 });
 </script>
 
 <template>
-  <p :class="['warning', { orange: isAboutPage }]">{{ t("footer.warning") }}</p>
+  <p
+    :class="[
+      'warning',
+      {
+        orange: isOrangeBackground,
+        brown: isBrownBackground,
+        green: isGreenBackground,
+        yellow: isYellowBackground,
+      },
+    ]"
+  >
+    {{ t("footer.warning") }}
+  </p>
   <div class="container">
     <div class="first-line">
       <div class="informations">
@@ -70,9 +96,27 @@ const isAboutPage = computed(() => {
   color: $white-soft;
 }
 
+.yellow {
+  background-color: $orange-light;
+  margin-top: 0;
+  color: $white-soft;
+}
+
+.brown {
+  background-color: $brown-dark;
+  margin-top: 0;
+  color: $white-soft;
+}
+
+.green {
+  background-color: $green;
+  margin-top: 0;
+  color: $brown-dark;
+}
+
 .container {
   width: 100%;
-  background-color: $brown-dark;
+  background-color: $brown-footer;
   margin: auto;
   color: $white-soft;
   padding: 24px 24px 0 24px;
