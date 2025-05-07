@@ -58,7 +58,7 @@ const isYellowBackground = computed(() => {
         </div>
         <div class="informations-item">
           <message />
-          <p>{{ t("footer.informations.mail") }}</p>
+          <p>isabelle_garde@yahoo.fr</p>
         </div>
         <div class="informations-item">
           <location />
