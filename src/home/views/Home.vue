@@ -60,7 +60,7 @@ function goToKnowMore() {
   <Carrousel :slides="slides" />
   <div class="container">
     <div class="content">
-      <p class="citation red">{{ t("home.citation") }}</p>
+      <p class="citation">{{ t("home.citation") }}</p>
 
       <div class="difficulties">
         <div v-for="(difficulty, index) in difficultiesList" :key="index" class="list-difficulties">
