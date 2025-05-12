@@ -10,7 +10,6 @@ const { t, tm } = useI18n();
 
 const title = t("about.title");
 const presentationText = tm("about.who.text");
-const parcoursText = tm("about.parcours.text");
 </script>
 
 <template>

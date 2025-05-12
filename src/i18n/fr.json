@@ -33,7 +33,7 @@
     }
   },
   "home": {
-    "citation": "\"Vous accompagner vers une meilleure version de vous-même par des méthodes douces: mon objectif\"",
+    "citation": "Envie de découvrir ou redécouvrir le bien-être par la Réflexologie, et les apports des Soins traditionnels chinois ? Soyez les bienvenu.e.s au cabinet ! Depuis 2012, je me passionne pour cet art du mieux-être, et je veux le partager avec vous et vous fournir les clefs pour mieux écouter votre corps et apprendre à en décrypter les signaux.",
     "difficulties": [
       "Anxiété",
       "Fatigue",
@@ -321,5 +321,65 @@
         ]
       }
     }
+  },
+  "price": {
+    "title": "Tarifs",
+    "takeAppointment": "Prendre rendez-vous",
+    "type": [
+      {
+        "title": "Bilan global",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "prices": [
+          {
+            "title": "Bilan 1h",
+            "price": "60€"
+          },
+          {
+            "title": "Bilan 1h30",
+            "price": "90€"
+          },
+          {
+            "title": "Bilan 2h",
+            "price": "110€"
+          }
+        ]
+      },
+      {
+        "title": "Massage  Tunia et accupression",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "prices": [
+          {
+            "title": "Séance 1h",
+            "price": "60€"
+          },
+          {
+            "title": "Séance 1h30",
+            "price": "90€"
+          },
+          {
+            "title": "Séance 2h",
+            "price": "110€"
+          }
+        ]
+      },
+      {
+        "title": "Réflexologie et accupression",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "prices": [
+          {
+            "title": "Séance 1h",
+            "price": "60€"
+          },
+          {
+            "title": "Séance 1h30",
+            "price": "90€"
+          },
+          {
+            "title": "Séance 2h",
+            "price": "110€"
+          }
+        ]
+      }
+    ]
   }
 }
