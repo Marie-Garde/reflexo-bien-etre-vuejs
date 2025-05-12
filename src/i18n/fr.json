@@ -33,30 +33,42 @@
     }
   },
   "home": {
-    "citation": "Envie de découvrir ou redécouvrir le bien-être par la Réflexologie, et les apports des Soins traditionnels chinois ? Soyez les bienvenu.e.s au cabinet ! Depuis 2012, je me passionne pour cet art du mieux-être, et je veux le partager avec vous et vous fournir les clefs pour mieux écouter votre corps et apprendre à en décrypter les signaux.",
-    "difficulties": [
-      "Anxiété",
-      "Fatigue",
-      "Digestion",
-      "Irritabilité",
-      "Mal-être",
-      "..."
-    ],
+    "difficulties": {
+      "title": "À chaque symptôme sa solution",
+      "list": [
+        "Douleurs musculaires",
+        "Migraines et céphalées",
+        "Insomnies",
+        "Troubles digestifs",
+        "Stress et anxiété",
+        "Santé oscillante"
+      ]
+    },
     "solution": {
       "title": "Une solution complète",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l",
-      "button": {
-        "takeAppointment": "Prendre rendez-vous",
-        "learnAboutActivities": "En savoir plus sur mes activités"
-      }
+      "text": [
+        "Je souhaite apporter écoute, douceur et bien-être à toutes personnes qui viennent me voir.",
+        "Dans mon cabinet, vous oubliez les préjuges et ce qui vous freine, vous vous posez, vous vous accordez du temps, juste pour vous. Apprenez à écouter votre corps et votre cœur.",
+        "Mon approche se décline sous 3 formes. Soit une approche privilégiant la réflexologie, soit une approche privilégiant le massage du corps en fonction des  5 éléments et de votre problématique, et enfin, soit en privilégiant  un travail  du corps et de l’esprit par le Qi gong."
+      ],
+      "button": "En savoir plus sur mes activités"
     },
     "presentation": {
       "title": "Qui suis-je ?",
       "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.",
-        "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+        "J’ai tout d’abord rencontré le QI gong, travail de l’énergie.",
+        "Un QI gong particulier, l'étirement des méridiens, a tout changé. Il a éveillé ma curiosité qui s’est peu à peu changée en passion pour cette brillante machine qu’est notre corps.",
+        "C’est cette passion que je veux partager avec vous, cette possibilité d’être maître de sa santé, à la fois en reconnaissant les petits signes d’un décalage énergétique et en facilitant le retour à une énergie en équilibre."
       ],
       "learnAboutMe": "En savoir plus sur mon parcours"
+    },
+    "takeAppointment": {
+      "title": "Prenez rendez-vous pour un premier bilan",
+      "description": "Réservez directement en ligne ou par téléphone au 06 00 00 00 00",
+      "buttonLabel": "Prendre rendez-vous"
+    },
+    "feedback": {
+      "title": "Mes clients m'ont fait confiance"
     }
   },
   "about": {

@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import yinYangImage from "@/assets/illustrations/Yin_yang.png";
-import isabelleImage from "@/assets/illustrations/isabelle.jpg";
+import isabelleImage from "@/assets/illustrations/isabelle-small.jpg";
 import LinkRouter from "@/components/LinkRouter.vue";
 import Button from "@/components/Button.vue";
 import { practicesRoutesName } from "@/practices/routes/routesPath";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import { aboutRoutesName } from "@/about/routes/routesName";
-import Carrousel from "../components/Carousel.vue";
+import Carousel from "../components/Carousel.vue";
+import CarouselText from "../components/CarouselText.vue";
+import BodyPainImage from "@/assets/icons/Body-pain.png";
+import HeadacheImage from "@/assets/icons/Headache.png";
+import IsomniaImage from "@/assets/icons/Isomnia.png";
+import DigestiveSystemPainImage from "@/assets/icons/Digestive-system-pain.png";
+import StressImage from "@/assets/icons/Stress.png";
+import DiseaseImage from "@/assets/icons/Disease.png";
+import TeaHerbsImage from "@/assets/illustrations/tea-herbs.png";
 
 const { t, tm } = useI18n();
 const router = useRouter();
@@ -40,10 +47,25 @@ const slides = [
   },
 ];
 
-const difficultiesList = tm("home.difficulties");
-const takeAppointmentLabel = t("home.solution.button.takeAppointment");
-const learnMoreLabel = t("home.solution.button.learnAboutActivities");
+const feedbacks = [
+  {
+    text: "Ouaaaah c'était trop bien, je recommande à fond. Je me sens super détendue",
+    subText: "Gertrude, Brive-la-Gaillarde",
+  },
+  {
+    text: "Très sympathique.",
+    subText: "Antoine, Brive-la-Gaillarde",
+  },
+  {
+    text: "A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond. A l'écoute, je recommande à fond.",
+    subText: "Sarah, Brive-la-Gaillarde",
+  },
+];
+
+const difficultiesList = tm("home.difficulties.list");
+const learnMoreLabel = t("home.solution.button");
 const aboutMeLabel = t("home.presentation.learnAboutMe");
+const takeAppointmentLabel = t("home.takeAppointment.buttonLabel");
 
 const practicesRouteName = practicesRoutesName.HOME;
 
@@ -57,50 +79,84 @@ function goToKnowMore() {
 </script>
 
 <template>
-  <Carrousel :slides="slides" />
+  <Carousel :slides="slides" />
   <div class="container">
-    <div class="content">
-      <p class="citation">{{ t("home.citation") }}</p>
-
-      <div class="difficulties">
-        <div v-for="(difficulty, index) in difficultiesList" :key="index" class="list-difficulties">
-          <img class="list-difficulties-img" :src="yinYangImage" />
-          <p>{{ difficulty }}</p>
-        </div>
+    <div class="presentation">
+      <div class="presentation-image">
+        <img :src="isabelleImage" class="presentation-image-content" />
       </div>
 
-      <div class="solution-presentation">
-        <div class="solution-presentation-overlay">
-          <h2>{{ t("home.solution.title") }}</h2>
-          <p class="text red">{{ t("home.solution.text") }}</p>
-          <div class="link-to">
-            <Button
-              class="link-to-button"
-              :label="takeAppointmentLabel"
-              background="orange"
-              @click="goToAppointment()"
-            />
-            <LinkRouter :label="learnMoreLabel" is-underline :to="practicesRouteName" />
-          </div>
-        </div>
+      <div class="presentation-content">
+        <h2 class="title">{{ t("home.presentation.title") }}</h2>
+        <p class="text">{{ tm("home.presentation.text")[0] }}</p>
+        <p>{{ tm("home.presentation.text")[1] }}</p>
+        <p>{{ tm("home.presentation.text")[2] }}</p>
+        <Button class="button" :label="aboutMeLabel" background="green" @click="goToKnowMore()" />
       </div>
+    </div>
 
-      <div class="presentation">
-        <div class="green-box">
-          <div class="green-box-content">
-            <h2 class="title">{{ t("home.presentation.title") }}</h2>
-            <p class="text red">{{ tm("home.presentation.text")[0] }}</p>
-            <p class="red">{{ tm("home.presentation.text")[1] }}</p>
-            <Button
-              class="button"
-              :label="aboutMeLabel"
-              background="orange-light"
-              @click="goToKnowMore()"
-            />
-          </div>
+    <div class="difficulties">
+      <h2 class="difficulties-title">{{ t("home.difficulties.title") }}</h2>
+
+      <div class="difficulties-list">
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="BodyPainImage" />
+          <p>{{ difficultiesList[0] }}</p>
         </div>
-        <img :src="isabelleImage" class="overlapping-image" />
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="HeadacheImage" />
+          <p>{{ difficultiesList[1] }}</p>
+        </div>
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="IsomniaImage" />
+          <p>{{ difficultiesList[2] }}</p>
+        </div>
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="DigestiveSystemPainImage" />
+          <p>{{ difficultiesList[3] }}</p>
+        </div>
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="StressImage" />
+          <p>{{ difficultiesList[4] }}</p>
+        </div>
+        <div class="difficulties-list-item">
+          <img class="difficulties-list-item-img" :src="DiseaseImage" />
+          <p>{{ difficultiesList[5] }}</p>
+        </div>
       </div>
+    </div>
+
+    <div class="overlay">
+      <div class="solution">
+        <div class="solution-text">
+          <h2 class="title">{{ t("home.solution.title") }}</h2>
+          <p class="text">{{ tm("home.solution.text")[0] }}</p>
+          <p class="text">{{ tm("home.solution.text")[1] }}</p>
+          <p class="text">{{ tm("home.solution.text")[2] }}</p>
+          <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
+        </div>
+        <img :src="TeaHerbsImage" />
+      </div>
+    </div>
+
+    <div class="takeAppointment">
+      <div class="takeAppointment-content">
+        <h2 class="takeAppointment-title">
+          {{ t("home.takeAppointment.title") }}
+        </h2>
+        <p class="takeAppointment-text">{{ t("home.takeAppointment.description") }}</p>
+        <Button
+          class="button"
+          :label="takeAppointmentLabel"
+          background="orange"
+          @click="goToAppointment()"
+        />
+      </div>
+    </div>
+
+    <div class="feedbacks">
+      <h2>{{ t("home.feedback.title") }}</h2>
+      <CarouselText :slides="feedbacks" />
     </div>
   </div>
 </template>
@@ -108,114 +164,134 @@ function goToKnowMore() {
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
 
-.container {
+.presentation {
+  display: flex;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .content {
-    width: 70%;
-  }
-}
 
-.citation {
-  margin: 30px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &-image {
+    width: 40%;
+    padding: 5vw;
+    background-color: $green;
+    &-content {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+  }
+
+  &-content {
+    width: 60%;
+    background-color: $orange-light;
+    padding: 30px 5%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .button {
+      margin-top: 20px;
+    }
+  }
 }
 
 .difficulties {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  .list-difficulties {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+  &-list {
+    margin-top: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    &-img {
-      width: 50px;
+    justify-content: space-around;
+    &-item {
+      &-img {
+        height: 70px;
+      }
     }
   }
 }
 
-.solution-presentation {
+.overlay {
   width: 100%;
-  height: 400px;
-  background-image: url("@/assets/illustrations/medecine-chinoise.jpg");
+  height: 60vh;
+  margin-top: 60px;
+  background-image: url("@/assets/background/HomeSolutionBackground.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  box-shadow: 0px 5px 5px $dark-grey;
-  &-overlay {
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    text-align: left;
-    .text {
-      margin-top: 20px;
+  background-repeat: no-repeat;
+  padding: 60px 20px 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.solution {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  &-text {
+    width: 70%;
+    color: $white;
+    .title {
+      margin-bottom: 30px;
     }
-    .link-to {
-      margin-top: 20px;
-      &-button {
-        margin-right: 20px;
+    .text {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 30px;
       }
     }
+    .link {
+      margin-top: 30px;
+      color: $white;
+    }
+  }
+
+  img {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
   }
 }
 
-.presentation {
-  position: relative;
+.takeAppointment {
   width: 100%;
-  height: 500px;
-  margin-top: 100px;
-  margin-bottom: 150px;
+  background-color: $orange-light;
+  padding: 60px;
 
-  .green-box {
-    width: 60%;
-    height: 100%;
-    background-color: $green;
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    box-shadow: 0px 5px 5px $dark-grey;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    &-content {
-      width: 80%;
-      .title {
-        margin-bottom: 24px;
-      }
-      .text {
-        margin-bottom: 12px;
-      }
-      .button {
-        margin-top: 24px;
-      }
-    }
+  &-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  :deep(.btn-orange-light) {
-    padding: 20px;
-    width: 100%;
+  &-title {
+    margin-bottom: 20px;
   }
 
-  .overlapping-image {
-    width: 50%;
-    height: auto;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    transform: translate(-20%, -20%);
+  &-text {
+    margin-bottom: 40px;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    padding: 20px 54px;
     box-shadow: 0px 5px 5px $dark-grey;
   }
+}
+
+.feedbacks {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
 }
 </style>
