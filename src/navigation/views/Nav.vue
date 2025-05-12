@@ -86,6 +86,7 @@ function goToAppointment() {
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 0px 5px 5px $dark-grey;
   &-info {
     background-color: $brown-dark;
     color: $white-soft;

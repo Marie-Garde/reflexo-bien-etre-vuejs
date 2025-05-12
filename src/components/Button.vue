@@ -30,6 +30,14 @@ button {
   padding: 12px 24px;
 }
 
+.btn-green {
+  background-color: $green;
+  border: transparent;
+  color: $brown-dark;
+  padding: 20px 32px;
+  font-size: 1rem;
+}
+
 .btn-orange-light {
   background-color: $orange-light;
   border: transparent;
