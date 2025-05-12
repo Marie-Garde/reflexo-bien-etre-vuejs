@@ -12,6 +12,7 @@ import LinkRouter from "@/components/LinkRouter.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
 import { useI18n } from "vue-i18n";
+import Logo from "@/assets/logo/logo-horizontal-brown.png";
 
 const router = useRouter();
 const route = useRoute();
@@ -27,6 +28,10 @@ const takeAppointment = t("navigation.items.takeAppointment");
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
 }
+
+function goToHome() {
+  router.push({ name: homeRoutesName.HOME });
+}
 </script>
 
 <template>
@@ -37,7 +42,13 @@ function goToAppointment() {
         <p>{{ t("navigation.top.tel") }}</p>
       </div>
       <nav class="header-navigation">
-        <LinkRouter label="Home" :to="homeRoutesName.HOME" />
+        <button @click="goToHome()" class="logo">
+          <img :src="Logo" />
+        </button>
+
+        <!-- <LinkRouter label="Home" :to="homeRoutesName.HOME">
+          
+        </LinkRouter> -->
         <div class="middle-nav">
           <LinkRouter
             :class="['link', { active: route.name === aboutRoutesName.HOME }]"
@@ -101,6 +112,16 @@ function goToAppointment() {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+
+    .logo {
+      width: 120px;
+      background-color: transparent;
+      border: transparent;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+    }
 
     .middle-nav {
       display: flex;

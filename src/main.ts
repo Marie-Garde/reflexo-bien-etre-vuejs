@@ -13,3 +13,9 @@ app.use(createPinia());
 app.use(router);
 app.use(i18n);
 app.mount("#app");
+
+router.beforeEach((to, from, next) => {
+  const defaultTitle = "Reflexô Bien-être";
+  document.title = (to.meta.title as string) || defaultTitle;
+  next();
+});
