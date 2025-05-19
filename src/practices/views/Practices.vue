@@ -19,42 +19,42 @@ const sessionProgressList = tm("practices.sessionProgress.list");
 
   <div class="container">
     <div class="content">
-      <p class="citation red">{{ t("practices.citation") }}</p>
-      <p class="text">{{ tm("practices.text")[0] }}</p>
-      <p>{{ tm("practices.text")[1] }}</p>
-      <p>{{ tm("practices.text")[2] }}</p>
+      <div class="presentation">
+        <h2>{{ t("practices.presentation.title") }}</h2>
+        <p class="text">{{ tm("practices.presentation.text")[0] }}</p>
+        <p>{{ tm("practices.presentation.text")[1] }}</p>
+        <p>{{ tm("practices.presentation.text")[2] }}</p>
+      </div>
 
-      <h2>{{ t("practices.benefits.title") }}</h2>
-      <ul class="benefits-list">
-        <li v-for="benefit in benefitsList">
-          <AccordionItem :title="benefit.title">
-            <div v-html="benefit.text"></div>
-          </AccordionItem>
-        </li>
-      </ul>
+      <div class="benefits">
+        <h2>{{ t("practices.benefits.title") }}</h2>
+        <ul class="benefits-list">
+          <li v-for="benefit in benefitsList">
+            <AccordionItem :title="benefit.title">
+              <div v-html="benefit.text"></div>
+            </AccordionItem>
+          </li>
+        </ul>
+      </div>
 
-      <h2>{{ t("practices.pillars.title") }}</h2>
-      <ul class="pillars">
-        <li>
-          <div class="pillars-wrapper">
-            <img :src="reflexoImage" class="pillars-image" />
-            <p class="pillars-label">{{ tm("practices.pillars.list")[0] }}</p>
-          </div>
-        </li>
-        <li>
-          <div class="pillars-wrapper">
-            <img :src="massageImage" class="pillars-image" />
-            <p class="pillars-label">{{ tm("practices.pillars.list")[1] }}</p>
-          </div>
-        </li>
-        <li>
-          <div class="pillars-wrapper">
-            <img :src="qiGongImage" class="pillars-image" />
-            <p class="pillars-label">{{ tm("practices.pillars.list")[2] }}</p>
-          </div>
-        </li>
-      </ul>
-      <p class="red">{{ t("practices.pillars.text") }}</p>
+      <div class="pillars">
+        <h2>{{ t("practices.pillars.title") }}</h2>
+        <ul class="pillars-list">
+          <li>
+            <div class="pillars-list-wrapper">
+              <img :src="reflexoImage" class="pillars-list-image" />
+              <p class="pillars-list-label">{{ tm("practices.pillars.list")[0] }}</p>
+            </div>
+          </li>
+          <li>
+            <div class="pillars-list-wrapper">
+              <img :src="qiGongImage" class="pillars-list-image" />
+              <p class="pillars-list-label">{{ tm("practices.pillars.list")[1] }}</p>
+            </div>
+          </li>
+        </ul>
+        <p class="red">{{ t("practices.pillars.text") }}</p>
+      </div>
 
       <div class="sessionProgress">
         <div class="sessionProgress-content">
@@ -85,34 +85,41 @@ strong {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 
   .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
+    width: 100%;
 
-    .text {
-      margin-top: 50px;
+    .presentation {
       max-width: 70%;
+      margin: 60px auto;
+      .text {
+        margin-top: 50px;
+      }
     }
 
-    h2 {
-      margin-top: 50px;
-    }
-
-    .benefits-list {
-      list-style: none;
-      width: 70%;
-      padding: 0;
+    .benefits {
+      width: 100%;
+      background-color: $green;
+      padding: 60px 0;
+      &-list {
+        list-style: none;
+        padding: 0;
+        width: 70%;
+        margin: 0 auto;
+      }
     }
 
     .pillars {
-      margin: 20px 0;
+      margin: 60px auto;
+    }
+
+    .pillars-list {
+      margin: 30px 0;
       list-style: none;
-      width: 70%;
       height: fit-content;
       display: flex;
       justify-content: space-between;

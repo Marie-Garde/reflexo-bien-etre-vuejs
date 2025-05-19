@@ -16,76 +16,70 @@ const presentationText = tm("about.who.text");
   <HeaderPage :label="title" background="orange" />
 
   <div class="container">
-    <div class="content">
-      <div class="presentation">
-        <div class="presentation-title">
-          <img :src="isabelleImage" class="presentation-title-image" />
-          <div class="presentation-title-text">
-            <div class="presentation-title-text-content">
-              <h2>{{ t("about.who.title") }}</h2>
-              <p>{{ t("about.who.name") }}</p>
-              <p>{{ t("about.who.profession") }}</p>
-            </div>
+    <div class="presentation">
+      <div class="presentation-title">
+        <img :src="isabelleImage" class="presentation-title-image" />
+        <div class="presentation-title-text">
+          <div class="presentation-title-text-content">
+            <h2>{{ t("about.who.title") }}</h2>
+            <p>{{ t("about.who.name") }}</p>
+            <p>{{ t("about.who.profession") }}</p>
           </div>
         </div>
-        <div class="presentation-text" v-for="text in presentationText">
-          <p class="red">{{ text }}</p>
-        </div>
       </div>
-
-      <div class="approach">
-        <h2 class="approach-title">{{ t("about.approach.title") }}</h2>
-        <ul class="pillars">
-          <li>
-            <div class="pillars-wrapper">
-              <img :src="reflexoImage" class="pillars-image" />
-              <p class="pillars-label">{{ tm("about.approach.list")[0] }}</p>
-            </div>
-          </li>
-          <li>
-            <div class="pillars-wrapper">
-              <img :src="massageImage" class="pillars-image" />
-              <p class="pillars-label">{{ tm("about.approach.list")[1] }}</p>
-            </div>
-          </li>
-          <li>
-            <div class="pillars-wrapper">
-              <img :src="qiGongImage" class="pillars-image" />
-              <p class="pillars-label">{{ tm("about.approach.list")[2] }}</p>
-            </div>
-          </li>
-        </ul>
-        <p class="approach-text red">{{ t("about.approach.text") }}</p>
-        <p class="approach-link">{{ t("about.approach.link") }}</p>
+      <div class="presentation-text" v-for="text in presentationText">
+        <p class="red">{{ text }}</p>
       </div>
+    </div>
 
-      <div class="parcours">
-        <h2 class="parcours-title">{{ t("about.parcours.title") }}</h2>
-        <div class="parcours-text">
-          <p>{{ tm("about.parcours.text")[0] }}</p>
-          <p>{{ tm("about.parcours.text")[1] }}</p>
-          <p>{{ tm("about.parcours.text")[2] }}</p>
-          <p>{{ tm("about.parcours.text")[3] }}</p>
-          <p>{{ tm("about.parcours.text")[4] }}</p>
-          <p>{{ tm("about.parcours.text")[5] }}</p>
-        </div>
+    <div class="approach">
+      <h2 class="approach-title">{{ t("about.approach.title") }}</h2>
+      <ul class="pillars">
+        <li>
+          <div class="pillars-wrapper">
+            <img :src="reflexoImage" class="pillars-image" />
+            <p class="pillars-label">{{ tm("about.approach.list")[0] }}</p>
+          </div>
+        </li>
+        <li>
+          <div class="pillars-wrapper">
+            <img :src="massageImage" class="pillars-image" />
+            <p class="pillars-label">{{ tm("about.approach.list")[1] }}</p>
+          </div>
+        </li>
+        <li>
+          <div class="pillars-wrapper">
+            <img :src="qiGongImage" class="pillars-image" />
+            <p class="pillars-label">{{ tm("about.approach.list")[2] }}</p>
+          </div>
+        </li>
+      </ul>
+      <p class="approach-text red">{{ t("about.approach.text") }}</p>
+      <p class="approach-link">{{ t("about.approach.link") }}</p>
+    </div>
+
+    <div class="parcours">
+      <h2 class="parcours-title">{{ t("about.parcours.title") }}</h2>
+      <div class="parcours-text">
+        <p>{{ tm("about.parcours.text")[0] }}</p>
+        <p>{{ tm("about.parcours.text")[1] }}</p>
+        <p>{{ tm("about.parcours.text")[2] }}</p>
+        <p>{{ tm("about.parcours.text")[3] }}</p>
+        <p>{{ tm("about.parcours.text")[4] }}</p>
+        <p>{{ tm("about.parcours.text")[5] }}</p>
       </div>
+    </div>
 
-      <div class="training">
-        <h2 class="training-title">{{ t("about.training.title") }}</h2>
-        <div class="training-list">
-          <div
-            v-for="(item, index) in tm('about.training.list')"
-            :key="index"
-            class="training-item"
-          >
-            <div class="training-date">
-              {{ item.date }}
-            </div>
-            <div class="training-info">
-              <p class="training-info-title">{{ item.title }}</p>
-              <p class="training-info-subtitle">{{ item.subtitle }}</p>
-            </div>
+    <div class="training">
+      <h2 class="training-title">{{ t("about.training.title") }}</h2>
+      <div class="training-list">
+        <div v-for="(item, index) in tm('about.training.list')" :key="index" class="training-item">
+          <div class="training-date">
+            {{ item.date }}
+          </div>
+          <div class="training-info">
+            <p class="training-info-title">{{ item.title }}</p>
+            <p class="training-info-subtitle">{{ item.subtitle }}</p>
           </div>
         </div>
       </div>
@@ -97,23 +91,18 @@ const presentationText = tm("about.who.text");
 @use "@/assets/variables.scss" as *;
 
 .container {
-  margin-top: 20px;
-
-  .content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $brown-dark;
-  }
+  margin-top: 60px;
 }
 
 .presentation {
-  max-width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  text-align: center;
   &-title {
     display: flex;
     align-items: center;
-    height: 30vw;
+    margin-bottom: 30px;
 
     &-image {
       width: 50%;
@@ -124,8 +113,8 @@ const presentationText = tm("about.who.text");
       justify-content: center;
       align-items: center;
       background-color: $orange-light;
+      padding: 90px 0;
       width: 50%;
-      height: 60%;
       box-shadow: 0px 5px 5px $dark-grey;
 
       &-content {
@@ -146,6 +135,7 @@ const presentationText = tm("about.who.text");
   background-color: $orange-light;
   width: 100%;
   padding: 20px 0;
+  text-align: center;
 
   .pillars {
     width: 70%;
@@ -164,6 +154,10 @@ const presentationText = tm("about.who.text");
 
     &-wrapper {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
 
     &-image {
@@ -191,6 +185,7 @@ const presentationText = tm("about.who.text");
   margin-top: 30px;
   width: 100%;
   padding: 20px 0;
+  text-align: center;
   &-title {
     margin-bottom: 10px;
   }
@@ -198,6 +193,9 @@ const presentationText = tm("about.who.text");
     width: 70%;
     :nth-child(-n + 4) {
       margin-bottom: 20px;
+    }
+    :last-child {
+      margin-bottom: 30px;
     }
   }
 }

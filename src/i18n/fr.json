@@ -127,14 +127,17 @@
   },
   "practices": {
     "title": "Mes activités",
-    "citation": "\"Une multiplicité de possibilités pour vous aider\"",
-    "text": [
-      "Je propose une réflexologie qui utilise les zones physiologiques mais aussi les zones énergétiques, soit sur les pieds, soit sur les mains. Je complète par un travail d’acupression sur les méridiens afin de favoriser la circulation de l’énergie, et par un travail sur le dos.",
-      "Sur le dos, j’apporte la détente par les techniques du massage Tuina, et le travail de l’énergie par l’acupression sur les points SHU.",
-      "Je finis par un massage du visage, un travail d’acupression à la fois sur le visage et le crâne."
-    ],
+    "presentation": {
+      "title": "Qu'est ce que je propose ?",
+      "text": [
+        "Je propose une réflexologie qui utilise les zones physiologiques mais aussi les zones énergétiques, soit sur les pieds, soit sur les mains. Je complète par un travail d’acupression sur les méridiens afin de favoriser la circulation de l’énergie, et par un travail sur le dos.",
+        "Sur le dos, j’apporte la détente par les techniques du massage Tuina, et le travail de l’énergie par l’acupression sur les points SHU.",
+        "Je finis par un massage du visage, un travail d’acupression à la fois sur le visage et le crâne."
+      ]
+    },
+
     "benefits": {
-      "title": "Quels sont ses bienfaits ?",
+      "title": "Quels sont les bienfaits de mes séances ?",
       "list": [
         {
           "title": "<strong>Diminution du stress</strong>",
@@ -167,12 +170,8 @@
       ]
     },
     "pillars": {
-      "title": "Ma solution s'articule autour de trois piliers",
-      "list": [
-        "Réflexologie & accupression",
-        "Massage Tuina & accupression",
-        "Qi gong"
-      ],
+      "title": "Ma solution s'articule autour de deux piliers",
+      "list": ["Séances en cabinet", "Séances extérieures"],
       "text": "Blabla qui dit qu’on peut réserver une séance spécifique sur ça. Mais, surtout pour la première séance, je conseille de réserver un bilan global "
     },
     "sessionProgress": {
@@ -213,7 +212,7 @@
     },
     "season": {
       "subtitles": {
-        "specialties": "Quelles sont ses spécificités ?",
+        "specialties": "Vous avez peut être noté que...",
         "advices": "Mes conseils pour cette saison",
         "recipes": "Exemple de recettes"
       },
