@@ -9,6 +9,7 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
+import { contactRoutesName } from "@/contact/routes/routesName";
 
 const { t } = useI18n();
 const route = useRoute();
@@ -27,7 +28,8 @@ const isGreenBackground = computed(() => {
 });
 
 const isYellowBackground = computed(() => {
-  return route.name === seasonsRoutesName.INTERSEASON;
+  const yellowRoutes = [seasonsRoutesName.INTERSEASON, contactRoutesName.HOME];
+  return typeof route.name === "string" && yellowRoutes.includes(route.name);
 });
 </script>
 
@@ -58,7 +60,7 @@ const isYellowBackground = computed(() => {
         </div>
         <div class="informations-item">
           <message />
-          <p>isabelle_garde@yahoo.fr</p>
+          <p>contact@reflexo-bien-etre.com</p>
         </div>
         <div class="informations-item">
           <location />
@@ -99,7 +101,7 @@ const isYellowBackground = computed(() => {
 .yellow {
   background-color: $orange-light;
   margin-top: 0;
-  color: $white-soft;
+  color: $brown-dark;
 }
 
 .brown {
