@@ -16,36 +16,14 @@ import DigestiveSystemPainImage from "@/assets/icons/Digestive-system-pain.png";
 import StressImage from "@/assets/icons/Stress.png";
 import DiseaseImage from "@/assets/icons/Disease.png";
 import TeaHerbsImage from "@/assets/illustrations/tea-herbs.png";
+import { sanityClient } from "@/sanityClient";
+import { onMounted, ref, type Ref } from "vue";
+import type { CarouselSlide } from "../interface/Carousel";
 
 const { t, tm } = useI18n();
 const router = useRouter();
 
-const slides = [
-  {
-    image: "https://picsum.photos/id/237/2000/1000",
-    title: "Blablablabla",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-  },
-  {
-    image: "https://picsum.photos/id/238/2000/1000",
-    title: "Blablablabla",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-  },
-  {
-    image: "https://picsum.photos/id/239/2000/1000",
-    title: "Blablablabla",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-  },
-  {
-    image: "https://picsum.photos/id/240/2000/1000",
-    title: "Blablablabla",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-  },
-];
+const slidesData: Ref<CarouselSlide[]> = ref([]);
 
 const feedbacks = [
   {
@@ -76,10 +54,20 @@ function goToAppointment() {
 function goToKnowMore() {
   router.push({ name: aboutRoutesName.HOME });
 }
+
+onMounted(async () => {
+  slidesData.value = await sanityClient.fetch(`*[_type == "carouselItem"]{
+    _id,
+    title,
+    description,
+    image,
+    link
+  }`);
+});
 </script>
 
 <template>
-  <Carousel :slides="slides" />
+  <Carousel :slides="slidesData" />
   <div class="container">
     <div class="presentation">
       <div class="presentation-image">

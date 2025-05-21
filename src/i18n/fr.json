@@ -33,6 +33,9 @@
     }
   },
   "home": {
+    "carousel": {
+      "link": "En savoir plus"
+    },
     "difficulties": {
       "title": "À chaque symptôme sa solution",
       "list": [
