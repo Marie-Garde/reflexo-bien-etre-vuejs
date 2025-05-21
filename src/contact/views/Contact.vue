@@ -29,7 +29,6 @@ const formValue = ref({
 watch(
   () => formValue.value,
   (formValue) => {
-    console.log(formValue);
     if (
       formValue.lastName !== "" &&
       formValue.firstName !== "" &&
