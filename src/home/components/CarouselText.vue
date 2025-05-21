@@ -14,7 +14,7 @@ const props = defineProps({
 const { slides } = toRefs(props);
 
 const currentSlide = ref(0);
-const slideInterval = ref(0);
+const slideInterval = ref<ReturnType<typeof setInterval>>();
 const direction = ref("");
 
 onMounted(() => {
