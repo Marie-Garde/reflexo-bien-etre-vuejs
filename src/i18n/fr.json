@@ -9,7 +9,7 @@
       "takeAppointment": "Prendre rendez-vous"
     },
     "top": {
-      "adress": "31 rue des petits pois 24839 Nespouls",
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
       "tel": "06 82 12 90 59"
     }
   },
@@ -18,9 +18,9 @@
     "informations": {
       "name": "Isabelle Laporcherie",
       "societyName": "Reflex’ô Bien-être",
-      "number": "06 00 00 00 00",
+      "number": "06 82 12 90 59",
       "mail": "izevc isabelle_garde@yahoo.fr",
-      "adress": "36 rue des petits pois 31270 Nespouls"
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls"
     },
     "socialMedia": {
       "title": "Retrouvez moi sur les réseaux sociaux"
@@ -392,5 +392,37 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "office": {
+      "title": "Mon cabinet",
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
+      "tel": "06 82 12 90 59"
+    },
+    "takeAppointment": "Prendre rendez-vous",
+    "form": {
+      "title": "Formulaire de contact",
+      "lastName": "Nom",
+      "firstName": "Prénom",
+      "mail": "Email",
+      "subject": "Sujet",
+      "message": {
+        "label": "Message",
+        "placeholder": "Votre message ici"
+      },
+      "send": "Envoyer",
+      "error": {
+        "lastName": "Veuillez renseigner votre nom de famille.",
+        "firstName": "Veuillez renseigner votre prénom.",
+        "mail": "Veuillez renseigner un email valide.",
+        "subject": "Veuillez renseigner un sujet.",
+        "message": "Veuillez renseigner un message d'au moins 10 charactères."
+      },
+      "sendMessage": {
+        "success": "Votre message a bien été envoyé, je reviendrai vers vous dans les meilleurs délais !",
+        "error": "Un problème est survenu, veuillez réessayer ultérieurement."
+      }
+    }
   }
 }
