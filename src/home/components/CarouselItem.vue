@@ -2,6 +2,8 @@
 import { computed, toRefs } from "vue";
 import type { PropType } from "vue";
 import type { CarouselSlide } from "../interface/Carousel";
+import { urlFor } from "@/sanityClient";
+import { useI18n } from "vue-i18n";
 
 const props = defineProps({
   slide: { type: Object as PropType<CarouselSlide>, required: true },
@@ -11,6 +13,8 @@ const props = defineProps({
 });
 
 const { direction } = toRefs(props);
+
+const { t } = useI18n();
 
 const emit = defineEmits(["mouseEnter", "mouseLeave"]);
 
@@ -27,10 +31,14 @@ const transitionEffect = computed(() => {
       @mouseenter="emit('mouseEnter')"
       @mouseout="emit('mouseLeave')"
     >
+      <img :src="urlFor(slide.image).url()" />
       <img :src="slide.image" />
       <div class="carousel-item-informations">
         <h2 class="red">{{ slide.title }}</h2>
         <p class="red">{{ slide.description }}</p>
+        <a v-if="slide.link" :href="`${slide.link}`" class="carousel-item-link">{{
+          t("home.carousel.link")
+        }}</a>
       </div>
     </div>
   </Transition>
@@ -48,7 +56,7 @@ const transitionEffect = computed(() => {
   &-informations {
     width: 100%;
     height: 30%;
-    background: rgba(38, 38, 38, 0.5);
+    background: rgba(38, 38, 38, 0.8);
     color: $white-soft;
     padding: 1em;
     position: absolute;
@@ -56,6 +64,12 @@ const transitionEffect = computed(() => {
     left: 50%;
     bottom: 0;
     z-index: 2;
+  }
+
+  &-link {
+    text-decoration: underline 1px;
+    cursor: pointer;
+    color: $white;
   }
 }
 

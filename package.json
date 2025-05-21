@@ -15,9 +15,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@sanity/client": "^7.3.0",
+    "@sanity/image-url": "^1.1.0",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "pinia": "^3.0.1",
+    "sanity": "^3.89.0",
     "vue": "^3.5.13",
     "vue-i18n": "^11.1.1",
     "vue-router": "^4.5.0"
