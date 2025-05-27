@@ -4,13 +4,16 @@ defineProps({
   label: { type: String, required: true },
   to: { type: String, required: true },
   isUnderline: { type: Boolean, default: false },
+  color: { type: String, default: "brown" },
 });
 </script>
 
 <template>
-  <RouterLink :class="['router-link', { underline: isUnderline }]" :to="{ name: to }">{{
-    label
-  }}</RouterLink>
+  <RouterLink
+    :class="['router-link', `router-link-${color}`, { underline: isUnderline }]"
+    :to="{ name: to }"
+    >{{ label }}</RouterLink
+  >
 </template>
 
 <style scoped lang="scss">
@@ -19,7 +22,12 @@ defineProps({
 .router-link {
   text-decoration: none;
   cursor: pointer;
-  color: $brown-dark;
+  &-brown {
+    color: $brown-dark;
+  }
+  &-yellow {
+    color: $orange-light;
+  }
 }
 .underline {
   text-decoration: underline;

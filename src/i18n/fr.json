@@ -33,6 +33,7 @@
     }
   },
   "home": {
+    "title": "Accueil",
     "carousel": {
       "link": "En savoir plus"
     },
@@ -138,7 +139,6 @@
         "Je finis par un massage du visage, un travail d’acupression à la fois sur le visage et le crâne."
       ]
     },
-
     "benefits": {
       "title": "Quels sont les bienfaits de mes séances ?",
       "list": [
@@ -197,6 +197,12 @@
           "description": "Après chaque séance, nous faisons le point et déterminons la stratégie à suivre :  la prise d’un rendez-vous pour une séance de suivi, des conseils de diététique à mettre en place pour vous sentir mieux, des conseils de qi gong, de l’utilisation de plantes de notre région, etc. Je vous envoie sur votre adresse électronique un compte rendu de ce qui s’est fait pendant la séance et des conseils qui peuvent être donnés."
         }
       ]
+    },
+    "OfficeSession": {
+      "title": "Séance au cabinet"
+    },
+    "OutsideSession": {
+      "title": "Séance extérieure"
     }
   },
   "seasons": {
@@ -427,5 +433,11 @@
         "error": "Un problème est survenu, veuillez réessayer ultérieurement."
       }
     }
+  },
+  "takeAppointment": {
+    "title": "Prendre rendez-vous"
+  },
+  "siteMap": {
+    "title": "Plan du site"
   }
 }
