@@ -14,6 +14,8 @@ import Contact from "@/contact/views/Contact.vue";
 import { practicesRoutesName } from "@/practices/routes/routesPath";
 import { practicesRoutesPath } from "@/practices/routes/routesName";
 import Practices from "@/practices/views/Practices.vue";
+import PracticesOffice from "@/practices/views/OfficeSession.vue";
+import PracticesOutside from "@/practices/views/OutsideSession.vue";
 import { priceRoutesName } from "@/price/routes/routesName";
 import { priceRoutesPath } from "@/price/routes/routesPath";
 import Price from "@/price/views/Price.vue";
@@ -25,6 +27,9 @@ import Winter from "@/season/views/Winter.vue";
 import Spring from "@/season/views/Spring.vue";
 import Summer from "@/season/views/Summer.vue";
 import InterSeasons from "@/season/views/InterSeasons.vue";
+import { siteMapRoutesName } from "@/siteMap/routes/routesName";
+import { siteMapRoutesPath } from "@/siteMap/routes/routesPath";
+import siteMap from "@/siteMap/views/siteMap.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +63,18 @@ const router = createRouter({
       name: practicesRoutesName.HOME,
       component: Practices,
       meta: { title: "Réflexô Bien-être - Mes pratiques" },
+    },
+    {
+      path: practicesRoutesPath.OFFICE,
+      name: practicesRoutesName.OFFICE,
+      component: PracticesOffice,
+      meta: { title: "Réflexô Bien-être - Séance au cabinet" },
+    },
+    {
+      path: practicesRoutesPath.OUTSIDE,
+      name: practicesRoutesName.OUTSIDE,
+      component: PracticesOutside,
+      meta: { title: "Réflexô Bien-être - Séance extérieure" },
     },
     {
       path: priceRoutesPath.HOME,
@@ -100,6 +117,12 @@ const router = createRouter({
       name: seasonsRoutesName.INTERSEASON,
       component: InterSeasons,
       meta: { title: "Réflexô Bien-être - Intersaison" },
+    },
+    {
+      path: siteMapRoutesPath.HOME,
+      name: siteMapRoutesName.HOME,
+      component: siteMap,
+      meta: { title: "Réflexô Bien-être - Plan du site" },
     },
     {
       path: "/",

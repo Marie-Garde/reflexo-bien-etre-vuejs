@@ -10,9 +10,14 @@ import { computed } from "vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import { contactRoutesName } from "@/contact/routes/routesName";
+import LinkRouter from "@/components/LinkRouter.vue";
+import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 
 const { t } = useI18n();
 const route = useRoute();
+
+const siteMapLabel = t("footer.legal.siteMap");
+const siteMapRouteName = siteMapRoutesName.HOME;
 
 const isOrangeBackground = computed(() => {
   const orangeRoutes = [aboutRoutesName.HOME, seasonsRoutesName.SUMMER, seasonsRoutesName.FALL];
@@ -77,7 +82,7 @@ const isYellowBackground = computed(() => {
     </div>
     <div class="second-line">
       <p>{{ t("footer.legal.copyright") }}</p>
-      <p>{{ t("footer.legal.siteMap") }}</p>
+      <LinkRouter class="link" :label="siteMapLabel" color="yellow" :to="siteMapRouteName" />
       <p>{{ t("footer.legal.legalPage") }}</p>
       <p>{{ t("footer.legal.creator") }}</p>
     </div>
