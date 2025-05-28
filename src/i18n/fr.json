@@ -1,6 +1,7 @@
 {
   "navigation": {
     "items": {
+      "home": "Accueil",
       "about": "Présentation",
       "seasons": "Ce qui bouge",
       "practices": "Mes pratiques",

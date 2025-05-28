@@ -39,6 +39,7 @@ const toggle = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   background: none;
   border: none;
   width: 100%;

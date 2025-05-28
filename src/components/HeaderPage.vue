@@ -23,6 +23,10 @@ defineProps({
   height: 90px;
   overflow: hidden;
   margin-top: 90px;
+  @media (max-width: 768px) {
+    height: 70px;
+    margin-top: 100px;
+  }
 }
 
 .left,
@@ -34,6 +38,9 @@ defineProps({
 
 .left {
   clip-path: polygon(0 0, calc(55% - 10px) 0, calc(45% - 10px) 100%, 0 100%);
+  @media (max-width: 768px) {
+    clip-path: polygon(0 0, calc(75% - 5px) 0, calc(65% - 5px) 100%, 0 100%);
+  }
   &-orange {
     background-color: $orange;
   }
@@ -51,8 +58,10 @@ defineProps({
 
 .right {
   background-image: url("@/assets/illustrations/flower-field.jpg");
-  // background-color: $orange;
   clip-path: polygon(calc(55% + 10px) 0, 100% 0, 100% 100%, calc(45% + 10px) 100%);
+  @media (max-width: 768px) {
+    clip-path: polygon(calc(75% + 5px) 0, 100% 0, 100% 100%, calc(65% + 5px) 100%);
+  }
 }
 
 .header::before {

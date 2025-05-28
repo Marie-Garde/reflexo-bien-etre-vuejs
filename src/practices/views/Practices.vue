@@ -96,8 +96,15 @@ strong {
     .presentation {
       max-width: 70%;
       margin: 60px auto;
+      @media (max-width: 768px) {
+        max-width: 90%;
+        margin: 40px auto;
+      }
       .text {
         margin-top: 50px;
+        @media (max-width: 768px) {
+          margin-top: 30px;
+        }
       }
     }
 
@@ -105,16 +112,27 @@ strong {
       width: 100%;
       background-color: $green;
       padding: 60px 0;
+      @media (max-width: 768px) {
+        h2 {
+          padding: 0 10px;
+        }
+      }
       &-list {
         list-style: none;
         padding: 0;
         width: 70%;
         margin: 0 auto;
+        @media (max-width: 768px) {
+          width: 90%;
+        }
       }
     }
 
     .pillars {
       margin: 60px auto;
+      @media (max-width: 768px) {
+        max-width: 90%;
+      }
     }
 
     .pillars-list {
@@ -124,6 +142,11 @@ strong {
       display: flex;
       justify-content: space-between;
       padding: 0;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
 
       &-wrapper {
         position: relative;
@@ -176,6 +199,9 @@ strong {
   box-shadow: 0px 5px 5px $dark-grey;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    height: 130vh;
+  }
 
   &-content {
     position: relative;
@@ -186,6 +212,9 @@ strong {
     justify-content: center;
     height: 100%;
     z-index: 1;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
     h2 {
       margin-bottom: 3vw;
     }
@@ -195,6 +224,11 @@ strong {
       justify-content: space-around;
       width: 100%;
       padding-bottom: 50px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 0;
+      }
       .card {
         display: flex;
         justify-content: space-around;
@@ -204,6 +238,10 @@ strong {
         background: rgba(246, 246, 246, 0.9);
         border-radius: 8px;
         text-align: center;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          width: 100%;
+        }
         &-content {
           margin: 0 10px;
           h3 {
