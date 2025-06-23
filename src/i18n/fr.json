@@ -1,6 +1,7 @@
 {
   "navigation": {
     "items": {
+      "home": "Accueil",
       "about": "Présentation",
       "seasons": "Ce qui bouge",
       "practices": "Mes pratiques",
@@ -113,17 +114,17 @@
       "list": [
         {
           "date": "Novembre 2020 - Septembre 2022",
-          "title": "Pracitienne en Qi Gong",
+          "title": "Praticienne en Qi Gong",
           "subtitle": "Institut de truc"
         },
         {
           "date": "Mars 2020 - Juin 2021",
-          "title": "Pracitienne en Massage Tuina",
+          "title": "Praticienne en Massage Tuina",
           "subtitle": "Institut de truc"
         },
         {
           "date": "Août 2019 - Avril 2021",
-          "title": "Pracitienne en reflexologie",
+          "title": "Praticienne en reflexologie",
           "subtitle": "Institut de truc"
         }
       ]

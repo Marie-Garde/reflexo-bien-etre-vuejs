@@ -55,10 +55,9 @@ const isYellowBackground = computed(() => {
   <div class="container">
     <div class="first-line">
       <div class="informations">
-        <div class="informations-title">
-          <h3>{{ t("footer.informations.name") }}</h3>
-          <h3>- {{ t("footer.informations.societyName") }}</h3>
-        </div>
+        <h3 class="informations-title">
+          {{ t("footer.informations.name") }} - {{ t("footer.informations.societyName") }}
+        </h3>
         <div class="informations-item">
           <phone />
           <p>{{ t("footer.informations.number") }}</p>
@@ -95,6 +94,9 @@ const isYellowBackground = computed(() => {
 .warning {
   text-align: center;
   margin-top: 2vw;
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 }
 
 .orange {
@@ -133,6 +135,12 @@ const isYellowBackground = computed(() => {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+    }
     .informations {
       &-title {
         margin-bottom: 12px;
@@ -146,6 +154,10 @@ const isYellowBackground = computed(() => {
         gap: 12px;
         margin-bottom: 12px;
         align-items: center;
+        @media (max-width: 768px) {
+          justify-content: center;
+          align-items: flex-start;
+        }
       }
     }
 
@@ -169,6 +181,11 @@ const isYellowBackground = computed(() => {
     width: 100%;
     display: flex;
     justify-content: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
     :nth-child(3) {
       margin: 0 5px 0 5px;
     }

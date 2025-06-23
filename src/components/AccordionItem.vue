@@ -3,7 +3,7 @@ import { ref } from "vue";
 import Add_ring from "@/assets/icons/Add_ring.vue";
 import Remove_ring from "@/assets/icons/Remove_ring.vue";
 
-const props = defineProps({
+defineProps({
   title: String,
 });
 
@@ -39,6 +39,7 @@ const toggle = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   background: none;
   border: none;
   width: 100%;

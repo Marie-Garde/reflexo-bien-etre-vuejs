@@ -69,6 +69,9 @@ function goToSeason(route: string) {
     justify-content: center;
     text-align: center;
     width: 70%;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   .importance {
@@ -84,6 +87,11 @@ function goToSeason(route: string) {
     border-radius: 50%;
     overflow: hidden;
     transform: rotate(45deg);
+    @media (max-width: 768px) {
+      width: 90vw;
+      height: 90vw;
+      margin-bottom: 60px;
+    }
   }
 
   .seasons-list {
@@ -107,6 +115,10 @@ function goToSeason(route: string) {
       font-size: 2rem;
       transform: rotate(-45deg);
       cursor: pointer;
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        color: $black;
+      }
       &-top-left {
         position: absolute;
         top: 50%;
@@ -114,8 +126,8 @@ function goToSeason(route: string) {
       }
       &-top-right {
         position: absolute;
-        top: 40%;
-        left: 35%;
+        top: 50%;
+        left: 30%;
       }
       &-bottom-right {
         position: absolute;
@@ -154,6 +166,9 @@ function goToSeason(route: string) {
       transform: rotate(-45deg) scale(3);
       background-repeat: no-repeat;
       z-index: -1;
+      @media (max-width: 768px) {
+        opacity: 0.5;
+      }
     }
     &::after {
       content: "";
@@ -177,12 +192,7 @@ function goToSeason(route: string) {
   .top-right {
     top: 0;
     right: 0;
-    clip-path: polygon(
-      0 0,
-      calc(100% - 5px) 0,
-      calc(100% - 5px) calc(100% - 5px),
-      0 calc(100% - 5px)
-    );
+    clip-path: polygon(0 0, calc(100%) 0, calc(100%) calc(100% - 5px), 0 calc(100% - 5px));
     &::before {
       content: "";
       position: absolute;
@@ -193,6 +203,9 @@ function goToSeason(route: string) {
       transform: rotate(-45deg) scale(3.5);
       background-repeat: no-repeat;
       z-index: -1;
+      @media (max-width: 768px) {
+        opacity: 0.5;
+      }
     }
     &::after {
       content: "";
@@ -216,12 +229,7 @@ function goToSeason(route: string) {
   .bottom-left {
     bottom: 0;
     left: 0;
-    clip-path: polygon(
-      0 0,
-      calc(100% - 5px) 0,
-      calc(100% - 5px) calc(100% - 5px),
-      0 calc(100% - 5px)
-    );
+    clip-path: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) calc(100%), 0 calc(100%));
     &::before {
       content: "";
       position: absolute;
@@ -232,6 +240,9 @@ function goToSeason(route: string) {
       transform: rotate(-45deg) scale(3);
       background-repeat: no-repeat;
       z-index: -1;
+      @media (max-width: 768px) {
+        opacity: 0.5;
+      }
     }
     &::after {
       content: "";
@@ -255,12 +266,7 @@ function goToSeason(route: string) {
   .bottom-right {
     bottom: 0;
     right: 0;
-    clip-path: polygon(
-      0 0,
-      calc(100% - 5px) 0,
-      calc(100% - 5px) calc(100% - 5px),
-      0 calc(100% - 5px)
-    );
+    clip-path: polygon(0 0, calc(100%) 0, calc(100%) calc(100%), 0 calc(100%));
     &::before {
       content: "";
       position: absolute;
@@ -270,6 +276,9 @@ function goToSeason(route: string) {
       background-size: 60% 60%;
       transform: rotate(-45deg) scale(3);
       z-index: -1;
+      @media (max-width: 768px) {
+        opacity: 0.5;
+      }
     }
     &::after {
       content: "";

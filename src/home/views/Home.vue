@@ -156,10 +156,17 @@ onMounted(async () => {
   display: flex;
   width: 100%;
 
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+
   &-image {
     width: 40%;
     padding: 5vw;
     background-color: $green;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     &-content {
       width: 100%;
       height: auto;
@@ -177,6 +184,9 @@ onMounted(async () => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     .title {
       margin-bottom: 20px;
     }
@@ -197,6 +207,12 @@ onMounted(async () => {
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      > * {
+        flex: 1 1 160px;
+      }
+    }
     &-item {
       &-img {
         height: 70px;
@@ -216,6 +232,10 @@ onMounted(async () => {
   padding: 60px 20px 40px 20px;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    height: 95vh;
+    padding: 30px 20px 40px 20px;
+  }
 }
 
 .solution {
@@ -225,10 +245,18 @@ onMounted(async () => {
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
 
   &-text {
     width: 70%;
     color: $white;
+    @media (max-width: 768px) {
+      width: 90%;
+      text-align: center;
+    }
     .title {
       margin-bottom: 30px;
     }
@@ -248,6 +276,9 @@ onMounted(async () => {
     width: 60%;
     height: auto;
     border-radius: 5px;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 }
 
@@ -255,6 +286,9 @@ onMounted(async () => {
   width: 100%;
   background-color: $orange-light;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 40px;
+  }
 
   &-content {
     max-width: 1200px;
@@ -274,6 +308,9 @@ onMounted(async () => {
     font-size: 1.5rem;
     padding: 20px 54px;
     box-shadow: 0px 5px 5px $dark-grey;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 }
 
