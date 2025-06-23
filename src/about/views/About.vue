@@ -92,6 +92,9 @@ const presentationText = tm("about.who.text");
 
 .container {
   margin-top: 60px;
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 .presentation {
@@ -103,9 +106,16 @@ const presentationText = tm("about.who.text");
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      width: 100%;
+    }
 
     &-image {
       width: 50%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     &-text {
@@ -116,6 +126,9 @@ const presentationText = tm("about.who.text");
       padding: 90px 0;
       width: 50%;
       box-shadow: 0px 5px 5px $dark-grey;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       &-content {
         text-align: left;
@@ -146,6 +159,10 @@ const presentationText = tm("about.who.text");
     align-items: center;
     padding: 0;
     width: 60%;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 90%;
+    }
     li {
       flex: 1;
       display: flex;
@@ -191,6 +208,9 @@ const presentationText = tm("about.who.text");
   }
   &-text {
     width: 70%;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
     :nth-child(-n + 4) {
       margin-bottom: 20px;
     }
@@ -222,6 +242,10 @@ const presentationText = tm("about.who.text");
     background-color: $orange;
     border-radius: 50%;
     z-index: -1;
+    @media (max-width: 768px) {
+      height: 100vh;
+      width: 170%;
+    }
   }
 
   &-title {
@@ -234,6 +258,9 @@ const presentationText = tm("about.who.text");
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   &-item {

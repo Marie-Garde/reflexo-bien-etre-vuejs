@@ -55,6 +55,9 @@ const transitionEffect = computed(() => {
     left: 50%;
     bottom: 50%;
     z-index: 2;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
 
     .text {
       margin-bottom: 20px;

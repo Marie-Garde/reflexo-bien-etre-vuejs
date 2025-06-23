@@ -25,7 +25,7 @@ defineProps({
   margin-top: 90px;
   @media (max-width: 768px) {
     height: 70px;
-    margin-top: 100px;
+    margin-top: 120px;
   }
 }
 

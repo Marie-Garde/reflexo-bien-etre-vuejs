@@ -46,6 +46,8 @@ const mobile = isMobile();
     @media (max-width: 768px) {
       font-size: 0.8rem;
       padding: 5px;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

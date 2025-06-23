@@ -86,6 +86,9 @@ function switchSlide(index: number) {
     width: 100%;
     height: 25vh;
     overflow: hidden;
+    @media (max-width: 768px) {
+      height: 40vh;
+    }
   }
 }
 </style>

@@ -32,7 +32,6 @@ const transitionEffect = computed(() => {
       @mouseout="emit('mouseLeave')"
     >
       <img :src="urlFor(slide.image).url()" />
-      <img :src="slide.image" />
       <div class="carousel-item-informations">
         <h2 class="red">{{ slide.title }}</h2>
         <p class="red">{{ slide.description }}</p>
@@ -52,6 +51,10 @@ const transitionEffect = computed(() => {
   left: 0;
   right: 0;
   bottom: 0;
+
+  img {
+    width: 100%;
+  }
 
   &-informations {
     width: 100%;
