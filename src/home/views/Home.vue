@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import isabelleImage from "@/assets/illustrations/isabelle-small.jpg";
 import LinkRouter from "@/components/LinkRouter.vue";
 import Button from "@/components/Button.vue";
-import { practicesRoutesName } from "@/practices/routes/routesPath";
+import { practicesRoutesName } from "@/practices/routes/routesName";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import { aboutRoutesName } from "@/about/routes/routesName";

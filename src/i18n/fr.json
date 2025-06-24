@@ -204,6 +204,55 @@
     },
     "OutsideSession": {
       "title": "Séance extérieure"
+    },
+    "outsideSessionPage": {
+      "title": "Séances extérieures - Qi gong",
+      "subtitle": "Reconnecter souffle, corps et esprit: tout l'art du Qi gong.",
+      "buttonLabel": "Réserver une séance",
+      "practice": {
+        "title": "Une pratique de santé douce et puissante",
+        "text": [
+          "Le Qi Gong est un art énergétique ancestral, pilier de la médecine chinoise.",
+          "À travers des mouvements lents,des combinaisons de mouvements, des postures statiques, la respiration et la concentration, il permet de <strong>faire circuler l’énergie</strong>, de <strong>renforcer le corps</strong>, et de <strong>calmer l’esprit.</strong>"
+        ]
+      },
+      "session": {
+        "title": "Déroulement d’un accompagnement",
+        "text": "Je propose des séances hebdomadaires (hors vacances scolaires), en petit groupe ou en individuel. Chaque séance dure environ <strong>1 heure</strong>, et suit une progression douce et adaptée à chacun."
+      },
+      "why": {
+        "title": "Pourquoi pratiquer le Qi Gong régulièrement ?",
+        "text": [
+          "Une séance fait du bien.",
+          "Mais c’est dans la régularité que les effets se déploient en profondeur :"
+        ],
+        "reasons": [
+          "Libération des tensions physiques et mentales",
+          "Amélioration de la respiration et du sommeil",
+          "Apaisement du système nerveux",
+          "Meilleure gestion du stress et des émotions",
+          "Renforcement de l’ancrage, de l’équilibre et de la vitalité"
+        ]
+      },
+      "who": {
+        "title": "A qui s’adresse le Qi Gong ?",
+        "text": "Accessible à tous, le Qi Gong est particulièrement indiqué pour :",
+        "people": [
+          "Les personnes stressées, tendues, anxieuses",
+          "Les personnes en convalescence ou en quête de prévention",
+          "Les séniors, pour entretenir souplesse et mobilité",
+          "Toute personne en quête d’une <strong>pratique douce et consciente</strong>"
+        ]
+      },
+      "how": {
+        "title": "Modalités pratiques",
+        "infos": [
+          "Durée : 1h",
+          "Rythme : 1 séance/semaine (hors vacances scolaires)",
+          "En petit groupe ou en individuel (selon la formule choisie)",
+          "Tenue confortable - pas besoin de matériel spécifique"
+        ]
+      }
     }
   },
   "seasons": {

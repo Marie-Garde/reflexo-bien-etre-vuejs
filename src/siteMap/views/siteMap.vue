@@ -5,7 +5,7 @@ import { homeRoutesName } from "@/home/routes/routesName";
 import { aboutRoutesName } from "@/about/routes/routesName";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import { contactRoutesName } from "@/contact/routes/routesName";
-import { practicesRoutesName } from "@/practices/routes/routesPath";
+import { practicesRoutesName } from "@/practices/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import { priceRoutesName } from "@/price/routes/routesName";
 
