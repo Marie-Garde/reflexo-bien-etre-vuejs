@@ -253,6 +253,180 @@
           "Tenue confortable - pas besoin de matériel spécifique"
         ]
       }
+    },
+    "insideSessionPage": {
+      "title": "Séances au cabinet - Massage Tuina ou reflexologie",
+      "subtitle": "Deux chemins, une même intention de mieux-être",
+      "why": {
+        "tuina": {
+          "title": "Pourquoi choisir un massage Tuina ?",
+          "text": [
+            "Le Tuina est une approche corporelle globale, dynamique et profonde.",
+            "👉 On le choisit quand on ressent le besoin de dénouer, d’activer, de libérer physiquement.",
+            "On vient pour :",
+            "Le Tuina agit à la fois en profondeur sur les tissus et en surface sur les méridiens et points d’acupuncture."
+          ],
+          "list": [
+            "Des tensions musculaires ou articulaires (nuque, dos, épaules, jambes…)",
+            "Une sensation de blocage énergétique",
+            "De la fatigue accumulée ou un sentiment de stagnation",
+            "Un besoin de mobiliser le corps (raideurs, circulation lente…)",
+            "Des troubles digestifs, respiratoires ou liés au stress",
+            "Prévenir ou accompagner les douleurs chroniques"
+          ]
+        },
+        "reflexo": {
+          "title": "Pourquoi choisir une séance de réflexologie ?",
+          "text": [
+            "La réflexologie est une approche indirecte, douce mais très puissante.",
+            "👉 On la choisit quand on veut rééquilibrer le corps par des points précis, sans forcément toucher la zone douloureuse.",
+            "On vient pour :",
+            "Elle agit par résonance, à partir des pieds, des mains, ou du visage, et peut être idéale en complément d’un traitement médical, sans contre-indication directe."
+          ],
+          "list": [
+            "Relancer les fonctions des organes (digestion, sommeil, élimination…)",
+            "Apaiser le système nerveux, le stress, l’anxiété",
+            "Travailler sur des troubles hormonaux, digestifs ou chroniques",
+            "Accompagner une période de transition (ménopause, changement de rythme…)",
+            "Un besoin de détente profonde et régénérante"
+          ]
+        }
+      },
+      "summary": {
+        "title": "En résumé",
+        "array": {
+          "firstLine": [
+            "",
+            "Action",
+            "Zones travaillées",
+            "Ressenti",
+            "Besoin principal"
+          ],
+          "secondLine": [
+            "Massage Tuina",
+            "Physique et énergétique",
+            "Corps entier, en direct",
+            "Tonique ou profond",
+            "Débloquer / dynamiser"
+          ],
+          "thirdLine": [
+            "Réflexologie",
+            "Réflexe et énergie",
+            "Pieds, dos, mains et visage",
+            "Apaisant et ciblé",
+            "Réguler / apaiser"
+          ]
+        }
+      },
+      "session": {
+        "reflexo": {
+          "title": "Déroulement des séances : énergétique chinoise et réflexologie",
+          "first": {
+            "title": "Première séance",
+            "text": [
+              "Chaque accompagnement débute par un bilan énergétique complet, un temps d’écoute et d’observation approfondi (30 à 45 min). Nous échangeons sur votre parcours, vos habitudes de vie, votre sommeil, votre digestion, vos émotions… Tout ce qui permet de mieux cerner votre terrain.",
+              "Je complète cette analyse par l’observation du teint, de la langue, de la voix, et la <strong>prise des pouls chinois</strong> pour détecter les déséquilibres énergétiques, par la : <strong>palpation du corps</strong> pour repérer les zones de tension ou de froid, et <strong>exploration des zones réflexes</strong> des pieds ou des mains pour confirmer les signaux perçus.",
+              "Puis vient le soin.",
+              "En fin de séance, nous définissons ensemble un plan d’action personnalisé : séances de suivi, conseils en alimentation, hygiène de vie, Qi Gong ou phytothérapie.",
+              "Un <strong>compte rendu clair</strong> vous est envoyé par mail, pour vous accompagner en toute autonomie."
+            ],
+            "hovering": "La première séance : un temps pour comprendre et agir"
+          },
+          "second": {
+            "title": "Séance de suivi",
+            "text": [
+              "Pour que les effets du soin ne s’arrêtent pas à la première séance, je propose un forfait de 3 séances de suivi, réparties sur un mois et demi.",
+              "Un rythme volontairement progressif, pensé pour accompagner le corps dans son propre processus d’équilibre et d’auto-régulation.",
+              "Ce forfait comprend :"
+            ],
+            "list": [
+              "• 1ère séance de suivi, 1 semaine après le bilan,",
+              "• 2e séance, 15 jours plus tard,",
+              "• 3e séance, encore 15 jours après."
+            ],
+            "hovering": "Donner du temps au corps… pour qu’il retrouve sa juste énergie."
+          },
+          "rhythm": {
+            "title": "Pourquoi ce rythme ?",
+            "text": [
+              "Parce qu’un seul soin peut soulager, mais c’est la régularité qui installe les bienfaits dans la durée.",
+              "Ce protocole offre un cadre souple mais engagé, qui respecte les temps du corps tout en créant une dynamique d’évolution.",
+              "Ce format est idéal pour :"
+            ],
+            "list": [
+              "✔ consolider les effets du premier soin,",
+              "✔ ajuster les axes de travail au fil des séances,",
+              "✔ ancrer les transformations en profondeur."
+            ],
+            "CTA": "Réserver une séance"
+          }
+        },
+        "tuina": {
+          "title": "Déroulement des séances : massage Tuina",
+          "first": {
+            "title": "Première séance",
+            "text": [
+              "Avant de commencer, nous échangeons brièvement sur vos besoins du moment : douleurs, tensions, fatigue, stress… Cela me permet d’adapter le massage à votre état énergétique du jour et aux zones prioritaires (10 à 15mins).",
+              "Installation et diagnostic corporel (10 à 15 min) : Vous vous allongez confortablement (habillé·e ou en sous-vêtements selon les zones à travailler). Je prends quelques instants pour observer votre posture, palper les tensions, ressentir la température de certaines zones, et affiner mon ressenti énergétique.",
+              "Le massage Tuina (30 à 45 min): J’utilise des techniques spécifiques ainsi que certains outils. Chaque geste est précis, rythmé, et ciblé sur les méridiens ou les points d’acupuncture. Selon les besoins, le massage peut être tonifiant ou apaisant, profond ou plus doux.",
+              "Retour au calme et conseils personnalisés (5 min): En fin de séance, un temps de repos vous permet de revenir à vous en douceur.",
+              "Nous faisons ensemble le point sur vos ressentis. Je peux vous donner des conseils de mouvements, d’alimentation ou d’hygiène de vie pour prolonger les effets du soin.",
+              "Un <strong>compte rendu clair</strong> vous est envoyé par mail, pour vous accompagner en toute autonomie."
+            ],
+            "hovering": "Une séance Tuina : relancer l’énergie, libérer les tensions."
+          },
+          "second": {
+            "title": "Séance de suivi",
+            "text": [
+              "Un suivi sur-mesure, pour laisser le soin agir… et s’inscrire dans la durée.",
+              "Le corps a sa propre temporalité.",
+              "C’est pourquoi je vous propose un suivi personnalisé en deux séances, espacées de 15 jours, pour renforcer les effets du massage Tuina et accompagner le corps dans son processus d’harmonisation."
+            ],
+            "hovering": "???"
+          },
+          "rhythm": {
+            "title": "Pourquoi ce rythme ?",
+            "text": [
+              "Le Tuina mobilise en profondeur l’énergie, les tissus, les méridiens.",
+              "Une seule séance peut faire bouger beaucoup de choses, mais c’est dans la continuité que les bénéfices s’installent durablement.",
+              "Espacer les séances de 15 jours permet :"
+            ],
+            "list": [
+              "✔ De laisser au corps le temps d’intégrer,",
+              "✔ D’observer les évolutions et réajuster le soin,",
+              "✔ De travailler en douceur, sans surcharge,",
+              "✔ D’ancrer les résultats (meilleure mobilité, apaisement, regain d’énergie."
+            ],
+            "CTA": "Réserver une séance de massage Tuina"
+          }
+        }
+      },
+      "after": {
+        "title": "Après la séance : quelques recommandations essentielles",
+        "text": [
+          "La séance ne s’arrête pas lorsque vous quittez le cabinet.",
+          "Votre corps entre alors dans une phase d’intégration, parfois discrète mais toujours active.",
+          "Pour accompagner ce processus en douceur, voici quelques conseils simples à suivre :"
+        ],
+        "list": [
+          {
+            "title": "Eviter toute activité intense",
+            "text": "Privilégiez le repos. Après un soin, votre organisme a besoin de calme pour « digérer » les informations reçues. Le sport, les efforts physiques ou les emplois du temps trop chargés peuvent gêner ce travail en profondeur."
+          },
+          {
+            "title": "Hydratez-vous généreusement",
+            "text": "L’eau aide à éliminer les toxines libérées pendant le soin. Buvez régulièrement dans les heures qui suivent, même si vous n’avez pas soif."
+          },
+          {
+            "title": "Fatigue passagère : un signal normal",
+            "text": "Il est courant de ressentir un coup de fatigue dans les 24 à 48 heures. C’est souvent bon signe : le soin est à l’œuvre.  Si une gêne inhabituelle persiste au-delà de ce délai, n’hésitez pas à me contacter."
+          },
+          {
+            "title": "Espacer les rendez-vous avec d'autres praticiens",
+            "text": "Si vous consultez d’autres professionnels (ostéopathe, kiné, etc.), veillez à respecter un délai d’au moins une semaine. Cela permet à votre corps d’intégrer chaque soin sans surcharge, et garantit une meilleure efficacité."
+          }
+        ]
+      }
     }
   },
   "seasons": {
