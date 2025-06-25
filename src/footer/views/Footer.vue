@@ -39,7 +39,8 @@ const isYellowBackground = computed(() => {
 });
 
 const isOrangeLightBackground = computed(() => {
-  return route.name === practicesRoutesName.OUTSIDE;
+  const orangeLightRoutes = [practicesRoutesName.OUTSIDE, practicesRoutesName.OFFICE];
+  return typeof route.name === "string" && orangeLightRoutes.includes(route.name);
 });
 </script>
 
