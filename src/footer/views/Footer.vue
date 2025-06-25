@@ -12,6 +12,7 @@ import { seasonsRoutesName } from "@/season/routes/routesName";
 import { contactRoutesName } from "@/contact/routes/routesName";
 import LinkRouter from "@/components/LinkRouter.vue";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
+import { practicesRoutesName } from "@/practices/routes/routesName";
 
 const { t } = useI18n();
 const route = useRoute();
@@ -36,6 +37,10 @@ const isYellowBackground = computed(() => {
   const yellowRoutes = [seasonsRoutesName.INTERSEASON, contactRoutesName.HOME];
   return typeof route.name === "string" && yellowRoutes.includes(route.name);
 });
+
+const isOrangeLightBackground = computed(() => {
+  return route.name === practicesRoutesName.OUTSIDE;
+});
 </script>
 
 <template>
@@ -47,6 +52,7 @@ const isYellowBackground = computed(() => {
         brown: isBrownBackground,
         green: isGreenBackground,
         yellow: isYellowBackground,
+        lightOrange: isOrangeLightBackground,
       },
     ]"
   >
@@ -119,6 +125,12 @@ const isYellowBackground = computed(() => {
 
 .green {
   background-color: $green;
+  margin-top: 0;
+  color: $brown-dark;
+}
+
+.lightOrange {
+  background-color: $orange-white;
   margin-top: 0;
   color: $brown-dark;
 }

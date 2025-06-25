@@ -2,16 +2,26 @@
 import { useI18n } from "vue-i18n";
 import HeaderPage from "@/components/HeaderPage.vue";
 import AccordionItem from "@/components/AccordionItem.vue";
-import massageImage from "@/assets/illustrations/massage.jpg";
 import reflexoImage from "@/assets/illustrations/reflexo.jpg";
 import qiGongImage from "@/assets/illustrations/qi-gong.jpg";
-import reflexoPlantaireImage from "@/assets/illustrations/reflexo-plantaire.jpg";
+import { useRouter } from "vue-router";
+import { practicesRoutesPath } from "../routes/routesPath";
+import { practicesRoutesName } from "../routes/routesName";
 
 const { t, tm } = useI18n();
+const router = useRouter();
 
 const title = t("practices.title");
 const benefitsList = tm("practices.benefits.list");
 const sessionProgressList = tm("practices.sessionProgress.list");
+
+function GoToInsideCare() {
+  router.push({ name: practicesRoutesName.OFFICE });
+}
+
+function GoToOutsideCare() {
+  router.push({ name: practicesRoutesName.OUTSIDE });
+}
 </script>
 
 <template>
@@ -40,13 +50,13 @@ const sessionProgressList = tm("practices.sessionProgress.list");
       <div class="pillars">
         <h2>{{ t("practices.pillars.title") }}</h2>
         <ul class="pillars-list">
-          <li>
+          <li @click="GoToInsideCare()">
             <div class="pillars-list-wrapper">
               <img :src="reflexoImage" class="pillars-list-image" />
               <p class="pillars-list-label">{{ tm("practices.pillars.list")[0] }}</p>
             </div>
           </li>
-          <li>
+          <li @click="GoToOutsideCare()">
             <div class="pillars-list-wrapper">
               <img :src="qiGongImage" class="pillars-list-image" />
               <p class="pillars-list-label">{{ tm("practices.pillars.list")[1] }}</p>
