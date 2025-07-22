@@ -21,7 +21,7 @@ const siteMapLabel = t("footer.legal.siteMap");
 const siteMapRouteName = siteMapRoutesName.HOME;
 
 const isOrangeBackground = computed(() => {
-  const orangeRoutes = [aboutRoutesName.HOME, seasonsRoutesName.SUMMER, seasonsRoutesName.FALL];
+  const orangeRoutes = [seasonsRoutesName.SUMMER, seasonsRoutesName.FALL];
   return typeof route.name === "string" && orangeRoutes.includes(route.name);
 });
 
@@ -42,6 +42,10 @@ const isOrangeLightBackground = computed(() => {
   const orangeLightRoutes = [practicesRoutesName.OUTSIDE, practicesRoutesName.OFFICE];
   return typeof route.name === "string" && orangeLightRoutes.includes(route.name);
 });
+
+const isBrownLightBackground = computed(() => {
+  return route.name === aboutRoutesName.HOME;
+});
 </script>
 
 <template>
@@ -54,6 +58,7 @@ const isOrangeLightBackground = computed(() => {
         green: isGreenBackground,
         yellow: isYellowBackground,
         lightOrange: isOrangeLightBackground,
+        lightBrown: isBrownLightBackground,
       },
     ]"
   >
@@ -134,6 +139,12 @@ const isOrangeLightBackground = computed(() => {
   background-color: $orange-white;
   margin-top: 0;
   color: $brown-dark;
+}
+
+.lightBrown {
+  background-color: #905463;
+  margin-top: 0;
+  color: $white-soft;
 }
 
 .container {

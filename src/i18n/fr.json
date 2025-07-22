@@ -77,26 +77,22 @@
     }
   },
   "about": {
-    "title": "Ma présentation",
-    "who": {
-      "title": "Qui suis-je ?",
-      "name": "Isabelle LAPORCHERIE",
-      "profession": "Praticienne de médecine chinoise & réflexologue",
-      "text": [
-        "Je suis à la recherche d’une seule chose :",
-        "Apporter écoute, douceur et bien-être à toutes personnes qui viennent me voir.",
-        "Dans mon cabinet, on oublie les préjuges, on se pose, on s’accorde du temps pour soi, et juste pour soi. On apprend à écouter son corps et son cœur."
-      ]
-    },
+    "title": "Isabelle Laporcherie",
+    "subTitle": "Praticienne de médecine chinoise & réflexologue",
     "approach": {
-      "title": "Mon approche",
+      "title": "De multiples approches pour une solution complète",
       "list": [
         "Réflexologie & accupression",
         "Massage Tuina & accupression",
         "Qi gong"
       ],
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ",
+      "text": "commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
       "link": "En savoir plus sur mes activités"
+    },
+    "CTA": {
+      "title": "Besoin de vous reconnecter à votre corps ?",
+      "description": "Réservez votre bilan globale ou votre séance spécifique.",
+      "buttonLabel": "Prendre rendez-vous"
     },
     "parcours": {
       "title": "Mon parcours",
