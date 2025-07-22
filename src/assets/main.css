@@ -5,6 +5,10 @@
   font-weight: normal;
 }
 
+.body {
+  margin-top: 100px;
+}
+
 p {
   font-family: "Mulish", sans-serif;
   font-optical-sizing: auto;

@@ -2,8 +2,9 @@
 import { useI18n } from "vue-i18n";
 import HeaderPage from "@/components/HeaderPage.vue";
 import AccordionItem from "@/components/AccordionItem.vue";
-import reflexoImage from "@/assets/illustrations/reflexo.jpg";
-import qiGongImage from "@/assets/illustrations/qi-gong.jpg";
+import reflexoImage from "@/assets/illustrations/practices/inside/reflexo-visage.png";
+import qiGongImage from "@/assets/illustrations/practices/outside/qi-gong-class.jpg";
+import benefitsImage from "@/assets/illustrations/practices/benefits.png";
 import { useRouter } from "vue-router";
 import { practicesRoutesPath } from "../routes/routesPath";
 import { practicesRoutesName } from "../routes/routesName";
@@ -25,58 +26,55 @@ function GoToOutsideCare() {
 </script>
 
 <template>
-  <HeaderPage :label="title" background="orange" />
+  <div class="header">
+    <div class="header-overlay">
+      <h1 class="title">{{ t("practices.title") }}</h1>
+      <h2 class="subTitle">{{ t("practices.presentation.title") }}</h2>
+      <p>{{ tm("practices.presentation.text")[0] }}</p>
+      <p>{{ tm("practices.presentation.text")[1] }}</p>
+      <p>{{ tm("practices.presentation.text")[2] }}</p>
+    </div>
+  </div>
 
-  <div class="container">
-    <div class="content">
-      <div class="presentation">
-        <h2>{{ t("practices.presentation.title") }}</h2>
-        <p class="text">{{ tm("practices.presentation.text")[0] }}</p>
-        <p>{{ tm("practices.presentation.text")[1] }}</p>
-        <p>{{ tm("practices.presentation.text")[2] }}</p>
-      </div>
+  <div class="benefits">
+    <h2>{{ t("practices.benefits.title") }}</h2>
+    <div class="benefits-content">
+      <img :src="benefitsImage" class="benefits-image" />
+      <ul class="benefits-list">
+        <li v-for="benefit in benefitsList">
+          <AccordionItem :title="benefit.title">
+            <div v-html="benefit.text"></div>
+          </AccordionItem>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <div class="benefits">
-        <h2>{{ t("practices.benefits.title") }}</h2>
-        <ul class="benefits-list">
-          <li v-for="benefit in benefitsList">
-            <AccordionItem :title="benefit.title">
-              <div v-html="benefit.text"></div>
-            </AccordionItem>
-          </li>
-        </ul>
-      </div>
+  <div class="pillars">
+    <div class="pillars-text">
+      <h2>{{ t("practices.pillars.title") }}</h2>
+      <p class="red">{{ t("practices.pillars.text") }}</p>
+    </div>
 
-      <div class="pillars">
-        <h2>{{ t("practices.pillars.title") }}</h2>
-        <ul class="pillars-list">
-          <li @click="GoToInsideCare()">
-            <div class="pillars-list-wrapper">
-              <img :src="reflexoImage" class="pillars-list-image" />
-              <p class="pillars-list-label">{{ tm("practices.pillars.list")[0] }}</p>
-            </div>
-          </li>
-          <li @click="GoToOutsideCare()">
-            <div class="pillars-list-wrapper">
-              <img :src="qiGongImage" class="pillars-list-image" />
-              <p class="pillars-list-label">{{ tm("practices.pillars.list")[1] }}</p>
-            </div>
-          </li>
-        </ul>
-        <p class="red">{{ t("practices.pillars.text") }}</p>
-      </div>
+    <ul class="pillars-list">
+      <li class="left" @click="GoToInsideCare()">
+        <p class="pillars-list-label">{{ tm("practices.pillars.list")[0] }}</p>
+      </li>
+      <li class="right" @click="GoToOutsideCare()">
+        <p class="pillars-list-label">{{ tm("practices.pillars.list")[1] }}</p>
+      </li>
+    </ul>
+  </div>
 
-      <div class="sessionProgress">
-        <div class="sessionProgress-content">
-          <h2>{{ t("practices.sessionProgress.title") }}</h2>
+  <div class="sessionProgress">
+    <div class="sessionProgress-content">
+      <h2>{{ t("practices.sessionProgress.title") }}</h2>
 
-          <div class="cards-container">
-            <div class="card" v-for="text in sessionProgressList">
-              <div class="card-content">
-                <h3>{{ text.title }}</h3>
-                <p>{{ text.description }}</p>
-              </div>
-            </div>
+      <div class="cards-container">
+        <div class="card" v-for="text in sessionProgressList">
+          <div class="card-content">
+            <h3>{{ text.title }}</h3>
+            <p>{{ text.description }}</p>
           </div>
         </div>
       </div>
@@ -87,113 +85,143 @@ function GoToOutsideCare() {
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
 
-strong {
-  font-style: bold;
+.header {
+  width: 100%;
+  height: 60vh;
+  background-image: url("@/assets/background/practiceBackground.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &-overlay {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    color: $white;
+    text-align: left;
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .subTitle {
+    margin-bottom: 40px;
+  }
+
+  p {
+    max-width: 50%;
+  }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .content {
+.benefits {
+  width: 100%;
+  background-color: $green;
+  padding: 60px 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  &-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 40px auto 0 auto;
+  }
+  @media (max-width: 768px) {
+    h2 {
+      padding: 0 10px;
+    }
+  }
+  &-list {
+    list-style: none;
+    padding: 0;
+    width: 70%;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+}
+
+.pillars {
+  margin-bottom: 60px;
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+  &-text {
+    max-width: 1280px;
+    margin: 60px auto 0 auto;
     text-align: center;
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-list {
+    position: relative;
     width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 0;
 
-    .presentation {
-      max-width: 70%;
-      margin: 60px auto;
-      @media (max-width: 768px) {
-        max-width: 90%;
-        margin: 40px auto;
-      }
-      .text {
-        margin-top: 50px;
-        @media (max-width: 768px) {
-          margin-top: 30px;
-        }
-      }
-    }
-
-    .benefits {
-      width: 100%;
-      background-color: $green;
-      padding: 60px 0;
-      @media (max-width: 768px) {
-        h2 {
-          padding: 0 10px;
-        }
-      }
-      &-list {
-        list-style: none;
-        padding: 0;
-        width: 70%;
-        margin: 0 auto;
-        @media (max-width: 768px) {
-          width: 90%;
-        }
-      }
-    }
-
-    .pillars {
-      margin: 60px auto;
-      @media (max-width: 768px) {
-        max-width: 90%;
-      }
-    }
-
-    .pillars-list {
-      margin: 30px 0;
-      list-style: none;
-      height: fit-content;
+    .left,
+    .right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 55%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+      text-align: center;
       display: flex;
-      justify-content: space-between;
-      padding: 0;
-      @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      p {
+        z-index: 2;
+        color: $white;
+        font-size: 1.6rem;
       }
 
-      &-wrapper {
-        position: relative;
-        width: 250px;
-        height: 250px;
-        cursor: pointer;
-
-        &:hover {
-          .pillars-image {
-            opacity: 100%;
-            transition: opacity 0.2s ease-in-out;
-          }
-
-          .pillars-label {
-            color: $white;
-            transition: color 0.2s ease-in-out;
-          }
-        }
-      }
-
-      &-image {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        opacity: 50%;
-        object-fit: cover;
-      }
-
-      &-label {
+      &::before {
+        content: "";
         position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $black;
-        text-align: center;
-        font-size: 24px;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        transition: opacity 0.4s ease-in-out;
+        z-index: 1;
+      }
+
+      &:hover::before {
+        opacity: 0.4;
+      }
+    }
+
+    .left {
+      left: 0;
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+      transition: clip-path 0.4s ease-in-out;
+    }
+
+    .right {
+      right: 0;
+      background-image: url("@/assets/illustrations/practices/outside/qi-gong-class.jpg");
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+      transition: clip-path 0.4s ease-in-out;
+    }
+
+    &:hover {
+      .left {
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+      }
+      .right {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
       }
     }
   }
@@ -201,21 +229,15 @@ strong {
 
 .sessionProgress {
   width: 100%;
-  height: 70vh;
-  background-image: url("@/assets/illustrations/reflexo-plantaire.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0px 5px 5px $dark-grey;
-  display: flex;
-  justify-content: center;
+  height: 55vh;
+  max-width: 1280px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     height: 130vh;
   }
 
   &-content {
     position: relative;
-    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,7 +253,8 @@ strong {
 
     .cards-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      gap: 20px;
       width: 100%;
       padding-bottom: 50px;
       @media (max-width: 768px) {
@@ -243,11 +266,33 @@ strong {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 20%;
-        padding: 15px;
+        width: 25%;
+        padding: 20px 10px;
         background: rgba(246, 246, 246, 0.9);
         border-radius: 8px;
         text-align: center;
+        box-shadow: 0px 5px 5px $dark-grey;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:first-child {
+          background-color: #e6c890;
+        }
+
+        &:nth-child(2) {
+          background-color: #ffe3b0;
+        }
+
+        &:nth-child(3) {
+          background-color: #ffebc4;
+        }
+
+        &:nth-child(4) {
+          background-color: #fff5dc;
+        }
         @media (max-width: 768px) {
           flex-direction: column;
           width: 100%;
