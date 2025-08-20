@@ -91,7 +91,7 @@
     },
     "CTA": {
       "title": "Besoin de vous reconnecter à votre corps ?",
-      "description": "Réservez votre bilan globale ou votre séance spécifique.",
+      "description": "Réservez votre bilan global ou votre séance spécifique.",
       "buttonLabel": "Prendre rendez-vous"
     },
     "parcours": {
@@ -415,7 +415,7 @@
           },
           {
             "title": "Fatigue passagère : un signal normal",
-            "text": "Il est courant de ressentir un coup de fatigue dans les 24 à 48 heures. C’est souvent bon signe : le soin est à l’œuvre.  Si une gêne inhabituelle persiste au-delà de ce délai, n’hésitez pas à me contacter."
+            "text": "Il est courant de ressentir un coup de fatigue dans les 24 à 48 heures. C’est souvent bon signe : le soin est à l’œuvre. Si une gêne inhabituelle persiste au-delà de ce délai, n’hésitez pas à me contacter."
           },
           {
             "title": "Espacer les rendez-vous avec d'autres praticiens",
