@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
 import type { PropType } from "vue";
-import type { CarouselSlideText } from "../interface/Carousel";
+import type { CarouselSlideText } from "../../home/interface/Carousel";
 
 const props = defineProps({
   slide: { type: Object as PropType<CarouselSlideText>, required: true },

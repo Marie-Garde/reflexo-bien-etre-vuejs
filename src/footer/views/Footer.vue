@@ -142,7 +142,7 @@ const isBrownLightBackground = computed(() => {
 }
 
 .lightBrown {
-  background-color: #905463;
+  background-color: $brown-medium;
   margin-top: 0;
   color: $white-soft;
 }

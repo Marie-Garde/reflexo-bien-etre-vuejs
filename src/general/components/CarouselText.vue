@@ -3,11 +3,12 @@ import { ref, onMounted, onBeforeUnmount, toRefs, toRef } from "vue";
 import type { PropType } from "vue";
 import CarouselItem from "./CarouselItem.vue";
 import CarouselControls from "./CarouselControls.vue";
-import CarouselIndicators from "./CarouselIndicators.vue";
-import type { CarouselSlide } from "../interface/Carousel";
+import CarouselIndicatorsText from "./CarouselIndicatorsText.vue";
+import type { CarouselSlideText } from "../../home/interface/Carousel";
+import CarouselItemText from "./CarouselItemText.vue";
 
 const props = defineProps({
-  slides: { type: Array as PropType<CarouselSlide[]>, required: true },
+  slides: { type: Array as PropType<CarouselSlideText[]>, required: true },
 });
 
 const { slides } = toRefs(props);
@@ -39,22 +40,10 @@ function setCurrentSlide(index: number): void {
   currentSlide.value = index;
 }
 
-function prev() {
-  const index = currentSlide.value > 0 ? currentSlide.value - 1 : slides.value.length - 1;
-  setCurrentSlide(index);
-  direction.value = "left";
-  startSlideTimer();
-}
-
 function _next() {
   const index = currentSlide.value < slides.value.length - 1 ? currentSlide.value + 1 : 0;
   setCurrentSlide(index);
   direction.value = "right";
-}
-
-function next() {
-  _next();
-  startSlideTimer();
 }
 
 function switchSlide(index: number) {
@@ -66,7 +55,7 @@ function switchSlide(index: number) {
 <template>
   <div class="carousel">
     <div class="carousel-inner">
-      <CarouselItem
+      <CarouselItemText
         v-for="(slide, index) in slides"
         :key="`item-${index}`"
         :slide="slide"
@@ -76,12 +65,11 @@ function switchSlide(index: number) {
         @mouse-enter="stopSlideTimer"
         @mouse-Leave="startSlideTimer"
       />
-      <CarouselIndicators
+      <CarouselIndicatorsText
         :total="slides.length"
         :current-index="currentSlide"
         @switch="switchSlide($event)"
       />
-      <CarouselControls @prev="prev" @next="next" />
     </div>
   </div>
 </template>
@@ -96,10 +84,10 @@ function switchSlide(index: number) {
   .carousel-inner {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 25vh;
     overflow: hidden;
     @media (max-width: 768px) {
-      height: 80vh;
+      height: 40vh;
     }
   }
 }

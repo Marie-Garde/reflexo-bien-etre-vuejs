@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
 import type { PropType } from "vue";
-import type { CarouselSlide } from "../interface/Carousel";
+import type { CarouselSlide } from "../../home/interface/Carousel";
 import { urlFor } from "@/sanityClient";
 import { useI18n } from "vue-i18n";
 
