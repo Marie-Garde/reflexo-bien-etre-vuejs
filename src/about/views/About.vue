@@ -114,6 +114,7 @@ const { t, tm } = useI18n();
 </template>
 
 <style scoped lang="scss">
+@use "sass:color";
 @use "@/assets/variables.scss" as *;
 
 .about {
@@ -293,7 +294,7 @@ const { t, tm } = useI18n();
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: darken($brown-medium, 5%);
+        background-color: color.adjust($brown-medium, $lightness: -5%);
       }
     }
   }

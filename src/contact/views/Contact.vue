@@ -1,24 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import phone from "@/assets/icons/phone-black.vue";
-import location from "@/assets/icons/location-black.vue";
-import { ref, watch } from "vue";
+import { ref, reactive, computed } from "vue";
 import emailjs from "emailjs-com";
+
+import PhoneIcon from "@/assets/icons/phone-black.vue";
+import LocationIcon from "@/assets/icons/location-black.vue";
 
 const { t } = useI18n();
 
-const disabled = ref(true);
-const isLoading = ref(false);
-
-const lastNameError = ref(false);
-const firstNameError = ref(false);
-const mailError = ref(false);
-const subjectError = ref(false);
-const messageError = ref(false);
-const error = ref("");
-const sendMessage = ref("");
-
-const formValue = ref({
+const formValue = reactive({
   lastName: "",
   firstName: "",
   mail: "",
@@ -26,63 +16,55 @@ const formValue = ref({
   message: "",
 });
 
-watch(
-  () => formValue.value,
-  (formValue) => {
-    if (
-      formValue.lastName !== "" &&
-      formValue.firstName !== "" &&
-      formValue.mail !== "" &&
-      formValue.subject !== "" &&
-      formValue.message !== ""
-    ) {
-      disabled.value = false;
-    } else {
-      disabled.value = true;
-    }
-  },
-  { deep: true }
-);
+const errors = reactive({
+  lastName: false,
+  firstName: false,
+  mail: false,
+  subject: false,
+  message: false,
+  general: "",
+});
+
+const isLoading = ref(false);
+const formSubmittedMessage = ref("");
+
+const isSubmitDisabled = computed(() => {
+  return !Object.values(formValue).every((value) => value !== "");
+});
 
 function validateEmail(email: string) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
+function validateForm() {
+  errors.lastName = !formValue.lastName;
+  errors.firstName = !formValue.firstName;
+  errors.mail = !validateEmail(formValue.mail);
+  errors.subject = !formValue.subject;
+  errors.message = formValue.message.length < 15;
+
+  if (errors.lastName) errors.general = t("contact.form.error.lastName");
+  else if (errors.firstName) errors.general = t("contact.form.error.firstName");
+  else if (errors.mail) errors.general = t("contact.form.error.mail");
+  else if (errors.subject) errors.general = t("contact.form.error.subject");
+  else if (errors.message) errors.general = t("contact.form.error.message");
+  else errors.general = "";
+
+  return !Object.values(errors).some((error) => error === true);
+}
+
+function resetForm() {
+    formValue.lastName = "";
+    formValue.firstName = "";
+    formValue.mail = "";
+    formValue.subject = "";
+    formValue.message = "";
+}
+
 function sendEmail() {
-  lastNameError.value = false;
-  firstNameError.value = false;
-  mailError.value = false;
-  subjectError.value = false;
-  messageError.value = false;
-
-  if (!formValue.value.lastName) {
-    error.value = t("contact.form.error.lastName");
-    lastNameError.value = true;
-    return;
-  }
-
-  if (!formValue.value.firstName) {
-    error.value = t("contact.form.error.firstName");
-    firstNameError.value = true;
-    return;
-  }
-
-  if (!formValue.value.mail || !validateEmail(formValue.value.mail)) {
-    error.value = t("contact.form.error.mail");
-    mailError.value = true;
-    return;
-  }
-
-  if (!formValue.value.subject) {
-    error.value = t("contact.form.error.subject");
-    subjectError.value = true;
-    return;
-  }
-
-  if (!formValue.value.message || formValue.value.message.length < 15) {
-    error.value = t("contact.form.error.message");
-    messageError.value = true;
+  formSubmittedMessage.value = "";
+  if (!validateForm()) {
     return;
   }
 
@@ -93,29 +75,20 @@ function sendEmail() {
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       {
-        name: formValue.value.firstName + " " + formValue.value.lastName + "/",
-        email: formValue.value.mail,
-        subject: formValue.value.subject,
-        message: formValue.value.message,
+        name: `${formValue.firstName} ${formValue.lastName}`,
+        email: formValue.mail,
+        subject: formValue.subject,
+        message: formValue.message,
       },
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(
       () => {
-        formValue.value = {
-          lastName: "",
-          firstName: "",
-          mail: "",
-          subject: "",
-          message: "",
-        };
-
-        sendMessage.value = t("contact.form.sendMessage.success");
-
-        error.value = "";
+        resetForm();
+        formSubmittedMessage.value = t("contact.form.sendMessage.success");
       },
       () => {
-        sendMessage.value = t("contact.form.sendMessage.error");
+        formSubmittedMessage.value = t("contact.form.sendMessage.error");
       }
     )
     .finally(() => {
@@ -125,160 +98,162 @@ function sendEmail() {
 </script>
 
 <template>
-  <div class="header">
-    <div class="header-overlay">
-      <h1 class="title">{{ t("contact.title") }}</h1>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="office">
-      <div class="office-text">
-        <h2 class="office-text-title">{{ t("contact.office.title") }}</h2>
-
-        <div class="office-text-item">
-          <location class="icon" />
-          <p>{{ t("contact.office.adress") }}</p>
-        </div>
-        <div class="office-text-item">
-          <phone class="icon" />
-          <p>{{ t("contact.office.tel") }}</p>
-        </div>
+  <div class="contact">
+    <header class="contact__header">
+      <div class="contact__header-overlay">
+        <h1 class="contact__title">{{ t("contact.title") }}</h1>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d176.17498117165698!2d1.5027570951208709!3d45.0492863940753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1747646905303!5m2!1sfr!2sfr"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen="false"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
+    </header>
 
-    <div class="form-container">
-      <h2 class="office-text-title">{{ t("contact.form.title") }}</h2>
-      <form @submit.prevent="sendEmail" class="form">
-        <div class="form-input">
-          <div class="form-input-field">
-            <label class="form-input-label" for="lastName">{{ t("contact.form.lastName") }}</label>
+    <main class="contact__content">
+      <section class="contact__office">
+        <div class="contact__office-text">
+          <h2 class="contact__section-title">{{ t("contact.office.title") }}</h2>
+          <div class="contact__office-item">
+            <LocationIcon class="icon" />
+            <p>{{ t("contact.office.adress") }}</p>
+          </div>
+          <div class="contact__office-item">
+            <PhoneIcon class="icon" />
+            <p>{{ t("contact.office.tel") }}</p>
+          </div>
+        </div>
+        <iframe
+          class="contact__office-map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d176.17498117165698!2d1.5027570951208709!3d45.0492863940753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1747646905303!5m2!1sfr!2sfr"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen="false"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+
+      <section class="contact__form-container">
+        <h2 class="contact__section-title">{{ t("contact.form.title") }}</h2>
+        <form @submit.prevent="sendEmail" class="form">
+          <div class="form__group form__group--horizontal">
+            <div class="form__field">
+              <label class="form__label" for="lastName">{{ t("contact.form.lastName") }}</label>
+              <input
+                :class="{ 'input-error': errors.lastName }"
+                id="lastName"
+                v-model="formValue.lastName"
+                type="text"
+                :placeholder="t('contact.form.lastName')"
+              />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="firstName">{{ t("contact.form.firstName") }}</label>
+              <input
+                :class="{ 'input-error': errors.firstName }"
+                id="firstName"
+                v-model="formValue.firstName"
+                type="text"
+                :placeholder="t('contact.form.firstName')"
+              />
+            </div>
+          </div>
+           <div class="form__field">
+              <label class="form__label" for="mail">{{ t("contact.form.mail") }}</label>
+              <input
+                :class="{ 'input-error': errors.mail }"
+                id="mail"
+                v-model="formValue.mail"
+                type="email"
+                :placeholder="t('contact.form.mail')"
+              />
+            </div>
+          <div class="form__field">
+            <label class="form__label" for="subject">{{ t("contact.form.subject") }}</label>
             <input
-              :class="{ 'input-error': lastNameError }"
-              id="lastName"
-              v-model="formValue.lastName"
+              :class="{ 'input-error': errors.subject }"
+              id="subject"
+              v-model="formValue.subject"
               type="text"
-              :placeholder="t('contact.form.lastName')"
+              :placeholder="t('contact.form.subject')"
             />
           </div>
-          <div class="form-input-field">
-            <label class="form-input-label" for="firstName">{{
-              t("contact.form.firstName")
-            }}</label>
-            <input
-              :class="{ 'input-error': firstNameError }"
-              id="firstName"
-              v-model="formValue.firstName"
-              type="text"
-              :placeholder="t('contact.form.firstName')"
-            />
+          <div class="form__field">
+            <label class="form__label" for="message">{{ t("contact.form.message.label") }}</label>
+            <textarea
+              id="message"
+              v-model="formValue.message"
+              :placeholder="t('contact.form.message.placeholder')"
+              :class="{ 'input-error': errors.message }"
+            ></textarea>
           </div>
-          <div class="form-input-field">
-            <label class="form-input-label" for="mail">{{ t("contact.form.mail") }}</label>
-            <input
-              :class="{ 'input-error': mailError }"
-              id="mail"
-              v-model="formValue.mail"
-              type="mail"
-              :placeholder="t('contact.form.mail')"
-            />
-          </div>
-        </div>
-        <div class="form-input-field">
-          <label class="form-input-label" for="subject">{{ t("contact.form.subject") }}</label>
-          <input
-            :class="{ 'input-error': subjectError }"
-            id="subject"
-            v-model="formValue.subject"
-            type="text"
-            :placeholder="t('contact.form.subject')"
-          />
-        </div>
-        <div class="form-input-field">
-          <label for="message">{{ t("contact.form.message.label") }}</label>
-          <textarea
-            id="message"
-            v-model="formValue.message"
-            :placeholder="t('contact.form.message.placeholder')"
-            :class="{ 'input-error': messageError }"
-          ></textarea>
-        </div>
 
-        <p v-show="error" class="error">{{ error }}</p>
+          <p v-if="errors.general" class="form__error-message">{{ errors.general }}</p>
+          <p v-if="formSubmittedMessage" class="form__success-message">{{ formSubmittedMessage }}</p>
 
-        <p v-show="sendMessage" class="send-message">{{ sendMessage }}</p>
-
-        <button type="submit" :disabled="disabled || isLoading" class="submit">
-          <span v-if="!isLoading">Envoyer</span>
-          <span v-else class="loader"></span>
-        </button>
-      </form>
-    </div>
+          <button type="submit" :disabled="isSubmitDisabled || isLoading" class="form__submit">
+            <span v-if="!isLoading">Envoyer</span>
+            <span v-else class="loader"></span>
+          </button>
+        </form>
+      </section>
+    </main>
   </div>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
 
-.header {
-  width: 100%;
-  height: 60vh;
-  background-image: url("@/assets/background/contactBackground.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0px 5px 5px $dark-grey;
-  &-overlay {
-    position: absolute;
-    bottom: 5%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    max-width: 600px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    text-align: left;
+.contact {
+  &__header {
+    width: 100%;
+    height: 60vh;
+    background-image: url("@/assets/background/contactBackground.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 5px 5px $dark-grey;
+
+    &-overlay {
+      position: absolute;
+      bottom: 5%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      text-align: left;
+    }
   }
-}
 
-.content {
-  width: 100%;
+  &__content {
+    width: 100%;
+  }
 
-  .office {
+  &__office {
     max-width: 1200px;
     margin: 60px auto;
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 
     &-text {
       margin: auto 0;
+    }
+    
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
 
-      &-title {
-        margin-bottom: 40px;
-      }
-
-      &-item {
-        display: flex;
-        margin-bottom: 20px;
-
-        .icon {
-          margin-right: 10px;
-        }
-      }
+    &-map {
+        border-radius: 5px;
+        box-shadow: 0 5px 5px $dark-grey;
     }
   }
 
-  .form-container {
+  &__form-container {
     background-color: $orange-light;
     text-align: center;
     padding: 60px 0;
@@ -286,86 +261,97 @@ function sendEmail() {
     .form {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
 
-      .error {
-        text-align: start;
-        color: red;
-      }
-
-      &-input {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-        &-field {
+      &__group {
+        &--horizontal {
+          display: flex;
+          gap: 20px;
           width: 100%;
         }
       }
 
-      &-input-field {
+      &__field {
         display: flex;
         flex-direction: column;
         align-items: start;
-        input {
-          width: 100%;
-          height: 40px;
-          margin-bottom: 20px;
-          border: none;
-          border-radius: 5px;
-        }
-        textarea {
-          width: 100%;
-          height: 200px;
-          border: none;
-          border-radius: 5px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      &__label {
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+
+        &.input-error {
+          border-color: red;
         }
       }
 
-      .input-error {
-        border: 1px solid red;
+      input {
+        height: 40px;
       }
 
-      .submit {
+      textarea {
+        height: 200px;
+        resize: vertical;
+      }
+
+      &__error-message {
+        color: red;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      
+      &__success-message {
+        color: green;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      &__submit {
         background-color: $orange;
         color: $white;
         height: 50px;
         padding: 12px;
         border-radius: 5px;
         border: 0;
-        width: 20%;
+        width: 200px;
         margin-top: 20px;
         cursor: pointer;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease;
 
         &:disabled {
           background-color: $dark-grey;
           color: $black;
-          &:hover {
-            color: $black;
-            cursor: not-allowed;
-          }
+          cursor: not-allowed;
         }
-      }
 
-      .loader {
-        width: 20px;
-        height: 20px;
-        border: 3px solid #fff;
-        border-radius: 50%;
-        border-top: 3px solid #3498db;
-        animation: spin 1s linear infinite;
-        display: inline-block;
-        margin-left: 10px;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
+        .loader {
+          width: 20px;
+          height: 20px;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          border-top: 3px solid #3498db;
+          animation: spin 1s linear infinite;
+          display: inline-block;
         }
       }
     }
   }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
