@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
 import { homeRoutesName } from "@/home/routes/routesName";
 import { aboutRoutesName } from "@/about/routes/routesName";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
@@ -11,19 +12,21 @@ import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
-import { useI18n } from "vue-i18n";
 import Logo from "@/assets/logo/logo-horizontal-brown.png";
 
 const router = useRouter();
 const route = useRoute();
 const { t } = useI18n();
 
-const about = t("navigation.items.about");
-const seasons = t("navigation.items.seasons");
-const practices = t("navigation.items.practices");
-const prices = t("navigation.items.prices");
-const contact = t("navigation.items.contact");
-const takeAppointment = t("navigation.items.takeAppointment");
+const navItems = [
+  { label: t("navigation.items.about"), routeName: aboutRoutesName.HOME },
+  { label: t("navigation.items.practices"), routeName: practicesRoutesName.HOME },
+  { label: t("navigation.items.seasons"), routeName: seasonsRoutesName.HOME },
+  { label: t("navigation.items.prices"), routeName: priceRoutesName.HOME },
+  { label: t("navigation.items.contact"), routeName: contactRoutesName.HOME },
+];
+
+const takeAppointmentLabel = t("navigation.items.takeAppointment");
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -35,106 +38,121 @@ function goToHome() {
 </script>
 
 <template>
-  <nav class="header-navigation">
-    <button @click="goToHome()" class="logo">
-      <img :src="Logo" />
+  <nav class="desktop-nav">
+    <button @click="goToHome()" class="desktop-nav__logo">
+      <img :src="Logo" alt="Reflex'o bien-être logo" />
     </button>
 
-    <div class="middle-nav">
+    <div class="desktop-nav__links">
       <LinkRouter
-        :class="['link', { active: route.name === aboutRoutesName.HOME }]"
-        :label="about"
-        :to="aboutRoutesName.HOME"
-      />
-      <LinkRouter
-        :class="['link', { active: route.name === practicesRoutesName.HOME }]"
-        :label="practices"
-        :to="practicesRoutesName.HOME"
-      />
-      <LinkRouter
-        :class="['link', { active: route.name === seasonsRoutesName.HOME }]"
-        :label="seasons"
-        :to="seasonsRoutesName.HOME"
-      />
-      <LinkRouter
-        :class="['link', { active: route.name === priceRoutesName.HOME }]"
-        :label="prices"
-        :to="priceRoutesName.HOME"
-      />
-      <LinkRouter
-        :class="['link', { active: route.name === contactRoutesName.HOME }]"
-        :label="contact"
-        :to="contactRoutesName.HOME"
+        v-for="item in navItems"
+        :key="item.routeName"
+        :class="['desktop-nav__link', { active: route.name === item.routeName }]"
+        :label="item.label"
+        :to="item.routeName"
       />
     </div>
-    <div class="right-nav">
-      <div class="right-nav-icon">
-        <InstagramIcon class="icon" />
-        <FacebookIcon class="icon" />
+
+    <div class="desktop-nav__actions">
+      <div class="desktop-nav__socials">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <InstagramIcon class="icon" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <FacebookIcon class="icon" />
+        </a>
       </div>
-      <Button class="right-nav-button" :label="takeAppointment" @click="goToAppointment()" />
+      <Button
+        class="desktop-nav__button"
+        :label="takeAppointmentLabel"
+        @click="goToAppointment()"
+      />
     </div>
   </nav>
 </template>
 
 <style scoped lang="scss">
+@use "sass:color";
 @use "@/assets/variables.scss" as *;
 
-.header-navigation {
+.desktop-nav {
   background-color: $orange-light;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-  .logo {
+  &__logo {
     width: 120px;
     background-color: transparent;
-    border: transparent;
+    border: none;
     cursor: pointer;
+
     img {
       width: 100%;
+      display: block;
     }
   }
 
-  .middle-nav {
+  &__links {
     display: flex;
-    flex-direction: row;
-    height: inherit;
-    cursor: pointer;
-    .link {
-      padding: 0 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    height: 100%;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+    color: $brown-dark;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: color.adjust($brown-dark, $lightness: 10%);
     }
-    .active {
-      position: relative;
+
+    &.active {
       font-weight: bold;
-    }
-    .active:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: $brown-dark;
-      height: 4px;
-      border-radius: 15px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: $brown-dark;
+        border-radius: 15px;
+      }
     }
   }
 
-  .right-nav {
+  &__actions {
     display: flex;
-    &-icon {
-      display: flex;
-      flex-direction: column;
-      margin-right: 10px;
-      .icon {
-        width: 20px;
-        fill: $brown-dark;
-        cursor: pointer;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      width: 24px;
+      height: 24px;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: $brown-dark;
+      transition: fill 0.3s ease;
+
+      &:hover {
+        fill: color.adjust($brown-dark, $lightness: 10%);
       }
     }
   }
