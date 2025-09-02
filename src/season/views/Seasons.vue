@@ -7,45 +7,48 @@ import { seasonsRoutesName } from "../routes/routesName";
 const { t } = useI18n();
 const router = useRouter();
 
-const title = t("seasons.title");
-
 function goToSeason(route: string) {
   router.push({ name: route });
 }
+
+const seasons = [
+  { name: "Été", route: seasonsRoutesName.SUMMER, className: "top-left" },
+  { name: "Automne", route: seasonsRoutesName.FALL, className: "top-right" },
+  { name: "Hiver", route: seasonsRoutesName.WINTER, className: "bottom-right" },
+  { name: "Printemps", route: seasonsRoutesName.SPRING, className: "bottom-left" },
+];
 </script>
 
 <template>
-  <HeaderPage :label="title" background="orange" />
+  <div class="header">
+    <div class="header-overlay">
+      <h1 class="title">{{ t("seasons.title") }}</h1>
+      <h2 class="subTitle">{{ t("seasons.importance.title") }}</h2>
+      <p class="red">{{ t("seasons.importance.text") }}</p>
+    </div>
+  </div>
 
   <div class="container">
     <div class="content">
-      <div class="importance">
-        <h2>{{ t("seasons.importance.title") }}</h2>
-        <p class="red">{{ t("seasons.importance.text") }}</p>
-      </div>
-
       <div class="seasons-list">
-        <h2>{{ t("seasons.list.title") }}</h2>
+        <div class="seasons-list-text">
+          <h2>{{ t("seasons.list.title") }}</h2>
+          <p>{{ t("seasons.list.text") }}</p>
+        </div>
+
         <div class="circle">
-          <div class="quarter top-left" @click="goToSeason(seasonsRoutesName.SUMMER)">
-            <h3 class="quarter-title quarter-title-top-left">Été</h3>
-          </div>
-          <div class="quarter top-right" @click="goToSeason(seasonsRoutesName.FALL)">
-            <h3 class="quarter-title quarter-title-top-right">Automne</h3>
-          </div>
-          <div class="quarter bottom-right" @click="goToSeason(seasonsRoutesName.WINTER)">
-            <h3 class="quarter-title quarter-title-bottom-right">Hiver</h3>
-          </div>
-          <div class="quarter bottom-left" @click="goToSeason(seasonsRoutesName.SPRING)">
-            <h3 class="quarter-title quarter-title-bottom-left">Printemps</h3>
-          </div>
-          <div class="center-circle">
-            <h3
-              class="quarter-title quarter-title-center"
-              @click="goToSeason(seasonsRoutesName.INTERSEASON)"
-            >
-              Inter saison
+          <div
+            v-for="season in seasons"
+            :key="season.name"
+            :class="['quarter', season.className]"
+            @click="goToSeason(season.route)"
+          >
+            <h3 :class="['quarter-title', 'quarter-title-' + season.className]">
+              {{ season.name }}
             </h3>
+          </div>
+          <div class="center-circle" @click="goToSeason(seasonsRoutesName.INTERSEASON)">
+            <h3 class="quarter-title quarter-title-center">Inter saison</h3>
           </div>
         </div>
       </div>
@@ -55,6 +58,37 @@ function goToSeason(route: string) {
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
+
+.header {
+  width: 100%;
+  height: 60vh;
+  background-image: url("@/assets/background/seasonBackground.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &-overlay {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    color: $white;
+    text-align: left;
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .subTitle {
+    margin-bottom: 40px;
+  }
+
+  p {
+    max-width: 50%;
+  }
+}
 
 .container {
   display: flex;
@@ -69,18 +103,41 @@ function goToSeason(route: string) {
     justify-content: center;
     text-align: center;
     width: 70%;
+    max-width: 1280px;
     @media (max-width: 768px) {
       width: 90%;
     }
   }
 
-  .importance {
+  .seasons-list {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 60px;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     h2 {
       margin-bottom: 20px;
+    }
+
+    &-text {
+      flex: 1;
+      text-align: left;
+
+      @media (max-width: 1200px) {
+        text-align: center;
+      }
     }
   }
 
   .circle {
+    flex-shrink: 0;
     position: relative;
     width: 40vw;
     height: 40vw;
@@ -94,13 +151,6 @@ function goToSeason(route: string) {
     }
   }
 
-  .seasons-list {
-    margin-top: 60px;
-    h2 {
-      margin-bottom: 20px;
-    }
-  }
-
   .quarter {
     position: absolute;
     width: 50%;
@@ -109,67 +159,6 @@ function goToSeason(route: string) {
     background-position: center;
     cursor: pointer;
 
-    &-title {
-      color: $white;
-      z-index: 3;
-      font-size: 2rem;
-      transform: rotate(-45deg);
-      cursor: pointer;
-      @media (max-width: 768px) {
-        font-size: 1rem;
-        color: $black;
-      }
-      &-top-left {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-      }
-      &-top-right {
-        position: absolute;
-        top: 50%;
-        left: 30%;
-      }
-      &-bottom-right {
-        position: absolute;
-        top: 37%;
-        left: 34%;
-      }
-      &-bottom-left {
-        position: absolute;
-        top: 40%;
-        left: 35%;
-      }
-      &-center {
-        position: absolute;
-        top: 16%;
-        left: 0%;
-      }
-    }
-  }
-
-  .top-left {
-    top: 0;
-    left: 0;
-    clip-path: polygon(
-      0 0,
-      calc(100% - 5px) 0,
-      calc(100% - 5px) calc(100% - 5px),
-      0 calc(100% - 5px)
-    );
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 70%;
-      background-image: url("@/assets/illustrations/ete.jpg");
-      background-size: 75% 75%;
-      transform: rotate(-45deg) scale(3);
-      background-repeat: no-repeat;
-      z-index: -1;
-      @media (max-width: 768px) {
-        opacity: 0.5;
-      }
-    }
     &::after {
       content: "";
       position: absolute;
@@ -180,123 +169,144 @@ function goToSeason(route: string) {
       transition: opacity 0.3s ease;
     }
 
-    &:hover::after {
-      opacity: 0.7;
-    }
-
-    &:hover .quarter-title {
-      color: $brown-dark;
+    &:hover {
+      &::after {
+        opacity: 0.7;
+      }
+      .quarter-title {
+        color: $brown-dark;
+      }
     }
   }
 
-  .top-right {
-    top: 0;
-    right: 0;
-    clip-path: polygon(0 0, calc(100%) 0, calc(100%) calc(100% - 5px), 0 calc(100% - 5px));
-    &::before {
-      content: "";
-      position: absolute;
-      width: 65%;
-      height: 65%;
-      background-image: url("@/assets/illustrations/fall.jpg");
-      background-size: 80% 80%;
-      transform: rotate(-45deg) scale(3.5);
-      background-repeat: no-repeat;
-      z-index: -1;
-      @media (max-width: 768px) {
-        opacity: 0.5;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: white;
-      opacity: 0;
-      z-index: 0;
-      transition: opacity 0.3s ease;
-    }
+  .quarter-title {
+    color: $white;
+    z-index: 3;
+    font-size: 2rem;
+    transform: rotate(-45deg);
+    cursor: pointer;
 
-    &:hover::after {
-      opacity: 0.7;
-    }
-
-    &:hover .quarter-title {
-      color: $brown-dark;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      color: $black;
     }
   }
 
-  .bottom-left {
-    bottom: 0;
-    left: 0;
-    clip-path: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) calc(100%), 0 calc(100%));
-    &::before {
-      content: "";
-      position: absolute;
-      width: 70%;
-      height: 70%;
-      background-image: url("@/assets/illustrations/spring.jpg");
-      background-size: 90% 90%;
-      transform: rotate(-45deg) scale(3);
-      background-repeat: no-repeat;
-      z-index: -1;
-      @media (max-width: 768px) {
-        opacity: 0.5;
+  $seasons-map: (
+    top-left: (
+      pos: (
+        top: 0,
+        left: 0,
+      ),
+      clip: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) calc(100% - 5px), 0 calc(100% - 5px)),
+      image: "ete.jpg",
+      before: (
+        width: 100%,
+        height: 70%,
+        bg-size: 75% 75%,
+        scale: 3,
+      ),
+      title-pos: (
+        top: 50%,
+        left: 50%,
+      ),
+    ),
+    top-right: (
+      pos: (
+        top: 0,
+        right: 0,
+      ),
+      clip: polygon(0 0, 100% 0, 100% calc(100% - 5px), 0 calc(100% - 5px)),
+      image: "fall.jpg",
+      before: (
+        width: 65%,
+        height: 65%,
+        bg-size: 80% 80%,
+        scale: 3.5,
+      ),
+      title-pos: (
+        top: 50%,
+        left: 30%,
+      ),
+    ),
+    bottom-right: (
+      pos: (
+        bottom: 0,
+        right: 0,
+      ),
+      clip: polygon(0 0, 100% 0, 100% 100%, 0 100%),
+      image: "winter.jpg",
+      before: (
+        width: 100%,
+        height: 65%,
+        bg-size: 60% 60%,
+        scale: 3,
+      ),
+      title-pos: (
+        top: 37%,
+        left: 34%,
+      ),
+    ),
+    bottom-left: (
+      pos: (
+        bottom: 0,
+        left: 0,
+      ),
+      clip: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) 100%, 0 100%),
+      image: "spring.jpg",
+      before: (
+        width: 70%,
+        height: 70%,
+        bg-size: 90% 90%,
+        scale: 3,
+      ),
+      title-pos: (
+        top: 40%,
+        left: 35%,
+      ),
+    ),
+  );
+
+  @each $name, $props in $seasons-map {
+    .#{$name} {
+      $pos: map-get($props, pos);
+      top: map-get($pos, top);
+      right: map-get($pos, right);
+      bottom: map-get($pos, bottom);
+      left: map-get($pos, left);
+      clip-path: map-get($props, clip);
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("@/assets/illustrations/#{map-get($props, image)}");
+        transform: rotate(-45deg) scale(#{map-get(map-get($props, before), scale)});
+        background-repeat: no-repeat;
+        z-index: -1;
+
+        $before-props: map-get($props, before);
+        width: map-get($before-props, width);
+        height: map-get($before-props, height);
+        background-size: map-get($before-props, bg-size);
+
+        @media (max-width: 768px) {
+          opacity: 0.5;
+        }
       }
     }
-    &::after {
-      content: "";
+
+    .quarter-title-#{$name} {
       position: absolute;
-      inset: 0;
-      background-color: white;
-      opacity: 0;
-      z-index: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover::after {
-      opacity: 0.7;
-    }
-
-    &:hover .quarter-title {
-      color: $brown-dark;
+      $title-pos: map-get($props, title-pos);
+      top: map-get($title-pos, top);
+      left: map-get($title-pos, left);
     }
   }
 
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-    clip-path: polygon(0 0, calc(100%) 0, calc(100%) calc(100%), 0 calc(100%));
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 65%;
-      background-image: url("@/assets/illustrations/winter.jpg");
-      background-size: 60% 60%;
-      transform: rotate(-45deg) scale(3);
-      z-index: -1;
-      @media (max-width: 768px) {
-        opacity: 0.5;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: white;
-      opacity: 0;
-      z-index: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover::after {
-      opacity: 0.7;
-    }
-
-    &:hover .quarter-title {
-      color: $brown-dark;
-    }
+  .quarter-title-center {
+    position: absolute;
+    top: 16%;
+    left: 0%;
   }
 
   .center-circle {
