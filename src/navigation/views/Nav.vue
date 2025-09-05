@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { isMobile } from "@/reactives/isMobile";
+import isMobile from "@/reactives/isMobile";
 import DesktopNav from "../components/DesktopNav.vue";
 import MobileNav from "../components/MobileNav.vue";
 
 const { t } = useI18n();
-const mobile = isMobile();
 </script>
 
 <template>
@@ -14,7 +13,7 @@ const mobile = isMobile();
       <p>{{ t("navigation.top.adress") }}</p>
       <p>{{ t("navigation.top.tel") }}</p>
     </div>
-    <DesktopNav v-if="!mobile" />
+    <DesktopNav v-if="!isMobile" />
     <MobileNav v-else />
   </header>
 </template>
