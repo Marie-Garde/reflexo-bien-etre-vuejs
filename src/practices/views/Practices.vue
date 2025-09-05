@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import HeaderPage from "@/components/HeaderPage.vue";
 import AccordionItem from "@/components/AccordionItem.vue";
-import reflexoImage from "@/assets/illustrations/practices/inside/reflexo-visage.png";
-import qiGongImage from "@/assets/illustrations/practices/outside/qi-gong-class.jpg";
 import benefitsImage from "@/assets/illustrations/practices/benefits.png";
 import { useRouter } from "vue-router";
-import { practicesRoutesPath } from "../routes/routesPath";
 import { practicesRoutesName } from "../routes/routesName";
+import { computed } from "vue";
+import isMobile from "../../reactives/isMobile";
+import benefitsMobile from "@/assets/illustrations/practices/benefitsMobile.png";
 
 const { t, tm } = useI18n();
 const router = useRouter();
 
-const title = t("practices.title");
 const benefitsList = tm("practices.benefits.list");
 const sessionProgressList = tm("practices.sessionProgress.list");
+
+const benefitsImageSource = computed(() => {
+  return isMobile.value ? benefitsMobile : benefitsImage;
+});
 
 function GoToInsideCare() {
   router.push({ name: practicesRoutesName.OFFICE });
@@ -39,7 +41,7 @@ function GoToOutsideCare() {
   <div class="benefits">
     <h2>{{ t("practices.benefits.title") }}</h2>
     <div class="benefits-content">
-      <img :src="benefitsImage" class="benefits-image" />
+      <img :src="benefitsImageSource" class="benefits-image" />
       <ul class="benefits-list">
         <li v-for="benefit in benefitsList">
           <AccordionItem :title="benefit.title">
@@ -130,27 +132,16 @@ function GoToOutsideCare() {
     max-width: 1280px;
     margin: 40px auto 0 auto;
   }
-  @media (max-width: 768px) {
-    h2 {
-      padding: 0 10px;
-    }
-  }
   &-list {
     list-style: none;
     padding: 0;
     width: 70%;
     margin: 0 auto;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
   }
 }
 
 .pillars {
   margin-bottom: 60px;
-  @media (max-width: 768px) {
-    max-width: 90%;
-  }
   &-text {
     max-width: 1280px;
     margin: 60px auto 0 auto;
@@ -232,9 +223,6 @@ function GoToOutsideCare() {
   height: 55vh;
   max-width: 1280px;
   margin: 0 auto;
-  @media (max-width: 768px) {
-    height: 130vh;
-  }
 
   &-content {
     position: relative;
@@ -244,9 +232,6 @@ function GoToOutsideCare() {
     justify-content: center;
     height: 100%;
     z-index: 1;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
     h2 {
       margin-bottom: 3vw;
     }
@@ -257,11 +242,6 @@ function GoToOutsideCare() {
       gap: 20px;
       width: 100%;
       padding-bottom: 50px;
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 10px;
-        padding-bottom: 0;
-      }
       .card {
         display: flex;
         justify-content: space-around;
@@ -293,15 +273,113 @@ function GoToOutsideCare() {
         &:nth-child(4) {
           background-color: #fff5dc;
         }
-        @media (max-width: 768px) {
-          flex-direction: column;
-          width: 100%;
-        }
         &-content {
           margin: 0 10px;
           h3 {
             margin-bottom: 5%;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    background-image: none;
+    display: block;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 250px;
+      background-image: url("@/assets/background/practiceBackgroundMobile.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    &-container {
+      align-items: center;
+      justify-content: center;
+    }
+    &-overlay {
+      width: 90%;
+      margin-bottom: 0;
+      padding: 2rem 0;
+      text-align: center;
+      background: transparent;
+      box-shadow: none;
+      color: $brown-dark;
+    }
+    p {
+      max-width: 100%;
+    }
+  }
+
+  .benefits {
+    h2 {
+      padding: 0 10px;
+    }
+    &-list {
+      width: 90%;
+    }
+    &-content {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    &-image {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+
+  .pillars {
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    &-text {
+      max-width: 90%;
+    }
+    &-list {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      overflow: visible;
+
+      .left,
+      .right {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        clip-path: none !important;
+      }
+
+      .right {
+        right: auto;
+      }
+
+      &:hover .left,
+      &:hover .right {
+        clip-path: none !important;
+      }
+    }
+  }
+
+  .sessionProgress {
+    height: auto;
+    padding: 40px 0;
+    &-content {
+      width: 90%;
+      margin: 0 auto;
+      .cards-container {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 0;
+        .card {
+          flex-direction: column;
+          width: 100%;
         }
       }
     }

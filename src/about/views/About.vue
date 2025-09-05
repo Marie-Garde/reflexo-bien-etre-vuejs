@@ -164,6 +164,7 @@ const { t, tm } = useI18n();
   &__approach {
     max-width: 1280px;
     margin: 60px auto 60px;
+    padding: 0 20px;
 
     &-top {
       display: flex;
@@ -305,6 +306,7 @@ const { t, tm } = useI18n();
     display: flex;
     align-items: center;
     gap: 40px;
+    padding: 0 20px;
 
     &-text {
       flex: 1;
@@ -403,6 +405,194 @@ const { t, tm } = useI18n();
 
       &-subtitle {
         margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+  .about {
+    &__header-overlay {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto 5rem auto;
+    }
+
+    &__approach {
+      padding: 0 40px;
+      &-bottom {
+        margin-top: -50px;
+      }
+      &-image-wrapper--left {
+        width: 50%;
+        transform: translateY(-50px);
+      }
+      &-gallery {
+        transform: translateX(0);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+
+        &-item {
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+    &__career {
+      padding: 0 40px;
+      gap: 20px;
+      &-text {
+        flex: 1;
+        text-align: left;
+      }
+      &-image-wrapper {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    &__header {
+      height: auto;
+      background-image: none;
+      display: block;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 250px;
+        background-image: url("@/assets/background/presentationWhoBackground.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      &-container {
+        align-items: center;
+        justify-content: center;
+      }
+      &-overlay {
+        width: 90%;
+        margin-bottom: 0;
+        padding: 2rem 0;
+        text-align: center;
+        background: transparent;
+        box-shadow: none;
+        color: $brown-dark;
+      }
+    }
+
+    &__section-title--left {
+      text-align: center;
+    }
+
+    &__approach {
+      margin: 20px auto 40px auto;
+      &-top {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 0;
+      }
+
+      &-text {
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      &-image-wrapper {
+        flex-basis: 100%;
+        &--left {
+          transform: translateY(0);
+          width: 100%;
+        }
+      }
+
+      &-image {
+        display: none;
+      }
+
+      &-bottom {
+        flex-direction: column;
+        margin-top: 0;
+        gap: 20px;
+      }
+
+      &-gallery {
+        flex-direction: column;
+        transform: translateX(0);
+        width: 100%;
+        align-self: center;
+
+        &-item {
+          img {
+            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+
+    &__cta {
+      height: auto;
+      padding: 40px 0;
+      &-content {
+        justify-content: center;
+      }
+      &-overlay {
+        width: 90%;
+      }
+    }
+
+    &__career {
+      flex-direction: column;
+      margin: 40px auto;
+      gap: 20px;
+
+      &-description {
+        text-align: center;
+      }
+
+      &-image {
+        width: 100%;
+      }
+    }
+
+    &__training {
+      padding: 60px 0 40px;
+
+      &::before {
+        height: 120vh;
+        width: 200%;
+      }
+
+      &-timeline {
+        width: 90%;
+        &::before {
+          display: none;
+        }
+      }
+
+      &-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 20px;
+      }
+
+      &-date,
+      &-info {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+      }
+
+      &-date {
+        padding-right: 0;
       }
     }
   }

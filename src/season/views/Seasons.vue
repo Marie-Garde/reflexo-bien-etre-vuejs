@@ -57,6 +57,7 @@ const seasons = [
 </template>
 
 <style scoped lang="scss">
+@use "sass:map";
 @use "@/assets/variables.scss" as *;
 
 .header {
@@ -269,25 +270,25 @@ const seasons = [
 
   @each $name, $props in $seasons-map {
     .#{$name} {
-      $pos: map-get($props, pos);
-      top: map-get($pos, top);
-      right: map-get($pos, right);
-      bottom: map-get($pos, bottom);
-      left: map-get($pos, left);
-      clip-path: map-get($props, clip);
+      $pos: map.get($props, pos);
+      top: map.get($pos, top);
+      right: map.get($pos, right);
+      bottom: map.get($pos, bottom);
+      left: map.get($pos, left);
+      clip-path: map.get($props, clip);
 
       &::before {
         content: "";
         position: absolute;
-        background-image: url("@/assets/illustrations/#{map-get($props, image)}");
-        transform: rotate(-45deg) scale(#{map-get(map-get($props, before), scale)});
+        background-image: url("@/assets/illustrations/#{map.get($props, image)}");
+        transform: rotate(-45deg) scale(#{map.get(map.get($props, before), scale)});
         background-repeat: no-repeat;
         z-index: -1;
 
-        $before-props: map-get($props, before);
-        width: map-get($before-props, width);
-        height: map-get($before-props, height);
-        background-size: map-get($before-props, bg-size);
+        $before-props: map.get($props, before);
+        width: map.get($before-props, width);
+        height: map.get($before-props, height);
+        background-size: map.get($before-props, bg-size);
 
         @media (max-width: 768px) {
           opacity: 0.5;
@@ -297,9 +298,9 @@ const seasons = [
 
     .quarter-title-#{$name} {
       position: absolute;
-      $title-pos: map-get($props, title-pos);
-      top: map-get($title-pos, top);
-      left: map-get($title-pos, left);
+      $title-pos: map.get($props, title-pos);
+      top: map.get($title-pos, top);
+      left: map.get($title-pos, left);
     }
   }
 
