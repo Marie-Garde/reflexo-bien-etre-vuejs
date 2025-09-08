@@ -1,14 +1,28 @@
 <script setup lang="ts">
-defineProps<{
-  sections: Array<{
-    key: string;
-    title: string;
-    text: string[];
-    list: string[];
-    image: string;
-    alt: string;
-  }>;
-}>();
+import { useI18n } from "vue-i18n";
+import tuinaBackImg from "@/assets/illustrations/practices/inside/tuina-dos.jpg";
+import reflexoHandImg from "@/assets/illustrations/practices/inside/relfexo-main.jpg";
+
+const { t, tm } = useI18n();
+
+const sections = [
+  {
+    key: "tuina",
+    title: t("practices.insideSessionPage.why.tuina.title"),
+    text: tm("practices.insideSessionPage.why.tuina.text"),
+    list: tm("practices.insideSessionPage.why.tuina.list"),
+    image: tuinaBackImg,
+    alt: "Massage Tuina du dos",
+  },
+  {
+    key: "reflexo",
+    title: t("practices.insideSessionPage.why.reflexo.title"),
+    text: tm("practices.insideSessionPage.why.reflexo.text"),
+    list: tm("practices.insideSessionPage.why.reflexo.list"),
+    image: reflexoHandImg,
+    alt: "Réflexologie de la main",
+  },
+];
 </script>
 
 <template>

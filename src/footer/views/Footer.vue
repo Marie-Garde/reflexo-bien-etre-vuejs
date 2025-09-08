@@ -139,8 +139,13 @@ const warningBackgroundColorClass = computed(() => {
       color: $white-soft;
     }
 
-    &.orange, &.yellow, &.brown, &.green, &.light-orange, &.light-brown {
-        margin-top: 0;
+    &.orange,
+    &.yellow,
+    &.brown,
+    &.green,
+    &.light-orange,
+    &.light-brown {
+      margin-top: 0;
     }
   }
 
@@ -184,8 +189,8 @@ const warningBackgroundColorClass = computed(() => {
         }
 
         &__icons {
-            display: flex;
-            gap: 20px;
+          display: flex;
+          gap: 20px;
         }
 
         .icon {
@@ -205,7 +210,6 @@ const warningBackgroundColorClass = computed(() => {
       padding-top: 24px;
       border-top: 1px solid $orange-light;
 
-
       @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
@@ -213,7 +217,8 @@ const warningBackgroundColorClass = computed(() => {
         gap: 10px;
       }
 
-      p, .link {
+      p,
+      .link {
         margin: 0 10px;
       }
     }

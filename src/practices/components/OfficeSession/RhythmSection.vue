@@ -1,18 +1,22 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import Button from "@/components/Button.vue";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 
+const { t, tm } = useI18n();
 const router = useRouter();
 
-defineProps<{
-  rhythm: {
-    title: string;
-    text: string[];
-    list: string[];
-    cta: string;
-  };
+const props = defineProps<{
+  sessionType: string;
 }>();
+
+const rhythm = {
+  title: t(`practices.insideSessionPage.session.${props.sessionType}.rhythm.title`),
+  text: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.text`),
+  list: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.list`),
+  cta: t("practices.insideSessionPage.session.reflexo.rhythm.CTA"),
+};
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -56,6 +60,4 @@ function goToAppointment() {
     margin-bottom: 40px;
   }
 }
-
-
 </style>

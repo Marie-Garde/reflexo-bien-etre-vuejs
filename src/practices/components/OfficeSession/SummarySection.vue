@@ -1,17 +1,20 @@
 <script setup lang="ts">
-defineProps<{
-  title: string;
-  summary: {
-    firstLine: string[];
-    secondLine: string[];
-    thirdLine: string[];
-  };
-}>();
+import { useI18n } from "vue-i18n";
+
+const { t, tm } = useI18n();
+
+const summary = {
+  firstLine: tm("practices.insideSessionPage.summary.array.firstLine"),
+  secondLine: tm("practices.insideSessionPage.summary.array.secondLine"),
+  thirdLine: tm("practices.insideSessionPage.summary.array.thirdLine"),
+};
 </script>
 
 <template>
   <section class="office-session__summary">
-    <h2 class="office-session__section-title">{{ title }}</h2>
+    <h2 class="office-session__section-title">
+      {{ t("practices.insideSessionPage.summary.title") }}
+    </h2>
     <div class="summary-overlay">
       <div class="summary-table">
         <ul class="summary-row">
@@ -78,6 +81,4 @@ defineProps<{
     }
   }
 }
-
-
 </style>

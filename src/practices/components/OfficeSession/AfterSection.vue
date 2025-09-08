@@ -1,12 +1,11 @@
 <script setup lang="ts">
-defineProps<{
-  title: string;
-  text: string[];
-  afterList: Array<{
-    title: string;
-    text: string;
-  }>;
-}>();
+import { useI18n } from "vue-i18n";
+
+const { t, tm } = useI18n();
+
+const afterList = tm("practices.insideSessionPage.after.list");
+const text = tm("practices.insideSessionPage.after.text");
+const title = t("practices.insideSessionPage.after.title");
 </script>
 
 <template>
@@ -77,6 +76,4 @@ defineProps<{
     }
   }
 }
-
-
 </style>

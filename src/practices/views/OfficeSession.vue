@@ -1,96 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import WhySection from "../components/OfficeSession/WhySection.vue";
-import SummarySection from "../components/OfficeSession/SummarySection.vue";
-import SessionDetail from "../components/OfficeSession/SessionDetail.vue";
-import RhythmSection from "../components/OfficeSession/RhythmSection.vue";
-import AfterSection from "../components/OfficeSession/AfterSection.vue";
-import tuinaBackImg from "@/assets/illustrations/practices/inside/tuina-dos.jpg";
-import reflexoHandImg from "@/assets/illustrations/practices/inside/relfexo-main.jpg";
+import WhySection from "@/practices/components/OfficeSession/WhySection.vue";
+import SummarySection from "@/practices/components/OfficeSession/SummarySection.vue";
+import SessionDetail from "@/practices/components/OfficeSession/SessionDetail.vue";
+import RhythmSection from "@/practices/components/OfficeSession/RhythmSection.vue";
+import AfterSection from "@/practices/components/OfficeSession/AfterSection.vue";
 
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
-const whySections = [
-  {
-    key: "tuina",
-    title: t("practices.insideSessionPage.why.tuina.title"),
-    text: tm("practices.insideSessionPage.why.tuina.text") as string[],
-    list: tm("practices.insideSessionPage.why.tuina.list") as string[],
-    image: tuinaBackImg,
-    alt: "Massage Tuina du dos",
-  },
-  {
-    key: "reflexo",
-    title: t("practices.insideSessionPage.why.reflexo.title"),
-    text: tm("practices.insideSessionPage.why.reflexo.text") as string[],
-    list: tm("practices.insideSessionPage.why.reflexo.list") as string[],
-    image: reflexoHandImg,
-    alt: "Réflexologie de la main",
-  },
-];
-
-const summary = {
-  firstLine: tm("practices.insideSessionPage.summary.array.firstLine") as string[],
-  secondLine: tm("practices.insideSessionPage.summary.array.secondLine") as string[],
-  thirdLine: tm("practices.insideSessionPage.summary.array.thirdLine") as string[],
-};
-
-const sessionSections = [
-    {
-        key: 'reflexo',
-        title: t("practices.insideSessionPage.session.reflexo.title"),
-        first: {
-            title: t("practices.insideSessionPage.session.reflexo.first.title"),
-            text: tm("practices.insideSessionPage.session.reflexo.first.text") as string[],
-            hovering: t("practices.insideSessionPage.session.reflexo.first.hovering"),
-            imageClass: 'reflexo-main'
-        },
-        second: {
-            title: t("practices.insideSessionPage.session.reflexo.second.title"),
-            text: tm("practices.insideSessionPage.session.reflexo.second.text") as string[],
-            list: tm("practices.insideSessionPage.session.reflexo.second.list") as string[],
-            hovering: t("practices.insideSessionPage.session.reflexo.second.hovering"),
-            imageClass: 'reflexo-visage'
-        },
-        rhythm: {
-            title: t("practices.insideSessionPage.session.reflexo.rhythm.title"),
-            text: tm("practices.insideSessionPage.session.reflexo.rhythm.text") as string[],
-            list: tm("practices.insideSessionPage.session.reflexo.rhythm.list") as string[],
-            cta: t("practices.insideSessionPage.session.reflexo.rhythm.CTA")
-        },
-        theme: 'green'
-    },
-    {
-        key: 'tuina',
-        title: t("practices.insideSessionPage.session.tuina.title"),
-        first: {
-            title: t("practices.insideSessionPage.session.tuina.first.title"),
-            text: tm("practices.insideSessionPage.session.tuina.first.text") as string[],
-            hovering: t("practices.insideSessionPage.session.tuina.first.hovering"),
-            imageClass: 'massage-dos'
-        },
-        second: {
-            title: t("practices.insideSessionPage.session.tuina.second.title"),
-            text: tm("practices.insideSessionPage.session.tuina.second.text") as string[],
-            list: [] as string[],
-            hovering: t("practices.insideSessionPage.session.tuina.second.hovering"),
-            imageClass: 'reflexo-dos'
-        },
-        rhythm: {
-            title: t("practices.insideSessionPage.session.tuina.rhythm.title"),
-            text: tm("practices.insideSessionPage.session.tuina.rhythm.text") as string[],
-            list: tm("practices.insideSessionPage.session.tuina.rhythm.list") as string[],
-            cta: t("practices.insideSessionPage.session.reflexo.rhythm.CTA")
-        },
-        theme: 'brown'
-    }
-];
-
-const afterList = tm("practices.insideSessionPage.after.list") as { title: string; text: string; }[];
-const afterText = tm("practices.insideSessionPage.after.text") as string[];
-const afterTitle = t("practices.insideSessionPage.after.title");
-const summaryTitle = t("practices.insideSessionPage.summary.title");
-
+const sessionTypes = ["reflexo", "tuina"];
 </script>
 
 <template>
@@ -102,15 +20,15 @@ const summaryTitle = t("practices.insideSessionPage.summary.title");
       </div>
     </header>
 
-    <WhySection :sections="whySections" />
-    <SummarySection :title="summaryTitle" :summary="summary" />
+    <WhySection />
+    <SummarySection />
 
-    <div v-for="session in sessionSections" :key="session.key">
-      <SessionDetail :session="session" />
-      <RhythmSection :rhythm="session.rhythm" />
+    <div v-for="sessionType in sessionTypes" :key="sessionType">
+      <SessionDetail :session-type="sessionType" />
+      <RhythmSection :session-type="sessionType" />
     </div>
 
-    <AfterSection :title="afterTitle" :text="afterText" :afterList="afterList" />
+    <AfterSection />
   </div>
 </template>
 

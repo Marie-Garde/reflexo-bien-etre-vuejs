@@ -467,6 +467,11 @@
             "title": "Blabla",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
           }
+        ],
+        "recipes": [
+          "Soupe de potimarron aux châtaignes et lardons grillés",
+          "Poêlée de champignons des bois à l'ail et au persil",
+          "Crumble aux pommes, poires et noix"
         ]
       },
       "spring": {
@@ -490,6 +495,11 @@
             "title": "Blabla",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
           }
+        ],
+        "recipes": [
+          "Velouté d'asperges vertes à la menthe fraîche",
+          "Salade de quinoa aux légumes nouveaux et vinaigrette citronnée",
+          "Tarte fine aux fraises et rhubarbe sur pâte sablée"
         ]
       },
       "summer": {
@@ -513,6 +523,11 @@
             "title": "Blabla",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
           }
+        ],
+        "recipes": [
+          "Gaspacho andalou et ses croûtons à l'ail",
+          "Brochettes de poulet mariné au citron et herbes de Provence",
+          "Salade de fruits d'été (pêches, abricots, melon) et son sirop de verveine"
         ]
       },
       "winter": {
@@ -536,6 +551,11 @@
             "title": "Blabla",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
           }
+        ],
+        "recipes": [
+          "Velouté de butternut au lait de coco et curry",
+          "Parmentier de canard confit à la patate douce",
+          "Poire Belle-Hélène revisitée"
         ]
       },
       "interSeason": {
@@ -559,6 +579,11 @@
             "title": "Blabla",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
           }
+        ],
+        "recipes": [
+          "Bouillon détox aux légumes racines et gingembre",
+          "Salade tiède de lentilles du Puy, carottes et betteraves",
+          "Compotée de pommes au miel et à la cannelle"
         ]
       }
     }
