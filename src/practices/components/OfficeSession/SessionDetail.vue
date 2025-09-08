@@ -12,14 +12,14 @@ const session = {
   title: t(`practices.insideSessionPage.session.${props.sessionType}.title`),
   first: {
     title: t(`practices.insideSessionPage.session.${props.sessionType}.first.title`),
-    text: tm(`practices.insideSessionPage.session.${props.sessionType}.first.text`) as string[],
+    text: tm(`practices.insideSessionPage.session.${props.sessionType}.first.text`),
     hovering: t(`practices.insideSessionPage.session.${props.sessionType}.first.hovering`),
     imageClass: props.sessionType === "reflexo" ? "reflexo-main" : "massage-dos",
   },
   second: {
     title: t(`practices.insideSessionPage.session.${props.sessionType}.second.title`),
-    text: tm(`practices.insideSessionPage.session.${props.sessionType}.second.text`) as string[],
-    list: tm(`practices.insideSessionPage.session.${props.sessionType}.second.list`) as string[],
+    text: tm(`practices.insideSessionPage.session.${props.sessionType}.second.text`),
+    list: tm(`practices.insideSessionPage.session.${props.sessionType}.second.list`),
     hovering: t(`practices.insideSessionPage.session.${props.sessionType}.second.hovering`),
     imageClass: props.sessionType === "reflexo" ? "reflexo-visage" : "reflexo-dos",
   },
@@ -50,7 +50,13 @@ const session = {
             <li v-for="(item, i) in session.second.list" :key="i">{{ item }}</li>
           </ul>
         </div>
-        <div :class="['session-card__image', `session-card__image--${session.second.imageClass}`, 'session-card__image--top']">
+        <div
+          :class="[
+            'session-card__image',
+            `session-card__image--${session.second.imageClass}`,
+            'session-card__image--top',
+          ]"
+        >
           <div class="session-card__hovering citation">{{ session.second.hovering }}</div>
         </div>
       </div>
@@ -173,6 +179,4 @@ const session = {
     }
   }
 }
-
-
 </style>

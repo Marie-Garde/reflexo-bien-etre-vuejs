@@ -13,8 +13,8 @@ const props = defineProps<{
 
 const rhythm = {
   title: t(`practices.insideSessionPage.session.${props.sessionType}.rhythm.title`),
-  text: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.text`) as string[],
-  list: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.list`) as string[],
+  text: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.text`),
+  list: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.list`),
   cta: t("practices.insideSessionPage.session.reflexo.rhythm.CTA"),
 };
 
@@ -60,6 +60,4 @@ function goToAppointment() {
     margin-bottom: 40px;
   }
 }
-
-
 </style>

@@ -3,8 +3,8 @@ import { useI18n } from "vue-i18n";
 
 const { t, tm } = useI18n();
 
-const afterList = tm("practices.insideSessionPage.after.list") as { title: string; text: string; }[];
-const text = tm("practices.insideSessionPage.after.text") as string[];
+const afterList = tm("practices.insideSessionPage.after.list");
+const text = tm("practices.insideSessionPage.after.text");
 const title = t("practices.insideSessionPage.after.title");
 </script>
 
@@ -76,6 +76,4 @@ const title = t("practices.insideSessionPage.after.title");
     }
   }
 }
-
-
 </style>

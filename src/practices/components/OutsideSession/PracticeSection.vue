@@ -7,7 +7,7 @@ defineProps<{
 
 const { t, tm } = useI18n();
 
-const practiceLabel = tm("practices.outsideSessionPage.practice.text") as string[];
+const practiceLabel = tm("practices.outsideSessionPage.practice.text");
 </script>
 
 <template>
