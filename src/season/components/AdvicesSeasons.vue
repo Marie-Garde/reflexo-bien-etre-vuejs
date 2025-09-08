@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import type { Accordion } from "@/season/interface/Accordion";
-import type { PropType } from "vue";
 import AccordionItem from "@/components/AccordionItem.vue";
 
-defineProps({
-  advicesList: { type: Array as PropType<Accordion[]>, required: true },
+const props = defineProps({
+  season: { type: String, required: true },
 });
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
 const title = t("seasons.season.subtitles.advices");
+const advicesList: Accordion[] = tm(`seasons.season.${props.season}.advices`);
 </script>
 
 <template>
@@ -36,7 +36,9 @@ const title = t("seasons.season.subtitles.advices");
   }
 
   .advices-list {
-    width: 60%;
+    width: 90%;
+    max-width: 1280px;
+    padding: 0;
     list-style: none;
   }
 }

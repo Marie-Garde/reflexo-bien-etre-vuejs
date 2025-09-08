@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-defineProps({
-  text: { type: String, required: true },
+const props = defineProps({
+  season: { type: String, required: true },
+  background: { type: String, required: true },
 });
 
 const { t } = useI18n();
 
 const title = t("seasons.season.subtitles.specialties");
+const text = t(`seasons.season.${props.season}.specialties`);
 </script>
 
 <template>
-  <div class="specialties">
+  <div :class="['specialties', `${background}`]">
     <h2>{{ title }}</h2>
     <p class="red">{{ text }}</p>
   </div>
@@ -23,7 +25,6 @@ const title = t("seasons.season.subtitles.specialties");
 .specialties {
   text-align: center;
   width: 100%;
-  background-color: $orange-light;
   padding: 60px 0;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,23 @@ const title = t("seasons.season.subtitles.specialties");
     padding-bottom: 20px;
   }
   p {
-    max-width: 1200px;
+    max-width: 1280px;
   }
+}
+
+.yellow {
+  background-color: $orange-light;
+}
+
+.orange {
+  background-color: $orange;
+}
+
+.green {
+  background-color: $green;
+}
+
+.brown {
+  background-color: $brown-dark;
 }
 </style>

@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import Button from "@/components/Button.vue";
+import { useI18n } from "vue-i18n";
 
-defineProps<{
-  session: {
-    key: string;
-    title: string;
-    first: {
-      title: string;
-      text: string[];
-      hovering: string;
-      imageClass: string;
-    };
-    second: {
-      title: string;
-      text: string[];
-      list: string[];
-      hovering: string;
-      imageClass: string;
-    };
-    theme: string;
-  };
+const { t, tm } = useI18n();
+
+const props = defineProps<{
+  sessionType: string;
 }>();
+
+const session = {
+  key: props.sessionType,
+  title: t(`practices.insideSessionPage.session.${props.sessionType}.title`),
+  first: {
+    title: t(`practices.insideSessionPage.session.${props.sessionType}.first.title`),
+    text: tm(`practices.insideSessionPage.session.${props.sessionType}.first.text`) as string[],
+    hovering: t(`practices.insideSessionPage.session.${props.sessionType}.first.hovering`),
+    imageClass: props.sessionType === "reflexo" ? "reflexo-main" : "massage-dos",
+  },
+  second: {
+    title: t(`practices.insideSessionPage.session.${props.sessionType}.second.title`),
+    text: tm(`practices.insideSessionPage.session.${props.sessionType}.second.text`) as string[],
+    list: tm(`practices.insideSessionPage.session.${props.sessionType}.second.list`) as string[],
+    hovering: t(`practices.insideSessionPage.session.${props.sessionType}.second.hovering`),
+    imageClass: props.sessionType === "reflexo" ? "reflexo-visage" : "reflexo-dos",
+  },
+  theme: props.sessionType === "reflexo" ? "green" : "brown",
+};
 </script>
 
 <template>
