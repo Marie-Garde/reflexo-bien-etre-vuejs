@@ -90,6 +90,7 @@ const sessionTypes = ["reflexo", "tuina"];
       &-overlay {
         width: 70%;
         left: 15%;
+        text-align: center;
         h1 {
           font-size: 2rem;
         }

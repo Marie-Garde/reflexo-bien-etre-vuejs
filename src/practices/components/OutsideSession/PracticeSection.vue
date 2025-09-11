@@ -49,4 +49,33 @@ const practiceLabel = tm("practices.outsideSessionPage.practice.text");
     object-position: top;
   }
 }
+
+@media (max-width: 768px) {
+  .infos-practices {
+    flex-direction: column;
+    height: auto;
+
+    .text {
+      width: 100%;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .infos-practices {
+    height: 40vh;
+
+    .text {
+      padding: 0 40px 0 60px;
+      width: 50%;
+    }
+  }
+}
 </style>

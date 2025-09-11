@@ -48,7 +48,12 @@ function goToAppointment() {
       </div>
     </div>
 
-    <Button class="how-button" :label="t('practices.outsideSessionPage.buttonLabel')" color="orange" @click="goToAppointment()" />
+    <Button
+      class="how-button"
+      :label="t('practices.outsideSessionPage.buttonLabel')"
+      color="orange"
+      @click="goToAppointment()"
+    />
   </div>
 </template>
 
@@ -86,6 +91,48 @@ function goToAppointment() {
   &-button {
     width: 20%;
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how {
+    padding: 40px 20px;
+
+    h2 {
+      margin: 0 0 20px 0;
+    }
+
+    .infos {
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 30px;
+
+      &-item {
+        width: 100%;
+      }
+    }
+
+    &-button {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .how {
+    .infos {
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-item {
+        width: 45%;
+      }
+    }
+
+    &-button {
+      width: 50%;
+    }
   }
 }
 </style>

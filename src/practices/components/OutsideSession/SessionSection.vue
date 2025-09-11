@@ -22,7 +22,12 @@ function goToAppointment() {
     <div class="text">
       <h2>{{ t("practices.outsideSessionPage.session.title") }}</h2>
       <div v-html="t('practices.outsideSessionPage.session.text')"></div>
-      <Button class="button" :label="t('practices.outsideSessionPage.buttonLabel')" color="orange" @click="goToAppointment()" />
+      <Button
+        class="button"
+        :label="t('practices.outsideSessionPage.buttonLabel')"
+        color="orange"
+        @click="goToAppointment()"
+      />
     </div>
   </div>
 </template>
@@ -45,7 +50,7 @@ function goToAppointment() {
     }
 
     .button {
-      width: 40%;
+      width: 70%;
       margin-top: 30px;
       font-size: 1.2rem;
     }
@@ -55,6 +60,48 @@ function goToAppointment() {
     flex: 1;
     object-fit: cover;
     object-position: top;
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .infos-session {
+    flex-direction: column-reverse;
+    height: auto;
+
+    .text {
+      width: 100%;
+      padding: 40px 20px;
+      text-align: center;
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .infos-session {
+    height: 40vh;
+
+    img {
+      width: 50%;
+    }
+
+    .text {
+      padding: 0 60px 0 40px;
+      width: 50%;
+
+      .button {
+        width: 70%;
+      }
+    }
   }
 }
 </style>
