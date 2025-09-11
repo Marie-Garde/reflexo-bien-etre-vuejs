@@ -48,8 +48,7 @@ const sessionTypes = ["reflexo", "tuina"];
     &-overlay {
       position: absolute;
       bottom: 10%;
-      left: 0;
-      margin-left: 120px;
+      left: 10%;
       width: 50%;
       max-width: 600px;
       padding: 20px;
@@ -64,5 +63,38 @@ const sessionTypes = ["reflexo", "tuina"];
 .office-session__section-title {
   margin: 80px 0 40px 0;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .office-session {
+    &__header {
+      height: 40vh;
+
+      &-overlay {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+    }
+
+    &__section-title {
+      margin: 120px 0 40px 0;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .office-session {
+    &__header {
+      &-overlay {
+        width: 70%;
+        left: 15%;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
 </style>

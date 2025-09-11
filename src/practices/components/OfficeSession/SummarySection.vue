@@ -57,6 +57,7 @@ const summary = {
   .summary-overlay {
     max-width: 1280px;
     width: 100%;
+    overflow-x: auto;
   }
 
   .summary-table {
@@ -78,6 +79,37 @@ const summary = {
 
     &:first-child > li {
       font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .office-session__summary {
+    padding: 40px 0;
+
+    .office-session__section-title {
+      margin: 0;
+    }
+    .summary-overlay {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .summary-table {
+      width: 800px;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .office-session__summary {
+    .office-session__section-title {
+      margin: 0 0 20px 0;
+    }
+
+    .summary-overlay {
+      width: 90%;
     }
   }
 }

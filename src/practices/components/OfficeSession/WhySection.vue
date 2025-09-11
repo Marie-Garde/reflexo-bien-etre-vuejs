@@ -111,4 +111,53 @@ const sections = [
     }
   }
 }
+
+@media (max-width: 768px) {
+  .office-session__why {
+    flex-direction: column;
+
+    .why-card {
+      width: 100%;
+      height: 60vh;
+
+      &__title-static {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &__text-hover {
+        opacity: 1;
+        pointer-events: auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 40px 20px;
+      }
+
+      &:hover {
+        .why-card__text-hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .office-session__why {
+    .why-card {
+      height: 75vh;
+
+      &__title-static {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &__text-hover {
+        opacity: 1;
+        pointer-events: auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+      }
+    }
+  }
+}
 </style>

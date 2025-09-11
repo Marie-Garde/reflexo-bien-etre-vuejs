@@ -90,7 +90,7 @@ const session = {
 
     &__text {
       width: 90%;
-      height: 65vh;
+      max-height: 100vh;
       background-color: $orange-white;
       position: absolute;
       z-index: 4;
@@ -109,10 +109,11 @@ const session = {
         left: auto;
         right: 0;
         padding: 60px 100px 60px 60px;
+        min-height: 60%;
       }
 
       h3 {
-        margin: 40px 0;
+        margin: 0 0 40px 0;
       }
 
       ul {
@@ -175,6 +176,45 @@ const session = {
 
       &:hover {
         opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .office-session__session {
+    .session-detail {
+      flex-direction: column;
+    }
+
+    .session-card {
+      width: 100%;
+      height: auto;
+
+      &__text {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+
+        h3 {
+          margin: 0 0 20px 0;
+        }
+
+        &--right {
+          padding: 40px 20px;
+        }
+      }
+
+      &__image {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+      }
+
+      &__hovering {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }

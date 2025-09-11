@@ -60,4 +60,12 @@ function goToAppointment() {
     margin-bottom: 40px;
   }
 }
+
+@media (max-width: 768px) {
+  .office-session__rhythm {
+    h2 {
+      margin: 40px 0 20px 0;
+    }
+  }
+}
 </style>

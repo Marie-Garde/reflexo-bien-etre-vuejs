@@ -71,7 +71,42 @@ const title = t("practices.insideSessionPage.after.title");
         background-color: #b17887;
       }
       &:nth-child(4) {
-        background-color: #b17887;
+        background-color: #d8aeb5;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .office-session__after {
+    text-align: center;
+    h2 {
+      margin: 0 0 20px 0;
+    }
+    .after-list {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      margin-top: 40px;
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .office-session__after {
+    h2 {
+      margin: 0 0 20px 0;
+    }
+    .after-list {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        width: 45%;
       }
     }
   }
