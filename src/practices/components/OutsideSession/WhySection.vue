@@ -22,7 +22,6 @@ const whyReasonsList = tm("practices.outsideSessionPage.why.reasons");
 <style scoped lang="scss">
 .why {
   width: 100%;
-  height: 60vh;
   background-image: url("@/assets/background/outsidePracticeBackground.png");
   background-size: cover;
   background-position: top;
@@ -38,6 +37,9 @@ const whyReasonsList = tm("practices.outsideSessionPage.why.reasons");
   &-list {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     justify-content: space-around;
     align-items: center;
     gap: 30px;
@@ -77,6 +79,51 @@ const whyReasonsList = tm("practices.outsideSessionPage.why.reasons");
 
       &:hover {
         transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .why {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+
+    h2 {
+      margin: 0 auto 20px auto;
+    }
+
+    &-list {
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+
+      &-item {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .why {
+    height: auto;
+    padding: 60px 20px;
+
+    h2 {
+      margin: 0 auto 20px auto;
+    }
+
+    &-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+
+      &-item {
+        width: 200px;
+        height: 200px;
       }
     }
   }

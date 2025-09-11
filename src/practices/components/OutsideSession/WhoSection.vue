@@ -89,4 +89,51 @@ const peopleWhoList = tm("practices.outsideSessionPage.who.people");
     }
   }
 }
+
+@media (max-width: 768px) {
+  .who {
+    margin-top: 40px;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      width: 90%;
+      margin: 0 auto 20px auto;
+    }
+
+    .who-list {
+      flex-direction: column;
+
+      &-item {
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      &-item-frame {
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .who {
+    margin-top: 30px;
+    h2 {
+      margin: 0 auto 20px auto;
+    }
+    .who-list {
+      flex-wrap: wrap;
+
+      &-item {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
 </style>

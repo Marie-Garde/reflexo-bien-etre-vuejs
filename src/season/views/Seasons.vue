@@ -105,9 +105,6 @@ const seasons = [
     text-align: center;
     width: 70%;
     max-width: 1280px;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
   }
 
   .seasons-list {
@@ -118,11 +115,6 @@ const seasons = [
     width: 100%;
     margin-top: 60px;
 
-    @media (max-width: 1200px) {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
     h2 {
       margin-bottom: 20px;
     }
@@ -130,10 +122,6 @@ const seasons = [
     &-text {
       flex: 1;
       text-align: left;
-
-      @media (max-width: 1200px) {
-        text-align: center;
-      }
     }
   }
 
@@ -145,11 +133,6 @@ const seasons = [
     border-radius: 50%;
     overflow: hidden;
     transform: rotate(45deg);
-    @media (max-width: 768px) {
-      width: 90vw;
-      height: 90vw;
-      margin-bottom: 60px;
-    }
   }
 
   .quarter {
@@ -186,11 +169,6 @@ const seasons = [
     font-size: 2rem;
     transform: rotate(-45deg);
     cursor: pointer;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      color: $black;
-    }
   }
 
   $seasons-map: (
@@ -289,10 +267,6 @@ const seasons = [
         width: map.get($before-props, width);
         height: map.get($before-props, height);
         background-size: map.get($before-props, bg-size);
-
-        @media (max-width: 768px) {
-          opacity: 0.5;
-        }
       }
     }
 
@@ -324,6 +298,41 @@ const seasons = [
 
     &:hover .quarter-title {
       color: $brown-dark;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-overlay {
+    margin-left: 20px;
+  }
+  .container {
+    .content {
+      width: 100%;
+    }
+    .seasons-list {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 0;
+
+      &-text {
+        text-align: center;
+        width: 90%;
+
+        h2 {
+          margin: 0 0 40px 0;
+        }
+      }
+
+      .circle {
+        width: 60vw;
+        height: 60vw;
+
+        .quarter-title {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 }
