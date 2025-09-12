@@ -34,6 +34,7 @@ const text = t(`seasons.season.${props.season}.specialties`);
   }
   p {
     max-width: 1280px;
+    width: 90%;
   }
 }
 

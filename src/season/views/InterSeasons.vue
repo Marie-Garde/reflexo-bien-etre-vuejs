@@ -64,4 +64,34 @@ const { t } = useI18n();
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 40px 0;
+    display: flex;
+
+    &-container {
+      width: 100%;
+    }
+
+    &-overlay {
+      width: 100%;
+      margin-bottom: 0;
+      text-align: center;
+      border-radius: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header {
+    &-overlay {
+      width: 70%;
+      margin: 0 auto 2vw auto;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+}
 </style>

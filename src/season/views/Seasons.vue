@@ -109,7 +109,8 @@ const seasons = [
 
   .seasons-list {
     display: flex;
-    align-items: top;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
     gap: 3rem;
     width: 100%;
@@ -121,7 +122,7 @@ const seasons = [
 
     &-text {
       flex: 1;
-      text-align: left;
+      text-align: center;
     }
   }
 
@@ -166,7 +167,8 @@ const seasons = [
   .quarter-title {
     color: $white;
     z-index: 3;
-    font-size: 2rem;
+    font-size: 2em;
+    text-size-adjust: auto;
     transform: rotate(-45deg);
     cursor: pointer;
   }
@@ -302,11 +304,25 @@ const seasons = [
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 40px 0;
+    p {
+      max-width: 90%;
+    }
+  }
   .header-overlay {
-    margin-left: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  p {
+    width: 100%;
   }
   .container {
+    overflow-x: hidden;
     .content {
       width: 100%;
     }
@@ -321,18 +337,54 @@ const seasons = [
         width: 90%;
 
         h2 {
-          margin: 0 0 40px 0;
+          width: 100%;
+          margin: 0 auto 40px auto;
         }
       }
+      .circle {
+        width: 90vw;
+        height: 90vw;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
 
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .header {
+    padding: 40px;
+  }
+  .container {
+    .seasons-list {
       .circle {
         width: 60vw;
         height: 60vw;
-
-        .quarter-title {
-          font-size: 1.5rem;
-        }
+        margin-bottom: 30px;
       }
+    }
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .container {
+    .quarter-title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 406px) and (max-width: 540px) {
+  .container {
+    .quarter-title {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 405px) {
+  .container {
+    .quarter-title {
+      font-size: 1rem;
     }
   }
 }

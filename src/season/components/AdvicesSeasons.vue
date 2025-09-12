@@ -31,8 +31,13 @@ const advicesList: Accordion[] = tm(`seasons.season.${props.season}.advices`);
 
 .container {
   margin: 60px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h2 {
     padding-bottom: 20px;
+    text-align: center;
   }
 
   .advices-list {
