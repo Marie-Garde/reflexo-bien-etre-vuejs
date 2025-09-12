@@ -25,14 +25,21 @@ const recipes = tm(`seasons.season.${props.season}.recipes`);
 @use "@/assets/variables.scss" as *;
 
 .container {
-  padding: 60px;
+  padding: 60px 0;
   color: $white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h2 {
     padding-bottom: 20px;
+    text-align: center;
   }
   ul {
     list-style: none;
     padding: 0;
+    width: 90%;
+    max-width: 1280px;
     li {
       margin-bottom: 10px;
     }
