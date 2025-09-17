@@ -65,16 +65,20 @@ const difficulties = [
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
-    @media (max-width: 768px) {
-      flex-wrap: wrap;
-      > * {
-        flex: 1 1 160px;
-      }
-    }
+
     &-item {
       &-img {
         height: 70px;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .difficulties-list {
+    flex-wrap: wrap;
+    > * {
+      flex: 1 1 160px;
     }
   }
 }

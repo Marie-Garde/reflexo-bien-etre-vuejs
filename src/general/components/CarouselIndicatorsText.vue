@@ -29,9 +29,6 @@ const emit = defineEmits<{
   left: 50%;
   bottom: 10%;
   z-index: 2;
-  @media (max-width: 768px) {
-    bottom: 0;
-  }
 }
 
 .carousel-indicator-item {
@@ -47,5 +44,11 @@ const emit = defineEmits<{
 
 .active {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-indicators {
+    bottom: 0;
+  }
 }
 </style>

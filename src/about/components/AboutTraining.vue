@@ -59,10 +59,6 @@ const { t, tm } = useI18n();
       background-color: $brown-medium;
       border-radius: 50%;
       z-index: -1;
-      @media (max-width: 768px) {
-        height: 100vh;
-        width: 170%;
-      }
     }
 
     &-timeline {
@@ -81,10 +77,6 @@ const { t, tm } = useI18n();
         width: 2px;
         background-color: rgba($white-soft, 0.5);
         transform: translateX(-50%);
-      }
-
-      @media (max-width: 768px) {
-        width: 90%;
       }
     }
 

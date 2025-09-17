@@ -38,17 +38,11 @@ function goToKnowMore() {
   display: flex;
   width: 100%;
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
-
   &-image {
     width: 40%;
     padding: 5vw;
     background-color: $green;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+
     &-content {
       width: 100%;
       height: auto;
@@ -66,9 +60,7 @@ function goToKnowMore() {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+
     .title {
       margin-bottom: 20px;
     }
@@ -77,6 +69,20 @@ function goToKnowMore() {
     }
     .button {
       margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column-reverse;
+
+    &-image {
+      width: 100%;
+    }
+
+    &-content {
+      width: 100%;
     }
   }
 }

@@ -44,10 +44,6 @@ const practicesRouteName = practicesRoutesName.HOME;
   padding: 60px 20px 40px 20px;
   display: flex;
   justify-content: center;
-  @media (max-width: 768px) {
-    height: 95vh;
-    padding: 30px 20px 40px 20px;
-  }
 }
 
 .solution {
@@ -57,18 +53,11 @@ const practicesRouteName = practicesRoutesName.HOME;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
 
   &-text {
     width: 70%;
     color: $white;
-    @media (max-width: 768px) {
-      width: 90%;
-      text-align: center;
-    }
+
     .title {
       margin-bottom: 30px;
     }
@@ -88,7 +77,25 @@ const practicesRouteName = practicesRoutesName.HOME;
     width: 60%;
     height: auto;
     border-radius: 5px;
-    @media (max-width: 768px) {
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    height: 95vh;
+    padding: 30px 20px 40px 20px;
+  }
+
+  .solution {
+    flex-direction: column-reverse;
+    gap: 30px;
+
+    &-text {
+      width: 90%;
+      text-align: center;
+    }
+
+    img {
       width: 90%;
     }
   }

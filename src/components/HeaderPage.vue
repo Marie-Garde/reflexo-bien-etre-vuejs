@@ -69,7 +69,7 @@ defineProps({
   position: absolute;
   top: 0;
   left: 50%;
-  width: 4px; /* Largeur de l'espace blanc */
+  width: 4px;
   height: 100%;
   background-color: white;
   transform: translateX(-50%);

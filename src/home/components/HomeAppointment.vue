@@ -40,9 +40,6 @@ function goToAppointment() {
   width: 100%;
   background-color: $orange-light;
   padding: 60px;
-  @media (max-width: 768px) {
-    padding: 40px;
-  }
 
   &-content {
     max-width: 1200px;
@@ -62,9 +59,15 @@ function goToAppointment() {
     font-size: 1.5rem;
     padding: 20px 54px;
     box-shadow: 0px 5px 5px $dark-grey;
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+  }
+}
+
+@media (max-width: 768px) {
+  .takeAppointment {
+    padding: 40px;
+  }
+  .button {
+    font-size: 1rem;
   }
 }
 </style>

@@ -55,9 +55,6 @@ const transitionEffect = computed(() => {
     left: 50%;
     bottom: 50%;
     z-index: 2;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
 
     .text {
       margin-bottom: 20px;
@@ -86,5 +83,13 @@ const transitionEffect = computed(() => {
 
 .slide-out-leave-to {
   transform: translateX(-150%);
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    &-informations {
+      width: 90%;
+    }
+  }
 }
 </style>

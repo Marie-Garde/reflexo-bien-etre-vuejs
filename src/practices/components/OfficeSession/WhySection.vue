@@ -118,7 +118,7 @@ const sections = [
 
     .why-card {
       width: 100%;
-      height: 60vh;
+      height: 90vh;
 
       &__title-static {
         opacity: 0;
