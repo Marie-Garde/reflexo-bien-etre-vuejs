@@ -110,10 +110,6 @@ const warningBackgroundColorClass = computed(() => {
     margin-top: 2vw;
     padding: 10px 0;
 
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
-    }
-
     &.orange {
       background-color: $orange;
       color: $white-soft;
@@ -158,13 +154,6 @@ const warningBackgroundColorClass = computed(() => {
       justify-content: space-around;
       width: 100%;
 
-      @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 30px;
-      }
-
       .informations {
         &__title {
           margin-bottom: 12px;
@@ -175,11 +164,6 @@ const warningBackgroundColorClass = computed(() => {
           align-items: center;
           gap: 12px;
           margin-bottom: 12px;
-
-          @media (max-width: 768px) {
-            justify-content: center;
-            align-items: flex-start;
-          }
         }
       }
 
@@ -210,16 +194,40 @@ const warningBackgroundColorClass = computed(() => {
       padding-top: 24px;
       border-top: 1px solid $orange-light;
 
-      @media (max-width: 768px) {
+      p,
+      .link {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .warning {
+      font-size: 0.8rem;
+    }
+
+    .container {
+      .first-line {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+
+        .informations {
+          &__item {
+            justify-content: center;
+            align-items: flex-start;
+          }
+        }
+      }
+
+      .second-line {
         flex-direction: column;
         align-items: center;
         margin-top: 30px;
         gap: 10px;
-      }
-
-      p,
-      .link {
-        margin: 0 10px;
       }
     }
   }

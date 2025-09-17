@@ -35,8 +35,12 @@ const { t } = useI18n();
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
+  }
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .main-header {
+    &__top-info {
       font-size: 0.8rem;
       padding: 5px;
       flex-direction: column;
