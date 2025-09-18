@@ -4,7 +4,7 @@
       "home": "Accueil",
       "about": "Présentation",
       "seasons": "Ce qui bouge",
-      "practices": "Mes pratiques",
+      "practices": "Mes activités",
       "prices": "Tarifs",
       "contact": "Contact",
       "takeAppointment": "Prendre rendez-vous"
@@ -80,13 +80,17 @@
     "title": "Isabelle Laporcherie",
     "subTitle": "Praticienne de médecine chinoise & réflexologue",
     "approach": {
-      "title": "De multiples approches pour une solution complète",
+      "title": "Mes approches au service de votre bien-être",
       "list": [
         "Réflexologie & accupression",
         "Massage Tuina & accupression",
         "Qi gong"
       ],
-      "text": "commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+      "text": [
+        "Chaque personne est unique, et c’est pourquoi j’adapte mes pratiques issues de la réflexologie et de la médecine traditionnelle chinoise à vos besoins. Je m’appuie notamment sur la réflexologie et l’acupression pour relancer l’énergie, le massage Tuina pour détendre en profondeur, et le Qi Gong pour prolonger les bienfaits. D’autres techniques comme les ventouses, la moxibustion, la diététique ou encore l’usage des plantes locales peuvent venir compléter mes soins.",
+        "Je vous accompagne avec bienveillance, dans une approche qui complète la médecine conventionnelle.",
+        "Mon objectif : un soin global, attentif et respectueux, pour que l’énergie circule et que le bien-être revienne."
+      ],
       "link": "En savoir plus sur mes activités"
     },
     "CTA": {
@@ -97,31 +101,39 @@
     "parcours": {
       "title": "Mon parcours",
       "text": [
-        "Pendant 36 ans, j’ai travaillé dans le monde bancaire.",
-        "En allant à la salle de sport de la Banque, j’ai découvert le Qi gong, littéralement, le travail de l’Energie. Par les mouvements du corps, je mets en mouvement mon énergie, je la débloque, je la renforce. Par le Qi gong, j’ai découvert les méridiens, voies particulières du QI, qui parcourent notre corps. Et ce fut la rencontre avec l’IEQG Institut Européen de Qi Gong &Yang Sheng du Docteur Yves Réquéna.",
-        "J’ai voulu en savoir plus.",
-        "J’ai suivi ces enseignements ainsi que ceux de son équipe, J’ai découvert, appris et concrétiser par un diplôme l’acupuncture, le massage Tuina. Je continue de me former pour pouvoir utiliser cette belle pharmacopée mais en utilisant nos fleurs et plantes de région au sein de l’école Imderplan de Montpellier. En arrivant à Brive la gaillarde, j’ai découvert l’école ADNR et son parcours de Réflexologie auquel j’ai adhéré jusqu’à être diplômée.",
-        "La boucle est bouclée.",
-        "Je cherchais un moyen d’apporter les bienfaits du mieux-être issus de la MTC mais en utilisant des techniques plus accordées à nos concepts occidentaux."
+        "Pendant 36 ans, j’ai travaillé dans le monde bancaire, un univers que j’ai profondément aimé. Mais dans les marchés financiers, la concurrence est rude, et même si j’ai eu la chance d’y évoluer plus longtemps que beaucoup, le moment est simplement arrivé d’ouvrir un nouveau chapitre. Ce fut l’occasion d’aller vers une autre passion : ma rencontre avec la médecine traditionnelle chinoise.",
+        "C’est dans ce cadre professionnel que j’ai découvert le Qi Gong, au détour d’un cours à la salle de sport. À travers ces gestes simples et profonds, j’ai appris à libérer et à renforcer mon énergie. Cette pratique m’a ouvert à l’univers fascinant des canaux souvent “méridiens” en Occident, ces voies invisibles qui parcourent le corps. C’est ainsi que j’ai rencontré l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna, dont les enseignements ont marqué le début d’un nouveau chemin.",
+        "Puis, j’ai voulu aller plus loin. J’ai étudié l’acupuncture, le massage Tuina, la diététique chinoise et le Qi Gong, et je poursuis une formation en pharmacopée à l’école Imderplan de Montpellier, avec un intérêt particulier pour nos plantes locales. Après une formation très ancrée dans la tradition chinoise, j’ai choisi de compléter mon parcours par la réflexologie, plus occidentale. Elle me permet de créer un pont naturel entre Orient et Occident, en travaillant sur l’acupression et les zones réflexes, dans le respect du cadre médical.",
+        "En osant changer de vie, j’ai choisi de mettre mon énergie au service du bien-être. Ce parcours entre Orient et Occident m’a appris qu’il n’existe pas de solution unique, mais des chemins qui s’adaptent à chacun. C’est avec cette conviction que j’accompagne aujourd’hui chaque personne, dans une approche bienveillante et complémentaire de la médecine conventionnelle."
       ]
     },
     "training": {
       "title": "Mes formations",
+      "subtitle": "l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna",
       "list": [
         {
-          "date": "Novembre 2020 - Septembre 2022",
-          "title": "Praticienne en Qi Gong",
-          "subtitle": "Institut de truc"
+          "date": "Septembre 2018 – Novembre 2021",
+          "title": "Professeure de QI Gong"
         },
         {
-          "date": "Mars 2020 - Juin 2021",
-          "title": "Praticienne en Massage Tuina",
-          "subtitle": "Institut de truc"
+          "date": "Février 2020 – Février 2022",
+          "title": "Certification en Acupuncture"
         },
         {
-          "date": "Août 2019 - Avril 2021",
-          "title": "Praticienne en reflexologie",
-          "subtitle": "Institut de truc"
+          "date": "Novembre 2022",
+          "title": "Diplôme d'Acupuncteur Traditionnel"
+        },
+        {
+          "date": "Septembre 2021 – Juillet 2023",
+          "title": "Praticienne en massage Tuina"
+        },
+        {
+          "date": "Janvier 2023 – Avril 2024",
+          "title": "Réflexologue"
+        },
+        {
+          "date": "Septembre 2024 -  formation en cours",
+          "title": "Herboristerie, Plantes médicinales et Médecines douces."
         }
       ]
     }
@@ -129,50 +141,57 @@
   "practices": {
     "title": "Mes activités",
     "presentation": {
-      "title": "Qu'est ce que je propose ?",
+      "title": "Ce que je propose",
       "text": [
-        "Je propose une réflexologie qui utilise les zones physiologiques mais aussi les zones énergétiques, soit sur les pieds, soit sur les mains. Je complète par un travail d’acupression sur les méridiens afin de favoriser la circulation de l’énergie, et par un travail sur le dos.",
-        "Sur le dos, j’apporte la détente par les techniques du massage Tuina, et le travail de l’énergie par l’acupression sur les points SHU.",
-        "Je finis par un massage du visage, un travail d’acupression à la fois sur le visage et le crâne."
+        "Chaque personne arrive avec son histoire, son rythme et ses besoins. C’est pourquoi je n’applique pas une approche unique. Je travaille avec une palette de pratiques issues de la réflexologie et de la médecine traditionnelle chinoise, que j’adapte à chacun.",
+        "Je m’appuie sur la réflexologie et l’acupression, qui stimulent les zones réflexes et les points d’énergie. Le massage Tuina redonne fluidité au corps et vitalité à l’esprit. Enfin, le Qi Gong prolonge les bienfaits et invite chacun à devenir acteur de son équilibre.",
+        "Selon vos besoins, d’autres pratiques peuvent compléter mes soins : ventouses, moxibustion, diététique chinoise ou encore pharmacopée, avec un intérêt particulier pour les plantes locales. Elles viennent stimuler, réchauffer ou rééquilibrer en douceur. Ensemble, elles participent à un accompagnement global, sur mesure et bienveillant."
       ]
     },
     "benefits": {
       "title": "Quels sont les bienfaits de mes séances ?",
+      "subtitle": "La réflexologie et la médecine chinoise complètent la médecine conventionnelle en apportant un accompagnement différent : elles soutiennent la prévention, favorisent l’équilibre du terrain et aident le corps à mieux s’adapter. Voici quelques domaines où elles peuvent vous être utiles au quotidien.",
       "list": [
         {
-          "title": "<strong>Diminution du stress</strong>",
-          "text": "<strong>Le stress</strong>, cette réaction physiologique qui nous permet de mobiliser nos ressources afin de faire face à un danger ou à un inconfort, de manière ponctuelle, est désormais ancré au quotidien chez beaucoup. Une exposition prolongée au stress ébranle l’organisme. Il serait <strong>à l’origine de plus de 80% des déséquilibres.</strong> <br><br>Lors d’une <strong>séance de Réflexologie</strong>, notre corps rentre dans un état de <strong>détente profond</strong>, le système nerveux se rééquilibre, le mental s’apaise et <strong>les tensions s’éliminent.</strong>"
+          "title": "<strong>Le stress</strong>",
+          "text": "Le stress fait partie de la vie : c’est une réaction naturelle qui nous aide à mobiliser nos ressources face à un danger ou un défi ponctuel. Mais lorsqu’il s’installe au quotidien, il devient un poids pour l’organisme. À la longue, il épuise nos défenses, dérègle le sommeil, la digestion, l’humeur… On estime aujourd’hui qu’il joue un rôle dans la majorité des déséquilibres de santé. La réflexologie offre alors une véritable parenthèse. En stimulant certaines zones réflexes, le corps entre dans un état de détente profonde : le système nerveux se rééquilibre, le mental s’apaise, les tensions se relâchent. Peu à peu, l’organisme retrouve de l’espace pour respirer et se régénérer."
         },
         {
-          "title": "<strong>Renforcement du système immunitaire</strong>",
-          "text": "La Réflexologie envoie au corps un message de régulation en <strong>mobilisant ses capacités d’auto-guérison</strong> par le biais de la relaxation. Ce processus vise à normaliser toutes nos fonctions corporelles, favorisant le renforcement de notre système immunitaire."
+          "title": "<strong>La fatigue</strong>",
+          "text": "La fatigue est un signal du corps : elle nous rappelle qu’il est temps de ralentir. La réflexologie et la médecine chinoise aident à relancer l’énergie, apaiser la charge mentale et favoriser les conditions d’une meilleure récupération. L’alimentation joue aussi un rôle clé : quelques ajustements simples, adaptés aux saisons, soutiennent la digestion et redonnent vitalité. Peu à peu, le corps retrouve équilibre et ressources."
         },
         {
-          "title": "<strong>Action sur les troubles respiratoires</strong>",
-          "text": "Relancer les mouvements internes de la sphère ORL et amélioration des allergies, bronchites, sinusites."
+          "title": "<strong>Le sommeil</strong>",
+          "text": "Les troubles du sommeil touchent beaucoup de personnes et pèsent sur l’énergie au quotidien. La réflexologie et la médecine chinoise apportent alors un soutien précieux : en rééquilibrant le système nerveux et en favorisant la détente, elles apaisent le mental et relâchent les tensions accumulées. Elles aident également le corps à retrouver ses rythmes naturels, pour un sommeil plus profond et réparateur. Peu à peu, les nuits deviennent un vrai temps de récupération, et les journées retrouvent plus de légèreté."
         },
         {
-          "title": "<strong>Régulation des troubles digestifs</strong>",
-          "text": "Relancer les <strong>mouvements internes des organes digestifs,</strong> aide à l’amélioration de ballonnement, constipation, diarrhée."
+          "title": "<strong>La sphère digestive</strong>",
+          "text": "En médecine chinoise, la digestion est notre “centre” : c’est là que se construit l’énergie qui nous fait avancer. Quand ce centre est fragilisé, l’énergie circule mal : elle stagne et provoque ballonnements, remonte au lieu de descendre et crée des reflux, ou s’épuise et entraîne fatigue et lourdeurs. La réflexologie et l’acupression aident à remettre l’énergie digestive dans le bon sens et à rétablir la circulation harmonieuse entre les organes. La diététique chinoise complète ce travail par des ajustements simples, adaptés aux saisons, pour soutenir la transformation des aliments et alléger la sphère digestive. Peu à peu, le corps retrouve confort et vitalité."
         },
         {
-          "title": "<strong>Régulation des troubles du petit bassin</strong>",
-          "text": "Relancer les mouvements internes des organes génitaux (problèmes prémenstruels, ménopause), des organes du système urinaire (cystite, infection uriniare..)."
+          "title": "<strong>La sphère ORL et l'immunité</strong>",
+          "text": "Nez qui coule, sinus encombrés, toux persistante ou rhumes à répétition : la sphère ORL est souvent le reflet de défenses fragilisées. En médecine chinoise, le Poumon est considéré comme la première barrière de protection : il régit la respiration et la capacité du corps à s’adapter aux agressions extérieures. Quand il est fragilisé, le corps devient plus vulnérable aux infections et les déséquilibres s’installent. La réflexologie et l’acupression aident à relancer la circulation énergétique du Poumon et à soutenir les défenses naturelles. Les ventouses, en libérant la poitrine et le dos encombrés, apportent une aide précieuse pour mieux respirer. La moxibustion vient renforcer la chaleur protectrice, tandis que quelques conseils diététiques simples permettent de mieux traverser les changements de saison."
         },
         {
-          "title": "<strong>Une meilleure circulation</strong>",
-          "text": "Lorsque nous sommes détendus, les plus petits vaisseaux sanguins de notre corps, <strong>les capillaires s’élargissent</strong> et apportent à nos cellules plus d’oxygène et de nutriments. Toutes les fonctions corporelles s’en trouvent renforcées."
+          "title": "<strong>L'équilibre féminin</strong>",
+          "text": "Les différentes étapes de la vie d’une femme – cycles menstruels, maternité, ménopause – s’accompagnent de nombreux changements physiques et émotionnels. Quand l’équilibre se fragilise, il peut en résulter des règles douloureuses ou irrégulières, un syndrome prémenstruel difficile à vivre, ou encore des bouffées de chaleur et de la fatigue à la ménopause. La réflexologie et la médecine chinoise offrent un accompagnement précieux : elles apaisent les tensions, débloquent l’énergie et favorisent un meilleur équilibre hormonal et émotionnel. Selon les besoins, l’acupression, la diététique chinoise ou encore le Qi Gong viennent compléter ce travail pour traverser ces étapes plus sereinement."
         },
         {
-          "title": "<strong>Autres bienfaits de la réflexologie</strong>",
-          "text": "Calme l’esprit et les déséquilibres émotionnels, améliore le sommeil, aide à venir à bout d'une addiction, soulage les douleurs articulaires et musculaires, soulage les maux de tête et les migraines, régule les problèmes hormonaux, active l'élimination des déchets et toxines, améliore les problèmes de peaux et bien d'autres..."
+          "title": "<strong>Les autres bienfaits</strong>",
+          "text": "La réflexologie et l’énergétique chinoise offrent un champ d’action bien plus large qu’on ne l’imagine : elles peuvent aussi accompagner, par exemple, certaines douleurs — notamment musculaires ou articulaires —, les migraines ou encore les déséquilibres émotionnels… toujours avec l’idée de rétablir la circulation et l’harmonie."
         }
-      ]
+      ],
+      "text": "Chaque séance est une invitation à relâcher la pression, à rééquilibrer vos énergies et à retrouver un mieux-être durable, pas à pas.   "
     },
     "pillars": {
-      "title": "Ma solution s'articule autour de deux piliers",
+      "title": "Mon approche s'articule autour de deux piliers",
       "list": ["Séances en cabinet", "Séances extérieures"],
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "text": [
+        "Mon approche s’appuie sur deux mouvements qui se complètent, Yin/Yang.",
+        "En cabinet, c’est le temps du soin : réflexologie, acupression et massage Tuina offrent un moment de relâchement, et de recentrage.",
+        "À l’extérieur, c’est le temps de la pratique : le Qi Gong et la méditation invitent à respirer, à bouger autrement et à cultiver son énergie en lien avec la nature.",
+        "L’un nourrit l’autre : recevoir quand le corps en a besoin, pratiquer pour entretenir l’équilibre au quotidien. Ensemble, participer à l’alignement corps/esprit."
+      ]
     },
     "sessionProgress": {
       "title": "Déroulé d'une séance",
@@ -203,18 +222,24 @@
     },
     "outsideSessionPage": {
       "title": "Séances extérieures - Qi gong",
-      "subtitle": "Reconnecter souffle, corps et esprit: tout l'art du Qi gong.",
+      "subtitle": "« Le Qi Gong, l’art de faire circuler l’énergie pour renforcer le corps et aligner l’esprit. »",
       "buttonLabel": "Réserver une séance",
       "practice": {
         "title": "Une pratique de santé douce et puissante",
         "text": [
-          "Le Qi Gong est un art énergétique ancestral, pilier de la médecine chinoise.",
-          "À travers des mouvements lents,des combinaisons de mouvements, des postures statiques, la respiration et la concentration, il permet de <strong>faire circuler l’énergie</strong>, de <strong>renforcer le corps</strong>, et de <strong>calmer l’esprit.</strong>"
+          "Le Qi Gong est un art énergétique ancestral, pilier de la médecine chinoise. Par des mouvements lents, des enchaînements rapides, des postures statiques, la respiration et l’intention, il favorise la circulation de l’énergie, renforce le corps et apaise l’esprit.",
+          "Pratiqué régulièrement, il entretient la vitalité, aide à mieux traverser les saisons et cultive la sérénité intérieure. La séance se termine souvent par un temps de méditation, qui prolonge les bienfaits et permet d’entrer dans une vraie présence à soi."
         ]
       },
       "session": {
         "title": "Déroulement d’un accompagnement",
-        "text": "Je propose des séances hebdomadaires (hors vacances scolaires), en petit groupe ou en individuel. Chaque séance dure environ <strong>1 heure</strong>, et suit une progression douce et adaptée à chacun."
+        "text": [
+          "« Du mouvement à la méditation, chaque séance vous guide pas à pas vers plus de vitalité et de sérénité. »",
+          "Une séance de Qi Gong suit une progression douce et adaptée à chacun.",
+          "Elle commence par un temps pour relâcher les tensions accumulées, suivi d’un auto-massage qui permet de reprendre contact avec son corps. Vient ensuite la mobilisation des principales articulations, afin de libérer les blocages et préparer une circulation plus fluide de l’énergie.",
+          "Puis, selon le moment, nous pratiquons des mouvements liés à la saison, une série plus complète ou encore les marches, qui apportent le mouvement dans l’immobilité. La séance se termine toujours par un temps méditatif, pour recentrer l’énergie dans le corps et retrouver l’alignement entre le corps et l’esprit.",
+          "Je propose ces séances une fois par semaine (hors vacances scolaires), en petits groupes ou en individuel. Chaque rencontre dure minimum une heure, dans une progression respectueuse du rythme de chacun."
+        ]
       },
       "why": {
         "title": "Pourquoi pratiquer le Qi Gong régulièrement ?",
@@ -257,27 +282,19 @@
         "tuina": {
           "title": "Pourquoi choisir un massage Tuina ?",
           "text": [
-            "Le Tuina est une approche corporelle globale, dynamique et profonde.",
-            "👉 On le choisit quand on ressent le besoin de dénouer, d’activer, de libérer physiquement.",
-            "On vient pour :",
-            "Le Tuina agit à la fois en profondeur sur les tissus et en surface sur les méridiens et points d’acupuncture."
-          ],
-          "list": [
-            "Des tensions musculaires ou articulaires (nuque, dos, épaules, jambes…)",
-            "Une sensation de blocage énergétique",
-            "De la fatigue accumulée ou un sentiment de stagnation",
-            "Un besoin de mobiliser le corps (raideurs, circulation lente…)",
-            "Des troubles digestifs, respiratoires ou liés au stress",
-            "Prévenir ou accompagner les douleurs chroniques"
+            "Le massage Tuina est une approche corporelle globale, à la fois dynamique et profonde.",
+            "Je le pratique toujours dans la continuité du corps entier, car c’est l’unité qui permet de retrouver l’équilibre. Selon vos besoins, je vais travailler plus en profondeur sur certains canaux (méridiens)ou zones en lien avec votre problématique, tout en gardant cette vision d’ensemble.",
+            "Ce massage aide à délier les tensions musculaires ou articulaires, à alléger la fatigue accumulée, à apaiser le stress ou encore à relancer une circulation trop lente. Il peut aussi soutenir l’équilibre digestif et respiratoire.",
+            "Le massage Tuina agit en profondeur sur les tissus et stimule en surface les canaux (méridiens) et points d’énergie : il libère ce qui bloque et redonne fluidité au corps et à l’esprit."
           ]
         },
         "reflexo": {
           "title": "Pourquoi choisir une séance de réflexologie ?",
           "text": [
-            "La réflexologie est une approche indirecte, douce mais très puissante.",
-            "👉 On la choisit quand on veut rééquilibrer le corps par des points précis, sans forcément toucher la zone douloureuse.",
-            "On vient pour :",
-            "Elle agit par résonance, à partir des pieds, des mains, ou du visage, et peut être idéale en complément d’un traitement médical, sans contre-indication directe."
+            "«En stimulant des zones et des points précis, la réflexologie apaise, relance et réharmonise.»",
+            "La réflexologie est une approche indirecte, douce mais très puissante. Elle agit en stimulant des zones et des points précis, qui permettent de rééquilibrer le corps sans qu’il soit nécessaire de toucher directement la zone douloureuse.",
+            "Au fil de la séance, cette stimulation relance les grandes fonctions (digestion, sommeil, élimination…), apaise le système nerveux et accompagne les périodes de transition de la vie. Elle offre aussi un profond relâchement, qui libère le stress et redonne au corps la possibilité de récupérer.",
+            "La réflexologie agit par résonance à partir des pieds, des mains ou du visage, et s’intègre parfaitement en complément d’un suivi médical, sans contre-indication."
           ],
           "list": [
             "Relancer les fonctions des organes (digestion, sommeil, élimination…)",
@@ -448,24 +465,27 @@
       },
       "fall": {
         "title": "L'automne",
-        "subtitle": "Une saison toute en douceur et en repli sur soi",
-        "specialties": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "subtitle": "La saison du recentrage : trier, lâcher et garder l’essentiel pour préparer l’hiver.",
+        "specialties": [
+          "À l’automne, l’air se refroidit et demande, à votre corps, un temps d’adaptation, votre respiration se fragilise, la nostalgie se fait plus présente ? ",
+          "L’automne, associé à l’élément Métal, est le temps des récoltes et des moissons : après l’expansion de l’été, la nature se recentre et commence à se dépouiller. C’est une saison de retour vers l’essentiel, où l’on apprend à trier, à garder ce qui nous nourrit et à laisser derrière soi ce qui encombre. Relié au Poumon et au Gros Intestin, mais aussi à l’émotion de la tristesse, l’automne nous invite à respirer plus consciemment, à ralentir et à préparer nos forces pour l’hiver."
+        ],
         "advices": [
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Respirer et protéger son souffle",
+            "text": "Prendre le temps de respirer profondément, marcher au grand air et se couvrir dès que l’air se rafraîchit (surtout le cou et les lombaires). Ces petits gestes soutiennent le Poumon, organe clé de la saison."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Ralentir le rythme",
+            "text": "Accepter de lever le pied, alléger son agenda, et s’accorder des moments de repos. L’automne invite à se recentrer et à garder son énergie pour l’hiver."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Alléger et nourrir",
+            "text": "Aider le Gros Intestin à « faire le tri » grâce à une alimentation simple et de saison : légumes cuits, céréales complètes, saveurs légèrement piquantes (radis, poireau, gingembre doux)."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Entretenir une énergie douce",
+            "text": "Bouger sans excès, pratiquer une activité régulière mais modérée (Qi Gong, marche) pour accompagner la rentrée du Yang et maintenir une vitalité équilibrée."
           }
         ],
         "recipes": [

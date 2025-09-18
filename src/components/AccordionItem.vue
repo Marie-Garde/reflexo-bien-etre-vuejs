@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import Add_ring from "@/assets/icons/Add_ring.vue";
 import Remove_ring from "@/assets/icons/Remove_ring.vue";
 
 defineProps({
   title: String,
+  isOpen: Boolean,
 });
 
-const isOpen = ref(false);
-const toggle = () => {
-  isOpen.value = !isOpen.value;
-};
+const emit = defineEmits(["toggle"]);
 </script>
 
 <template>
   <div class="accordion-item">
-    <button class="accordion-header" @click="toggle">
+    <button class="accordion-header" @click="emit('toggle')">
       <div v-html="title"></div>
       <Add_ring class="icon" v-if="!isOpen" />
       <Remove_ring class="icon" v-else />
@@ -50,10 +47,10 @@ const toggle = () => {
 }
 
 .accordion-body {
-  padding: 0.5rem 0 0;
+  padding: 20px 0;
   color: #444;
   text-align: start;
-  padding-right: 10px;
+  width: 90%;
 }
 
 .accordion-enter-active,

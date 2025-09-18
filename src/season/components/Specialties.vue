@@ -6,16 +6,17 @@ const props = defineProps({
   background: { type: String, required: true },
 });
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
 const title = t("seasons.season.subtitles.specialties");
-const text = t(`seasons.season.${props.season}.specialties`);
+const text = tm(`seasons.season.${props.season}.specialties`);
 </script>
 
 <template>
   <div :class="['specialties', `${background}`]">
     <h2>{{ title }}</h2>
-    <p class="red">{{ text }}</p>
+    <p class="specialties-first-line">{{ text[0] }}</p>
+    <p>{{ text[1] }}</p>
   </div>
 </template>
 
@@ -35,6 +36,9 @@ const text = t(`seasons.season.${props.season}.specialties`);
   p {
     max-width: 1280px;
     width: 90%;
+  }
+  &-first-line {
+    margin-bottom: 20px;
   }
 }
 

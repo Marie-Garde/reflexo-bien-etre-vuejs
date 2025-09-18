@@ -24,7 +24,7 @@ const practiceLabel = tm("practices.outsideSessionPage.practice.text");
 <style scoped lang="scss">
 .infos-practices {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   display: flex;
 
   .text {

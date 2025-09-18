@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AccordionItem from "@/components/AccordionItem.vue";
 import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 
 const { t, tm } = useI18n();
 
@@ -9,21 +10,44 @@ const benefitsList = tm("practices.benefits.list");
 defineProps<{
   benefitsImageSource: string;
 }>();
+
+const openAccordionIndex = ref<string | null>(null);
+
+const toggleAccordion = (index: string) => {
+  const currentlyOpen = openAccordionIndex.value;
+
+  if (currentlyOpen === index) {
+    openAccordionIndex.value = null;
+  } else if (currentlyOpen !== null) {
+    openAccordionIndex.value = null;
+    setTimeout(() => {
+      openAccordionIndex.value = index;
+    }, 300);
+  } else {
+    openAccordionIndex.value = index;
+  }
+};
 </script>
 
 <template>
   <div class="benefits">
     <h2>{{ t("practices.benefits.title") }}</h2>
+    <p>{{ t("practices.benefits.subtitle") }}</p>
     <div class="benefits-content">
       <img :src="benefitsImageSource" class="benefits-image" />
       <ul class="benefits-list">
-        <li v-for="benefit in benefitsList">
-          <AccordionItem :title="benefit.title">
+        <li v-for="(benefit, index) in benefitsList" :key="index">
+          <AccordionItem
+            :title="benefit.title"
+            :is-open="openAccordionIndex === index"
+            @toggle="toggleAccordion(index)"
+          >
             <div v-html="benefit.text"></div>
           </AccordionItem>
         </li>
       </ul>
     </div>
+    <p>{{ t("practices.benefits.text") }}</p>
   </div>
 </template>
 
@@ -37,6 +61,11 @@ defineProps<{
   margin: 0 auto;
   text-align: center;
   width: 100%;
+
+  p {
+    max-width: 1280px;
+    margin: 30px auto;
+  }
   &-content {
     display: flex;
     justify-content: space-between;

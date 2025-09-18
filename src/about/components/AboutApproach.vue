@@ -15,7 +15,9 @@ const { t, tm } = useI18n();
     <h2 class="about__section-title--left">{{ t("about.approach.title") }}</h2>
     <div class="about__approach-top">
       <div class="about__approach-text">
-        <p>{{ t("about.approach.text") }}</p>
+        <p>{{ tm("about.approach.text")[0] }}</p>
+        <p class="bold">{{ tm("about.approach.text")[1] }}</p>
+        <p>{{ tm("about.approach.text")[2] }}</p>
       </div>
       <div class="about__approach-image-wrapper">
         <img
@@ -75,6 +77,14 @@ const { t, tm } = useI18n();
 
     &-text {
       flex-basis: 50%;
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
     }
 
     &-image-wrapper {
