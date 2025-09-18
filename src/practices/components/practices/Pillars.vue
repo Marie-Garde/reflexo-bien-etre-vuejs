@@ -12,7 +12,10 @@ defineProps<{
   <div class="pillars">
     <div class="pillars-text">
       <h2>{{ t("practices.pillars.title") }}</h2>
-      <p class="red">{{ t("practices.pillars.text") }}</p>
+      <p>{{ tm("practices.pillars.text")[0] }}</p>
+      <p>{{ tm("practices.pillars.text")[1] }}</p>
+      <p>{{ tm("practices.pillars.text")[2] }}</p>
+      <p>{{ tm("practices.pillars.text")[3] }}</p>
     </div>
 
     <ul class="pillars-list">
@@ -37,6 +40,9 @@ defineProps<{
     text-align: center;
     h2 {
       margin-bottom: 40px;
+    }
+    p {
+      padding-bottom: 10px;
     }
   }
 

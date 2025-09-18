@@ -45,7 +45,8 @@ const { t, tm } = useI18n();
   }
 
   p {
-    max-width: 50%;
+    max-width: 60%;
+    padding-bottom: 20px;
   }
 }
 

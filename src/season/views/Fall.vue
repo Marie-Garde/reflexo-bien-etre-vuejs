@@ -12,7 +12,7 @@ const { t } = useI18n();
     <div class="header-container">
       <div class="header-overlay">
         <h1 class="title">{{ t("seasons.season.fall.title") }}</h1>
-        <p class="red">{{ t("seasons.season.fall.subtitle") }}</p>
+        <p>{{ t("seasons.season.fall.subtitle") }}</p>
       </div>
     </div>
   </div>
@@ -52,17 +52,10 @@ const { t } = useI18n();
     max-width: 600px;
     padding: 2rem;
     margin-bottom: 5rem;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     text-align: left;
   }
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @media (max-width: 768px) {

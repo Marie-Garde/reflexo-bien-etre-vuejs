@@ -8,7 +8,7 @@ defineProps<{
   image: string;
 }>();
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const router = useRouter();
 
 function goToAppointment() {
@@ -21,7 +21,11 @@ function goToAppointment() {
     <img :src="image" alt="" />
     <div class="text">
       <h2>{{ t("practices.outsideSessionPage.session.title") }}</h2>
-      <div v-html="t('practices.outsideSessionPage.session.text')"></div>
+      <p>{{ tm("practices.outsideSessionPage.session.text")[0] }}</p>
+      <p>{{ tm("practices.outsideSessionPage.session.text")[1] }}</p>
+      <p>{{ tm("practices.outsideSessionPage.session.text")[2] }}</p>
+      <p>{{ tm("practices.outsideSessionPage.session.text")[3] }}</p>
+      <p>{{ tm("practices.outsideSessionPage.session.text")[4] }}</p>
       <Button
         class="button"
         :label="t('practices.outsideSessionPage.buttonLabel')"
@@ -35,7 +39,7 @@ function goToAppointment() {
 <style scoped lang="scss">
 .infos-session {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   display: flex;
 
   .text {
@@ -47,6 +51,10 @@ function goToAppointment() {
 
     h2 {
       margin-bottom: 40px;
+    }
+
+    p {
+      padding-bottom: 10px;
     }
 
     .button {

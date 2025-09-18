@@ -10,7 +10,6 @@ const sections = [
     key: "tuina",
     title: t("practices.insideSessionPage.why.tuina.title"),
     text: tm("practices.insideSessionPage.why.tuina.text"),
-    list: tm("practices.insideSessionPage.why.tuina.list"),
     image: tuinaBackImg,
     alt: "Massage Tuina du dos",
   },
@@ -18,7 +17,6 @@ const sections = [
     key: "reflexo",
     title: t("practices.insideSessionPage.why.reflexo.title"),
     text: tm("practices.insideSessionPage.why.reflexo.text"),
-    list: tm("practices.insideSessionPage.why.reflexo.list"),
     image: reflexoHandImg,
     alt: "Réflexologie de la main",
   },
@@ -32,11 +30,7 @@ const sections = [
       <h2 class="why-card__title-static">{{ section.title }}</h2>
       <div class="why-card__text-hover">
         <h2 class="why-card__title">{{ section.title }}</h2>
-        <p v-for="(p, i) in section.text.slice(0, 3)" :key="i">{{ p }}</p>
-        <ul class="why-card__list">
-          <li v-for="(item, i) in section.list" :key="i">{{ item }}</li>
-        </ul>
-        <p>{{ section.text[3] }}</p>
+        <p v-for="(p, i) in section.text" :key="i">{{ p }}</p>
       </div>
     </div>
   </section>
@@ -87,6 +81,10 @@ const sections = [
       pointer-events: none;
       overflow-y: auto;
       z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
       padding: 60px 80px;
     }
 

@@ -15,9 +15,10 @@ const recipes = tm(`seasons.season.${props.season}.recipes`);
 <template>
   <div :class="['container', `${background}`]">
     <h2>{{ title }}</h2>
-    <ul>
+    <p>Cette partie est actuellement en construction ! Vous la retrouverez bientôt !</p>
+    <!-- <ul>
       <li v-for="(recipe, index) in recipes" :key="index">{{ recipe }}</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
