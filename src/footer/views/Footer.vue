@@ -115,7 +115,7 @@ const warningBackgroundColorClass = computed(() => {
       color: $white-soft;
     }
     &.yellow {
-      background-color: $orange-light;
+      background-color: $orange-white;
       color: $brown-dark;
     }
     &.brown {

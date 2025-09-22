@@ -55,10 +55,18 @@ function goToHome() {
 
     <div class="desktop-nav__actions">
       <div class="desktop-nav__socials">
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/reflex_o_bien_etre_correze"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InstagramIcon class="icon" />
         </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.facebook.com/people/Reflex%C3%B4-Bien-%C3%AAtre-Corr%C3%A8ze/61575998591423/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FacebookIcon class="icon" />
         </a>
       </div>
@@ -85,7 +93,7 @@ function goToHome() {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   &__logo {
-    width: 120px;
+    width: 200px;
     background-color: transparent;
     border: none;
     cursor: pointer;
