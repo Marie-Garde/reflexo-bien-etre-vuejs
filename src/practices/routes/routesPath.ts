@@ -1,5 +1,5 @@
 export const practicesRoutesPath = {
-  HOME: "/mes-pratiques",
-  OFFICE: "/mes-pratiques/seances-au-cabinet",
-  OUTSIDE: "/mes-pratiques/seances-extérieures",
+  HOME: "/mes-accompagnements",
+  OFFICE: "/mes-accompagnements/seances-au-cabinet",
+  OUTSIDE: "/mes-accompagnements/seances-extérieures",
 };

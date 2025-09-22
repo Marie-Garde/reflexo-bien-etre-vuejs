@@ -15,8 +15,9 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 <template>
   <div :class="['specialties', `${background}`]">
     <h2>{{ title }}</h2>
-    <p class="specialties-first-line">{{ text[0] }}</p>
-    <p>{{ text[1] }}</p>
+    <p v-for="(paragraph, index) in text" :key="index">
+      <div v-html="paragraph"></div>
+    </p>
   </div>
 </template>
 
@@ -35,7 +36,7 @@ const text = tm(`seasons.season.${props.season}.specialties`);
   }
   p {
     max-width: 1280px;
-    width: 90%;
+    margin-bottom: 20px;
   }
   &-first-line {
     margin-bottom: 20px;
@@ -43,7 +44,7 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 }
 
 .yellow {
-  background-color: $orange-light;
+  background-color: $orange-white;
 }
 
 .orange {

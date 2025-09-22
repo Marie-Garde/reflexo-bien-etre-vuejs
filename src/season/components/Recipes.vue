@@ -48,7 +48,7 @@ const recipes = tm(`seasons.season.${props.season}.recipes`);
 }
 
 .yellow {
-  background-color: $orange-light;
+  background-color: $orange-white;
   color: $black;
 }
 

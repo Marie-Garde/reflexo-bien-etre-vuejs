@@ -5,6 +5,7 @@ import SummarySection from "@/practices/components/OfficeSession/SummarySection.
 import SessionDetail from "@/practices/components/OfficeSession/SessionDetail.vue";
 import RhythmSection from "@/practices/components/OfficeSession/RhythmSection.vue";
 import AfterSection from "@/practices/components/OfficeSession/AfterSection.vue";
+import CheckUpSection from "../components/OfficeSession/CheckUpSection.vue";
 
 const { t } = useI18n();
 
@@ -27,7 +28,7 @@ const sessionTypes = ["reflexo", "tuina"];
       <SessionDetail :session-type="sessionType" />
       <RhythmSection :session-type="sessionType" />
     </div>
-
+    <CheckUpSection />
     <AfterSection />
   </div>
 </template>

@@ -62,7 +62,7 @@ const router = createRouter({
       path: practicesRoutesPath.HOME,
       name: practicesRoutesName.HOME,
       component: Practices,
-      meta: { title: "Réflexô Bien-être - Mes pratiques" },
+      meta: { title: "Réflexô Bien-être - Mes accompagnements" },
     },
     {
       path: practicesRoutesPath.OFFICE,
@@ -86,7 +86,7 @@ const router = createRouter({
       path: seasonsRoutesPath.HOME,
       name: seasonsRoutesName.HOME,
       component: Seasons,
-      meta: { title: "Réflexô Bien-être - Ce qui bouge" },
+      meta: { title: "Réflexô Bien-être - Saisons et conseils" },
     },
     {
       path: seasonsRoutesPath.FALL,

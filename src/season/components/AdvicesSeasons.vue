@@ -62,21 +62,28 @@ const toggleAccordion = (index: number) => {
 @use "@/assets/variables.scss" as *;
 
 .advices-seasons {
+  height: 100%;
+  width: 100%;
+
   &__container {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 2rem;
     width: 100%;
+    height: 100%;
   }
 
   &__image {
     width: 50%;
+    height: 100%;
     object-fit: cover;
+    align-self: stretch;
   }
 
   &__content {
     width: 50%;
+    margin-right: 60px;
   }
 
   &__title {

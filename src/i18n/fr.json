@@ -3,8 +3,8 @@
     "items": {
       "home": "Accueil",
       "about": "Présentation",
-      "seasons": "Ce qui bouge",
-      "practices": "Mes activités",
+      "seasons": "Saisons et conseils",
+      "practices": "Mes accompagnements",
       "prices": "Tarifs",
       "contact": "Contact",
       "takeAppointment": "Prendre rendez-vous"
@@ -337,27 +337,21 @@
           "first": {
             "title": "Première séance",
             "text": [
-              "Chaque accompagnement débute par un bilan énergétique complet, un temps d’écoute et d’observation approfondi (30 à 45 min). Nous échangeons sur votre parcours, vos habitudes de vie, votre sommeil, votre digestion, vos émotions… Tout ce qui permet de mieux cerner votre terrain.",
-              "Je complète cette analyse par l’observation du teint, de la langue, de la voix, et la <strong>prise des pouls chinois</strong> pour détecter les déséquilibres énergétiques, par la : <strong>palpation du corps</strong> pour repérer les zones de tension ou de froid, et <strong>exploration des zones réflexes</strong> des pieds ou des mains pour confirmer les signaux perçus.",
-              "Puis vient le soin.",
-              "En fin de séance, nous définissons ensemble un plan d’action personnalisé : séances de suivi, conseils en alimentation, hygiène de vie, Qi Gong ou phytothérapie.",
-              "Un <strong>compte rendu clair</strong> vous est envoyé par mail, pour vous accompagner en toute autonomie."
+              "La première séance de réflexologie dure environ 1h15.",
+              "Chaque accompagnement commence par un temps d’écoute et d’observation approfondi.",
+              "Nous échangeons sur votre parcours, vos habitudes de vie, votre sommeil, votre digestion, vos émotions… tout ce qui permet de mieux comprendre votre terrain. J’affine ensuite cette analyse grâce à l’observation de la langue, du teint, de la voix, à la prise des pouls chinois et à l’exploration des zones réflexes des pieds ou des mains.",
+              "Puis vient le soin : un travail précis sur les zones réflexes qui permet de relancer l’énergie et d’apporter un profond relâchement. Au fil de la séance, le corps s’apaise, le mental se calme et les tensions se dénouent.",
+              "En fin de séance, nous faisons ensemble le point sur vos ressentis et je vous propose des pistes personnalisées : suivi, conseils en alimentation, hygiène de vie, exercices de Qi Gong ou soutien par les plantes.",
+              "Un compte rendu clair vous est envoyé par mail, pour vous accompagner en toute autonomie."
             ],
             "hovering": "La première séance : un temps pour comprendre et agir"
           },
           "second": {
             "title": "Séance de suivi",
             "text": [
-              "Pour que les effets du soin ne s’arrêtent pas à la première séance, je propose un forfait de 3 séances de suivi, réparties sur un mois et demi.",
-              "Un rythme volontairement progressif, pensé pour accompagner le corps dans son propre processus d’équilibre et d’auto-régulation.",
-              "Ce forfait comprend :"
+              "Les séances de suivi durent environ 45 minutes temps effectif de soin. Nous reprenons le protocole mis en place, que j’ajuste selon vos retours et vos besoins du moment. En fin de séance, nous faisons le point ensemble et je vous propose des conseils personnalisés pour prolonger les effets. Un compte rendu clair vous est envoyé par mail, afin de vous accompagner en toute autonomie."
             ],
-            "list": [
-              "• 1ère séance de suivi, 1 semaine après le bilan,",
-              "• 2e séance, 15 jours plus tard,",
-              "• 3e séance, encore 15 jours après."
-            ],
-            "hovering": "Donner du temps au corps… pour qu’il retrouve sa juste énergie."
+            "hovering": "La réflexologie, une approche douce et précise qui rééquilibre le corps et apaise l’esprit."
           },
           "rhythm": {
             "title": "Pourquoi ce rythme ?",
@@ -379,12 +373,12 @@
           "first": {
             "title": "Première séance",
             "text": [
-              "Avant de commencer, nous échangeons brièvement sur vos besoins du moment : douleurs, tensions, fatigue, stress… Cela me permet d’adapter le massage à votre état énergétique du jour et aux zones prioritaires (10 à 15mins).",
-              "Installation et diagnostic corporel (10 à 15 min) : Vous vous allongez confortablement (habillé·e ou en sous-vêtements selon les zones à travailler). Je prends quelques instants pour observer votre posture, palper les tensions, ressentir la température de certaines zones, et affiner mon ressenti énergétique.",
-              "Le massage Tuina (30 à 45 min): J’utilise des techniques spécifiques ainsi que certains outils. Chaque geste est précis, rythmé, et ciblé sur les méridiens ou les points d’acupuncture. Selon les besoins, le massage peut être tonifiant ou apaisant, profond ou plus doux.",
-              "Retour au calme et conseils personnalisés (5 min): En fin de séance, un temps de repos vous permet de revenir à vous en douceur.",
-              "Nous faisons ensemble le point sur vos ressentis. Je peux vous donner des conseils de mouvements, d’alimentation ou d’hygiène de vie pour prolonger les effets du soin.",
-              "Un <strong>compte rendu clair</strong> vous est envoyé par mail, pour vous accompagner en toute autonomie."
+              "Une séance de Tuina dure environ 1h30 de massage effectif. Avec le temps d’échange et de retour au calme, il faut compter deux heures : un vrai moment pour soi, sans précipitation.",
+              "Après un court échange pour cerner vos besoins, vous vous installez confortablement. J’observe votre posture et vos tensions, puis je travaille le corps dans son ensemble, en insistant sur les zones prioritaires.",
+              "Puis vient le cœur de la séance : le massage Tuina.",
+              "Grâce à des gestes précis, rythmés et adaptés, j’agis à la fois en profondeur sur les tissus et en surface sur les canaux (méridiens) et points d’acupuncture. Selon vos besoins, le massage peut être tonifiant ou apaisant, profond ou plus doux.",
+              "La séance se termine par un retour au calme, suivi d’un temps d’échange sur vos ressentis. Je peux vous proposer quelques conseils simples – mouvements de qi gong ou auto-massage, alimentation, hygiène de vie – pour prolonger les effets du soin.",
+              "Enfin, un compte rendu clair vous est envoyé par mail, afin de vous accompagner en toute autonomie."
             ],
             "hovering": "Une séance Tuina : relancer l’énergie, libérer les tensions."
           },
@@ -395,7 +389,7 @@
               "Le corps a sa propre temporalité.",
               "C’est pourquoi je vous propose un suivi personnalisé en deux séances, espacées de 15 jours, pour renforcer les effets du massage Tuina et accompagner le corps dans son processus d’harmonisation."
             ],
-            "hovering": "???"
+            "hovering": "Le Tuina, un soin profond et global qui libère les tensions et redonne fluidité au corps et à l’esprit. "
           },
           "rhythm": {
             "title": "Pourquoi ce rythme ?",
@@ -408,11 +402,15 @@
               "✔ De laisser au corps le temps d’intégrer,",
               "✔ D’observer les évolutions et réajuster le soin,",
               "✔ De travailler en douceur, sans surcharge,",
-              "✔ D’ancrer les résultats (meilleure mobilité, apaisement, regain d’énergie."
+              "✔ D’ancrer les résultats (meilleure mobilité, apaisement, regain d’énergie)."
             ],
             "CTA": "Réserver une séance de massage Tuina"
           }
         }
+      },
+      "checkup": {
+        "title": "Bilan de la séance",
+        "text": "Le bilan personnalisé s’appuie sur les 5 éléments de la médecine chinoise. À travers des questions qui explorent aussi bien le corps que les émotions, j’apprends à mieux vous connaître dans votre globalité. J’observe ensuite certains indicateurs comme le teint, la langue ou les pouls chinois, qui me permettent de comprendre comment circule votre énergie et d’identifier les zones qui demandent à être rééquilibrées."
       },
       "after": {
         "title": "Après la séance : quelques recommandations essentielles",
@@ -443,15 +441,21 @@
     }
   },
   "seasons": {
-    "title": "Saisonnalité",
+    "title": "Saisons et conseils",
     "importance": {
       "title": "Pourquoi est-ce si important de différencier les saisons ?",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in "
+      "text": [
+        "En médecine chinoise, chaque saison influence directement notre énergie vitale. Les variations de lumière, de température et de rythme extérieur se reflètent à l’intérieur du corps. L’hiver invite au repos, l’été stimule le mouvement, l’automne recentre… Lorsque nous respectons ces cycles naturels, nous soutenons nos organes, nos émotions et notre vitalité.",
+        "À l’inverse, aller « à contre-saison » fatigue l’organisme. Manger trop froid en hiver, ignorer le besoin de repos de l’automne, ou manquer de mouvement au printemps… autant de décalages qui perturbent la circulation de l’énergie. Petit à petit, ces déséquilibres fragilisent l’immunité, dérèglent la digestif ou le sommeil, et épuisent notre vitalité."
+      ]
     },
     "list": {
       "title": "Quelles sont les saisons à prendre en compte ?",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ",
-      "summer": "Été",
+      "text": [
+        "La médecine chinoise distingue cinq saisons et non quatre.",
+        "Aux classiques printemps, été, automne et hiver, s’ajoute la « cinquième saison » : une période de transition, qui revient à chaque changement de saison et correspond à l’élément Terre.",
+        "Chacune de ces étapes est reliée à des organes, des émotions et des conseils spécifiques, pour mieux vivre en harmonie avec le rythme de la nature."
+      ],
       "Fall": "Automne",
       "Winter": "Hiver",
       "Spring": "Printemps",
@@ -552,24 +556,28 @@
       },
       "winter": {
         "title": "L'hiver",
-        "subtitle": "Une saison toute en douceur et en repli sur soi",
-        "specialties": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "subtitle": "Ralentir pour mieux repartir.",
+        "specialties": [
+          "L’hiver, associé à l’élément Eau, est la saison du <strong>repos</strong> et de la <strong>régénération</strong>. Comme la nature qui semble immobile en surface mais travaille en profondeur, il nous invite à ralentir pour préserver nos forces et préparer le printemps à venir.",
+          "Relié au <strong>Rein</strong> et à la <strong>Vessie</strong>, l’élément Eau touche à notre énergie vitale, à nos os et à notre structure profonde. Son émotion est la <strong>peur</strong> : en déséquilibre, elle peut se transformer en <strong>témérité</strong>, ou glisser vers le <strong>désespoir</strong> et la peur paralysante.",
+          "Mais en équilibre, elle devient <strong>volonté</strong> : une <strong>force de vie</strong> et de <strong>transmission</strong>, la capacité d’avancer et de mener ses projets à terme."
+        ],
         "advices": [
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Ralentir et cultiver le calme",
+            "text": "L’hiver nous invite à ralentir. Comme les nuits s’allongent, dormir davantage, s’accorder des moments de chaleur et de convivialité, pratiquer un Qi Gong du Rein ou méditer sont autant de façons de régénérer nos forces. Ce n’est pas de l’inaction, mais une véritable manière de nourrir notre énergie."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Préserver ses énergies",
+            "text": "Éviter de se disperser ou de “tirer sur la corde”. L’hiver n’est pas la saison des excès : travail, sport ou agitation usent inutilement nos réserves. Garder du discernement, c’est renforcer sa vitalité."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Chouchouter le Rein",
+            "text": "Le froid attaque facilement le Rein. Un secret bien connu : si vous gardez la tête couverte, vos pieds resteront au chaud ! Ajoutez à cela un bas du dos protégé, des boissons tièdes et moins de cru ou glacé : de petits gestes simples qui préservent une énergie vitale précieuse."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Cultiver la saveur salée avec mesure",
+            "text": "L’hiver est la saison de la saveur salée : c’est le moment idéal pour en profiter. Champignons noirs, algues, crustacés ou autres produits venus de l’eau nourrissent le Rein et soutiennent l’équilibre des liquides. Comme toujours, l’excès fatigue au lieu de renforcer : le secret, c’est la mesure."
           }
         ],
         "recipes": [
@@ -580,24 +588,32 @@
       },
       "interSeason": {
         "title": "L'inter saison",
-        "subtitle": "Une saison toute en douceur et en repli sur soi",
-        "specialties": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "subtitle": "Comme la Terre, faites une pause pour intégrer et vous ressourcer.",
+        "specialties": {
+          "title": "La spécificité de l'inter saison",
+          "text": [
+            "Entre chaque saison, un temps de pause existe, comme si la Terre reprenait son souffle. C’est une respiration entre deux mouvements, où l’on revient à soi, où l’on assimile ce qui a été vécu avant de pouvoir repartir.",
+            "La Terre est notre <strong>centre vital</strong>. Reliée à la Rate et à l’Estomac, elle transforme et assimile les aliments pour nourrir notre énergie.",
+            "Elle est aussi notre <strong>soutien</strong> : l’ancrage qu’elle nous offre nous permet de tenir debout et d’avancer.",
+            "Dans la symbolique de la Médecine Traditionnelle Chinoise, l’émotion associée à la Terre est la réflexion. Quand elle est harmonieuse, elle nourrit la clarté d’esprit ; mais si elle est excessive, elle se transforme en ruminations qui fatiguent le corps autant que le mental. Si nous en prenons soin, la Terre nous apporte stabilité, vitalité et discernement. Si nous la négligeons, apparaissent fatigue, lourdeurs digestives, ruminations mentales ou impression de fragilité."
+          ]
+        },
         "advices": [
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Retrouver la réflexion juste",
+            "text": "C’est sortir du flux d’informations, prendre le temps de réfléchir pour se recentrer sur ses véritables objectifs."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Nourrir la Rate et l’Estomac",
+            "text": "Prendre soin de la Rate et de l’Estomac, c’est manger à heures régulières, privilégier le tiède et des plats simples comme des soupes, des légumes mijotés ou des céréales douces. Les repas trop gras, trop copieux ou trop sucrés fatiguent notre énergie."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "S’ancrer dans le quotidien",
+            "text": "Renouer avec la Terre : marcher pieds nus, dehors ou à la maison, jardiner, s’entourer  de matériaux naturels. Ces gestes nous enracinent et nous aident à nous tenir droits, solides et présents."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Installer le calme intérieur",
+            "text": "C’est parfois aussi… poser son téléphone. Faire silence pour s’offrir un moment à soi, pratiquer le Qi Gong ou méditer : autant de gestes qui ramènent paix et force à nos journées."
           }
         ],
         "recipes": [

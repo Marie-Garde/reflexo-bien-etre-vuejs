@@ -4,7 +4,10 @@ import Specialties from "@/season/components/Specialties.vue";
 import AdvicesSeasons from "@/season/components/AdvicesSeasons.vue";
 import Recipes from "@/season/components/Recipes.vue";
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
+
+const specialtiesTitle = t("seasons.season.interSeason.specialties.title");
+const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
 </script>
 
 <template>
@@ -12,13 +15,19 @@ const { t } = useI18n();
     <div class="header-container">
       <div class="header-overlay">
         <h1 class="title">{{ t("seasons.season.interSeason.title") }}</h1>
-        <p class="red">{{ t("seasons.season.interSeason.subtitle") }}</p>
+        <p>{{ t("seasons.season.interSeason.subtitle") }}</p>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <Specialties season="interSeason" background="yellow" />
+    <div class="specialties">
+      <h2>{{ specialtiesTitle }}</h2>
+      
+      <p v-for="(paragraph, index) in specialtiesText" :key="index">
+        <div v-html="paragraph"></div>
+      </p>
+    </div>
 
     <AdvicesSeasons season="interSeason" />
 
@@ -32,7 +41,7 @@ const { t } = useI18n();
 .header {
   width: 100%;
   height: 70vh;
-  background-image: url("@/assets/illustrations/inter-saison.jpg");
+  background-image: url("@/assets/illustrations/inter-saison.png");
   background-size: cover;
   background-position: center;
   box-shadow: 0px 5px 5px $dark-grey;
@@ -63,6 +72,26 @@ const { t } = useI18n();
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.specialties {
+  text-align: center;
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $orange-white;
+  h2 {
+    padding-bottom: 20px;
+  }
+  p {
+    max-width: 1280px;
+    margin-bottom: 20px;;
+  }
+  &-first-line {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 768px) {

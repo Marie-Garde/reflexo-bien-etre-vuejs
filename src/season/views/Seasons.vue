@@ -4,7 +4,7 @@ import HeaderPage from "@/components/HeaderPage.vue";
 import { useRouter } from "vue-router";
 import { seasonsRoutesName } from "../routes/routesName";
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const router = useRouter();
 
 function goToSeason(route: string) {
@@ -24,7 +24,9 @@ const seasons = [
     <div class="header-overlay">
       <h1 class="title">{{ t("seasons.title") }}</h1>
       <h2 class="subTitle">{{ t("seasons.importance.title") }}</h2>
-      <p class="red">{{ t("seasons.importance.text") }}</p>
+      <p v-for="(paragraph, index) in tm('seasons.importance.text')" :key="index">
+        {{ paragraph }}
+      </p>
     </div>
   </div>
 
@@ -33,7 +35,9 @@ const seasons = [
       <div class="seasons-list">
         <div class="seasons-list-text">
           <h2>{{ t("seasons.list.title") }}</h2>
-          <p>{{ t("seasons.list.text") }}</p>
+          <p v-for="(paragraph, index) in tm('seasons.list.text')" :key="index">
+            {{ paragraph }}
+          </p>
         </div>
 
         <div class="circle">
@@ -88,6 +92,7 @@ const seasons = [
 
   p {
     max-width: 50%;
+    margin-bottom: 20px;
   }
 }
 

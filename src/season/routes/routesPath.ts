@@ -1,8 +1,8 @@
 export const seasonsRoutesPath = {
-  HOME: "/ce-qui-bouge",
-  SUMMER: "/ce-qui-bouge/été",
-  SPRING: "/ce-qui-bouge/printemps",
-  FALL: "/ce-qui-bouge/automne",
-  WINTER: "/ce-qui-bouge/hiver",
-  INTERSEASON: "/ce-qui-bouge/inter-saison",
+  HOME: "/saisons-et-conseils",
+  SUMMER: "/saisons-et-conseils/été",
+  SPRING: "/saisons-et-conseils/printemps",
+  FALL: "/saisons-et-conseils/automne",
+  WINTER: "/saisons-et-conseils/hiver",
+  INTERSEASON: "/saisons-et-conseils/inter-saison",
 };

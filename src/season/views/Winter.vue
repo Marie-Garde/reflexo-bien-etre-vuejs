@@ -12,7 +12,7 @@ const { t } = useI18n();
     <div class="header-container">
       <div class="header-overlay">
         <h1 class="title">{{ t("seasons.season.winter.title") }}</h1>
-        <p class="red">{{ t("seasons.season.winter.subtitle") }}</p>
+        <p>{{ t("seasons.season.winter.subtitle") }}</p>
       </div>
     </div>
   </div>
