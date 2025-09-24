@@ -40,30 +40,37 @@
     },
     "difficulties": {
       "title": "À chaque symptôme sa solution",
+      "subtitle": "Vous ressentez des tensions, de la fatigue ou du stress ? Mes accompagnements peuvent vous aider.",
       "list": [
-        "Douleurs musculaires",
-        "Migraines et céphalées",
-        "Insomnies",
+        "Douleurs musculaires & articulaires",
+        "Maux de tête & migraines",
+        "Insomnie et sommeil agité",
         "Troubles digestifs",
-        "Stress et anxiété",
-        "Santé oscillante"
+        "Stress & anxiété",
+        "Fatigue persistante & manque d'énergie"
       ]
     },
     "solution": {
-      "title": "Une solution complète",
+      "title": "Retrouver équilibre et bien-être",
       "text": [
-        "Je souhaite apporter écoute, douceur et bien-être à toutes personnes qui viennent me voir.",
-        "Dans mon cabinet, vous oubliez les préjuges et ce qui vous freine, vous vous posez, vous vous accordez du temps, juste pour vous. Apprenez à écouter votre corps et votre cœur.",
-        "Mon approche se décline sous 3 formes. Soit une approche privilégiant la réflexologie, soit une approche privilégiant le massage du corps en fonction des  5 éléments et de votre problématique, et enfin, soit en privilégiant  un travail  du corps et de l’esprit par le Qi gong."
+        "Je vous accueille avec douceur et attention, pour un moment entièrement dédié à votre bien-être.",
+        "Dans mon cabinet, vous mettez le quotidien sur pause : respirer, relâcher les tensions, vous reconnecter à vous-même.",
+        "Mon approche se décline en trois pratiques complémentaires :",
+        "Ces pratiques sont adaptées à chacun, en fonction de vos besoins. Découvrez-les plus en détail et choisissez le chemin qui vous correspond."
+      ],
+      "list": [
+        "<strong>Réflexologie :</strong> stimuler les points réflexes pour rétablir l’harmonie du corps.",
+        "<strong>Massage selon les 5 éléments :</strong> rééquilibrer en profondeur et apaiser les tensions.",
+        "<strong>Qi Gong :</strong> associer corps et esprit dans un mouvement doux et ressourçant."
       ],
       "button": "En savoir plus sur mes activités"
     },
     "presentation": {
       "title": "Qui suis-je ?",
       "text": [
-        "J’ai tout d’abord rencontré le QI gong, travail de l’énergie.",
-        "Un QI gong particulier, l'étirement des méridiens, a tout changé. Il a éveillé ma curiosité qui s’est peu à peu changée en passion pour cette brillante machine qu’est notre corps.",
-        "C’est cette passion que je veux partager avec vous, cette possibilité d’être maître de sa santé, à la fois en reconnaissant les petits signes d’un décalage énergétique et en facilitant le retour à une énergie en équilibre."
+        "Je suis Isabelle, praticienne en réflexologie et en médecine traditionnelle chinoise.",
+        "À Nespouls, j’ai créé Réflex ô Bien-être comme un lieu où l’on prend soin de soi simplement : soulager les tensions, retrouver de l’énergie, s’accorder une pause dans un quotidien trop rempli.",
+        "Mon approche complète naturellement la médecine conventionnelle : je prends le temps d’écouter, d’expliquer et d’accompagner, pour que l’énergie circule à nouveau et que le bien-être revienne."
       ],
       "learnAboutMe": "En savoir plus sur mon parcours"
     },

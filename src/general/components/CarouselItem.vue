@@ -33,8 +33,8 @@ const transitionEffect = computed(() => {
     >
       <img :src="urlFor(slide.image).url()" />
       <div class="carousel-item-informations">
-        <h2 class="red">{{ slide.title }}</h2>
-        <p class="red">{{ slide.description }}</p>
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.description }}</p>
         <a v-if="slide.link" :href="`${slide.link}`" class="carousel-item-link">{{
           t("home.carousel.link")
         }}</a>

@@ -18,12 +18,14 @@ const practicesRouteName = practicesRoutesName.HOME;
         <p class="text">{{ tm("home.solution.text")[0] }}</p>
         <p class="text">{{ tm("home.solution.text")[1] }}</p>
         <p class="text">{{ tm("home.solution.text")[2] }}</p>
-        <LinkRouter
-          class="link"
-          :label="learnMoreLabel"
-          is-underline
-          :to="practicesRouteName"
-        />
+        <ul>
+          <li v-for="(paragraph, index) in tm('home.solution.list')" :key="index">
+            <div v-html="paragraph"></div>
+          </li>
+        </ul>
+        <p class="text">{{ tm("home.solution.text")[3] }}</p>
+
+        <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
       </div>
       <img :src="TeaHerbsImage" />
     </div>
@@ -70,6 +72,10 @@ const practicesRouteName = practicesRoutesName.HOME;
     .link {
       margin-top: 30px;
       color: $white;
+    }
+
+    ul {
+      margin-bottom: 20px;
     }
   }
 

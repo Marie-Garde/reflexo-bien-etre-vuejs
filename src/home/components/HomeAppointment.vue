@@ -38,8 +38,16 @@ function goToAppointment() {
 
 .takeAppointment {
   width: 100%;
-  background-color: $orange-light;
+  height: 40vh;
+  background-image: url("@/assets/illustrations/homeCTA.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &-content {
     max-width: 1200px;
@@ -58,7 +66,7 @@ function goToAppointment() {
   .button {
     font-size: 1.5rem;
     padding: 20px 54px;
-    box-shadow: 0px 5px 5px $dark-grey;
+    border: none;
   }
 }
 
