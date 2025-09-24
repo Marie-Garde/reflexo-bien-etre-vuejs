@@ -1,34 +1,27 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import HeaderPage from "@/components/HeaderPage.vue";
 import Button from "@/components/Button.vue";
+import Header from "../components/Header.vue";
+import OfficePrice from "../components/OfficePrice.vue";
+import OutsidePrice from "../components/OutsidePrice.vue";
 
 const { t, tm } = useI18n();
 
-const title = t("price.title");
 const types = tm("price.type");
 
 const labelButton = t("price.takeAppointment");
+
+const reflexoLabel = [{ title: t("price.type[0].title") }];
 </script>
 
 <template>
-  <HeaderPage :label="title" background="green" />
+  <Header />
 
   <div class="content">
     <div class="prices">
-      <ul class="prices-list">
-        <li v-for="type in types">
-          <h2 class="prices-list-title">{{ type.title }}</h2>
-          <p class="prices-list-description red">{{ type.description }}</p>
+      <OfficePrice />
 
-          <div v-for="(item, index) in type.prices" :key="index" class="prices-item">
-            <p class="prices-item-title">
-              {{ item.title }}
-            </p>
-            <p class="prices-item-price red">{{ item.price }}</p>
-          </div>
-        </li>
-      </ul>
+      <OutsidePrice />
     </div>
 
     <aside>
@@ -44,58 +37,20 @@ const labelButton = t("price.takeAppointment");
   display: flex;
   justify-content: space-between;
   gap: 2vw;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 40px auto;
-}
 
-.prices {
-  &-list {
-    list-style: none;
-    padding-left: 0;
-    li {
-      margin-bottom: 40px;
-      .prices-list-title {
-        margin-bottom: 20px;
-      }
-      .prices-list-description {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  &-item {
+  .prices {
     display: flex;
-    align-items: center;
-    position: relative;
-    padding: 10px 0;
-
-    &-title {
-      width: 12%;
-      text-align: left;
-      padding-right: 30px;
-    }
-
-    &-price {
-      width: 50%;
-      padding-left: 30px;
-      text-align: left;
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 10%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: #ccc;
-      transform: translateX(-50%);
-    }
+    flex-direction: column;
   }
 }
 
 aside {
-  width: 50%;
+  width: 15%;
+  display: flex;
+  justify-content: end;
+  height: fit-content;
 }
 
 .take-appointment-button {
