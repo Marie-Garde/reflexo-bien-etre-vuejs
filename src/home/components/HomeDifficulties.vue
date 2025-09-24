@@ -42,13 +42,10 @@ const difficulties = [
 <template>
   <div class="difficulties">
     <h2 class="difficulties-title">{{ t("home.difficulties.title") }}</h2>
+    <p>{{ t("home.difficulties.subtitle") }}</p>
 
     <div class="difficulties-list">
-      <div
-        v-for="(difficulty, index) in difficulties"
-        :key="index"
-        class="difficulties-list-item"
-      >
+      <div v-for="(difficulty, index) in difficulties" :key="index" class="difficulties-list-item">
         <img class="difficulties-list-item-img" :src="difficulty.image" />
         <p>{{ difficulty.text }}</p>
       </div>
@@ -61,12 +58,16 @@ const difficulties = [
   max-width: 1200px;
   margin: 60px auto;
   text-align: center;
+  h2 {
+    margin-bottom: 30px;
+  }
   &-list {
-    margin-top: 40px;
+    margin-top: 60px;
     display: flex;
     justify-content: space-around;
 
     &-item {
+      width: 16%;
       &-img {
         height: 70px;
       }
