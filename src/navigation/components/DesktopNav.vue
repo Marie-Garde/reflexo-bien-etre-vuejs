@@ -47,7 +47,7 @@ function goToHome() {
       <LinkRouter
         v-for="item in navItems"
         :key="item.routeName"
-        :class="['desktop-nav__link', { active: route.name === item.routeName }]"
+        :class="['desktop-nav__link', { active: route.path.startsWith(router.resolve({ name: item.routeName }).path) }]"
         :label="item.label"
         :to="item.routeName"
       />

@@ -625,60 +625,68 @@
     }
   },
   "price": {
-    "title": "Tarifs",
+    "title": "Prestations et tarifs",
     "takeAppointment": "Prendre rendez-vous",
+    "description": [
+      "Des questions sur la formule qui vous convient ?",
+      "Je suis à votre écoute pour vous orienter vers l’accompagnement le plus adapté."
+    ],
     "type": [
       {
-        "title": "Bilan global",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "title": "Réflexologie & énergétique chinoise",
         "prices": [
           {
-            "title": "Bilan 1h",
-            "price": "60€"
+            "title": "Première séance (avec bilan complet)",
+            "time": "1h30",
+            "price": "60€",
+            "description": ""
           },
           {
-            "title": "Bilan 1h30",
-            "price": "90€"
-          },
-          {
-            "title": "Bilan 2h",
-            "price": "110€"
+            "title": "Forfait Suivi – 3 séances",
+            "time": "3 séances de 45min, réparties sur 1 mois et demi",
+            "price": "115€",
+            "description": "Idéal pour ancrer les bienfaits et accompagner le processus d’auto-régulation."
           }
         ]
       },
       {
-        "title": "Massage  Tunia et accupression",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "title": "Massage Tuina",
         "prices": [
           {
-            "title": "Séance 1h",
-            "price": "60€"
+            "title": "Première séance (avec bilan énergétique)",
+            "time": "1h15",
+            "price": "75€",
+            "description": ""
           },
           {
-            "title": "Séance 1h30",
-            "price": "90€"
-          },
-          {
-            "title": "Séance 2h",
-            "price": "110€"
+            "title": "Forfait Suivi - 2 séances",
+            "time": "2 séances d’1h, espacées de 15 jours",
+            "price": "120€",
+            "description": "Pour relancer, équilibrer et consolider les effets du soin"
           }
         ]
       },
       {
-        "title": "Réflexologie et accupression",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "title": "Cours de Qi Gong",
+        "label": {
+          "faceToFace": "En présentiel (à Nespouls)",
+          "online": "En ligne (via Zoom ou enregistrement)"
+        },
         "prices": [
           {
-            "title": "Séance 1h",
-            "price": "60€"
+            "title": "Cours unitaire",
+            "faceToFace": "12€",
+            "online": "10€"
           },
           {
-            "title": "Séance 1h30",
-            "price": "90€"
+            "title": "Forfait 1er trimestre (septembre à décembre)",
+            "faceToFace": "144€",
+            "online": "120€"
           },
           {
-            "title": "Séance 2h",
-            "price": "110€"
+            "title": "Forfait 2ème et 3ème trimestre",
+            "faceToFace": "120€ / trimestre",
+            "online": "120€ / trimestre"
           }
         ]
       }
