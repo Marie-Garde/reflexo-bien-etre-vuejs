@@ -76,6 +76,14 @@ const difficulties = [
 }
 
 @media (max-width: 768px) {
+  .difficulties {
+    width: 100%;
+    p {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+
   .difficulties-list {
     flex-wrap: wrap;
     > * {

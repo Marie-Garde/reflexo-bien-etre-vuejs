@@ -58,4 +58,14 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 .brown {
   background-color: $brown-dark;
 }
+
+@media (max-width: 768px) {
+  .specialties {
+    width: 100%;
+    p {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
 </style>

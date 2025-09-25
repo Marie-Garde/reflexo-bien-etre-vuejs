@@ -63,4 +63,10 @@ const recipes = tm(`seasons.season.${props.season}.recipes`);
 .brown {
   background-color: $brown-dark;
 }
+
+@media (max-width: 768px) {
+  .container {
+    text-align: center;
+  }
+}
 </style>

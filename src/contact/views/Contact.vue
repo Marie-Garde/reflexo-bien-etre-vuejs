@@ -55,11 +55,11 @@ function validateForm() {
 }
 
 function resetForm() {
-    formValue.lastName = "";
-    formValue.firstName = "";
-    formValue.mail = "";
-    formValue.subject = "";
-    formValue.message = "";
+  formValue.lastName = "";
+  formValue.firstName = "";
+  formValue.mail = "";
+  formValue.subject = "";
+  formValue.message = "";
 }
 
 function sendEmail() {
@@ -155,16 +155,16 @@ function sendEmail() {
               />
             </div>
           </div>
-           <div class="form__field">
-              <label class="form__label" for="mail">{{ t("contact.form.mail") }}</label>
-              <input
-                :class="{ 'input-error': errors.mail }"
-                id="mail"
-                v-model="formValue.mail"
-                type="email"
-                :placeholder="t('contact.form.mail')"
-              />
-            </div>
+          <div class="form__field">
+            <label class="form__label" for="mail">{{ t("contact.form.mail") }}</label>
+            <input
+              :class="{ 'input-error': errors.mail }"
+              id="mail"
+              v-model="formValue.mail"
+              type="email"
+              :placeholder="t('contact.form.mail')"
+            />
+          </div>
           <div class="form__field">
             <label class="form__label" for="subject">{{ t("contact.form.subject") }}</label>
             <input
@@ -186,7 +186,9 @@ function sendEmail() {
           </div>
 
           <p v-if="errors.general" class="form__error-message">{{ errors.general }}</p>
-          <p v-if="formSubmittedMessage" class="form__success-message">{{ formSubmittedMessage }}</p>
+          <p v-if="formSubmittedMessage" class="form__success-message">
+            {{ formSubmittedMessage }}
+          </p>
 
           <button type="submit" :disabled="isSubmitDisabled || isLoading" class="form__submit">
             <span v-if="!isLoading">Envoyer</span>
@@ -239,7 +241,7 @@ function sendEmail() {
     &-text {
       margin: auto 0;
     }
-    
+
     &-item {
       display: flex;
       align-items: center;
@@ -248,13 +250,13 @@ function sendEmail() {
     }
 
     &-map {
-        border-radius: 5px;
-        box-shadow: 0 5px 5px $dark-grey;
+      border-radius: 5px;
+      box-shadow: 0 5px 5px $dark-grey;
     }
   }
 
   &__form-container {
-    background-color: $orange-light;
+    background-color: $orange-white;
     text-align: center;
     padding: 60px 0;
 
@@ -310,7 +312,7 @@ function sendEmail() {
         text-align: left;
         margin-bottom: 10px;
       }
-      
+
       &__success-message {
         color: green;
         text-align: left;
@@ -351,7 +353,50 @@ function sendEmail() {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &__header {
+      height: 40vh;
+
+      &-overlay {
+        left: 50%;
+        width: 80%;
+        padding: 15px;
+        bottom: 2%;
+      }
+    }
+
+    &__office {
+      flex-direction: column;
+      margin: 40px auto;
+      padding: 0 20px;
+
+      &-map {
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    &__form-container {
+      padding: 40px 0;
+
+      .form {
+        &__group {
+          &--horizontal {
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      }
+    }
+  }
 }
 </style>

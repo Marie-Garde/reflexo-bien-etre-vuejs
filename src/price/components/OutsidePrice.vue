@@ -106,4 +106,24 @@ const type = t("price.type[2]");
     }
   }
 }
+
+@media (max-width: 768px) {
+  .type {
+    text-align: center;
+    .cards-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .type {
+    margin-left: 40px;
+  }
+}
 </style>

@@ -57,4 +57,29 @@ aside {
   padding: 20px 32px;
   font-size: 1.2rem;
 }
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
+  .take-appointment-button {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  aside {
+    width: 30%;
+    margin-right: 40px;
+  }
+  .take-appointment-button {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+}
 </style>
