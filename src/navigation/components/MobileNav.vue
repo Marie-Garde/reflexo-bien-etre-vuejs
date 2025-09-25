@@ -100,7 +100,7 @@ function goToHome() {
   overflow: hidden;
 
   &__logo {
-    width: 120px;
+    width: 150px;
     background-color: transparent;
     border: none;
     cursor: pointer;

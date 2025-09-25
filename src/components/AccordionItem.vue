@@ -47,7 +47,6 @@ const emit = defineEmits(["toggle"]);
 }
 
 .accordion-body {
-  padding: 20px 0;
   color: #444;
   text-align: start;
   width: 90%;
@@ -55,7 +54,7 @@ const emit = defineEmits(["toggle"]);
 
 .accordion-enter-active,
 .accordion-leave-active {
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 .accordion-enter-from,
 .accordion-leave-to {

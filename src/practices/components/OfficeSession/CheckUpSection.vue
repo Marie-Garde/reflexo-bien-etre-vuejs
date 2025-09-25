@@ -31,7 +31,7 @@ const title = t("practices.insideSessionPage.checkup.title");
     width: 100%;
     height: 40vh;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   .office-session__checkup-text {
@@ -40,6 +40,20 @@ const title = t("practices.insideSessionPage.checkup.title");
     max-width: 1280px;
     h2 {
       margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .office-session__checkup {
+    width: 100%;
+
+    img {
+      height: 50vh;
+    }
+    p {
+      max-width: 90%;
+      margin: 20px auto;
     }
   }
 }

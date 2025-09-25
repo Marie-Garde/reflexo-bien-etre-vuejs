@@ -47,7 +47,10 @@ function goToHome() {
       <LinkRouter
         v-for="item in navItems"
         :key="item.routeName"
-        :class="['desktop-nav__link', { active: route.path.startsWith(router.resolve({ name: item.routeName }).path) }]"
+        :class="[
+          'desktop-nav__link',
+          { active: route.path.startsWith(router.resolve({ name: item.routeName }).path) },
+        ]"
         :label="item.label"
         :to="item.routeName"
       />
@@ -161,6 +164,30 @@ function goToHome() {
 
       &:hover {
         fill: color.adjust($brown-dark, $lightness: 10%);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .desktop-nav {
+    &__logo {
+      width: 150px;
+    }
+    &__links {
+      font-size: 0.7rem;
+    }
+    &__button {
+      font-size: 0.7rem;
+    }
+    &__socials {
+      a {
+        width: 20px;
+        height: 20px;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
       }
     }
   }

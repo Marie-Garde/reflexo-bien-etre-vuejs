@@ -88,7 +88,7 @@ const practicesRouteName = practicesRoutesName.HOME;
 
 @media (max-width: 768px) {
   .overlay {
-    height: 95vh;
+    height: 125vh;
     padding: 30px 20px 40px 20px;
   }
 

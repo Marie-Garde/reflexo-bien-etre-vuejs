@@ -111,6 +111,14 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
       border-radius: 0;
     }
   }
+
+  .specialties {
+    width: 100%;
+    p {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {

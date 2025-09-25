@@ -35,7 +35,6 @@ const { t, tm } = useI18n();
     display: flex;
     gap: 2rem;
     justify-content: start;
-    flex-wrap: wrap;
     margin-bottom: 60px;
   }
 
@@ -109,6 +108,26 @@ const { t, tm } = useI18n();
         background-image: url("@/assets/illustrations/price/tuina2.png");
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .type {
+    text-align: center;
+    .cards-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .type {
+    margin-left: 40px;
   }
 }
 </style>

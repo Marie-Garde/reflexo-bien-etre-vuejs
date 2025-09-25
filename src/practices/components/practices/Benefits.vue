@@ -42,7 +42,7 @@ const toggleAccordion = (index: string) => {
             :is-open="openAccordionIndex === index"
             @toggle="toggleAccordion(index)"
           >
-            <div v-html="benefit.text"></div>
+            <div class="benefits-list-text" v-html="benefit.text"></div>
           </AccordionItem>
         </li>
       </ul>
@@ -79,13 +79,21 @@ const toggleAccordion = (index: string) => {
     padding: 0;
     width: 70%;
     margin: 0 auto;
+    &-text {
+      padding: 20px 0;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .benefits {
+    width: 100%;
     h2 {
       padding: 0 10px;
+    }
+    p {
+      max-width: 90%;
+      margin: 20px auto;
     }
     &-list {
       width: 90%;

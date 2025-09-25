@@ -221,6 +221,12 @@ const warningBackgroundColorClass = computed(() => {
             align-items: flex-start;
           }
         }
+
+        .social-media {
+          &__icons {
+            justify-content: center;
+          }
+        }
       }
 
       .second-line {

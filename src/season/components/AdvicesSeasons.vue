@@ -97,4 +97,24 @@ const toggleAccordion = (index: number) => {
     list-style: none;
   }
 }
+
+@media (max-width: 768px) {
+  .advices-seasons {
+    width: 100%;
+    &__container {
+      flex-direction: column;
+    }
+    &__image {
+      width: 100%;
+    }
+    &__content {
+      width: 90%;
+      margin: 0 0 60px 0;
+    }
+    &__list {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
 </style>
