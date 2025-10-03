@@ -21,7 +21,8 @@ const { t, tm } = useI18n();
 
 .header {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   background-image: url("@/assets/background/practiceBackground.png");
   background-size: cover;
   background-position: center;

@@ -38,7 +38,8 @@ function goToAppointment() {
 
 .takeAppointment {
   width: 100%;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   background-image: url("@/assets/illustrations/homeCTA.png");
   background-size: cover;
   background-position: center;

@@ -46,7 +46,8 @@ const sections = [
   .why-card {
     position: relative;
     width: 50%;
-    height: 60vh;
+    min-height: 80vh;
+    height: auto;
     overflow: hidden;
 
     &__image {
@@ -116,7 +117,7 @@ const sections = [
 
     .why-card {
       width: 100%;
-      height: 90vh;
+      height: 110vh;
 
       &__title-static {
         opacity: 0;
@@ -142,7 +143,7 @@ const sections = [
 @media (min-width: 769px) and (max-width: 1024px) {
   .office-session__why {
     .why-card {
-      height: 75vh;
+      height: 100vh;
 
       &__title-static {
         opacity: 0;

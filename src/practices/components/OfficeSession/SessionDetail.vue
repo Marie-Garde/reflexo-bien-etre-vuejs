@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import topImage from "@/assets/illustrations/massage.jpg";
+import bottomImage from "@/assets/illustrations/qi-gong.jpg";
 
 const { t, tm } = useI18n();
 
@@ -30,7 +32,37 @@ const session = {
 <template>
   <section class="office-session__session">
     <h2 class="office-session__section-title">{{ session.title }}</h2>
-    <div class="session-detail">
+    <div class="top-section">
+      <div class="top-section__text">
+        <h3>{{ session.first.title }}</h3>
+        <ul>
+          <li v-for="(item, i) in session.first.text" :key="i" v-html="item"></li>
+        </ul>
+      </div>
+      <div :class="['top-section__image', `top-section__image--${session.first.imageClass}`]">
+        <div class="image-overlay">
+          <p class="citation">{{ session.first.hovering }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-section">
+      <div
+        :class="['bottom-section__image', `bottom-section__image--${session.second.imageClass}`]"
+      >
+        <div class="image-overlay">
+          <p class="citation">{{ session.second.hovering }}</p>
+        </div>
+      </div>
+      <div class="bottom-section__text">
+        <h3>{{ session.second.title }}</h3>
+        <p class="text" v-for="(p, i) in session.second.text" :key="i">{{ p }}</p>
+        <ul v-if="session.second.list.length">
+          <li v-for="(item, i) in session.second.list" :key="i">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="session-detail">
       <div :class="['session-card', `session-card--${session.theme}`]">
         <div class="session-card__text">
           <h3>{{ session.first.title }}</h3>
@@ -60,12 +92,163 @@ const session = {
           <div class="session-card__hovering citation">{{ session.second.hovering }}</div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
 <style lang="scss">
 @use "@/assets/variables.scss" as *;
+
+.top-section,
+.bottom-section {
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  height: auto;
+}
+
+.top-section {
+  &__text {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $orange-white;
+    border-left: 40px solid $brown-medium;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &--reflexo-main {
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-main.png");
+      background-position: top;
+    }
+    &--reflexo-visage {
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      background-position: top;
+    }
+    &--massage-dos {
+      background-image: url("@/assets/illustrations/practices/inside/massage-dos.png");
+      background-position: top;
+    }
+    &--reflexo-dos {
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-dos.png");
+      background-position: center;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    h3 {
+      margin-bottom: 40px;
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 20px 0;
+    }
+  }
+}
+
+.bottom-section {
+  &__image {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &--reflexo-visage {
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      background-position: top;
+    }
+    &--reflexo-dos {
+      background-image: url("@/assets/illustrations/practices/inside/reflexo-dos.png");
+      background-position: center;
+    }
+  }
+
+  &__text {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $orange-white;
+    border-left: 40px solid $brown-medium;
+    box-sizing: border-box;
+    text-align: left;
+    h3 {
+      margin-bottom: 40px;
+    }
+    ul > li {
+      list-style: none;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1.2rem;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.top-section__image:hover .image-overlay,
+.bottom-section__image:hover .image-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .top-section, .bottom-section {
+    height: auto;
+  }
+  .top-section {
+    flex-direction: column;
+
+    &__text,
+    &__image {
+      width: 100%;
+    }
+    &__image {
+      height: 30vh;
+    }
+  }
+  .bottom-section {
+    flex-direction: column-reverse;
+    &__text,
+    &__image {
+      width: 100%;
+    }
+    &__image {
+      height: 30vh;
+    }
+  }
+  .image-overlay {
+    opacity: 1;
+  }
+}
 
 .office-session__session {
   width: 100%;
@@ -194,6 +377,7 @@ const session = {
       &__text {
         position: relative;
         width: 100%;
+        min-height: 130vh;
         height: auto;
         padding: 40px 20px;
 

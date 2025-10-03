@@ -129,11 +129,11 @@ function goToHome() {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    z-index: 100;
+    z-index: 102;
   }
 
   &__close {
-    align-self: flex-end;
+    align-self: flex-start;
     background: transparent;
     border: none;
     cursor: pointer;
