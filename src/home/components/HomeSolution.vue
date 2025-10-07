@@ -24,6 +24,7 @@ const practicesRouteName = practicesRoutesName.HOME;
           </li>
         </ul>
         <p class="text">{{ tm("home.solution.text")[3] }}</p>
+        <p class="text">{{ tm("home.solution.text")[4] }}</p>
 
         <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
       </div>

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import topImage from "@/assets/illustrations/massage.jpg";
-import bottomImage from "@/assets/illustrations/qi-gong.jpg";
 
 const { t, tm } = useI18n();
 
@@ -56,43 +54,8 @@ const session = {
       <div class="bottom-section__text">
         <h3>{{ session.second.title }}</h3>
         <p class="text" v-for="(p, i) in session.second.text" :key="i">{{ p }}</p>
-        <ul v-if="session.second.list.length">
-          <li v-for="(item, i) in session.second.list" :key="i">{{ item }}</li>
-        </ul>
       </div>
     </div>
-
-    <!-- <div class="session-detail">
-      <div :class="['session-card', `session-card--${session.theme}`]">
-        <div class="session-card__text">
-          <h3>{{ session.first.title }}</h3>
-          <ul>
-            <li v-for="(item, i) in session.first.text" :key="i" v-html="item"></li>
-          </ul>
-        </div>
-        <div :class="['session-card__image', `session-card__image--${session.first.imageClass}`]">
-          <div class="session-card__hovering citation">{{ session.first.hovering }}</div>
-        </div>
-      </div>
-      <div :class="['session-card', `session-card--${session.theme}`]">
-        <div class="session-card__text session-card__text--right">
-          <h3>{{ session.second.title }}</h3>
-          <p class="text" v-for="(p, i) in session.second.text" :key="i">{{ p }}</p>
-          <ul v-if="session.second.list.length">
-            <li v-for="(item, i) in session.second.list" :key="i">{{ item }}</li>
-          </ul>
-        </div>
-        <div
-          :class="[
-            'session-card__image',
-            `session-card__image--${session.second.imageClass}`,
-            'session-card__image--top',
-          ]"
-        >
-          <div class="session-card__hovering citation">{{ session.second.hovering }}</div>
-        </div>
-      </div>
-    </div> -->
   </section>
 </template>
 
@@ -189,8 +152,7 @@ const session = {
     h3 {
       margin-bottom: 40px;
     }
-    ul > li {
-      list-style: none;
+    p {
       padding-bottom: 20px;
     }
   }
@@ -221,7 +183,8 @@ const session = {
 }
 
 @media (max-width: 768px) {
-  .top-section, .bottom-section {
+  .top-section,
+  .bottom-section {
     height: auto;
   }
   .top-section {

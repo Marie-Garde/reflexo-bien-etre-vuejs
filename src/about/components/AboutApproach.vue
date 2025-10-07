@@ -16,8 +16,11 @@ const { t, tm } = useI18n();
     <div class="about__approach-top">
       <div class="about__approach-text">
         <p>{{ tm("about.approach.text")[0] }}</p>
-        <p class="bold">{{ tm("about.approach.text")[1] }}</p>
+        <p>{{ tm("about.approach.text")[1] }}</p>
         <p>{{ tm("about.approach.text")[2] }}</p>
+        <p>{{ tm("about.approach.text")[3] }}</p>
+        <p>{{ tm("about.approach.text")[4] }}</p>
+        <p>{{ tm("about.approach.text")[5] }}</p>
       </div>
       <div class="about__approach-image-wrapper">
         <img

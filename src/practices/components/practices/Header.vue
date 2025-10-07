@@ -30,7 +30,7 @@ const { t, tm } = useI18n();
   display: flex;
   align-items: center;
   &-overlay {
-    margin: 0 auto;
+    margin: 60px auto;
     max-width: 1280px;
     width: 100%;
     color: $white;

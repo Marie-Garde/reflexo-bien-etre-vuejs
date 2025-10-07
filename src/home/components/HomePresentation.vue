@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
-import isabelleImage from "@/assets/illustrations/isabelle-small.jpg";
+import isabelleImage from "@/assets/illustrations/isabelle-small.png";
 import Button from "@/components/Button.vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
 
@@ -9,6 +9,7 @@ const { t, tm } = useI18n();
 const router = useRouter();
 
 const aboutMeLabel = t("home.presentation.learnAboutMe");
+const presentationText = tm("home.presentation.text");
 
 function goToKnowMore() {
   router.push({ name: aboutRoutesName.HOME });
@@ -22,10 +23,14 @@ function goToKnowMore() {
     </div>
 
     <div class="presentation-content">
-      <h2 class="title">{{ t("home.presentation.title") }}</h2>
-      <p class="text">{{ tm("home.presentation.text")[0] }}</p>
-      <p>{{ tm("home.presentation.text")[1] }}</p>
-      <p>{{ tm("home.presentation.text")[2] }}</p>
+      <h2 class="presentation-content-title">{{ t("home.presentation.title") }}</h2>
+      <div
+        v-for="(paragraph, index) in presentationText"
+        :key="index"
+        class="presentation-content-text"
+      >
+        <div v-html="paragraph"></div>
+      </div>
       <Button class="button" :label="aboutMeLabel" background="green" @click="goToKnowMore()" />
     </div>
   </div>
@@ -61,14 +66,15 @@ function goToKnowMore() {
     align-items: center;
     justify-content: center;
 
-    .title {
+    &-title {
       margin-bottom: 20px;
     }
-    p {
-      margin-bottom: 10px;
+    &-text {
+      margin-bottom: 20px;
     }
     .button {
       margin-top: 20px;
+      font-size: 1.2rem;
     }
   }
 }

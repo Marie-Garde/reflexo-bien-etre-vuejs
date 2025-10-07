@@ -2,16 +2,15 @@
 import { useI18n } from "vue-i18n";
 import Button from "@/components/Button.vue";
 import Header from "../components/Header.vue";
-import OfficePrice from "../components/OfficePrice.vue";
 import OutsidePrice from "../components/OutsidePrice.vue";
+import ReflexoPrice from "../components/ReflexoPrice.vue";
+import TuinaPrice from "../components/TuinaPrice.vue";
 
 const { t, tm } = useI18n();
 
-const types = tm("price.type");
-
-const labelButton = t("price.takeAppointment");
-
-const reflexoLabel = [{ title: t("price.type[0].title") }];
+const labelButtonReflexo = t("price.buttonLabel.takeAppointmentReflexo");
+const labelButtonTuina = t("price.buttonLabel.takeAppointmentTuina");
+const labelButtonQiGong = t("price.buttonLabel.takeAppointmentQiGong");
 </script>
 
 <template>
@@ -19,14 +18,13 @@ const reflexoLabel = [{ title: t("price.type[0].title") }];
 
   <div class="content">
     <div class="prices">
-      <OfficePrice />
-
+      <ReflexoPrice />
+      <Button :label="labelButtonReflexo" color="brown-dark" />
+      <TuinaPrice />
+      <Button :label="labelButtonTuina" color="brown-dark" />
       <OutsidePrice />
+      <Button :label="labelButtonQiGong" color="brown-dark" />
     </div>
-
-    <aside>
-      <Button :label="labelButton" background="orange" class="take-appointment-button" />
-    </aside>
   </div>
 </template>
 
@@ -46,40 +44,15 @@ const reflexoLabel = [{ title: t("price.type[0].title") }];
   }
 }
 
-aside {
-  width: 15%;
-  display: flex;
-  justify-content: end;
-  height: fit-content;
-}
-
-.take-appointment-button {
-  padding: 20px 32px;
+button {
+  width: 40%;
   font-size: 1.2rem;
+  margin-bottom: 60px;
 }
 
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
-  }
-
-  aside {
-    width: 100%;
-  }
-  .take-appointment-button {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  aside {
-    width: 30%;
-    margin-right: 40px;
-  }
-  .take-appointment-button {
-    font-size: 1rem;
-    margin: 0 auto;
   }
 }
 </style>

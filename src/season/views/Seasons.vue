@@ -66,7 +66,7 @@ const seasons = [
 
 .header {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
   background-image: url("@/assets/background/seasonBackground.png");
   background-size: cover;
   background-position: center;
@@ -75,7 +75,7 @@ const seasons = [
   align-items: center;
 
   &-overlay {
-    margin: 0 auto;
+    margin: 60px auto;
     max-width: 1280px;
     width: 100%;
     color: $white;

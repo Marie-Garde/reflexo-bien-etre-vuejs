@@ -6,16 +6,17 @@ defineProps<{
   goToInsideCare: () => void;
   goToOutsideCare: () => void;
 }>();
+
+const pillarsText = tm("practices.pillars.text");
 </script>
 
 <template>
   <div class="pillars">
     <div class="pillars-text">
       <h2>{{ t("practices.pillars.title") }}</h2>
-      <p>{{ tm("practices.pillars.text")[0] }}</p>
-      <p>{{ tm("practices.pillars.text")[1] }}</p>
-      <p>{{ tm("practices.pillars.text")[2] }}</p>
-      <p>{{ tm("practices.pillars.text")[3] }}</p>
+      <div v-for="(paragraph, index) in pillarsText" :key="index" class="pillars-text-paragraph">
+        <div v-html="paragraph"></div>
+      </div>
     </div>
 
     <ul class="pillars-list">
@@ -41,7 +42,7 @@ defineProps<{
     h2 {
       margin-bottom: 40px;
     }
-    p {
+    &-paragraph {
       padding-bottom: 10px;
     }
   }
