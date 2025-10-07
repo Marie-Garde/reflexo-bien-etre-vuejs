@@ -42,11 +42,16 @@ button {
   background-color: $orange-light;
   border: transparent;
   color: $brown-dark;
-  padding: 12px 24px;
 }
 
 .btn-brown-dark {
   background-color: $brown-dark;
   color: $white-soft;
+  transition: background-color 0.3s ease;
+  border: none;
+
+  &:hover {
+    background-color: $orange;
+  }
 }
 </style>

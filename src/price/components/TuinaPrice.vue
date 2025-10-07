@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t, tm } = useI18n();
+
+const pricesTuina = tm("price.type")[1];
 </script>
 
 <template>
-  <div class="price-type">
-    <div v-for="(type, index) in tm('price.type').slice(0, 2)" :key="index" class="type">
-      <h2>{{ type.title }}</h2>
-      <div class="cards-container">
-        <div v-for="(price, index) in type.prices" :key="index" class="card">
-          <h3>{{ price.title }}</h3>
-          <p v-if="price.time" class="time">{{ price.time }}</p>
-          <p v-if="price.price" class="price">{{ price.price }}</p>
-          <p v-if="price.description" class="description">{{ price.description }}</p>
-        </div>
+  <div class="type">
+    <h2>{{ pricesTuina.title }}</h2>
+    <div class="cards-container">
+      <div v-for="(price, index) in pricesTuina.prices" :key="index" class="card">
+        <h3>{{ price.title }}</h3>
+        <p v-if="price.time" class="time">{{ price.time }}</p>
+        <p v-if="price.price" class="price">{{ price.price }}</p>
+        <p v-if="price.description" class="description">{{ price.description }}</p>
       </div>
     </div>
   </div>
@@ -21,10 +21,6 @@ const { t, tm } = useI18n();
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
-
-.price-type {
-  width: 100%;
-}
 
 .type {
   h2 {
@@ -43,7 +39,7 @@ const { t, tm } = useI18n();
     border: 1px solid $brown-dark;
     border-radius: 8px;
     padding: 1.5rem;
-    width: 300px;
+    width: 250px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -86,27 +82,15 @@ const { t, tm } = useI18n();
     &:hover::before {
       transform: scale(1.08);
     }
-  }
 
-  &:first-child {
-    .card {
-      &:first-child::before {
-        background-image: url("@/assets/illustrations/price/reflexo1.png");
-      }
-      &:nth-child(2)::before {
-        background-image: url("@/assets/illustrations/price/reflexo2.png");
-      }
+    &:first-child::before {
+      background-image: url("@/assets/illustrations/price/tuina1.png");
     }
-  }
-
-  &:nth-child(2) {
-    .card {
-      &:first-child::before {
-        background-image: url("@/assets/illustrations/price/tuina1.png");
-      }
-      &:nth-child(2)::before {
-        background-image: url("@/assets/illustrations/price/tuina2.png");
-      }
+    &:nth-child(2)::before {
+      background-image: url("@/assets/illustrations/price/tuina2.png");
+    }
+    &:nth-child(3)::before {
+      background-image: url("@/assets/illustrations/price/tuina3.png");
     }
   }
 }

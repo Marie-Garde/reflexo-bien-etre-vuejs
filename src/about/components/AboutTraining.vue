@@ -47,19 +47,7 @@ const { t, tm } = useI18n();
     align-items: center;
     padding: 100px 0 50px;
     color: $white-soft;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120%;
-      height: 70vw;
-      background-color: $brown-medium;
-      border-radius: 50%;
-      z-index: -1;
-    }
+    background-color: $brown-medium;
 
     &-timeline {
       width: 70%;

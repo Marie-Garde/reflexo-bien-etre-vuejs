@@ -15,9 +15,9 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 <template>
   <div :class="['specialties', `${background}`]">
     <h2>{{ title }}</h2>
-    <p v-for="(paragraph, index) in text" :key="index">
+    <div v-for="(paragraph, index) in text" :key="index" class="specialties-text">
       <div v-html="paragraph"></div>
-    </p>
+    </div>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ const text = tm(`seasons.season.${props.season}.specialties`);
   h2 {
     padding-bottom: 20px;
   }
-  p {
+  &-text {
     max-width: 1280px;
     margin-bottom: 20px;
   }

@@ -23,10 +23,10 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
   <div class="container">
     <div class="specialties">
       <h2>{{ specialtiesTitle }}</h2>
-      
-      <p v-for="(paragraph, index) in specialtiesText" :key="index">
+
+      <div v-for="(paragraph, index) in specialtiesText" :key="index" class="specialties-text">
         <div v-html="paragraph"></div>
-      </p>
+      </div>
     </div>
 
     <AdvicesSeasons season="interSeason" />
@@ -85,11 +85,8 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
   h2 {
     padding-bottom: 20px;
   }
-  p {
+  &-text {
     max-width: 1280px;
-    margin-bottom: 20px;;
-  }
-  &-first-line {
     margin-bottom: 20px;
   }
 }

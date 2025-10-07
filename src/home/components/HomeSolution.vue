@@ -24,6 +24,7 @@ const practicesRouteName = practicesRoutesName.HOME;
           </li>
         </ul>
         <p class="text">{{ tm("home.solution.text")[3] }}</p>
+        <p class="text">{{ tm("home.solution.text")[4] }}</p>
 
         <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
       </div>
@@ -37,7 +38,7 @@ const practicesRouteName = practicesRoutesName.HOME;
 
 .overlay {
   width: 100%;
-  height: 60vh;
+  height: auto;
   margin-top: 60px;
   background-image: url("@/assets/background/HomeSolutionBackground.png");
   background-size: cover;
@@ -88,7 +89,7 @@ const practicesRouteName = practicesRoutesName.HOME;
 
 @media (max-width: 768px) {
   .overlay {
-    height: 125vh;
+    height: auto;
     padding: 30px 20px 40px 20px;
   }
 

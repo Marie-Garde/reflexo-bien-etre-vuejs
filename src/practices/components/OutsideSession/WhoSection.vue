@@ -76,7 +76,7 @@ const peopleWhoList = tm("practices.outsideSessionPage.who.people");
       }
 
       &-frame {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(242, 241, 228, 0.7);
         padding: 20px;
         width: calc(100% - 40px);
         height: calc(100% - 40px);

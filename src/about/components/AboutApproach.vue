@@ -16,8 +16,11 @@ const { t, tm } = useI18n();
     <div class="about__approach-top">
       <div class="about__approach-text">
         <p>{{ tm("about.approach.text")[0] }}</p>
-        <p class="bold">{{ tm("about.approach.text")[1] }}</p>
+        <p>{{ tm("about.approach.text")[1] }}</p>
         <p>{{ tm("about.approach.text")[2] }}</p>
+        <p>{{ tm("about.approach.text")[3] }}</p>
+        <p>{{ tm("about.approach.text")[4] }}</p>
+        <p>{{ tm("about.approach.text")[5] }}</p>
       </div>
       <div class="about__approach-image-wrapper">
         <img
@@ -28,13 +31,6 @@ const { t, tm } = useI18n();
       </div>
     </div>
     <div class="about__approach-bottom">
-      <div class="about__approach-image-wrapper about__approach-image-wrapper--left">
-        <img
-          class="about__approach-image"
-          :src="bowlIllustration"
-          alt="Bols tibétains pour la sonothérapie"
-        />
-      </div>
       <div class="about__approach-gallery">
         <figure class="about__approach-gallery-item">
           <img :src="tuinaIllustration" alt="Massage Tui Na du dos" />
@@ -89,11 +85,6 @@ const { t, tm } = useI18n();
 
     &-image-wrapper {
       flex-basis: 48%;
-      &--left {
-        flex-shrink: 0;
-        width: 600px;
-        transform: translateY(-50px);
-      }
     }
 
     &-image {
@@ -106,16 +97,12 @@ const { t, tm } = useI18n();
 
     &-bottom {
       display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      margin-top: -100px;
+      margin-top: 40px;
     }
 
     &-gallery {
       display: flex;
       gap: 20px;
-      align-self: flex-end;
-      transform: translateX(-150px);
 
       &-item {
         position: relative;
@@ -157,18 +144,10 @@ const { t, tm } = useI18n();
     &__approach {
       padding: 0 40px;
       &-bottom {
-        margin-top: -50px;
-      }
-      &-image-wrapper--left {
-        width: 20%;
-        transform: translateY(-50px);
-        img {
-          display: none;
-        }
+        margin-top: 40px;
       }
       &-gallery {
         margin-top: 40px;
-        transform: translateX(-50%);
         justify-content: center;
         align-self: center;
 
@@ -208,10 +187,6 @@ const { t, tm } = useI18n();
 
       &-image-wrapper {
         flex-basis: 100%;
-        &--left {
-          transform: translateY(0);
-          width: 100%;
-        }
       }
 
       &-image {
@@ -226,7 +201,6 @@ const { t, tm } = useI18n();
 
       &-gallery {
         flex-direction: column;
-        transform: translateX(0);
         width: 100%;
         align-self: center;
 

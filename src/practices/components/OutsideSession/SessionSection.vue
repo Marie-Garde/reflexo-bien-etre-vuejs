@@ -39,12 +39,13 @@ function goToAppointment() {
 <style scoped lang="scss">
 .infos-session {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   display: flex;
 
   .text {
     width: 50%;
-    padding: 0 120px 0 80px;
+    padding: 40px 120px 40px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@ function goToAppointment() {
     }
 
     p {
-      padding-bottom: 10px;
+      padding-bottom: 20px;
     }
 
     .button {

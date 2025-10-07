@@ -39,7 +39,8 @@ const sessionTypes = ["reflexo", "tuina"];
 .office-session {
   &__header {
     width: 100%;
-    height: 40vh;
+    min-height: 60vh;
+    height: auto;
     margin-top: 60px;
     background-image: url("@/assets/illustrations/practices/inside/reflexo-pied.png");
     background-size: cover;

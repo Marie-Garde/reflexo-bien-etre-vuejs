@@ -29,7 +29,6 @@ onMounted(async () => {
     <HomeDifficulties />
     <HomeSolution />
     <HomeAppointment />
-    <HomeFeedbacks />
   </div>
 </template>
 

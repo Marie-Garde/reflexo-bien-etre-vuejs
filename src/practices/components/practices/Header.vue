@@ -21,7 +21,8 @@ const { t, tm } = useI18n();
 
 .header {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   background-image: url("@/assets/background/practiceBackground.png");
   background-size: cover;
   background-position: center;
@@ -29,7 +30,7 @@ const { t, tm } = useI18n();
   display: flex;
   align-items: center;
   &-overlay {
-    margin: 0 auto;
+    margin: 60px auto;
     max-width: 1280px;
     width: 100%;
     color: $white;

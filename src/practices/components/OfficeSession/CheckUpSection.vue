@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import checkupImage from "@/assets/illustrations/practices/inside/bilan.png";
 
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const text = t("practices.insideSessionPage.checkup.text");
 const title = t("practices.insideSessionPage.checkup.title");
@@ -26,10 +26,12 @@ const title = t("practices.insideSessionPage.checkup.title");
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 20vh;
+  height: auto;
 
   img {
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     object-fit: cover;
     opacity: 0.3;
   }

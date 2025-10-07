@@ -37,7 +37,8 @@ const { t } = useI18n();
 .outside-session {
   &__header {
     width: 100%;
-    height: 40vh;
+    min-height: 60vh;
+    height: auto;
     margin-top: 60px;
     background-image: url("@/assets/illustrations/practices/outside/women-qi-gong.png");
     background-size: cover;

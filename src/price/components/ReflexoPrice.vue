@@ -2,20 +2,20 @@
 import { useI18n } from "vue-i18n";
 const { t, tm } = useI18n();
 
-const type = t("price.type[2]");
+const pricesReflexo = tm("price.type")[0];
 </script>
 
 <template>
-  <div class="price-type">
-    <div class="type">
-      <h2>{{ t("price.type[2].title") }}</h2>
-      <div class="cards-container">
-        <div v-for="(price, index) in tm('price.type[2].prices')" :key="index" class="card">
+  <div class="type">
+    <h2>{{ pricesReflexo.title }}</h2>
+    <div v-for="(age, index) in pricesReflexo.age" :key="index" class="age">
+      <h3>{{ age.title }}</h3>
+      <div :class="['cards-container', `cards-container-${index}`]">
+        <div v-for="(price, index) in age.prices" :key="index" class="card">
           <h3>{{ price.title }}</h3>
-          <p class="label">{{ t("price.type[2].label.faceToFace") }}</p>
-          <p class="price">{{ price.faceToFace }}</p>
-          <p class="label">{{ t("price.type[2].label.online") }}</p>
-          <p class="price">{{ price.online }}</p>
+          <p v-if="price.time" class="time">{{ price.time }}</p>
+          <p v-if="price.price" class="price">{{ price.price }}</p>
+          <p v-if="price.description" class="description">{{ price.description }}</p>
         </div>
       </div>
     </div>
@@ -42,6 +42,12 @@ const type = t("price.type[2]");
     margin-bottom: 60px;
   }
 
+  .age {
+    h3 {
+      margin-bottom: 20px;
+    }
+  }
+
   .card {
     position: relative;
     border: 1px solid $brown-dark;
@@ -61,7 +67,7 @@ const type = t("price.type[2]");
       margin-bottom: 30px;
       z-index: 1;
     }
-    .label {
+    .time {
       font-style: italic;
       margin-bottom: 30px;
       z-index: 1;
@@ -92,16 +98,38 @@ const type = t("price.type[2]");
     }
   }
 
-  &:first-child {
-    .card {
-      &:first-child::before {
-        background-image: url("@/assets/illustrations/price/Qigong1.png");
+  .age {
+    .cards-container-adult {
+      & > .card {
+        &:first-child::before {
+          background-image: url("@/assets/illustrations/price/reflexo1.png");
+        }
+        &:nth-child(2)::before {
+          background-image: url("@/assets/illustrations/price/reflexo2.png");
+        }
+        &:nth-child(3)::before {
+          background-image: url("@/assets/illustrations/price/reflexo3.png");
+        }
+        &:nth-child(4)::before {
+          background-image: url("@/assets/illustrations/price/reflexo4.png");
+        }
       }
-      &:nth-child(2)::before {
-        background-image: url("@/assets/illustrations/price/Qigong2.png");
-      }
-      &:nth-child(3)::before {
-        background-image: url("@/assets/illustrations/price/Qigong3.png");
+    }
+
+    .cards-container-child {
+      & > .card {
+        &:first-child::before {
+          background-image: url("@/assets/illustrations/price/reflexo5.png");
+        }
+        &:nth-child(2)::before {
+          background-image: url("@/assets/illustrations/price/reflexo6.png");
+        }
+        &:nth-child(3)::before {
+          background-image: url("@/assets/illustrations/price/reflexo7.png");
+        }
+        &:nth-child(4)::before {
+          background-image: url("@/assets/illustrations/price/reflexo8.png");
+        }
       }
     }
   }
@@ -110,6 +138,7 @@ const type = t("price.type[2]");
 @media (max-width: 768px) {
   .type {
     text-align: center;
+    margin: 0;
     .cards-container {
       flex-direction: column;
       justify-content: center;

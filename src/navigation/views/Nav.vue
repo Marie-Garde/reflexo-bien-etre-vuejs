@@ -3,6 +3,8 @@ import { useI18n } from "vue-i18n";
 import isMobile from "@/reactives/isMobile";
 import DesktopNav from "../components/DesktopNav.vue";
 import MobileNav from "../components/MobileNav.vue";
+import PhoneIcon from "@/assets/icons/phone.vue";
+import LocationIcon from "@/assets/icons/location.vue";
 
 const { t } = useI18n();
 </script>
@@ -10,8 +12,14 @@ const { t } = useI18n();
 <template>
   <header class="main-header">
     <div class="main-header__top-info">
-      <p>{{ t("navigation.top.adress") }}</p>
-      <p>{{ t("navigation.top.tel") }}</p>
+      <div class="info">
+        <LocationIcon class="info-icon" />
+        <p>{{ t("navigation.top.adress") }}</p>
+      </div>
+      <div class="info">
+        <PhoneIcon class="info-icon" />
+        <p>{{ t("navigation.top.tel") }}</p>
+      </div>
     </div>
     <DesktopNav v-if="!isMobile" />
     <MobileNav v-else />
@@ -35,6 +43,16 @@ const { t } = useI18n();
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
+
+    .info {
+      display: flex;
+      align-items: center;
+      color: $orange-light;
+      &-icon {
+        margin-right: 10px;
+        width: 20px;
+      }
+    }
   }
 }
 
