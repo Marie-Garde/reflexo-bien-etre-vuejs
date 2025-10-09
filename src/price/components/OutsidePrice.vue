@@ -60,6 +60,7 @@ const type = t("price.type[2]");
     h3 {
       margin-bottom: 30px;
       z-index: 1;
+      height: 70px;
     }
     .label {
       font-style: italic;
@@ -71,6 +72,7 @@ const type = t("price.type[2]");
       font-weight: bold;
       margin-bottom: 30px;
       z-index: 1;
+      height: 80px;
     }
 
     &::before {

@@ -786,12 +786,13 @@
     "takeAppointment": "Prendre rendez-vous",
     "form": {
       "title": "Formulaire de contact",
-      "lastName": "Nom",
-      "firstName": "Prénom",
+      "lastName": "Nom*",
+      "firstName": "Prénom*",
       "mail": "Email",
-      "subject": "Sujet",
+      "phone": "Téléphone",
+      "subject": "Sujet*",
       "message": {
-        "label": "Message",
+        "label": "Message*",
         "placeholder": "Votre message ici"
       },
       "send": "Envoyer",
@@ -799,6 +800,7 @@
         "lastName": "Veuillez renseigner votre nom de famille.",
         "firstName": "Veuillez renseigner votre prénom.",
         "mail": "Veuillez renseigner un email valide.",
+        "phone": "Veuillez renseigner un numéro de téléphone valide.",
         "subject": "Veuillez renseigner un sujet.",
         "message": "Veuillez renseigner un message d'au moins 10 charactères."
       },

@@ -45,6 +45,7 @@ const pricesReflexo = tm("price.type")[0];
   .age {
     h3 {
       margin-bottom: 20px;
+      height: 50px;
     }
   }
 
