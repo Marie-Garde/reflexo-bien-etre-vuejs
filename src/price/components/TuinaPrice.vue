@@ -52,6 +52,7 @@ const pricesTuina = tm("price.type")[1];
     h3 {
       margin-bottom: 30px;
       z-index: 1;
+      height: 50px;
     }
     .time {
       font-style: italic;
