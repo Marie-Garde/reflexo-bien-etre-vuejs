@@ -2,7 +2,6 @@
 import { useI18n } from "vue-i18n";
 
 import cabinetIllustration from "@/assets/illustrations/about/cabinet.jpg";
-import bowlIllustration from "@/assets/illustrations/about/bowl.jpg";
 import tuinaIllustration from "@/assets/illustrations/practices/inside/tuina-dos.jpg";
 import reflexoIllustration from "@/assets/illustrations/practices/inside/reflexo-main.png";
 import qiGongIllustration from "@/assets/illustrations/practices/outside/qi-gong-outside.jpg";
