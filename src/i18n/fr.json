@@ -14,6 +14,11 @@
       "tel": "06 82 12 90 59"
     }
   },
+  "404": {
+    "title": "404 - Page non trouvée",
+    "text": "La page que vous recherchez n'existe pas.",
+    "button": "Retour à l'accueil"
+  },
   "footer": {
     "warning": "Le réflexologue ne se substitue en aucun cas à un médecin généraliste, ne pose aucun diagnostic médical et n’intervient dans aucune décision thérapeutique.",
     "informations": {

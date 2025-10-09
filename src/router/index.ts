@@ -30,6 +30,9 @@ import InterSeasons from "@/season/views/InterSeasons.vue";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { siteMapRoutesPath } from "@/siteMap/routes/routesPath";
 import siteMap from "@/siteMap/views/siteMap.vue";
+import { notFoundRoutesName } from "@/notFound/routes/routesName";
+import { notFoundRoutesPath } from "@/notFound/routes/routesPath";
+import NotFound from "@/notFound/views/notFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -127,6 +130,12 @@ const router = createRouter({
     {
       path: "/",
       redirect: homeRoutesPath.HOME,
+    },
+    {
+      path: notFoundRoutesPath.HOME,
+      name: notFoundRoutesName.HOME,
+      component: NotFound,
+      meta: { title: "Réflexô Bien-être - Page non trouvée" },
     },
   ],
   scrollBehavior(to, from, savedPosition) {
