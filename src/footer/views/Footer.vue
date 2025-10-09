@@ -60,7 +60,7 @@ const warningBackgroundColorClass = computed(() => {
           </div>
           <div class="informations__item">
             <MessageIcon />
-            <p>contact@reflexo-bien-etre.com</p>
+            <p>contact@reflexo-bien-etre.fr</p>
           </div>
           <div class="informations__item">
             <LocationIcon />
