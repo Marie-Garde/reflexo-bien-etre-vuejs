@@ -2,8 +2,11 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import Button from "@/components/Button.vue";
+import { useRouter } from "vue-router";
+import { contactRoutesName } from "@/contact/routes/routesName";
 
 const { t, tm } = useI18n();
+const router = useRouter();
 
 const selectedOption = ref<string>("");
 
@@ -11,6 +14,10 @@ const options = tm("appointment.select.list");
 
 function openCalendly(url: string) {
   (window as any).Calendly.initPopupWidget({ url });
+}
+
+function goToContact() {
+  router.push({ name: contactRoutesName.HOME });
 }
 </script>
 
@@ -86,11 +93,13 @@ function openCalendly(url: string) {
     </div>
     <div v-if="selectedOption === '4'" class="text-block">
       <h3>{{ tm("appointment.select.list")[3].label }}</h3>
-      <p>????</p>
+      <p>{{ tm("appointment.select.qiGong") }}</p>
+      <Button label="Contactez-moi" @click="goToContact()" />
     </div>
     <div v-if="selectedOption === '5'" class="text-block">
       <h3>{{ tm("appointment.select.list")[4].label }}</h3>
-      <p>?????</p>
+      <p>{{ tm("appointment.select.qiGong") }}</p>
+      <Button label="Contactez-moi" @click="goToContact()" />
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@
     },
     "top": {
       "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
-      "tel": "06 82 12 90 59"
+      "tel": "06 33 47 80 96"
     }
   },
   "404": {
@@ -24,7 +24,7 @@
     "informations": {
       "name": "Isabelle Laporcherie",
       "societyName": "Reflex’ô Bien-être",
-      "number": "06 82 12 90 59",
+      "number": "06 33 47 80 96",
       "mail": "izevc isabelle_garde@yahoo.fr",
       "adress": "7 place de l'église Saint Julien, 19600 Nespouls"
     },
@@ -77,7 +77,7 @@
         "<em>À la croisée des chemins entre la Corrèze, la Dordogne et le Lot, j’ai créé Réflex ô Bien-être : un lieu pour prendre soin de soi et retrouver équilibre et vitalité.</em>",
         "Je m’appelle Isabelle, praticienne en <strong>réflexologie</strong> et en <strong>médecine traditionnelle chinoise</strong>. Mon approche vient en complément de la médecine conventionnelle, pour accompagner chacun de façon simple et humaine.",
         "L’objectif : <strong>soulager les tensions, protéger son souffle, retrouver de l’énergie et s’offrir une vraie pause</strong> dans un quotidien trop rempli.",
-        "J’accorde une place essentielle au temps <strong>d’écoute et d’explication</strong>, afin que chacun comprenne son corps, retrouve une circulation harmonieuse de l’énergie… et que le bien-être revienne."
+        "J’accorde une place essentielle au temps <strong>d’écoute et d’explications</strong>, afin que chacun comprenne son corps, retrouve une circulation harmonieuse de l’énergie… et que le bien-être revienne."
       ],
       "learnAboutMe": "En savoir plus sur mon parcours"
     },
@@ -105,7 +105,7 @@
         "C’est ce chemin qui m’a menée à la Médecine Traditionnelle Chinoise et à la Réflexologie : deux approches différentes mais qui partagent une même vision globale de l’être humain.",
         "Je les ai choisies parce qu’elles me permettent de prendre soin autrement : en écoutant, en observant, en respectant le rythme de chacun. Elles accompagnent, soulagent et rééquilibrent.",
         "Mon engagement est d’offrir un espace de confiance et de bienveillance, où chaque séance s’adapte à votre histoire et à vos besoins. Ce qui me motive chaque jour, c’est de vous voir repartir plus léger : le corps détendu, l’esprit apaisé, avec un souffle nouveau.",
-        "Mes soins ne remplacent pas la médecine conventionnelle, ils la complètent et apportent un autre éclairage.",
+        "Mes soins ne remplacent pas la médecine conventionnelle, ils viennent en complément et apportent un autre éclairage.",
         "Mon intention est simple : vous aider à activer vos propres ressources pour retrouver un équilibre durable."
       ],
       "link": "En savoir plus sur mes activités"
@@ -120,7 +120,7 @@
       "text": [
         "J’ai travaillé 36 ans au sein des Marchés Financiers, un univers exigeant que j’ai profondément apprécié. J’y ai appris la rigueur et la persévérance. Les salles de marchés restent un terrain rude, où la compétition ne laisse guère de répit. Le temps était venu d’ouvrir une nouvelle page, et j’ai choisi de la consacrer à une autre passion : la Médecine Traditionnelle Chinoise (MTC).",
         "C’est au détour d’un cours de sport, dans le cadre professionnel, que j’ai découvert le Qi Gong. Ces mouvements simples et profonds m’ont appris à libérer et à renforcer mon énergie. Peu à peu, cette pratique m’a ouverte à l’univers fascinant des canaux – appelés “méridiens” en Occident – qui parcourent le corps. Elle m’a conduite à l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna, dont les enseignements ont marqué le début d’un nouveau chemin.",
-        "J’ai ensuite approfondi mes connaissances par un parcours complet, qui m’a permis d’obtenir des diplômes en acupuncture et en Qi Gong, ainsi que des certifications en massage Tuina et en diététique chinoise. Je poursuis aujourd’hui une formation en pharmacopée à l’école Imderplan de Montpellier, avec un intérêt particulier pour nos plantes locales. Je suis également certifiée en Réflexologie, une discipline plus connue en Occident. Elle crée un pont naturel entre Orient et Occident, en combinant zones réflexes et points d’acupuncture, dans le respect du cadre médical.",
+        "J’ai ensuite approfondi mes connaissances par un parcours complet, qui m’a permis d’obtenir des diplômes en acupuncture et en Qi Gong, ainsi que des certifications en massage Tuina et en diététique chinoise (en cours). Je poursuis aujourd’hui une formation en pharmacopée à l’école Imderplan de Montpellier, avec un intérêt particulier pour nos plantes locales. Je suis également certifiée en Réflexologie, une discipline plus connue en Occident. Elle crée un pont naturel entre Orient et Occident, en combinant zones réflexes et points d’acupuncture, dans le respect du cadre médical.",
         "J’ai choisi de donner un nouvel élan à ma vie professionnelle en consacrant mon énergie à vous accompagner vers un mieux-être. Mon chemin entre Orient et Occident m’a appris qu’il n’existe pas de solution unique, mais des chemins qui s’adaptent à chacun. C’est avec cette conviction que j’accompagne aujourd’hui chaque personne, dans une approche bienveillante qui s’inscrit aux côtés de la médecine conventionnelle, pour redonner place à l’équilibre et à la vitalité."
       ]
     },
@@ -150,7 +150,11 @@
         },
         {
           "date": "Septembre 2024 -  formation en cours",
-          "title": "Herboristerie, Plantes médicinales et Médecines douces."
+          "title": "Herboristerie, Plantes médicinales et Médecines douces"
+        },
+        {
+          "date": "Avril 2025 -  formation en cours",
+          "title": "Réseau Guolin France - Qi gong et cancer"
         }
       ]
     }
@@ -365,8 +369,9 @@
             "title": "Séance de suivi",
             "text": [
               "Les séances de suivi durent environ 45 minutes.",
-              "Nous reprenons ensemble le protocole établi, que j’adapte selon vos besoins et vos ressentis du moment.",
-              "En fin de séance, nous faisons le point et je vous propose des conseils personnalisés pour prolonger les bienfaits. Vous recevez ensuite un résumé personnalisé par mail, afin de vous accompagner en toute autonomie."
+              "Elles s’inscrivent dans un cycle de trois rendez-vous, espacés d’une quinzaine de jours. Ce rythme permet au corps d’intégrer progressivement les informations reçues et d’ancrer les effets du soin dans la durée.",
+              "À chaque séance, nous reprenons le protocole établi lors de la première rencontre, que j’adapte selon vos ressentis et l’évolution observée depuis la dernière fois.",
+              "Ces ajustements permettent d’accompagner le corps pas à pas vers un nouvel équilibre, tout en douceur."
             ],
             "hovering": "La réflexologie, une approche douce et précise qui rééquilibre le corps et apaise l’esprit."
           },
@@ -775,7 +780,8 @@
     "office": {
       "title": "Mon cabinet",
       "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
-      "tel": "06 82 12 90 59"
+      "tel": "06 33 47 80 96",
+      "mail": "contact@reflexo-bien-etre.fr"
     },
     "takeAppointment": "Prendre rendez-vous",
     "form": {
@@ -811,11 +817,18 @@
   "appointment": {
     "title": "Prendre rendez-vous",
     "description": "Choisissez la prestation qui vous convient et réservez votre créneau en ligne.",
+    "qiGong": "Pour les séances de massage Tuina, contactez-moi directement.",
     "select": {
       "title": "Choississez une option",
       "list": [
-        { "value": "1", "label": "Réflexologie adulte" },
-        { "value": "2", "label": "Réflexologie enfant/adolescent (-16 ans)" },
+        {
+          "value": "1",
+          "label": "Réflexologie et énergétique chinoise adulte"
+        },
+        {
+          "value": "2",
+          "label": "Réflexologie et énergétique chinoise enfant/adolescent (-16 ans)"
+        },
         { "value": "3", "label": "Massage Tuina" },
         { "value": "4", "label": "Cours de Qi Gong en ligne" },
         { "value": "5", "label": "Cours de Qi Gong en présentiel (Nespouls)" }
