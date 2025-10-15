@@ -16,6 +16,8 @@ import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { siteMapRoutesPath } from "@/siteMap/routes/routesPath";
 import { notFoundRoutesName } from "@/notFound/routes/routesName";
 import { notFoundRoutesPath } from "@/notFound/routes/routesPath";
+import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
+import { legalNoticeRoutesPath } from "@/legalNotice/routes/routesPath";
 
 export const routes = [
   {
@@ -175,6 +177,15 @@ export const routes = [
       title: "Réflexô Bien-être - Page non trouvée",
       description:
         "La page que vous cherchez n'existe pas. Retournez à l'accueil pour découvrir les accompagnements en réflexologie et bien-être.",
+    },
+  },
+  {
+    path: legalNoticeRoutesPath.HOME,
+    name: legalNoticeRoutesName.HOME,
+    component: () => import("@/legalNotice/legalNotice.vue"),
+    meta: {
+      title: "Réflexô Bien-être - Mentions Légales",
+      description: "Consultez les mentions légales du site reflexo-bien-etre.com.",
     },
   },
 ];

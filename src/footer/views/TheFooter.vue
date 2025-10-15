@@ -15,6 +15,7 @@ import { seasonsRoutesName } from "@/season/routes/routesName";
 import { contactRoutesName } from "@/contact/routes/routesName";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { practicesRoutesName } from "@/practices/routes/routesName";
+import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
 
 const { t } = useI18n();
 const route = useRoute();
@@ -72,10 +73,20 @@ const warningBackgroundColorClass = computed(() => {
             {{ t("footer.socialMedia.title") }}
           </h3>
           <div class="social-media__icons">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Instagram">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitez notre page Instagram"
+            >
               <InstagramIcon class="icon" />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Facebook">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitez notre page Facebook"
+            >
               <FacebookIcon class="icon" />
             </a>
           </div>
@@ -89,7 +100,12 @@ const warningBackgroundColorClass = computed(() => {
           color="yellow"
           :to="siteMapRoutesName.HOME"
         />
-        <p>{{ t("footer.legal.legalPage") }}</p>
+        <LinkRouter
+          class="link"
+          :label="t('footer.legal.legalPage')"
+          color="yellow"
+          :to="legalNoticeRoutesName.HOME"
+        />
         <p>{{ t("footer.legal.creator") }}</p>
       </div>
     </div>
