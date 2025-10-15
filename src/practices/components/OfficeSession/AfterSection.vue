@@ -91,6 +91,9 @@ const title = t("practices.insideSessionPage.after.title");
 
       li {
         width: 100%;
+        p {
+          margin: 0;
+        }
       }
     }
   }

@@ -62,7 +62,7 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 @media (max-width: 768px) {
   .specialties {
     width: 100%;
-    p {
+    &-text {
       max-width: 90%;
       margin: 0 auto;
     }

@@ -10,6 +10,7 @@ const props = defineProps({
   currentSlide: { type: Number, required: true },
   index: { type: Number, required: true },
   direction: { type: String, required: true },
+  total: { type: Number, required: true },
 });
 
 const { direction } = toRefs(props);
@@ -30,8 +31,11 @@ const transitionEffect = computed(() => {
       v-show="currentSlide === index"
       @mouseenter="emit('mouseEnter')"
       @mouseout="emit('mouseLeave')"
+      role="group"
+      aria-roledescription="slide"
+      :aria-label="`Slide ${index + 1} de ${total}`"
     >
-      <img :src="urlFor(slide.image).url()" />
+      <img :src="urlFor(slide.image).url()" :alt="slide.description" />
       <div class="carousel-item-informations">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>

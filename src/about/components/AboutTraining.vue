@@ -9,8 +9,8 @@ const { t, tm } = useI18n();
     <h2 class="about__section-title about__section-title--light">
       {{ t("about.training.title") }}
     </h2>
-    <div class="about__training-timeline">
-      <div
+    <ul class="about__training-timeline">
+      <li
         v-for="(item, index) in tm('about.training.list')"
         :key="index"
         class="about__training-item"
@@ -20,8 +20,8 @@ const { t, tm } = useI18n();
           <p class="about__training-info-title">{{ item.title }}</p>
           <p class="about__training-info-subtitle">{{ item.subtitle }}</p>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -55,6 +55,7 @@ const { t, tm } = useI18n();
       flex-direction: column;
       gap: 20px;
       position: relative;
+      padding-left: 0;
 
       &::before {
         content: "";
@@ -72,6 +73,7 @@ const { t, tm } = useI18n();
       display: flex;
       align-items: center;
       position: relative;
+      list-style: none;
     }
 
     &-date {

@@ -2,7 +2,7 @@
 import { onMounted, ref, type Ref } from "vue";
 import { sanityClient } from "@/sanityClient";
 import type { CarouselSlide } from "../interface/Carousel";
-import Carousel from "@/general/components/Carousel.vue";
+import BaseCarousel from "@/general/components/BaseCarousel.vue";
 import HomePresentation from "../components/HomePresentation.vue";
 import HomeDifficulties from "../components/HomeDifficulties.vue";
 import HomeSolution from "../components/HomeSolution.vue";
@@ -23,7 +23,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Carousel :slides="slidesData" />
+  <BaseCarousel :slides="slidesData" ariaLabel="Carrousel d'images" />
   <div class="container">
     <HomePresentation />
     <HomeDifficulties />

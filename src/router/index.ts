@@ -1,43 +1,27 @@
 import { homeRoutesName } from "@/home/routes/routesName";
 import { homeRoutesPath } from "@/home/routes/routesPath";
-import Home from "@/home/views/Home.vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
 import { aboutRoutesPath } from "@/about/routes/routesPath";
-import About from "@/about/views/About.vue";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import { appointmentRoutesPath } from "@/appointment/routes/routesPath";
-import Appointment from "@/appointment/views/Appointment.vue";
 import { contactRoutesName } from "@/contact/routes/routesName";
 import { contactRoutesPath } from "@/contact/routes/routesPath";
-import Contact from "@/contact/views/Contact.vue";
 import { practicesRoutesName } from "@/practices/routes/routesName";
 import { practicesRoutesPath } from "@/practices/routes/routesPath";
-import Practices from "@/practices/views/Practices.vue";
-import PracticesOffice from "@/practices/views/OfficeSession.vue";
-import PracticesOutside from "@/practices/views/OutsideSession.vue";
 import { priceRoutesName } from "@/price/routes/routesName";
 import { priceRoutesPath } from "@/price/routes/routesPath";
-import Price from "@/price/views/Price.vue";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import { seasonsRoutesPath } from "@/season/routes/routesPath";
-import Seasons from "@/season/views/Seasons.vue";
-import Fall from "@/season/views/Fall.vue";
-import Winter from "@/season/views/Winter.vue";
-import Spring from "@/season/views/Spring.vue";
-import Summer from "@/season/views/Summer.vue";
-import InterSeasons from "@/season/views/InterSeasons.vue";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { siteMapRoutesPath } from "@/siteMap/routes/routesPath";
-import siteMap from "@/siteMap/views/siteMap.vue";
 import { notFoundRoutesName } from "@/notFound/routes/routesName";
 import { notFoundRoutesPath } from "@/notFound/routes/routesPath";
-import NotFound from "@/notFound/views/notFound.vue";
 
 export const routes = [
   {
     path: homeRoutesPath.HOME,
     name: homeRoutesName.HOME,
-    component: Home,
+    component: () => import("@/home/views/Home.vue"),
     meta: {
       title: "Réflexô Bien-être - Accueil",
       description:
@@ -47,7 +31,7 @@ export const routes = [
   {
     path: aboutRoutesPath.HOME,
     name: aboutRoutesName.HOME,
-    component: About,
+    component: () => import("@/about/views/About.vue"),
     meta: {
       title: "Réflexô Bien-être - À propos",
       description:
@@ -57,7 +41,7 @@ export const routes = [
   {
     path: appointmentRoutesPath.HOME,
     name: appointmentRoutesName.HOME,
-    component: Appointment,
+    component: () => import("@/appointment/views/AppointmentView.vue"),
     meta: {
       title: "Réflexô Bien-être - Rendez-vous",
       description:
@@ -67,7 +51,7 @@ export const routes = [
   {
     path: contactRoutesPath.HOME,
     name: contactRoutesName.HOME,
-    component: Contact,
+    component: () => import("@/contact/views/ContactView.vue"),
     meta: {
       title: "Réflexô Bien-être - Contact",
       description:
@@ -77,7 +61,7 @@ export const routes = [
   {
     path: practicesRoutesPath.HOME,
     name: practicesRoutesName.HOME,
-    component: Practices,
+    component: () => import("@/practices/views/Practices.vue"),
     meta: {
       title: "Réflexô Bien-être - Mes accompagnements",
       description:
@@ -87,7 +71,7 @@ export const routes = [
   {
     path: practicesRoutesPath.OFFICE,
     name: practicesRoutesName.OFFICE,
-    component: PracticesOffice,
+    component: () => import("@/practices/views/OfficeSession.vue"),
     meta: {
       title: "Réflexô Bien-être - Séance au cabinet",
       description:
@@ -97,7 +81,7 @@ export const routes = [
   {
     path: practicesRoutesPath.OUTSIDE,
     name: practicesRoutesName.OUTSIDE,
-    component: PracticesOutside,
+    component: () => import("@/practices/views/OutsideSession.vue"),
     meta: {
       title: "Réflexô Bien-être - Séance extérieure",
       description: "Déroulement d'une séance de Qi Gong au cabinet ou en visio.",
@@ -106,7 +90,7 @@ export const routes = [
   {
     path: priceRoutesPath.HOME,
     name: priceRoutesName.HOME,
-    component: Price,
+    component: () => import("@/price/views/Price.vue"),
     meta: {
       title: "Réflexô Bien-être - Tarifs",
       description:
@@ -116,7 +100,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.HOME,
     name: seasonsRoutesName.HOME,
-    component: Seasons,
+    component: () => import("@/season/views/Seasons.vue"),
     meta: {
       title: "Réflexô Bien-être - Saisons et conseils",
       description:
@@ -126,7 +110,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.FALL,
     name: seasonsRoutesName.FALL,
-    component: Fall,
+    component: () => import("@/season/views/Fall.vue"),
     meta: {
       title: "Réflexô Bien-être - Automne",
       description:
@@ -136,7 +120,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.WINTER,
     name: seasonsRoutesName.WINTER,
-    component: Winter,
+    component: () => import("@/season/views/Winter.vue"),
     meta: {
       title: "Réflexô Bien-être - Hiver",
       description:
@@ -146,7 +130,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.SPRING,
     name: seasonsRoutesName.SPRING,
-    component: Spring,
+    component: () => import("@/season/views/Spring.vue"),
     meta: {
       title: "Réflexô Bien-être - Printemps",
       description:
@@ -156,7 +140,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.SUMMER,
     name: seasonsRoutesName.SUMMER,
-    component: Summer,
+    component: () => import("@/season/views/Summer.vue"),
     meta: {
       title: "Réflexô Bien-être - Été",
       description:
@@ -166,7 +150,7 @@ export const routes = [
   {
     path: seasonsRoutesPath.INTERSEASON,
     name: seasonsRoutesName.INTERSEASON,
-    component: InterSeasons,
+    component: () => import("@/season/views/InterSeasons.vue"),
     meta: {
       title: "Réflexô Bien-être - Intersaison",
       description:
@@ -176,7 +160,7 @@ export const routes = [
   {
     path: siteMapRoutesPath.HOME,
     name: siteMapRoutesName.HOME,
-    component: siteMap,
+    component: () => import("@/siteMap/views/siteMap.vue"),
     meta: {
       title: "Réflexô Bien-être - Plan du site",
       description:
@@ -184,13 +168,9 @@ export const routes = [
     },
   },
   {
-    path: "/",
-    redirect: homeRoutesPath.HOME,
-  },
-  {
     path: notFoundRoutesPath.HOME,
     name: notFoundRoutesName.HOME,
-    component: NotFound,
+    component: () => import("@/notFound/views/notFound.vue"),
     meta: {
       title: "Réflexô Bien-être - Page non trouvée",
       description:
@@ -199,11 +179,16 @@ export const routes = [
   },
 ];
 
-export const scrollBehavior = (to: any, from: any, savedPosition: any) => {
+import type { RouteLocationNormalized } from "vue-router";
+
+export const scrollBehavior = (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  savedPosition: { left: number; top: number } | null
+) => {
   if (savedPosition) {
     return savedPosition;
   } else {
     return { top: 0 };
   }
 };
-

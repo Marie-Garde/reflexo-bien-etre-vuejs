@@ -5,7 +5,17 @@ import Button from "@/components/Button.vue";
 import { useRouter } from "vue-router";
 import { contactRoutesName } from "@/contact/routes/routesName";
 
-const { t, tm } = useI18n();
+interface Calendly {
+  initPopupWidget: (options: { url: string }) => void;
+}
+
+declare global {
+  interface Window {
+    Calendly: Calendly;
+  }
+}
+
+const { tm } = useI18n();
 const router = useRouter();
 
 const selectedOption = ref<string>("");
@@ -13,7 +23,7 @@ const selectedOption = ref<string>("");
 const options = tm("appointment.select.list");
 
 function openCalendly(url: string) {
-  (window as any).Calendly.initPopupWidget({ url });
+  window.Calendly.initPopupWidget({ url });
 }
 
 function goToContact() {
@@ -23,8 +33,8 @@ function goToContact() {
 
 <template>
   <div class="select-container">
-    <h2>Sélectionnez une option :</h2>
-    <select v-model="selectedOption" class="select">
+    <label for="appointment-select">Sélectionnez une option :</label>
+    <select v-model="selectedOption" id="appointment-select" class="select">
       <option value="">-</option>
       <option v-for="(option, index) in options" :key="index" :value="option.value">
         {{ option.label }}
@@ -93,7 +103,7 @@ function goToContact() {
     </div>
     <div v-if="selectedOption === '4'" class="text-block">
       <h3>{{ tm("appointment.select.list")[3].label }}</h3>
-      <p>{{ tm("appointment.select.qiGong") }}</p>
+      <p>{{ tm("appointment.qiGong") }}</p>
       <Button label="Contactez-moi" @click="goToContact()" />
     </div>
     <div v-if="selectedOption === '5'" class="text-block">
@@ -110,12 +120,32 @@ function goToContact() {
 
 .select-container {
   font-family: sans-serif;
+  width: 100%;
   max-width: 1280px;
-  margin: 60px auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 
-  // @media (max-width: 1200px) and (min-width: 769px) {
-  //   margin: 0 auto 5rem 40px;
-  // }
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 100%;
+    margin: 40px auto 5rem 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+label {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  @media (max-width: 769px) {
+    text-align: center;
+  }
 }
 
 .select {
@@ -124,6 +154,11 @@ function goToContact() {
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 20px;
+
+  @media (max-width: 769px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .text-block {
@@ -135,6 +170,15 @@ function goToContact() {
 
   h3 {
     margin-bottom: 30px;
+  }
+
+  @media (max-width: 769px) {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 90%;
   }
 }
 
@@ -150,5 +194,10 @@ function goToContact() {
 button {
   padding: 20px 40px;
   font-size: 1.2rem;
+
+  @media (max-width: 769px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 </style>

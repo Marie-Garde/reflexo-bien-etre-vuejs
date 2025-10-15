@@ -6,12 +6,17 @@ const emit = defineEmits(["prev", "next"]);
 </script>
 
 <template>
-  <ArrowLeft class="carousel-control left" @click="emit('prev')" />
-  <ArrowRight class="carousel-control right" @click="emit('next')" />
+  <button class="carousel-control left" @click="emit('prev')" aria-label="Slide précédente">
+    <ArrowLeft />
+  </button>
+  <button class="carousel-control right" @click="emit('next')" aria-label="Slide suivante">
+    <ArrowRight />
+  </button>
 </template>
 
 <style scoped lang="scss">
 .carousel-control {
+  background-color: transparent;
   border: none;
   display: inline-block;
   position: absolute;

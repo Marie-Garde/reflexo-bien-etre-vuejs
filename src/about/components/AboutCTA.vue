@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { contactRoutesName } from "@/contact/routes/routesName";
+import { appointmentRoutesName } from "@/appointment/routes/routesName";
 
 const { t } = useI18n();
 </script>
@@ -11,7 +11,7 @@ const { t } = useI18n();
       <div class="about__cta-overlay">
         <h2 class="about__section-title">{{ t("about.CTA.title") }}</h2>
         <p>{{ t("about.CTA.description") }}</p>
-        <router-link :to="{ name: contactRoutesName.HOME }" class="about__cta-button">
+        <router-link :to="{ name: appointmentRoutesName.HOME }" class="about__cta-button">
           {{ t("about.CTA.buttonLabel") }}
         </router-link>
       </div>

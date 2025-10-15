@@ -5,10 +5,10 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <header class="about__header">
-    <div class="about__header-container">
-      <div class="about__header-overlay">
-        <h1 class="about__title">{{ t("appointment.title") }}</h1>
+  <header class="appointment__header">
+    <div class="appointment__header-container">
+      <div class="appointment__header-overlay">
+        <h1 class="appointment__title">{{ t("appointment.title") }}</h1>
       </div>
     </div>
   </header>
@@ -18,7 +18,7 @@ const { t } = useI18n();
 @use "sass:color";
 @use "@/assets/variables.scss" as *;
 
-.about {
+.appointment {
   &__header {
     width: 100%;
     height: 60vh;
@@ -50,7 +50,7 @@ const { t } = useI18n();
 }
 
 @media (max-width: 1200px) and (min-width: 769px) {
-  .about {
+  .appointment {
     &__header-overlay {
       width: 50%;
       margin: 0 auto 5rem 40px;
@@ -59,7 +59,7 @@ const { t } = useI18n();
 }
 
 @media (max-width: 768px) {
-  .about {
+  .appointment {
     &__header {
       height: auto;
       background-image: none;
@@ -70,7 +70,7 @@ const { t } = useI18n();
         display: block;
         width: 100%;
         height: 250px;
-        background-image: url("@/assets/background/presentationWhoBackground.png");
+        background-image: url("@/assets/background/office.png");
         background-size: cover;
         background-position: center;
       }

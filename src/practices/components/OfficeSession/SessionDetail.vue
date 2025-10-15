@@ -28,8 +28,8 @@ const session = {
 </script>
 
 <template>
-  <section class="office-session__session">
-    <h2 class="office-session__section-title">{{ session.title }}</h2>
+  <section>
+    <h2 class="title">{{ session.title }}</h2>
     <div class="top-section">
       <div class="top-section__text">
         <h3>{{ session.first.title }}</h3>
@@ -183,6 +183,11 @@ const session = {
 }
 
 @media (max-width: 768px) {
+  .title {
+    margin: 40px auto 20px auto;
+    max-width: 90%;
+    text-align: center;
+  }
   .top-section,
   .bottom-section {
     height: auto;
@@ -327,7 +332,11 @@ const session = {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
+  h2 {
+    margin: 60px auto 40px auto;
+    text-align: center;
+  }
   .office-session__session {
     .session-detail {
       flex-direction: column;

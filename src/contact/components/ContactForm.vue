@@ -160,7 +160,11 @@ const formFields = [
     <h2 class="contact__section-title">{{ t("contact.form.title") }}</h2>
     <form @submit.prevent="sendEmail" class="form">
       <div class="form__group form__group--horizontal">
-        <div v-for="field in formFields.filter((f) => f.half)" :key="field.name" class="form__field">
+        <div
+          v-for="field in formFields.filter((f) => f.half)"
+          :key="field.name"
+          class="form__field"
+        >
           <label class="form__label" :for="field.name">{{ t(field.label) }}</label>
           <input
             :class="{ 'input-error': errors[field.name] }"

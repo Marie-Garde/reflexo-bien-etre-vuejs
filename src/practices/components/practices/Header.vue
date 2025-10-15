@@ -73,8 +73,8 @@ const { t, tm } = useI18n();
     }
     &-overlay {
       width: 90%;
-      margin-bottom: 0;
-      padding: 2rem 0;
+      margin: 0 auto;
+      padding: 40px 0;
       text-align: center;
       background: transparent;
       box-shadow: none;
