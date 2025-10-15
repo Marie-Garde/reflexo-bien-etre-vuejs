@@ -72,10 +72,10 @@ const warningBackgroundColorClass = computed(() => {
             {{ t("footer.socialMedia.title") }}
           </h3>
           <div class="social-media__icons">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Instagram">
               <InstagramIcon class="icon" />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Facebook">
               <FacebookIcon class="icon" />
             </a>
           </div>

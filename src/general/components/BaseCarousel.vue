@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, toRefs, toRef } from "vue";
+import { ref, onMounted, onBeforeUnmount, toRefs } from "vue";
 import type { PropType } from "vue";
 import CarouselItem from "./CarouselItem.vue";
 import CarouselControls from "./CarouselControls.vue";
@@ -8,6 +8,7 @@ import type { CarouselSlide } from "../../home/interface/Carousel";
 
 const props = defineProps({
   slides: { type: Array as PropType<CarouselSlide[]>, required: true },
+  ariaLabel: { type: String, required: true },
 });
 
 const { slides } = toRefs(props);
@@ -64,8 +65,13 @@ function switchSlide(index: number) {
 </script>
 
 <template>
-  <div class="carousel">
-    <div class="carousel-inner">
+  <div
+    class="carousel"
+    role="region"
+    aria-roledescription="carousel"
+    :aria-label="ariaLabel"
+  >
+    <div class="carousel-inner" aria-live="polite">
       <CarouselItem
         v-for="(slide, index) in slides"
         :key="`item-${index}`"
@@ -73,6 +79,7 @@ function switchSlide(index: number) {
         :current-slide="currentSlide"
         :index="index"
         :direction="direction"
+        :total="slides.length"
         @mouse-enter="stopSlideTimer"
         @mouse-Leave="startSlideTimer"
       />

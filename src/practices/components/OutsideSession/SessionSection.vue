@@ -97,7 +97,7 @@ function goToAppointment() {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .infos-session {
-    height: 40vh;
+    height: fit-content;
 
     img {
       width: 50%;
@@ -109,6 +109,7 @@ function goToAppointment() {
 
       .button {
         width: 70%;
+        margin-bottom: 40px;
       }
     }
   }

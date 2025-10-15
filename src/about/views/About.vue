@@ -7,11 +7,11 @@ import AboutTraining from "../components/AboutTraining.vue";
 </script>
 
 <template>
-  <div class="about">
+  <main class="about">
     <AboutHeader />
     <AboutApproach />
     <AboutCTA />
     <AboutCareer />
     <AboutTraining />
-  </div>
+  </main>
 </template>

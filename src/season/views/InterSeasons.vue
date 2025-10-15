@@ -94,8 +94,9 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
 @media (max-width: 768px) {
   .header {
     height: auto;
-    padding: 40px 0;
+    padding: 100px 0 0 0;
     display: flex;
+    align-items: flex-end;
 
     &-container {
       width: 100%;
@@ -106,6 +107,11 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
       margin-bottom: 0;
       text-align: center;
       border-radius: 0;
+      background: rgba(255, 255, 255, 0.7);
+
+      h1 {
+        margin: 0 auto 20px auto;
+      }
     }
   }
 

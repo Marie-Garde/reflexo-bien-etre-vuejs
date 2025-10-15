@@ -41,9 +41,9 @@ const { t } = useI18n();
           width="600"
           height="450"
           style="border: 0"
-          allowfullscreen="false"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          title="Carte Google Maps indiquant l'emplacement du cabinet"
         ></iframe>
       </section>
 
@@ -121,19 +121,37 @@ const { t } = useI18n();
 @media (max-width: 768px) {
   .contact {
     &__header {
-      height: 40vh;
+      height: auto;
+      background-image: none;
+      display: block;
 
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 250px;
+        background-image: url("@/assets/background/contactBackground.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      &-container {
+        align-items: center;
+        justify-content: center;
+      }
       &-overlay {
-        left: 50%;
-        width: 80%;
-        padding: 15px;
-        bottom: 2%;
+        width: 90%;
+        margin-bottom: 0;
+        padding: 2rem 0;
+        text-align: center;
+        background: transparent;
+        box-shadow: none;
       }
     }
 
     &__office {
       flex-direction: column;
-      margin: 40px auto;
+      margin: 20px auto;
       padding: 0 20px;
 
       &-map {

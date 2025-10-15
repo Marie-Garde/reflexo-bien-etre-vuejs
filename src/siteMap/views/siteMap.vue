@@ -33,9 +33,7 @@ const priceRouteName = priceRoutesName.HOME;
     <h2>
       <LinkRouter class="link" :label="t('home.title')" :to="homeRouteName" />
     </h2>
-    <h2>
-      <LinkRouter class="link" :label="t('about.title')" :to="aboutRouteName" />
-    </h2>
+    <h2><LinkRouter class="link" :label="t('navigation.items.about')" :to="aboutRouteName" /></h2>
     <h2>
       <LinkRouter class="link" :label="t('practices.title')" :to="practicesRouteName" />
     </h2>
@@ -111,7 +109,7 @@ const priceRouteName = priceRoutesName.HOME;
 @use "@/assets/variables.scss" as *;
 
 .container {
-  margin: 60px auto;
+  margin: 60px auto 40px 40px;
   max-width: 1280px;
 
   h1 {
@@ -121,6 +119,10 @@ const priceRouteName = priceRoutesName.HOME;
     margin-top: 20px;
   }
   .subCategory {
+    margin-left: 30px;
+  }
+
+  @media (max-width: 768px) {
     margin-left: 30px;
   }
 }

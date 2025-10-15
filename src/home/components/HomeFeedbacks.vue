@@ -23,7 +23,7 @@ const feedbacks = [
 <template>
   <div class="feedbacks">
     <h2>{{ t("home.feedback.title") }}</h2>
-    <CarouselText :slides="feedbacks" />
+    <CarouselText :slides="feedbacks" ariaLabel="Carrousel de témoignages" />
   </div>
 </template>
 

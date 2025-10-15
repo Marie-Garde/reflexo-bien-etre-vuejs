@@ -16,6 +16,8 @@ const emit = defineEmits<{
       v-for="(item, index) in total"
       :key="index"
       @click="emit('switch', index)"
+      :aria-label="`Aller à la slide ${index + 1}`"
+      :aria-current="currentIndex === index ? 'true' : 'false'"
     ></button>
   </div>
 </template>

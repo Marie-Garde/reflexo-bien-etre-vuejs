@@ -63,6 +63,8 @@ const { t } = useI18n();
       padding: 5px;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
 }

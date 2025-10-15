@@ -70,10 +70,10 @@ const practiceLabel = tm("practices.outsideSessionPage.practice.text");
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .infos-practices {
-    height: 40vh;
+    height: fit-content;
 
     .text {
-      padding: 0 40px 0 60px;
+      padding: 0 40px 40px 60px;
       width: 50%;
     }
   }
