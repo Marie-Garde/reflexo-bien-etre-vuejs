@@ -527,24 +527,30 @@
       },
       "spring": {
         "title": "Le printemps",
-        "subtitle": "La saison de l’élan : pousser, créer, se déployer.",
-        "specialties": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "subtitle": "La saison de l’élan vital : la nature s’éveille, tout pousse, tout repart. ",
+        "specialties": [
+          "Au printemps, la lumière revient, les jours s’allongent, le corps se remet doucement en mouvement. C’est une période de relance et d’ouverture…",
+          "Le printemps, associé à l’élément <strong>Bois</strong>, marque le <strong>renouveau</strong>.",
+          "Dans la nature, la sève monte, les bourgeons s’ouvrent, la vie reprend sa course. Sur le plan énergétique, c’est la saison du <strong>Foie</strong> et de la <strong>Vésicule Biliaire</strong>, qui assurent la libre circulation de l’énergie (Qi) et des émotions.",
+          "Quand tout circule harmonieusement, cette énergie se manifeste par <strong>la créativité, la curiosité, l’élan, la capacité à imaginer et à entreprendre</strong>. Mais si elle se bloque, elle peut se transformer en <strong>colère, irritabilité ou frustration</strong>.",
+          "Le printemps nous invite donc à <strong>laisser l’énergie s’exprimer avec souplesse</strong>, à bouger, créer, oser — sans brusquer ni retenir."
+        ],
         "advices": [
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Faire circuler l’énergie",
+            "text": "Bouger, s’étirer, marcher, pratiquer le Qi Gong ou le yoga : tout ce qui assouplit le corps aide aussi à libérer l’esprit. Le Foie aime le mouvement fluide, pas les tensions."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Alléger et détoxifier",
+            "text": "C’est la saison idéale pour alléger son alimentation: favoriser les <strong>jeunes pousses</strong>, les <strong>verdures</strong>, les <strong>saveurs légèrement acides</strong> (citron, oseille, pomme), et limiter les excès gras ou sucrés. Ces choix soutiennent le Foie et facilitent la reprise d’énergie."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Cultiver la souplesse intérieure",
+            "text": "Accueillir les changements sans résistance : le printemps est mouvement, croissance et adaptation. Se fixer des objectifs réalistes, mais ne pas vouloir tout faire d’un coup."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Prendre soin de ses émotions",
+            "text": "La colère, la nervosité ou la fatigue oculaire sont souvent des signes d’un Foie un peu “congestif”. Apprenez à <strong>respirer profondément</strong>, à vous <strong>accorder du temps dehors</strong>, à <strong>canaliser vos élans</strong> plutôt qu’à les réprimer."
           }
         ],
         "recipes": [
@@ -555,24 +561,31 @@
       },
       "summer": {
         "title": "L'été",
-        "subtitle": "La saison de l’ouverture : rayonner, partager, vibrer.",
-        "specialties": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+        "subtitle": "La saison de la joie et de l’expansion : la nature rayonne, tout est à son apogée.",
+        "specialties": [
+          "En été, la lumière est à son maximum, les journées s’étirent et la chaleur nous invite à vivre dehors.",
+          "C’est une saison d’ouverture, de partage, d’abondance. Le corps a naturellement envie de mouvements, d’activités et de convivialité.",
+          "L’été, associé à l’élément <strong>Feu</strong>, est la saison de la <strong>plénitude</strong>. C’est le moment où l’énergie atteint son apogée : tout est en expansion, à l’image de la nature qui s’épanouit pleinement.",
+          "Sur le plan énergétique, le <strong>Cœur</strong> et <strong>l’Intestin Grêle</strong> sont à l’honneur. Le Cœur gouverne le <strong>Shen</strong>, c’est-à-dire l’esprit, la conscience et la joie intérieure.",
+          "Quand le Feu est équilibré, il se manifeste par <strong>la joie, la clarté, la chaleur humaine et la communication.</strong> Mais s’il s’emballe, il peut se traduire par de <strong>l’agitation, des insomnies, une nervosité importante ou une émotivité excessive.</strong>",
+          "L’été nous invite <strong>à rayonner sans nous consumer,</strong> à savourer la vie tout en gardant un espace de calme intérieur."
+        ],
         "advices": [
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Rafraîchir et hydrater",
+            "text": "Privilégier les <strong>aliments riches en eau</strong> (concombre, melon, pastèque, courgette), les <strong>fruits rouges</strong> et les <strong>tisanes tièdes.</strong> Éviter les excès de café, d’alcool et d’aliments trop épicés qui entretiennent la chaleur interne."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Soutenir le Cœur",
+            "text": "Cultiver la <strong>joie simple</strong>, le <strong>partage</strong>, le <strong>rire</strong>, tout ce qui nourrit le lien et apaise l’esprit. Pratiquer la gratitude, méditer ou marcher dans la nature pour entretenir la sérénité du Shen."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Préserver son énergie",
+            "text": "Même si les journées sont longues, il est essentiel de <strong>respecter des temps de repos</strong> et d’éviter la surexcitation. La sieste ou les moments calmes à l’ombre aident à retrouver un rythme naturel."
           },
           {
-            "title": "Blabla",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+            "title": "Respirer et se relier",
+            "text": "Respirer lentement, sentir le soleil sur la peau sans excès, se relier à la chaleur du vivant. L’été est le moment de s’ouvrir, d’aimer, de se relier aux autres avec légèreté."
           }
         ],
         "recipes": [

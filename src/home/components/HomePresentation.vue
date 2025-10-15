@@ -19,7 +19,7 @@ function goToKnowMore() {
 <template>
   <div class="presentation">
     <div class="presentation-image">
-      <img :src="isabelleImage" class="presentation-image-content" />
+      <img :src="isabelleImage" class="presentation-image-content" alt="Portrait d’Isabelle" />
     </div>
 
     <div class="presentation-content">
@@ -47,12 +47,23 @@ function goToKnowMore() {
     width: 40%;
     padding: 5vw;
     background-color: $green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
     &-content {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       border-radius: 5px;
+      transition: transform 3s ease;
+      transform: scale(1.05);
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 

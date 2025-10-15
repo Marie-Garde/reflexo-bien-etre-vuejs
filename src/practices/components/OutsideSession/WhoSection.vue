@@ -11,7 +11,7 @@ const peopleWhoList = tm("practices.outsideSessionPage.who.people");
     <h2>{{ t("practices.outsideSessionPage.who.title") }}</h2>
     <p>{{ t("practices.outsideSessionPage.who.text") }}</p>
     <ul class="who-list">
-      <li class="who-list-item" v-for="person in peopleWhoList">
+      <li class="who-list-item" v-for="(person, index) in peopleWhoList" :key="index">
         <div class="who-list-item-frame">
           <div v-html="person"></div>
         </div>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import HeaderPage from "@/components/HeaderPage.vue";
 import { useRouter } from "vue-router";
 import { seasonsRoutesName } from "../routes/routesName";
 
@@ -20,44 +19,51 @@ const seasons = [
 </script>
 
 <template>
-  <div class="header">
-    <div class="header-overlay">
-      <h1 class="title">{{ t("seasons.title") }}</h1>
-      <h2 class="subTitle">{{ t("seasons.importance.title") }}</h2>
-      <p v-for="(paragraph, index) in tm('seasons.importance.text')" :key="index">
-        {{ paragraph }}
-      </p>
+  <main>
+    <div class="header">
+      <img
+        src="@/assets/background/seasonBackground.png"
+        alt="Illustration des saisons"
+        class="header-image"
+      />
+      <div class="header-overlay">
+        <h1 class="title">{{ t("seasons.title") }}</h1>
+        <h2 class="subTitle">{{ t("seasons.importance.title") }}</h2>
+        <p v-for="(paragraph, index) in tm('seasons.importance.text')" :key="index">
+          {{ paragraph }}
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="content">
-      <div class="seasons-list">
-        <div class="seasons-list-text">
-          <h2>{{ t("seasons.list.title") }}</h2>
-          <p v-for="(paragraph, index) in tm('seasons.list.text')" :key="index">
-            {{ paragraph }}
-          </p>
-        </div>
-
-        <div class="circle">
-          <div
-            v-for="season in seasons"
-            :key="season.name"
-            :class="['quarter', season.className]"
-            @click="goToSeason(season.route)"
-          >
-            <h3 :class="['quarter-title', 'quarter-title-' + season.className]">
-              {{ season.name }}
-            </h3>
+    <div class="container">
+      <div class="content">
+        <div class="seasons-list">
+          <div class="seasons-list-text">
+            <h2>{{ t("seasons.list.title") }}</h2>
+            <p v-for="(paragraph, index) in tm('seasons.list.text')" :key="index">
+              {{ paragraph }}
+            </p>
           </div>
-          <div class="center-circle" @click="goToSeason(seasonsRoutesName.INTERSEASON)">
-            <h3 class="quarter-title quarter-title-center">Inter saison</h3>
+
+          <div class="circle">
+            <div
+              v-for="season in seasons"
+              :key="season.name"
+              :class="['quarter', season.className]"
+              @click="goToSeason(season.route)"
+            >
+              <h3 :class="['quarter-title', 'quarter-title-' + season.className]">
+                {{ season.name }}
+              </h3>
+            </div>
+            <div class="center-circle" @click="goToSeason(seasonsRoutesName.INTERSEASON)">
+              <h3 class="quarter-title quarter-title-center">Inter saison</h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -65,14 +71,21 @@ const seasons = [
 @use "@/assets/variables.scss" as *;
 
 .header {
+  position: relative;
   width: 100%;
   min-height: 60vh;
-  background-image: url("@/assets/background/seasonBackground.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
   display: flex;
   align-items: center;
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
   &-overlay {
     margin: 60px auto;
@@ -80,6 +93,8 @@ const seasons = [
     width: 100%;
     color: $white;
     text-align: left;
+    position: relative;
+    z-index: 1;
   }
 
   .title {
@@ -212,7 +227,7 @@ const seasons = [
       ),
       title-pos: (
         top: 50%,
-        left: 30%,
+        left: 30%
       ),
     ),
     bottom-right: (
@@ -230,7 +245,7 @@ const seasons = [
       ),
       title-pos: (
         top: 37%,
-        left: 34%,
+        left: 34%
       ),
     ),
     bottom-left: (
@@ -248,7 +263,7 @@ const seasons = [
       ),
       title-pos: (
         top: 40%,
-        left: 35%,
+        left: 35%
       ),
     ),
   );

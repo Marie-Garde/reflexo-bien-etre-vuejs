@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-const { t, tm } = useI18n();
+const { tm } = useI18n();
 
 const pricesTuina = tm("price.type")[1];
 </script>

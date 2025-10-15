@@ -25,7 +25,7 @@ const { t } = useI18n();
     height: 60vh;
     background-image: url("@/assets/background/presentationWhoBackground.png");
     background-size: cover;
-    background-position: center;
+    background-position: top;
     position: relative;
     display: flex;
     justify-content: center;

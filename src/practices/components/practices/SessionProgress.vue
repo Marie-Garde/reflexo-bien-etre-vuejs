@@ -12,7 +12,7 @@ const sessionProgressList = tm("practices.sessionProgress.list");
       <h2>{{ t("practices.sessionProgress.title") }}</h2>
 
       <div class="cards-container">
-        <div class="card" v-for="text in sessionProgressList">
+        <div class="card" v-for="text in sessionProgressList" :key="text.title">
           <div class="card-content">
             <h3>{{ text.title }}</h3>
             <p>{{ text.description }}</p>

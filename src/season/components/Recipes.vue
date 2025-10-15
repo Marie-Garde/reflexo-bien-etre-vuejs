@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-const props = defineProps({
+defineProps({
   background: { type: String, required: true },
-  season: { type: String, required: true },
+  // season: { type: String, required: true },
 });
 
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const title = t("seasons.season.subtitles.recipes");
-const recipes = tm(`seasons.season.${props.season}.recipes`);
+// const recipes = tm(`seasons.season.${props.season}.recipes`);
 </script>
 
 <template>

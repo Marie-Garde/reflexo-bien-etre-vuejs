@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t, tm } = useI18n();
-
-const type = t("price.type[2]");
 </script>
 
 <template>
