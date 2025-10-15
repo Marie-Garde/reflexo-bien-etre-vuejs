@@ -8,36 +8,52 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="header">
-    <div class="header-container">
-      <div class="header-overlay">
-        <h1 class="title">{{ t("seasons.season.winter.title") }}</h1>
-        <p>{{ t("seasons.season.winter.subtitle") }}</p>
+  <main>
+    <div class="header">
+      <img
+        src="@/assets/illustrations/winter.jpg"
+        alt="Paysage d'hiver avec de la neige"
+        class="header-image"
+      />
+      <div class="header-container">
+        <div class="header-overlay">
+          <h1 class="title">{{ t("seasons.season.winter.title") }}</h1>
+          <p>{{ t("seasons.season.winter.subtitle") }}</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <Specialties season="winter" background="yellow" />
+    <div class="container">
+      <Specialties season="winter" background="yellow" />
 
-    <AdvicesSeasons season="winter" />
+      <AdvicesSeasons season="winter" />
 
-    <Recipes season="winter" background="brown" />
-  </div>
+      <Recipes season="winter" background="brown" />
+    </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
 
 .header {
+  position: relative;
   width: 100%;
   height: 70vh;
-  background-image: url("@/assets/illustrations/winter.jpg");
-  background-size: cover;
-  background-position: center;
   box-shadow: 0px 5px 5px $dark-grey;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
   &-container {
     width: 100%;
@@ -69,8 +85,6 @@ const { t } = useI18n();
   .header {
     height: auto;
     padding: 100px 0 0 0;
-    display: flex;
-    align-items: flex-end;
 
     &-container {
       width: 100%;

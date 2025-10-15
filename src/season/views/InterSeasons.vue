@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import Specialties from "@/season/components/Specialties.vue";
 import AdvicesSeasons from "@/season/components/AdvicesSeasons.vue";
 import Recipes from "@/season/components/Recipes.vue";
 
@@ -11,42 +10,58 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
 </script>
 
 <template>
-  <div class="header">
-    <div class="header-container">
-      <div class="header-overlay">
-        <h1 class="title">{{ t("seasons.season.interSeason.title") }}</h1>
-        <p>{{ t("seasons.season.interSeason.subtitle") }}</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="specialties">
-      <h2>{{ specialtiesTitle }}</h2>
-
-      <div v-for="(paragraph, index) in specialtiesText" :key="index" class="specialties-text">
-        <div v-html="paragraph"></div>
+  <main>
+    <div class="header">
+      <img
+        src="@/assets/illustrations/inter-saison.png"
+        alt="Illustration pour l'inter-saison"
+        class="header-image"
+      />
+      <div class="header-container">
+        <div class="header-overlay">
+          <h1 class="title">{{ t("seasons.season.interSeason.title") }}</h1>
+          <p>{{ t("seasons.season.interSeason.subtitle") }}</p>
+        </div>
       </div>
     </div>
 
-    <AdvicesSeasons season="interSeason" />
+    <div class="container">
+      <div class="specialties">
+        <h2>{{ specialtiesTitle }}</h2>
 
-    <Recipes season="interSeason" background="yellow" />
-  </div>
+        <div v-for="(paragraph, index) in specialtiesText" :key="index" class="specialties-text">
+          <div v-html="paragraph"></div>
+        </div>
+      </div>
+
+      <AdvicesSeasons season="interSeason" />
+
+      <Recipes season="interSeason" background="yellow" />
+    </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/variables.scss" as *;
 
 .header {
+  position: relative;
   width: 100%;
   height: 70vh;
-  background-image: url("@/assets/illustrations/inter-saison.png");
-  background-size: cover;
-  background-position: center;
   box-shadow: 0px 5px 5px $dark-grey;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
   &-container {
     width: 100%;
@@ -95,8 +110,6 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
   .header {
     height: auto;
     padding: 100px 0 0 0;
-    display: flex;
-    align-items: flex-end;
 
     &-container {
       width: 100%;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-const { t, tm } = useI18n();
+const { tm } = useI18n();
 
 const pricesReflexo = tm("price.type")[0];
 </script>

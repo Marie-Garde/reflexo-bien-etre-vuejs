@@ -42,7 +42,7 @@ function goToAppointment() {
     <h2>{{ t("practices.outsideSessionPage.how.title") }}</h2>
 
     <div class="infos">
-      <div class="infos-item" v-for="info in infos">
+      <div class="infos-item" v-for="(info, index) in infos" :key="index">
         <img class="infos-item-icon" :src="info.icon" />
         <p>{{ info.text }}</p>
       </div>

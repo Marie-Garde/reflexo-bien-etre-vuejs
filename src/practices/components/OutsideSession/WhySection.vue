@@ -12,7 +12,7 @@ const whyReasonsList = tm("practices.outsideSessionPage.why.reasons");
     <p>{{ tm("practices.outsideSessionPage.why.text[0]") }}</p>
     <p>{{ tm("practices.outsideSessionPage.why.text[1]") }}</p>
     <ul class="why-list">
-      <li class="why-list-item" v-for="reason in whyReasonsList">
+      <li class="why-list-item" v-for="(reason, index) in whyReasonsList" :key="index">
         <p>{{ reason }}</p>
       </li>
     </ul>

@@ -7,7 +7,6 @@ import HomePresentation from "../components/HomePresentation.vue";
 import HomeDifficulties from "../components/HomeDifficulties.vue";
 import HomeSolution from "../components/HomeSolution.vue";
 import HomeAppointment from "../components/HomeAppointment.vue";
-import HomeFeedbacks from "../components/HomeFeedbacks.vue";
 
 const slidesData: Ref<CarouselSlide[]> = ref([]);
 
