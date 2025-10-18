@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import tuinaBackImg from "@/assets/illustrations/practices/inside/tuina-dos.jpg";
-import reflexoHandImg from "@/assets/illustrations/practices/inside/relfexo-main.jpg";
+import tuinaBackImg from "/illustrations/practices/inside/tuina-dos.jpg";
+import reflexoHandImg from "/illustrations/practices/inside/relfexo-main.jpg";
 
 const { t, tm } = useI18n();
 

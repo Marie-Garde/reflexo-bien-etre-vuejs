@@ -13,7 +13,7 @@ const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
   <main>
     <div class="header">
       <img
-        src="@/assets/illustrations/inter-saison.png"
+        src="/illustrations/inter-saison.png"
         alt="Illustration pour l'inter-saison"
         class="header-image"
       />

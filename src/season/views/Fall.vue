@@ -11,7 +11,7 @@ const { t } = useI18n();
   <main>
     <div class="header">
       <img
-        src="@/assets/illustrations/fall.jpg"
+        src="/illustrations/fall.jpg"
         alt="Paysage d'automne avec des feuilles mortes oranges"
         class="header-image"
       />

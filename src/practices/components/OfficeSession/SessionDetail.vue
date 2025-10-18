@@ -89,19 +89,19 @@ const session = {
     position: relative;
 
     &--reflexo-main {
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-main.png");
+      background-image: url("/illustrations/practices/inside/reflexo-main.png");
       background-position: top;
     }
     &--reflexo-visage {
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
       background-position: top;
     }
     &--massage-dos {
-      background-image: url("@/assets/illustrations/practices/inside/massage-dos.png");
+      background-image: url("/illustrations/practices/inside/massage-dos.png");
       background-position: top;
     }
     &--reflexo-dos {
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-dos.png");
+      background-image: url("/illustrations/practices/inside/reflexo-dos.png");
       background-position: center;
     }
   }
@@ -130,11 +130,11 @@ const session = {
     position: relative;
 
     &--reflexo-visage {
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
       background-position: top;
     }
     &--reflexo-dos {
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-dos.png");
+      background-image: url("/illustrations/practices/inside/reflexo-dos.png");
       background-position: center;
     }
   }
@@ -295,19 +295,19 @@ const session = {
       }
 
       &--reflexo-main {
-        background-image: url("@/assets/illustrations/practices/inside/reflexo-main.png");
+        background-image: url("/illustrations/practices/inside/reflexo-main.png");
         background-position: top;
       }
       &--reflexo-visage {
-        background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+        background-image: url("/illustrations/practices/inside/reflexo-visage.png");
         background-position: top;
       }
       &--massage-dos {
-        background-image: url("@/assets/illustrations/practices/inside/massage-dos.png");
+        background-image: url("/illustrations/practices/inside/massage-dos.png");
         background-position: top;
       }
       &--reflexo-dos {
-        background-image: url("@/assets/illustrations/practices/inside/reflexo-dos.png");
+        background-image: url("/illustrations/practices/inside/reflexo-dos.png");
         background-position: center;
       }
     }

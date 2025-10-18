@@ -11,7 +11,7 @@ const { t } = useI18n();
   <main>
     <div class="header">
       <img
-        src="@/assets/illustrations/winter.jpg"
+        src="/illustrations/winter.jpg"
         alt="Paysage d'hiver avec de la neige"
         class="header-image"
       />

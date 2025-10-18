@@ -85,13 +85,13 @@ const pricesTuina = tm("price.type")[1];
     }
 
     &:first-child::before {
-      background-image: url("@/assets/illustrations/price/tuina1.png");
+      background-image: url("/illustrations/price/tuina1.png");
     }
     &:nth-child(2)::before {
-      background-image: url("@/assets/illustrations/price/tuina2.png");
+      background-image: url("/illustrations/price/tuina2.png");
     }
     &:nth-child(3)::before {
-      background-image: url("@/assets/illustrations/price/tuina3.png");
+      background-image: url("/illustrations/price/tuina3.png");
     }
   }
 }

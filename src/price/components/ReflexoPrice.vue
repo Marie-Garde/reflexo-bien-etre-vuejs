@@ -103,16 +103,16 @@ const pricesReflexo = tm("price.type")[0];
     .cards-container-adult {
       & > .card {
         &:first-child::before {
-          background-image: url("@/assets/illustrations/price/reflexo1.png");
+          background-image: url("/illustrations/price/reflexo1.png");
         }
         &:nth-child(2)::before {
-          background-image: url("@/assets/illustrations/price/reflexo2.png");
+          background-image: url("/illustrations/price/reflexo2.png");
         }
         &:nth-child(3)::before {
-          background-image: url("@/assets/illustrations/price/reflexo3.png");
+          background-image: url("/illustrations/price/reflexo3.png");
         }
         &:nth-child(4)::before {
-          background-image: url("@/assets/illustrations/price/reflexo4.png");
+          background-image: url("/illustrations/price/reflexo4.png");
         }
       }
     }
@@ -120,16 +120,16 @@ const pricesReflexo = tm("price.type")[0];
     .cards-container-child {
       & > .card {
         &:first-child::before {
-          background-image: url("@/assets/illustrations/price/reflexo5.png");
+          background-image: url("/illustrations/price/reflexo5.png");
         }
         &:nth-child(2)::before {
-          background-image: url("@/assets/illustrations/price/reflexo6.png");
+          background-image: url("/illustrations/price/reflexo6.png");
         }
         &:nth-child(3)::before {
-          background-image: url("@/assets/illustrations/price/reflexo7.png");
+          background-image: url("/illustrations/price/reflexo7.png");
         }
         &:nth-child(4)::before {
-          background-image: url("@/assets/illustrations/price/reflexo8.png");
+          background-image: url("/illustrations/price/reflexo8.png");
         }
       }
     }

@@ -91,14 +91,14 @@ const pillarsText = tm("practices.pillars.text");
 
     .left {
       left: 0;
-      background-image: url("@/assets/illustrations/practices/inside/reflexo-visage.png");
+      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
       clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
       transition: clip-path 0.4s ease-in-out;
     }
 
     .right {
       right: 0;
-      background-image: url("@/assets/illustrations/practices/outside/qi-gong-class.jpg");
+      background-image: url("/illustrations/practices/outside/qi-gong-class.jpg");
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
       transition: clip-path 0.4s ease-in-out;
     }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
-import isabelleImage from "@/assets/illustrations/isabelle-small.png";
+import isabelleImage from "/illustrations/isabelle-small.png";
 import Button from "@/components/Button.vue";
 import { aboutRoutesName } from "@/about/routes/routesName";
 

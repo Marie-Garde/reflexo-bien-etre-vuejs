@@ -14,8 +14,7 @@ const title = t("seasons.season.subtitles.advices");
 const advicesList: Accordion[] = tm(`seasons.season.${props.season}.advices`);
 
 const imageUrl = computed(() => {
-  return new URL(`../../assets/illustrations/Seasons/${props.season}-advice.jpg`, import.meta.url)
-    .href;
+  return `/illustrations/Seasons/${props.season}-advice.jpg`;
 });
 
 const openAccordionIndex = ref<number | null>(null);

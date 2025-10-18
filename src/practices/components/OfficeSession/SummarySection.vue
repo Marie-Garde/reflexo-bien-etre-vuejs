@@ -37,7 +37,7 @@ const summary = {
 @use "@/assets/variables.scss" as *;
 
 .office-session__summary {
-  background-image: url("@/assets/illustrations/practices/inside/reflexo-pieds-transp.png");
+  background-image: url("/illustrations/practices/inside/reflexo-pieds-transp.png");
   background-size: cover;
   background-position: center;
   width: 100%;

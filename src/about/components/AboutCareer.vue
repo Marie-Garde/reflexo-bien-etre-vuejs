@@ -3,8 +3,8 @@ import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 import isMobile from "../../reactives/isMobile";
 
-import careerImage from "@/assets/illustrations/about/professionnalCareer.png";
-import careerImageMobile from "@/assets/illustrations/about/professionnalCareerMobile.png";
+import careerImage from "/illustrations/about/professionnalCareer.png";
+import careerImageMobile from "/illustrations/about/professionnalCareerMobile.png";
 
 const { t, tm } = useI18n();
 

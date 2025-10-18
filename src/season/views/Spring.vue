@@ -11,7 +11,7 @@ const { t } = useI18n();
   <main>
     <div class="header">
       <img
-        src="@/assets/illustrations/spring.jpg"
+        src="/illustrations/spring.jpg"
         alt="Paysage de printemps avec des fleurs"
         class="header-image"
       />

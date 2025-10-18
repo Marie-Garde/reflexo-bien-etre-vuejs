@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import checkupImage from "@/assets/illustrations/practices/inside/bilan.png";
+import checkupImage from "/illustrations/practices/inside/bilan.png";
 
 const { t, tm } = useI18n();
 

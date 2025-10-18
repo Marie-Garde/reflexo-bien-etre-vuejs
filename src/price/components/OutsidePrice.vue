@@ -95,13 +95,13 @@ const { t, tm } = useI18n();
   &:first-child {
     .card {
       &:first-child::before {
-        background-image: url("@/assets/illustrations/price/Qigong1.png");
+        background-image: url("/illustrations/price/Qigong1.png");
       }
       &:nth-child(2)::before {
-        background-image: url("@/assets/illustrations/price/Qigong2.png");
+        background-image: url("/illustrations/price/Qigong2.png");
       }
       &:nth-child(3)::before {
-        background-image: url("@/assets/illustrations/price/Qigong3.png");
+        background-image: url("/illustrations/price/Qigong3.png");
       }
     }
   }

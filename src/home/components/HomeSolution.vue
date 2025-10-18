@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import LinkRouter from "@/components/LinkRouter.vue";
 import { practicesRoutesName } from "@/practices/routes/routesName";
-import TeaHerbsImage from "@/assets/illustrations/tea-herbs.png";
+import TeaHerbsImage from "/illustrations/tea-herbs.png";
 
 const { t, tm } = useI18n();
 

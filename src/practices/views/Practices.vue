@@ -3,8 +3,8 @@ import { useRouter } from "vue-router";
 import { practicesRoutesName } from "../routes/routesName";
 import { computed } from "vue";
 import isMobile from "../../reactives/isMobile";
-import benefitsImage from "@/assets/illustrations/practices/benefits.png";
-import benefitsMobile from "@/assets/illustrations/practices/benefitsMobile.png";
+import benefitsImage from "/illustrations/practices/benefits.png";
+import benefitsMobile from "/illustrations/practices/benefitsMobile.png";
 
 import Header from "../components/practices/Header.vue";
 import Benefits from "../components/practices/Benefits.vue";

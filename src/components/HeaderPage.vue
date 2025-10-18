@@ -57,7 +57,7 @@ defineProps({
 }
 
 .right {
-  background-image: url("@/assets/illustrations/flower-field.jpg");
+  background-image: url("/illustrations/flower-field.jpg");
   clip-path: polygon(calc(55% + 10px) 0, 100% 0, 100% 100%, calc(45% + 10px) 100%);
   @media (max-width: 768px) {
     clip-path: polygon(calc(75% + 5px) 0, 100% 0, 100% 100%, calc(65% + 5px) 100%);

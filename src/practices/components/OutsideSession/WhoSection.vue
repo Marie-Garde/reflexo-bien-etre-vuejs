@@ -59,16 +59,16 @@ const peopleWhoList = tm("practices.outsideSessionPage.who.people");
       transition: transform 0.3s ease;
 
       &:first-child {
-        background-image: url("@/assets/illustrations/practices/outside/stress.png");
+        background-image: url("/illustrations/practices/outside/stress.png");
       }
       &:nth-child(2) {
-        background-image: url("@/assets/illustrations/practices/outside/illness.png");
+        background-image: url("/illustrations/practices/outside/illness.png");
       }
       &:nth-child(3) {
-        background-image: url("@/assets/illustrations/practices/outside/old.png");
+        background-image: url("/illustrations/practices/outside/old.png");
       }
       &:nth-child(4) {
-        background-image: url("@/assets/illustrations/practices/outside/meditation.png");
+        background-image: url("/illustrations/practices/outside/meditation.png");
       }
 
       &:hover {

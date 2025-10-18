@@ -11,7 +11,7 @@ const { t } = useI18n();
   <main>
     <div class="header">
       <img
-        src="@/assets/illustrations/ete.jpg"
+        src="/illustrations/ete.jpg"
         alt="Paysage d'été avec un champ de fleurs"
         class="header-image"
       />

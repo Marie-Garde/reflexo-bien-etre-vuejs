@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-import cabinetIllustration from "@/assets/illustrations/about/cabinet.jpg";
-import tuinaIllustration from "@/assets/illustrations/practices/inside/tuina-dos.jpg";
-import reflexoIllustration from "@/assets/illustrations/practices/inside/reflexo-main.png";
-import qiGongIllustration from "@/assets/illustrations/practices/outside/qi-gong-outside.jpg";
+import cabinetIllustration from "/illustrations/about/cabinet.jpg";
+import tuinaIllustration from "/illustrations/practices/inside/tuina-dos.jpg";
+import reflexoIllustration from "/illustrations/practices/inside/reflexo-main.png";
+import qiGongIllustration from "/illustrations/practices/outside/qi-gong-outside.jpg";
 
 const { t, tm } = useI18n();
 </script>

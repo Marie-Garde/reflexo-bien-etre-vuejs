@@ -42,7 +42,7 @@ const sessionTypes = ["reflexo", "tuina"];
     min-height: 60vh;
     height: auto;
     margin-top: 60px;
-    background-image: url("@/assets/illustrations/practices/inside/reflexo-pied.png");
+    background-image: url("/illustrations/practices/inside/reflexo-pied.png");
     background-size: cover;
     background-position: top;
     position: relative;

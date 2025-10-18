@@ -280,7 +280,7 @@ const seasons = [
       &::before {
         content: "";
         position: absolute;
-        background-image: url("@/assets/illustrations/#{map.get($props, image)}");
+        background-image: url("/illustrations/#{map.get($props, image)}");
         transform: rotate(-45deg) scale(#{map.get(map.get($props, before), scale)});
         background-repeat: no-repeat;
         z-index: -1;

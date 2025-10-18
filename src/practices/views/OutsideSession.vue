@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import qiGongClassImg from "@/assets/illustrations/practices/outside/qi-gong-class.jpg";
-import qiGongOutsideImg from "@/assets/illustrations/practices/outside/qi-gong-outside.jpg";
+import qiGongClassImg from "/illustrations/practices/outside/qi-gong-class.jpg";
+import qiGongOutsideImg from "/illustrations/practices/outside/qi-gong-outside.jpg";
 import PracticeSection from "@/practices/components/OutsideSession/PracticeSection.vue";
 import SessionSection from "@/practices/components/OutsideSession/SessionSection.vue";
 import WhySection from "@/practices/components/OutsideSession/WhySection.vue";
@@ -40,7 +40,7 @@ const { t } = useI18n();
     min-height: 60vh;
     height: auto;
     margin-top: 60px;
-    background-image: url("@/assets/illustrations/practices/outside/women-qi-gong.png");
+    background-image: url("/illustrations/practices/outside/women-qi-gong.png");
     background-size: cover;
     background-position: top;
     position: relative;
