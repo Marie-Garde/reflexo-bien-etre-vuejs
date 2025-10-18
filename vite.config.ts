@@ -4,13 +4,22 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import svgLoader from "vite-svg-loader";
+import sitemap from "vite-plugin-sitemap";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueDevTools(), svgLoader()],
+  plugins: [
+    vue(),
+    vueDevTools(),
+    svgLoader(),
+    sitemap({
+      hostname: "https://www.reflexo-bien-etre.com",
+    }),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  base: "/reflexo-bien-etre-vuejs/",
 });

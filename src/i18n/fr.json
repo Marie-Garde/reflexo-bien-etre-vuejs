@@ -1,0 +1,853 @@
+{
+  "navigation": {
+    "items": {
+      "home": "Accueil",
+      "about": "Présentation",
+      "seasons": "Saisons et conseils",
+      "practices": "Mes accompagnements",
+      "prices": "Tarifs",
+      "contact": "Contact",
+      "takeAppointment": "Prendre rendez-vous"
+    },
+    "top": {
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
+      "tel": "06 33 47 80 96"
+    }
+  },
+  "404": {
+    "title": "404 - Page non trouvée",
+    "text": "La page que vous recherchez n'existe pas.",
+    "button": "Retour à l'accueil"
+  },
+  "footer": {
+    "warning": "Le réflexologue ne se substitue en aucun cas à un médecin généraliste, ne pose aucun diagnostic médical et n’intervient dans aucune décision thérapeutique.",
+    "informations": {
+      "name": "Isabelle Laporcherie",
+      "societyName": "Reflex’ô Bien-être",
+      "number": "06 33 47 80 96",
+      "mail": "izevc isabelle_garde@yahoo.fr",
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls"
+    },
+    "socialMedia": {
+      "title": "Retrouvez moi sur les réseaux sociaux"
+    },
+    "legal": {
+      "copyright": "Copyright - Tous droits réservés -",
+      "siteMap": "Plan du site -",
+      "legalPage": "Mentions légales -",
+      "creator": "Site créé par Marie Garde EI"
+    }
+  },
+  "home": {
+    "title": "Accueil",
+    "carousel": {
+      "link": "En savoir plus"
+    },
+    "difficulties": {
+      "title": "À chaque symptôme sa solution",
+      "subtitle": "Vous ressentez des tensions, de la fatigue ou du stress ? Mes accompagnements peuvent vous aider.",
+      "list": [
+        "Douleurs musculaires & articulaires",
+        "Maux de tête & migraines",
+        "Insomnie et sommeil agité",
+        "Troubles digestifs",
+        "Stress & anxiété",
+        "Fatigue persistante & manque d'énergie"
+      ]
+    },
+    "solution": {
+      "title": "Retrouver équilibre et bien-être",
+      "text": [
+        "Je vous accueille avec bienveillance et attention, pour un moment entièrement dédié à votre bien-être.",
+        "Dans mon cabinet, vous mettez le quotidien sur pause : respirer, relâcher les tensions, vous reconnecter à vous-même.",
+        "Mon approche se décline en trois pratiques complémentaires :",
+        "Ces pratiques sont adaptées à chacun, en fonction de ces besoins.",
+        "Découvrez-les plus en détail et choisissez le chemin qui vous correspond."
+      ],
+      "list": [
+        "<strong>Réflexologie :</strong> stimuler les points réflexes pour rétablir l’harmonie du corps.",
+        "<strong>Massage selon les 5 éléments :</strong> rééquilibrer en profondeur et apaiser les tensions.",
+        "<strong>Qi Gong :</strong> associer corps et esprit dans un mouvement doux et ressourçant."
+      ],
+      "button": "En savoir plus sur mes activités"
+    },
+    "presentation": {
+      "title": "Qui suis-je ?",
+      "text": [
+        "<em>À la croisée des chemins entre la Corrèze, la Dordogne et le Lot, j’ai créé Réflex ô Bien-être : un lieu pour prendre soin de soi et retrouver équilibre et vitalité.</em>",
+        "Je m’appelle Isabelle, praticienne en <strong>réflexologie</strong> et en <strong>médecine traditionnelle chinoise</strong>. Mon approche vient en complément de la médecine conventionnelle, pour accompagner chacun de façon simple et humaine.",
+        "L’objectif : <strong>soulager les tensions, protéger son souffle, retrouver de l’énergie et s’offrir une vraie pause</strong> dans un quotidien trop rempli.",
+        "J’accorde une place essentielle au temps <strong>d’écoute et d’explications</strong>, afin que chacun comprenne son corps, retrouve une circulation harmonieuse de l’énergie… et que le bien-être revienne."
+      ],
+      "learnAboutMe": "En savoir plus sur mon parcours"
+    },
+    "takeAppointment": {
+      "title": "Prenez rendez-vous pour un premier bilan",
+      "description": "Réservez directement en ligne ou par téléphone au 06 00 00 00 00",
+      "buttonLabel": "Prendre rendez-vous"
+    },
+    "feedback": {
+      "title": "Mes clients m'ont fait confiance"
+    }
+  },
+  "about": {
+    "title": "Isabelle Laporcherie",
+    "subTitle": "Praticienne de médecine chinoise & réflexologue",
+    "approach": {
+      "title": "Mon approche au service de votre Bien-être",
+      "list": [
+        "Réflexologie & accupression",
+        "Massage Tuina & accupression",
+        "Qi gong"
+      ],
+      "text": [
+        "Je suis convaincue que le corps possède en lui une formidable capacité d’autoguérison. Parfois, il suffit d’un accompagnement juste pour l’aider à retrouver son équilibre.",
+        "C’est ce chemin qui m’a menée à la Médecine Traditionnelle Chinoise et à la Réflexologie : deux approches différentes mais qui partagent une même vision globale de l’être humain.",
+        "Je les ai choisies parce qu’elles me permettent de prendre soin autrement : en écoutant, en observant, en respectant le rythme de chacun. Elles accompagnent, soulagent et rééquilibrent.",
+        "Mon engagement est d’offrir un espace de confiance et de bienveillance, où chaque séance s’adapte à votre histoire et à vos besoins. Ce qui me motive chaque jour, c’est de vous voir repartir plus léger : le corps détendu, l’esprit apaisé, avec un souffle nouveau.",
+        "Mes soins ne remplacent pas la médecine conventionnelle, ils viennent en complément et apportent un autre éclairage.",
+        "Mon intention est simple : vous aider à activer vos propres ressources pour retrouver un équilibre durable."
+      ],
+      "link": "En savoir plus sur mes activités"
+    },
+    "CTA": {
+      "title": "Besoin de vous reconnecter à votre corps ?",
+      "description": "Réservez votre bilan global ou votre séance spécifique.",
+      "buttonLabel": "Prendre rendez-vous"
+    },
+    "parcours": {
+      "title": "Mon parcours",
+      "text": [
+        "J’ai travaillé 36 ans au sein des Marchés Financiers, un univers exigeant que j’ai profondément apprécié. J’y ai appris la rigueur et la persévérance. Les salles de marchés restent un terrain rude, où la compétition ne laisse guère de répit. Le temps était venu d’ouvrir une nouvelle page, et j’ai choisi de la consacrer à une autre passion : la Médecine Traditionnelle Chinoise (MTC).",
+        "C’est au détour d’un cours de sport, dans le cadre professionnel, que j’ai découvert le Qi Gong. Ces mouvements simples et profonds m’ont appris à libérer et à renforcer mon énergie. Peu à peu, cette pratique m’a ouverte à l’univers fascinant des canaux – appelés “méridiens” en Occident – qui parcourent le corps. Elle m’a conduite à l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna, dont les enseignements ont marqué le début d’un nouveau chemin.",
+        "J’ai ensuite approfondi mes connaissances par un parcours complet, qui m’a permis d’obtenir des diplômes en acupuncture et en Qi Gong, ainsi que des certifications en massage Tuina et en diététique chinoise (en cours). Je poursuis aujourd’hui une formation en pharmacopée à l’école Imderplan de Montpellier, avec un intérêt particulier pour nos plantes locales. Je suis également certifiée en Réflexologie, une discipline plus connue en Occident. Elle crée un pont naturel entre Orient et Occident, en combinant zones réflexes et points d’acupuncture, dans le respect du cadre médical.",
+        "J’ai choisi de donner un nouvel élan à ma vie professionnelle en consacrant mon énergie à vous accompagner vers un mieux-être. Mon chemin entre Orient et Occident m’a appris qu’il n’existe pas de solution unique, mais des chemins qui s’adaptent à chacun. C’est avec cette conviction que j’accompagne aujourd’hui chaque personne, dans une approche bienveillante qui s’inscrit aux côtés de la médecine conventionnelle, pour redonner place à l’équilibre et à la vitalité."
+      ]
+    },
+    "training": {
+      "title": "Mes formations",
+      "subtitle": "l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna",
+      "list": [
+        {
+          "date": "Septembre 2018 – Novembre 2021",
+          "title": "Professeure de QI Gong"
+        },
+        {
+          "date": "Février 2020 – Février 2022",
+          "title": "Certification en Acupuncture"
+        },
+        {
+          "date": "Novembre 2022",
+          "title": "Diplôme d'Acupuncteur Traditionnel"
+        },
+        {
+          "date": "Septembre 2021 – Juillet 2023",
+          "title": "Praticienne en massage Tuina"
+        },
+        {
+          "date": "Janvier 2023 – Avril 2024",
+          "title": "Réflexologue"
+        },
+        {
+          "date": "Septembre 2024 -  formation en cours",
+          "title": "Herboristerie, Plantes médicinales et Médecines douces"
+        },
+        {
+          "date": "Avril 2025 -  formation en cours",
+          "title": "Réseau Guolin France - Qi gong et cancer"
+        }
+      ]
+    }
+  },
+  "practices": {
+    "title": "Mes activités",
+    "presentation": {
+      "title": "Ce que je propose",
+      "text": [
+        "Parce que chacun a son propre équilibre, parfois fragilisé sur le plan physique ou émotionnel, je m’appuie sur différentes pratiques issues de la Réflexologie et de la Médecine Traditionnelle Chinoise, que j’adapte à chaque situation.",
+        "La Réflexologie et l’acupression – une pression manuelle sans aiguille – relancent la circulation de l’énergie et apaisent les tensions. Le massage Tuina détend les muscles en profondeur et redonne vitalité. Le Qi Gong, avec ses mouvements doux, prolonge les bienfaits des séances et aide chacun à devenir acteur de son équilibre.",
+        "Selon les besoins, je peux aussi utiliser les ventouses pour libérer les blocages, ou la moxibustion – une technique qui diffuse la chaleur de l’armoise sur des points précis – afin de réchauffer et stimuler l’énergie. J’apporte également des conseils de diététique chinoise et sur les plantes locales, pour soutenir l’organisme au fil des saisons."
+      ]
+    },
+    "benefits": {
+      "title": "Quels sont les bienfaits de mes séances ?",
+      "subtitle": "La réflexologie et la Médecine Traditionnelle Chinoise s’inscrivent aux côtés de la médecine conventionnelle. Elles soutiennent la prévention, favorisent l’équilibre et aident le corps à mieux s’adapter. Voici quelques domaines où elles peuvent vous accompagner au quotidien.",
+      "list": [
+        {
+          "title": "<strong>Le stress</strong>",
+          "text": "Le stress fait partie de la vie : c’est une réaction naturelle qui nous aide à mobiliser nos ressources face à un danger ou un défi ponctuel. Mais lorsqu’il s’installe au quotidien, il devient un poids pour l’organisme. À la longue, il épuise nos défenses, dérègle le sommeil, la digestion, l’humeur… On estime aujourd’hui qu’il joue un rôle dans la majorité des déséquilibres de santé. La réflexologie offre alors une véritable parenthèse. En stimulant certaines zones réflexes, le corps entre dans un état de détente profonde : le système nerveux se rééquilibre, le mental s’apaise, les tensions se relâchent. Peu à peu, l’organisme retrouve de l’espace pour respirer et se régénérer."
+        },
+        {
+          "title": "<strong>La fatigue</strong>",
+          "text": "La fatigue est un signal du corps : elle nous rappelle qu’il est temps de ralentir. La réflexologie et la médecine chinoise aident à relancer l’énergie, apaiser la charge mentale et favoriser les conditions d’une meilleure récupération. L’alimentation joue aussi un rôle clé : quelques ajustements simples, adaptés aux saisons, soutiennent la digestion et redonnent vitalité. Peu à peu, le corps retrouve équilibre et ressources."
+        },
+        {
+          "title": "<strong>Le sommeil</strong>",
+          "text": "Les troubles du sommeil touchent beaucoup de personnes et pèsent sur l’énergie au quotidien. La réflexologie et la médecine chinoise apportent alors un soutien précieux : en rééquilibrant le système nerveux et en favorisant la détente, elles apaisent le mental et relâchent les tensions accumulées. Elles aident également le corps à retrouver ses rythmes naturels, pour un sommeil plus profond et réparateur. Peu à peu, les nuits deviennent un vrai temps de récupération, et les journées retrouvent plus de légèreté."
+        },
+        {
+          "title": "<strong>La sphère digestive</strong>",
+          "text": "En médecine chinoise, la digestion est notre “centre” : c’est là que se construit l’énergie qui nous fait avancer. Quand ce centre est fragilisé, l’énergie circule mal : elle stagne et provoque ballonnements, remonte au lieu de descendre et crée des reflux, ou s’épuise et entraîne fatigue et lourdeurs. La réflexologie et l’acupression aident à remettre l’énergie digestive dans le bon sens et à rétablir la circulation harmonieuse entre les organes. La diététique chinoise complète ce travail par des ajustements simples, adaptés aux saisons, pour soutenir la transformation des aliments et alléger la sphère digestive. Peu à peu, le corps retrouve confort et vitalité."
+        },
+        {
+          "title": "<strong>La sphère ORL et l'immunité</strong>",
+          "text": "Nez qui coule, sinus encombrés, toux persistante ou rhumes à répétition : la sphère ORL est souvent le reflet de défenses fragilisées. En médecine chinoise, le Poumon est considéré comme la première barrière de protection : il régit la respiration et la capacité du corps à s’adapter aux agressions extérieures. Quand il est fragilisé, le corps devient plus vulnérable aux infections et les déséquilibres s’installent. La réflexologie et l’acupression aident à relancer la circulation énergétique du Poumon et à soutenir les défenses naturelles. Les ventouses, en libérant la poitrine et le dos encombrés, apportent une aide précieuse pour mieux respirer. La moxibustion vient renforcer la chaleur protectrice, tandis que quelques conseils diététiques simples permettent de mieux traverser les changements de saison."
+        },
+        {
+          "title": "<strong>L'équilibre féminin</strong>",
+          "text": "Les différentes étapes de la vie d’une femme – cycles menstruels, maternité, ménopause – s’accompagnent de nombreux changements physiques et émotionnels. Quand l’équilibre se fragilise, il peut en résulter des règles douloureuses ou irrégulières, un syndrome prémenstruel difficile à vivre, ou encore des bouffées de chaleur et de la fatigue à la ménopause. La réflexologie et la médecine chinoise offrent un accompagnement précieux : elles apaisent les tensions, débloquent l’énergie et favorisent un meilleur équilibre hormonal et émotionnel. Selon les besoins, l’acupression, la diététique chinoise ou encore le Qi Gong viennent compléter ce travail pour traverser ces étapes plus sereinement."
+        },
+        {
+          "title": "<strong>Les autres bienfaits</strong>",
+          "text": "La réflexologie et l’énergétique chinoise offrent un champ d’action bien plus large qu’on ne l’imagine : elles peuvent aussi accompagner, par exemple, certaines douleurs — notamment musculaires ou articulaires —, les migraines ou encore les déséquilibres émotionnels… toujours avec l’idée de rétablir la circulation et l’harmonie."
+        }
+      ],
+      "text": "Chaque séance est une invitation à relâcher la pression, à rééquilibrer vos énergies et à retrouver un mieux-être durable, pas à pas.   "
+    },
+    "pillars": {
+      "title": "Mon approche s'articule autour de deux piliers",
+      "list": ["Séances en cabinet", "Séances extérieures"],
+      "text": [
+        "Deux mouvements qui se complètent, Yin/Yang.",
+        "<strong>En cabinet, place au relâchement :</strong> réflexologie, acupression et massage Tuina offrent un moment de détente et de recentrage.",
+        "<strong>À l’extérieur, place au mouvement :</strong> Qi Gong et méditation invitent à respirer, à bouger autrement et à cultiver son énergie en lien avec la nature.",
+        "<strong>L’un nourrit l’autre :</strong> recevoir quand le corps en a besoin, pratiquer pour entretenir l’équilibre chaque jour. Ensemble, ils participent à l’alignement corps/esprit."
+      ]
+    },
+    "sessionProgress": {
+      "title": "Déroulé d'une séance",
+      "list": [
+        {
+          "title": "Un moment d'écoute et de partage",
+          "description": "Chaque séance débute par un échange attentif, où je prends le temps de vous écouter. Votre histoire, vos besoins et vos ressentis sont au cœur de cette rencontre. C'est un échange important  pour comprendre votre problématique  et trouver la meilleure approche pour y répondre."
+        },
+        {
+          "title": "Un bilan personnalisé",
+          "description": "Après ce temps d’échange, j’observe quelques signes visibles ou plus subtils du corps. Ils me donnent de précieuses indications sur la circulation de votre énergie et me permettent de personnaliser le soin."
+        },
+        {
+          "title": "Le temps soin énergétique",
+          "description": "Vient ensuite le moment du soin : je sélectionne les techniques les plus adaptées à votre situation. Chaque geste est précis et pensé pour rétablir la circulation de l’énergie et favoriser un mieux-être global."
+        },
+        {
+          "title": "Un suivi adapté",
+          "description": "À la fin de la séance, nous faisons le point ensemble. Selon vos besoins, je peux vous proposer un rendez-vous ponctuel ou un suivi progressif sous forme de forfaits. Des conseils personnalisés — en diététique, en Qi Gong ou avec des plantes locales — vous accompagnent également au quotidien. Vous recevez enfin un résumé par mail pour prolonger les bienfaits du soin."
+        }
+      ]
+    },
+    "OfficeSession": {
+      "title": "Séance au cabinet"
+    },
+    "OutsideSession": {
+      "title": "Séance extérieure"
+    },
+    "outsideSessionPage": {
+      "title": "Séances extérieures - Qi gong",
+      "subtitle": "« Le Qi Gong, l’art de faire circuler l’énergie pour renforcer le corps et aligner l’esprit. »",
+      "buttonLabel": "Réserver une séance",
+      "practice": {
+        "title": "Une pratique de santé douce et puissante",
+        "text": [
+          "Le Qi Gong est un art énergétique ancestral, pilier de la médecine chinoise. Par des mouvements lents, des enchaînements rapides, des postures statiques, la respiration et l’intention, il favorise la circulation de l’énergie, renforce le corps et apaise l’esprit.",
+          "Pratiqué régulièrement, il entretient la vitalité, aide à mieux traverser les saisons et cultive la sérénité intérieure. La séance se termine souvent par un temps de méditation, qui prolonge les bienfaits et permet d’entrer dans une vraie présence à soi."
+        ]
+      },
+      "session": {
+        "title": "Déroulement d’un accompagnement",
+        "text": [
+          "« Du mouvement à la méditation, chaque séance vous guide pas à pas vers plus de vitalité et de sérénité. »",
+          "Une séance de Qi Gong suit une progression douce et adaptée à chacun.",
+          "Elle commence par un temps pour relâcher les tensions accumulées, suivi d’un auto-massage qui permet de reprendre contact avec son corps. Vient ensuite la mobilisation des principales articulations, afin de libérer les blocages et préparer une circulation plus fluide de l’énergie.",
+          "Puis, selon le moment, nous pratiquons des mouvements liés à la saison, une série plus complète ou encore les marches, qui apportent le mouvement dans l’immobilité. La séance se termine toujours par un temps méditatif, pour recentrer l’énergie dans le corps et retrouver l’alignement entre le corps et l’esprit.",
+          "Je propose ces séances une fois par semaine (hors vacances scolaires), en petits groupes ou en individuel. Chaque rencontre dure minimum une heure, dans une progression respectueuse du rythme de chacun."
+        ]
+      },
+      "why": {
+        "title": "Pourquoi pratiquer le Qi Gong régulièrement ?",
+        "text": [
+          "Une séance fait du bien.",
+          "Mais c’est dans la régularité que les effets se déploient en profondeur :"
+        ],
+        "reasons": [
+          "Libération des tensions physiques et mentales",
+          "Amélioration de la respiration et du sommeil",
+          "Apaisement du système nerveux",
+          "Meilleure gestion du stress et des émotions",
+          "Renforcement de l’ancrage, de l’équilibre et de la vitalité"
+        ]
+      },
+      "who": {
+        "title": "A qui s’adresse le Qi Gong ?",
+        "text": "Accessible à tous, le Qi Gong est particulièrement indiqué pour :",
+        "people": [
+          "Les personnes stressées, tendues, anxieuses",
+          "Les personnes en convalescence ou en quête de prévention",
+          "Les séniors, pour entretenir souplesse et mobilité",
+          "Toute personne en quête d’une pratique douce et consciente"
+        ]
+      },
+      "how": {
+        "title": "Modalités pratiques",
+        "infos": [
+          "Durée : 1h",
+          "Rythme : 1 séance/semaine (hors vacances scolaires)",
+          "En petit groupe ou en individuel (selon la formule choisie)",
+          "Tenue confortable - pas besoin de matériel spécifique"
+        ]
+      }
+    },
+    "insideSessionPage": {
+      "title": "Séances au cabinet - Massage Tuina ou reflexologie",
+      "subtitle": "Deux chemins, une même intention de mieux-être",
+      "why": {
+        "tuina": {
+          "title": "Pourquoi choisir un massage Tuina ?",
+          "text": [
+            "Le massage Tuina est une approche corporelle globale, à la fois dynamique et profonde.",
+            "Je le pratique toujours dans la continuité du corps entier, car c’est l’unité qui permet de retrouver l’équilibre. Selon vos besoins, je vais travailler plus en profondeur sur certains canaux (méridiens)ou zones en lien avec votre problématique, tout en gardant cette vision d’ensemble.",
+            "Ce massage aide à délier les tensions musculaires ou articulaires, à alléger la fatigue accumulée, à apaiser le stress ou encore à relancer une circulation trop lente. Il peut aussi soutenir l’équilibre digestif et respiratoire.",
+            "Le massage Tuina agit en profondeur sur les tissus et stimule en surface les canaux (méridiens) et points d’énergie : il libère ce qui bloque et redonne fluidité au corps et à l’esprit."
+          ]
+        },
+        "reflexo": {
+          "title": "Pourquoi choisir une séance de réflexologie ?",
+          "text": [
+            "En stimulant  des zones réflexes et des points précis , la Réflexologie apaise, relance et réharmonise votre organisme. Elle permet de rééquilibrer le corps sans toucher directement la zone douloureuse.",
+            "Au fil de la séance, cette stimulation relance les grandes fonctions (digestion, sommeil, élimination…), apaise le système nerveux et accompagne les périodes de transition de la vie. Elle offre aussi un profond relâchement, qui libère le stress et redonne au corps la possibilité de récupérer.",
+            "La réflexologie agit par résonance à partir des pieds, des mains ou du visage, et vient en complément de la médecine conventionnelle, en tenant compte de chaque situation."
+          ],
+          "list": [
+            "Relancer les fonctions des organes (digestion, sommeil, élimination…)",
+            "Apaiser le système nerveux, le stress, l’anxiété",
+            "Travailler sur des troubles hormonaux, digestifs ou chroniques",
+            "Accompagner une période de transition (ménopause, changement de rythme…)",
+            "Un besoin de détente profonde et régénérante"
+          ]
+        }
+      },
+      "summary": {
+        "title": "En résumé",
+        "array": {
+          "firstLine": [
+            "",
+            "Action",
+            "Zones travaillées",
+            "Ressenti",
+            "Besoin principal"
+          ],
+          "secondLine": [
+            "Massage Tuina",
+            "Physique et énergétique",
+            "Corps entier, en direct",
+            "Tonique ou profond",
+            "Débloquer / dynamiser"
+          ],
+          "thirdLine": [
+            "Réflexologie",
+            "Réflexe et énergie",
+            "Pieds, dos, mains et visage",
+            "Apaisant et ciblé",
+            "Réguler / apaiser"
+          ]
+        }
+      },
+      "session": {
+        "reflexo": {
+          "title": "Déroulement des séances : énergétique chinoise et réflexologie",
+          "first": {
+            "title": "Première séance",
+            "text": [
+              "La première séance de réflexologie dure environ 1h15.",
+              "Elle commence par un temps d’écoute et d’échanges approfondis autour de votre parcours, de vos habitudes de vie, de votre sommeil, de votre digestion ou encore de vos émotions. J’affine ensuite cette analyse grâce à l’observation de la langue, du teint, à la prise des pouls chinois et à l’exploration des zones réflexes des pieds ou des mains.",
+              "Vient ensuite le soin : un travail précis sur les zones réflexes pour relancer l’énergie et offrir un profond relâchement.",
+              "Le corps s’apaise, le mental se calme, les tensions se dénouent.",
+              "La séance se conclut par un retour au calme, un moment d’intégration et de détente profonde, pour reprendre pied en douceur dans le réel."
+            ],
+            "hovering": "La première séance : un temps pour comprendre et agir"
+          },
+          "second": {
+            "title": "Séance de suivi",
+            "text": [
+              "Les séances de suivi durent environ 45 minutes.",
+              "Elles s’inscrivent dans un cycle de trois rendez-vous, espacés d’une quinzaine de jours. Ce rythme permet au corps d’intégrer progressivement les informations reçues et d’ancrer les effets du soin dans la durée.",
+              "À chaque séance, nous reprenons le protocole établi lors de la première rencontre, que j’adapte selon vos ressentis et l’évolution observée depuis la dernière fois.",
+              "Ces ajustements permettent d’accompagner le corps pas à pas vers un nouvel équilibre, tout en douceur."
+            ],
+            "hovering": "La réflexologie, une approche douce et précise qui rééquilibre le corps et apaise l’esprit."
+          },
+          "rhythm": {
+            "title": "Pourquoi ce rythme ?",
+            "text": [
+              "Parce qu’un seul soin peut soulager, mais c’est la régularité qui installe les bienfaits dans la durée.",
+              "Cet accompagnement offre un cadre souple mais engagé : il respecte les temps du corps tout en créant une dynamique d’évolution.",
+              "Ce rythme est particulièrement adapté pour :"
+            ],
+            "list": [
+              "✔ consolider les effets du premier soin,",
+              "✔ ajuster l’accompagnement au fil des séances,",
+              "✔ ancrer les transformations en profondeur."
+            ],
+            "CTA": "Réserver une séance"
+          }
+        },
+        "tuina": {
+          "title": "Déroulement des séances : massage Tuina",
+          "first": {
+            "title": "Première séance",
+            "text": [
+              "La première séance de Tuina dure environ 1h30 de massage. Avec le temps d’échange et de retour au calme, il faut compter deux heures : un vrai moment pour soi, sans précipitation.",
+              "Après un court échange pour cerner vos besoins, vous vous installez confortablement. J’observe votre posture et vos tensions, puis je travaille le corps dans son ensemble, en insistant sur les zones prioritaires.",
+              "Vient ensuite le cœur de la séance : le massage Tuina.",
+              "Grâce à des gestes précis, rythmés et adaptés, j’agis en profondeur sur les tissus tout en stimulant les méridiens et les points d’énergie. Le massage peut être tonifiant ou apaisant, profond ou plus doux.",
+              "La séance se conclut par un retour au calme, un moment d’intégration et de détente profonde, pour reprendre pied en douceur dans le réel."
+            ],
+            "hovering": "Une séance Tuina : relancer l’énergie, libérer les tensions."
+          },
+          "second": {
+            "title": "Séance de suivi",
+            "text": [
+              "Un suivi sur-mesure, pour laisser le soin agir… et s’inscrire dans la durée.",
+              "Le corps a sa propre temporalité.",
+              "C’est pourquoi je propose généralement deux séances complémentaires, espacées d’une quinzaine de jours, afin de renforcer les effets du Tuina et d’accompagner le corps sur son chemin d’équilibre."
+            ],
+            "hovering": "Le Tuina, un soin profond et global qui libère les tensions et redonne fluidité au corps et à l’esprit. "
+          },
+          "rhythm": {
+            "title": "Pourquoi ce rythme ?",
+            "text": [
+              "Le Massage Tuina remet en mouvement ce qui circule dans le corps – énergie, sang, lymphe – pour restaurer l’harmonie, améliorer la circulation et soulager les douleurs.",
+              "Une seule séance peut déjà apporter de grands changements, mais c’est la continuité qui permet aux bienfaits de s’installer durablement.",
+              "Espacer les séances de quinze jours permet :"
+            ],
+            "list": [
+              "✔ de laisser au corps le temps d’intégrer,",
+              "✔ d’observer les évolutions et ajuster le soin,",
+              "✔ de travailler en douceur, sans surcharge,",
+              "✔ d’ancrer les résultats : meilleure mobilité, apaisement, regain d’énergie."
+            ],
+            "CTA": "Réserver une séance de massage Tuina"
+          }
+        }
+      },
+      "checkup": {
+        "title": "Bilan de la séance",
+        "text": [
+          "À la suite du soin, nous prenons un temps d’échange pour accueillir vos ressentis, tant physiques qu’émotionnels.",
+          "Je vous propose ensuite des conseils personnalisés – gestes d’auto-massage, mouvements de Qi Gong, ajustements alimentaires ou règles simples d’hygiène de vie – afin de prolonger les effets au quotidien.",
+          "Enfin, vous recevez par mail un résumé personnalisé, reprenant les points essentiels et les recommandations adaptées, pour vous accompagner après la séance et soutenir votre autonomie."
+        ]
+      },
+      "after": {
+        "title": "Après la séance : quelques recommandations essentielles",
+        "text": [
+          "La séance ne s’arrête pas lorsque vous quittez le cabinet.",
+          "Votre corps entre alors dans une phase d’intégration, parfois discrète mais toujours active.",
+          "Pour accompagner ce processus en douceur, voici quelques conseils simples à suivre :"
+        ],
+        "list": [
+          {
+            "title": "Evitez toute activité intense",
+            "text": "Privilégiez le repos. Après un soin, votre organisme a besoin de calme pour « digérer » les informations reçues. Le sport, les efforts physiques ou les emplois du temps trop chargés peuvent gêner ce travail en profondeur."
+          },
+          {
+            "title": "Hydratez-vous généreusement",
+            "text": "L’eau aide à éliminer les toxines libérées pendant le soin. Buvez régulièrement dans les heures qui suivent, même si vous n’avez pas soif."
+          },
+          {
+            "title": "Fatigue passagère : un signal normal",
+            "text": "Il est courant de ressentir un coup de fatigue dans les 24 à 48 heures. C’est souvent bon signe : le soin est à l’œuvre. Si une gêne inhabituelle persiste au-delà de ce délai, n’hésitez pas à me contacter."
+          },
+          {
+            "title": "Espacez les rendez-vous avec d'autres praticiens",
+            "text": "Si vous consultez d’autres professionnels (ostéopathe, kiné, etc.), veillez à respecter un délai d’au moins une semaine. Cela permet à votre corps d’intégrer chaque soin sans surcharge, et garantit une meilleure efficacité."
+          }
+        ]
+      }
+    }
+  },
+  "seasons": {
+    "title": "Saisons et conseils",
+    "importance": {
+      "title": "Pourquoi est-ce si important de différencier les saisons ?",
+      "text": [
+        "En médecine chinoise, les cycles de la nature influencent directement notre énergie vitale. Les changements de lumière, de température et de rythme extérieur se répercutent à l’intérieur du corps. L’hiver appelle au repos et à la récupération, l’été favorise l’expansion et le mouvement, l’automne invite au recentrage… En respectant ces cycles naturels, nous soutenons notre équilibre, nos émotions et notre vitalité.",
+        "À l’inverse, vivre « à contre-saison » épuise progressivement l’organisme. Manger froid en plein hiver, ignorer le besoin de ralentir en automne, ou rester inactif au printemps… autant de décalages qui perturbent la circulation de l’énergie. Petit à petit, ces déséquilibres fragilisent l’immunité, troublent la digestion ou le sommeil et entament notre vitalité."
+      ]
+    },
+    "list": {
+      "title": "Quelles sont les saisons à prendre en compte ?",
+      "text": [
+        "En médecine chinoise, il n’existe pas quatre, mais cinq saisons.",
+        "Aux classiques printemps, été, automne et hiver, s’ajoute la « cinquième saison » : une période de transition, qui revient à chaque changement d'une saison à l’autre.",
+        "Chacune de ces étapes influence notre énergie, nos émotions et certains organes clés. Les découvrir permet de mieux comprendre comment vivre en harmonie avec le rythme de la nature."
+      ],
+      "Fall": "Automne",
+      "Winter": "Hiver",
+      "Spring": "Printemps",
+      "interSaison": "Inter saison"
+    },
+    "season": {
+      "subtitles": {
+        "specialties": "Vous avez peut être noté que...",
+        "advices": "Mes conseils pour cette saison",
+        "recipes": "Exemple de recettes"
+      },
+      "fall": {
+        "title": "L'automne",
+        "subtitle": "La saison du recentrage : trier, lâcher et garder l’essentiel pour préparer l’hiver.",
+        "specialties": [
+          "À l’automne, l’air se refroidit et le corps a besoin d’un temps d’adaptation. La respiration devient plus sensible, et il n’est pas rare de ressentir une certaine nostalgie.",
+          "En médecine chinoise, l’automne est associé à l’élément Métal. C’est la saison des récoltes et des moissons : après l’expansion de l’été, la nature se recentre et commence à se dépouiller. Ce mouvement nous invite à revenir à l’essentiel : trier, garder ce qui nous nourrit et laisser aller ce qui nous encombre.",
+          "Relié au Poumon et au Gros Intestin, l’automne nous encourage à respirer plus consciemment, à ralentir et à préparer nos forces pour l’hiver.",
+          "Son émotion est la tristesse : en déséquilibre, elle peut devenir pesante, alimenter la mélancolie et freiner notre élan vital. En équilibre, elle devient une force d’acceptation : la capacité de se délester de ce qui n’a plus lieu d’être, d’accueillir le changement et de retrouver une clarté intérieure."
+        ],
+        "advices": [
+          {
+            "title": "Respirer et protéger son souffle",
+            "text": "Prendre le temps de respirer profondément, marcher au grand air et se couvrir dès que l’air se rafraîchit (surtout le cou et les lombaires). Ces petits gestes soutiennent le Poumon, organe clé de la saison."
+          },
+          {
+            "title": "Ralentir le rythme",
+            "text": "Accepter de lever le pied, alléger son agenda, et s’accorder des moments de repos. L’automne invite à se recentrer et à garder son énergie pour l’hiver."
+          },
+          {
+            "title": "Alléger et nourrir",
+            "text": "Aider le Gros Intestin à « faire le tri » grâce à une alimentation simple et de saison : légumes cuits, céréales complètes, saveurs légèrement piquantes (radis, poireau, gingembre doux)."
+          },
+          {
+            "title": "Entretenir une énergie douce",
+            "text": "Bouger sans excès, pratiquer une activité régulière mais modérée (Qi Gong, marche) pour accompagner la rentrée du Yang et maintenir une vitalité équilibrée."
+          }
+        ],
+        "recipes": [
+          "Soupe de potimarron aux châtaignes et lardons grillés",
+          "Poêlée de champignons des bois à l'ail et au persil",
+          "Crumble aux pommes, poires et noix"
+        ]
+      },
+      "spring": {
+        "title": "Le printemps",
+        "subtitle": "La saison de l’élan vital : la nature s’éveille, tout pousse, tout repart. ",
+        "specialties": [
+          "Au printemps, la lumière revient, les jours s’allongent, le corps se remet doucement en mouvement. C’est une période de relance et d’ouverture…",
+          "Le printemps, associé à l’élément <strong>Bois</strong>, marque le <strong>renouveau</strong>.",
+          "Dans la nature, la sève monte, les bourgeons s’ouvrent, la vie reprend sa course. Sur le plan énergétique, c’est la saison du <strong>Foie</strong> et de la <strong>Vésicule Biliaire</strong>, qui assurent la libre circulation de l’énergie (Qi) et des émotions.",
+          "Quand tout circule harmonieusement, cette énergie se manifeste par <strong>la créativité, la curiosité, l’élan, la capacité à imaginer et à entreprendre</strong>. Mais si elle se bloque, elle peut se transformer en <strong>colère, irritabilité ou frustration</strong>.",
+          "Le printemps nous invite donc à <strong>laisser l’énergie s’exprimer avec souplesse</strong>, à bouger, créer, oser — sans brusquer ni retenir."
+        ],
+        "advices": [
+          {
+            "title": "Faire circuler l’énergie",
+            "text": "Bouger, s’étirer, marcher, pratiquer le Qi Gong ou le yoga : tout ce qui assouplit le corps aide aussi à libérer l’esprit. Le Foie aime le mouvement fluide, pas les tensions."
+          },
+          {
+            "title": "Alléger et détoxifier",
+            "text": "C’est la saison idéale pour alléger son alimentation: favoriser les <strong>jeunes pousses</strong>, les <strong>verdures</strong>, les <strong>saveurs légèrement acides</strong> (citron, oseille, pomme), et limiter les excès gras ou sucrés. Ces choix soutiennent le Foie et facilitent la reprise d’énergie."
+          },
+          {
+            "title": "Cultiver la souplesse intérieure",
+            "text": "Accueillir les changements sans résistance : le printemps est mouvement, croissance et adaptation. Se fixer des objectifs réalistes, mais ne pas vouloir tout faire d’un coup."
+          },
+          {
+            "title": "Prendre soin de ses émotions",
+            "text": "La colère, la nervosité ou la fatigue oculaire sont souvent des signes d’un Foie un peu “congestif”. Apprenez à <strong>respirer profondément</strong>, à vous <strong>accorder du temps dehors</strong>, à <strong>canaliser vos élans</strong> plutôt qu’à les réprimer."
+          }
+        ],
+        "recipes": [
+          "Velouté d'asperges vertes à la menthe fraîche",
+          "Salade de quinoa aux légumes nouveaux et vinaigrette citronnée",
+          "Tarte fine aux fraises et rhubarbe sur pâte sablée"
+        ]
+      },
+      "summer": {
+        "title": "L'été",
+        "subtitle": "La saison de la joie et de l’expansion : la nature rayonne, tout est à son apogée.",
+        "specialties": [
+          "En été, la lumière est à son maximum, les journées s’étirent et la chaleur nous invite à vivre dehors.",
+          "C’est une saison d’ouverture, de partage, d’abondance. Le corps a naturellement envie de mouvements, d’activités et de convivialité.",
+          "L’été, associé à l’élément <strong>Feu</strong>, est la saison de la <strong>plénitude</strong>. C’est le moment où l’énergie atteint son apogée : tout est en expansion, à l’image de la nature qui s’épanouit pleinement.",
+          "Sur le plan énergétique, le <strong>Cœur</strong> et <strong>l’Intestin Grêle</strong> sont à l’honneur. Le Cœur gouverne le <strong>Shen</strong>, c’est-à-dire l’esprit, la conscience et la joie intérieure.",
+          "Quand le Feu est équilibré, il se manifeste par <strong>la joie, la clarté, la chaleur humaine et la communication.</strong> Mais s’il s’emballe, il peut se traduire par de <strong>l’agitation, des insomnies, une nervosité importante ou une émotivité excessive.</strong>",
+          "L’été nous invite <strong>à rayonner sans nous consumer,</strong> à savourer la vie tout en gardant un espace de calme intérieur."
+        ],
+        "advices": [
+          {
+            "title": "Rafraîchir et hydrater",
+            "text": "Privilégier les <strong>aliments riches en eau</strong> (concombre, melon, pastèque, courgette), les <strong>fruits rouges</strong> et les <strong>tisanes tièdes.</strong> Éviter les excès de café, d’alcool et d’aliments trop épicés qui entretiennent la chaleur interne."
+          },
+          {
+            "title": "Soutenir le Cœur",
+            "text": "Cultiver la <strong>joie simple</strong>, le <strong>partage</strong>, le <strong>rire</strong>, tout ce qui nourrit le lien et apaise l’esprit. Pratiquer la gratitude, méditer ou marcher dans la nature pour entretenir la sérénité du Shen."
+          },
+          {
+            "title": "Préserver son énergie",
+            "text": "Même si les journées sont longues, il est essentiel de <strong>respecter des temps de repos</strong> et d’éviter la surexcitation. La sieste ou les moments calmes à l’ombre aident à retrouver un rythme naturel."
+          },
+          {
+            "title": "Respirer et se relier",
+            "text": "Respirer lentement, sentir le soleil sur la peau sans excès, se relier à la chaleur du vivant. L’été est le moment de s’ouvrir, d’aimer, de se relier aux autres avec légèreté."
+          }
+        ],
+        "recipes": [
+          "Gaspacho andalou et ses croûtons à l'ail",
+          "Brochettes de poulet mariné au citron et herbes de Provence",
+          "Salade de fruits d'été (pêches, abricots, melon) et son sirop de verveine"
+        ]
+      },
+      "winter": {
+        "title": "L'hiver",
+        "subtitle": "La saison du repos : ralentir, préserver, se régénérer.",
+        "specialties": [
+          "L’hiver est la saison du repos et de la régénération. Vous avez peut-être remarqué que le froid, les journées plus courtes et l’envie de rester au chaud modifient naturellement votre rythme. Comme la nature qui paraît immobile en surface mais travaille en profondeur, l’hiver nous invite à ralentir pour préserver nos forces et préparer le printemps à venir.",
+          "En médecine chinoise, l’hiver est associé à l’élément Eau. Relié au Rein et à la Vessie, il touche à notre énergie vitale, à nos os et à notre structure profonde.",
+          "Son émotion est la peur : en déséquilibre, elle peut devenir paralysante ou, à l’inverse, se transformer en témérité. Mais lorsque l’équilibre est présent, elle se transforme en volonté : une force intérieure qui nous permet d’avancer et de mener nos projets à terme."
+        ],
+        "advices": [
+          {
+            "title": "Ralentir et cultiver le calme",
+            "text": "L’hiver nous invite à ralentir. Comme les nuits s’allongent, dormir davantage, s’accorder des moments de chaleur et de convivialité, pratiquer un Qi Gong du Rein ou méditer sont autant de façons de régénérer nos forces. Ce n’est pas de l’inaction, mais une véritable manière de nourrir notre énergie."
+          },
+          {
+            "title": "Préserver ses énergies",
+            "text": "Éviter de se disperser ou de “tirer sur la corde”. L’hiver n’est pas la saison des excès : travail, sport ou agitation usent inutilement nos réserves. Garder du discernement, c’est renforcer sa vitalité."
+          },
+          {
+            "title": "Chouchouter le Rein",
+            "text": "Le froid attaque facilement le Rein. Un secret bien connu : si vous gardez la tête couverte, vos pieds resteront au chaud ! Ajoutez à cela un bas du dos protégé, des boissons tièdes et moins de cru ou glacé : de petits gestes simples qui préservent une énergie vitale précieuse."
+          },
+          {
+            "title": "Cultiver la saveur salée avec mesure",
+            "text": "L’hiver est la saison de la saveur salée : c’est le moment idéal pour en profiter. Champignons noirs, algues, crustacés ou autres produits venus de l’eau nourrissent le Rein et soutiennent l’équilibre des liquides. Comme toujours, l’excès fatigue au lieu de renforcer : le secret, c’est la mesure."
+          }
+        ],
+        "recipes": [
+          "Velouté de butternut au lait de coco et curry",
+          "Parmentier de canard confit à la patate douce",
+          "Poire Belle-Hélène revisitée"
+        ]
+      },
+      "interSeason": {
+        "title": "L'inter saison",
+        "subtitle": "Comme la Terre, faites une pause pour intégrer et vous ressourcer.",
+        "specialties": {
+          "title": "La spécificité de l'inter saison",
+          "text": [
+            "Entre chaque saison, un temps de pause existe, comme si la Terre reprenait son souffle. C’est une respiration entre deux mouvements, un moment pour revenir à soi et assimiler ce qui a été vécu avant de repartir.",
+            "En médecine chinoise, la Terre est notre centre vital. Reliée à la Rate et à l’Estomac, elle transforme et assimile les aliments pour nourrir notre énergie. Elle représente aussi notre soutien : l’ancrage qui nous permet de tenir debout et d’avancer.",
+            "Son émotion est la réflexion : lorsqu’elle est harmonieuse, elle nourrit la clarté d’esprit ; mais si elle est excessive, elle se transforme en ruminations qui épuisent aussi bien le corps que le mental. En équilibre, la Terre nous apporte stabilité, vitalité et discernement. Mais lorsqu’elle est négligée, apparaissent fatigue, lourdeurs digestives, ruminations ou sentiment de fragilité."
+          ]
+        },
+        "advices": [
+          {
+            "title": "Retrouver la réflexion juste",
+            "text": "C’est sortir du flux d’informations, prendre le temps de réfléchir pour se recentrer sur ses véritables objectifs."
+          },
+          {
+            "title": "Nourrir la Rate et l’Estomac",
+            "text": "Prendre soin de la Rate et de l’Estomac, c’est manger à heures régulières, privilégier le tiède et des plats simples comme des soupes, des légumes mijotés ou des céréales douces. Les repas trop gras, trop copieux ou trop sucrés fatiguent notre énergie."
+          },
+          {
+            "title": "S’ancrer dans le quotidien",
+            "text": "Renouer avec la Terre : marcher pieds nus, dehors ou à la maison, jardiner, s’entourer  de matériaux naturels. Ces gestes nous enracinent et nous aident à nous tenir droits, solides et présents."
+          },
+          {
+            "title": "Installer le calme intérieur",
+            "text": "C’est parfois aussi… poser son téléphone. Faire silence pour s’offrir un moment à soi, pratiquer le Qi Gong ou méditer : autant de gestes qui ramènent paix et force à nos journées."
+          }
+        ],
+        "recipes": [
+          "Bouillon détox aux légumes racines et gingembre",
+          "Salade tiède de lentilles du Puy, carottes et betteraves",
+          "Compotée de pommes au miel et à la cannelle"
+        ]
+      }
+    }
+  },
+  "price": {
+    "title": "Prestations et tarifs",
+    "takeAppointment": "Prendre rendez-vous",
+    "description": [
+      "Des questions sur la formule qui vous convient ?",
+      "Je suis à votre écoute pour vous orienter vers l’accompagnement le plus adapté."
+    ],
+    "buttonLabel": {
+      "takeAppointmentReflexo": "Prendre un rendez-vous de réflexologie et énergétique chinoise",
+      "takeAppointmentTuina": "Prendre un rendez-vous de massage Tuina",
+      "takeAppointmentQiGong": "Réserver un cours de Qi Gong"
+    },
+    "type": [
+      {
+        "title": "Réflexologie & énergétique chinoise",
+        "age": {
+          "adult": {
+            "title": "Adultes",
+            "prices": [
+              {
+                "title": "Première séance",
+                "time": "1h15",
+                "price": "65€",
+                "description": "Avec bilan complet."
+              },
+              {
+                "title": "Séance de suivi",
+                "time": "1 séance de 45min",
+                "price": "50€",
+                "description": "Dans les 15 jours suivant la première séance."
+              },
+              {
+                "title": "Forfait Suivi – 2 séances",
+                "time": "2 séances de 45min",
+                "price": "90€",
+                "description": "Réparties sur 1 mois et demi."
+              },
+              {
+                "title": "Forfait Suivi – 3 séances",
+                "time": "3 séances de 45min",
+                "price": "120€",
+                "description": "Réparties sur 1 mois et demi. Idéal pour ancrer les bienfaits et accompagner le processus d’auto-régulation."
+              }
+            ]
+          },
+          "child": {
+            "title": "Adolescents et enfants (jusqu'à 16 ans)",
+            "prices": [
+              {
+                "title": "Première séance",
+                "time": "1h",
+                "price": "55€",
+                "description": "Avec bilan complet."
+              },
+              {
+                "title": "Séance de suivi",
+                "time": "1 séance de 45min",
+                "price": "45€",
+                "description": "Dans les 15 jours suivant la première séance."
+              },
+              {
+                "title": "Forfait Suivi – 2 séances",
+                "time": "2 séances de 45min",
+                "price": "80€",
+                "description": "Réparties sur 1 mois et demi."
+              },
+              {
+                "title": "Forfait Suivi – 3 séances",
+                "time": "3 séances de 45min",
+                "price": "105€",
+                "description": "Réparties sur 1 mois et demi. Idéal pour ancrer les bienfaits et accompagner le processus d’auto-régulation."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Massage Tuina",
+        "prices": [
+          {
+            "title": "Première séance",
+            "time": "1h30",
+            "price": "75€",
+            "description": "Avec bilan énergétique."
+          },
+          {
+            "title": "Séance de suivi",
+            "time": "1 séance de 60min",
+            "price": "60€",
+            "description": "Dans les 15 jours suivant la première séance."
+          },
+          {
+            "title": "Forfait Suivi - 2 séances",
+            "time": "2 séances de 60min",
+            "price": "110€",
+            "description": "Espacées de 15 jours. Pour relancer, équilibrer et consolider les effets du soin."
+          }
+        ]
+      },
+      {
+        "title": "Cours de Qi Gong",
+        "label": {
+          "faceToFace": "En présentiel (à Nespouls)",
+          "online": "En ligne (via Zoom ou enregistrement)"
+        },
+        "prices": [
+          {
+            "title": "Cours unitaire",
+            "faceToFace": "12€",
+            "online": "10€"
+          },
+          {
+            "title": "Forfait 1er trimestre (septembre à décembre)",
+            "faceToFace": "72€",
+            "online": "70€"
+          },
+          {
+            "title": "Forfait 2ème et 3ème trimestre",
+            "faceToFace": "120€ / trimestre",
+            "online": "120€ / trimestre"
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "office": {
+      "title": "Mon cabinet",
+      "adress": "7 place de l'église Saint Julien, 19600 Nespouls",
+      "tel": "06 33 47 80 96",
+      "mail": "contact@reflexo-bien-etre.fr"
+    },
+    "takeAppointment": "Prendre rendez-vous",
+    "form": {
+      "title": "Formulaire de contact",
+      "lastName": "Nom*",
+      "firstName": "Prénom*",
+      "mail": "Email",
+      "phone": "Téléphone",
+      "subject": "Sujet*",
+      "message": {
+        "label": "Message*",
+        "placeholder": "Votre message ici"
+      },
+      "send": "Envoyer",
+      "error": {
+        "lastName": "Veuillez renseigner votre nom de famille.",
+        "firstName": "Veuillez renseigner votre prénom.",
+        "mail": "Veuillez renseigner un email valide.",
+        "phone": "Veuillez renseigner un numéro de téléphone valide.",
+        "subject": "Veuillez renseigner un sujet.",
+        "message": "Veuillez renseigner un message d'au moins 10 charactères."
+      },
+      "sendMessage": {
+        "success": "Votre message a bien été envoyé, je reviendrai vers vous dans les meilleurs délais !",
+        "error": "Un problème est survenu, veuillez réessayer ultérieurement."
+      }
+    }
+  },
+  "takeAppointment": {
+    "title": "Prendre rendez-vous"
+  },
+  "siteMap": {
+    "title": "Plan du site"
+  },
+  "appointment": {
+    "title": "Prendre rendez-vous",
+    "description": "Choisissez la prestation qui vous convient et réservez votre créneau en ligne.",
+    "qiGong": "Pour les séances de Qi Gong, contactez-moi directement.",
+    "select": {
+      "title": "Choississez une option",
+      "list": [
+        {
+          "value": "1",
+          "label": "Réflexologie et énergétique chinoise adulte"
+        },
+        {
+          "value": "2",
+          "label": "Réflexologie et énergétique chinoise enfant/adolescent (-16 ans)"
+        },
+        { "value": "3", "label": "Massage Tuina" },
+        { "value": "4", "label": "Cours de Qi Gong en ligne" },
+        { "value": "5", "label": "Cours de Qi Gong en présentiel (Nespouls)" }
+      ]
+    }
+  }
+}

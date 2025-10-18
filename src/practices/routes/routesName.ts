@@ -1,3 +1,5 @@
-export const practicesRoutesPath = {
-  HOME: "/mes-pratiques",
+export const practicesRoutesName = {
+  HOME: "practices",
+  OFFICE: "practices-office",
+  OUTSIDE: "practices-ouside",
 };
