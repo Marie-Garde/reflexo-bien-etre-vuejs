@@ -21,6 +21,10 @@ import { legalNoticeRoutesPath } from "@/legalNotice/routes/routesPath";
 
 export const routes = [
   {
+    path: "/",
+    redirect: "/accueil",
+  },
+  {
     path: homeRoutesPath.HOME,
     name: homeRoutesName.HOME,
     component: () => import("@/home/views/Home.vue"),
