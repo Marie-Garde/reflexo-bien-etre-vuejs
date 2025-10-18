@@ -14,6 +14,7 @@ export default defineConfig({
     svgLoader(),
     sitemap({
       hostname: "https://www.reflexo-bien-etre.com",
+      robots: [],
     }),
   ],
   resolve: {
