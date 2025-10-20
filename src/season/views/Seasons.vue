@@ -191,6 +191,10 @@ const seasons = [
     text-size-adjust: auto;
     transform: rotate(-45deg);
     cursor: pointer;
+
+    &-center {
+      font-size: 1.6rem;
+    }
   }
 
   $seasons-map: (
@@ -227,7 +231,7 @@ const seasons = [
       ),
       title-pos: (
         top: 50%,
-        left: 30%
+        left: 30%,
       ),
     ),
     bottom-right: (
@@ -245,7 +249,7 @@ const seasons = [
       ),
       title-pos: (
         top: 37%,
-        left: 34%
+        left: 34%,
       ),
     ),
     bottom-left: (
@@ -263,7 +267,7 @@ const seasons = [
       ),
       title-pos: (
         top: 40%,
-        left: 35%
+        left: 35%,
       ),
     ),
   );
@@ -389,6 +393,10 @@ const seasons = [
   .container {
     .quarter-title {
       font-size: 1.5rem;
+      &-center {
+        font-size: 1.6rem;
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -397,6 +405,10 @@ const seasons = [
   .container {
     .quarter-title {
       font-size: 1.2rem;
+      &-center {
+        font-size: 1rem;
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -405,6 +417,10 @@ const seasons = [
   .container {
     .quarter-title {
       font-size: 1rem;
+      &-center {
+        font-size: 0.8rem;
+        margin-right: 10px;
+      }
     }
   }
 }

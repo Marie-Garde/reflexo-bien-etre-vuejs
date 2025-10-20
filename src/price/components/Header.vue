@@ -22,7 +22,7 @@ const { t } = useI18n();
   &__header {
     width: 100%;
     height: 60vh;
-    background-image: url("@/assets/background/office.png");
+    background-image: url("@/assets/background/office-back.png");
     background-size: cover;
     background-position: center;
     position: relative;
