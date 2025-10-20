@@ -106,7 +106,13 @@ const warningBackgroundColorClass = computed(() => {
           color="yellow"
           :to="legalNoticeRoutesName.HOME"
         />
-        <p>{{ t("footer.legal.creator") }}</p>
+        <a
+          href="https://www.lenvoleenumerique.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link"
+          >{{ t("footer.legal.creator") }}</a
+        >
       </div>
     </div>
   </footer>
@@ -212,7 +218,12 @@ const warningBackgroundColorClass = computed(() => {
 
       p,
       .link {
-        margin: 0 10px;
+        margin-right: 5px;
+      }
+
+      a.link {
+        color: inherit;
+        text-decoration: none;
       }
     }
   }
