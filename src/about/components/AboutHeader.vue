@@ -70,7 +70,7 @@ const { t } = useI18n();
         content: "";
         display: block;
         width: 100%;
-        height: 250px;
+        height: 350px;
         background-image: url("@/assets/background/presentationWhoBackground.png");
         background-size: cover;
         background-position: center;

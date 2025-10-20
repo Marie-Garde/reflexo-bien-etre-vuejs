@@ -9,6 +9,7 @@ const { t } = useI18n();
     <div class="appointment__header-container">
       <div class="appointment__header-overlay">
         <h1 class="appointment__title">{{ t("appointment.title") }}</h1>
+        <p>{{ t("appointment.description") }}</p>
       </div>
     </div>
   </header>

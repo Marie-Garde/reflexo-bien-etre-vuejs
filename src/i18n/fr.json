@@ -665,6 +665,7 @@
   },
   "price": {
     "title": "Prestations et tarifs",
+    "subTitle": "Le cabinet accepte les paiements par espèces, chèque et carte bancaire.",
     "takeAppointment": "Prendre rendez-vous",
     "description": [
       "Des questions sur la formule qui vous convient ?",
@@ -831,7 +832,7 @@
   },
   "appointment": {
     "title": "Prendre rendez-vous",
-    "description": "Choisissez la prestation qui vous convient et réservez votre créneau en ligne.",
+    "description": "Choisissez la prestation qui vous convient et réservez votre créneau en ligne. Le cabinet accepte les paiements par carte bancaire, chèque et espèces.",
     "qiGong": "Pour les séances de Qi Gong, contactez-moi directement.",
     "select": {
       "title": "Choississez une option",
