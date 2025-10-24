@@ -73,6 +73,10 @@ const transitionEffect = computed(() => {
     left: 50%;
     bottom: 0;
     z-index: 2;
+
+    @media (max-width: 768px) {
+      height: 40%;
+    }
   }
 
   &-link {
