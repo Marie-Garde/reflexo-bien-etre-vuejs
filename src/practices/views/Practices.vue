@@ -2,7 +2,7 @@
 import { useRouter } from "vue-router";
 import { practicesRoutesName } from "../routes/routesName";
 import { computed } from "vue";
-import isMobile from "../../reactives/isMobile";
+import { useIsMobile } from "../../reactives/isMobile";
 import benefitsImage from "/illustrations/practices/benefits.png";
 import benefitsMobile from "/illustrations/practices/benefitsMobile.png";
 
@@ -12,6 +12,7 @@ import Pillars from "../components/practices/Pillars.vue";
 import SessionProgress from "../components/practices/SessionProgress.vue";
 
 const router = useRouter();
+const isMobile = useIsMobile();
 
 const benefitsImageSource = computed(() => {
   return isMobile.value ? benefitsMobile : benefitsImage;
