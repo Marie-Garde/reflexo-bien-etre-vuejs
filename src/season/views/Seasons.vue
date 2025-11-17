@@ -22,7 +22,7 @@ const seasons = [
   <main>
     <div class="header">
       <img
-        src="@/assets/background/seasonBackground.jpg"
+        src="@/assets/background/seasonBackground.webp"
         alt="Illustration des saisons"
         class="header-image"
         fetchpriority="high"

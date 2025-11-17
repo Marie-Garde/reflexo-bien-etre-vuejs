@@ -59,7 +59,7 @@ const { t } = useI18n();
   &__header {
     width: 100%;
     height: 60vh;
-    background-image: url("@/assets/background/contactBackground.jpg");
+    background-image: url("@/assets/background/contactBackground.webp");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -130,7 +130,7 @@ const { t } = useI18n();
         display: block;
         width: 100%;
         height: 250px;
-        background-image: url("@/assets/background/contactBackground.jpg");
+        background-image: url("@/assets/background/contactBackground.webp");
         background-size: cover;
         background-position: center;
       }
