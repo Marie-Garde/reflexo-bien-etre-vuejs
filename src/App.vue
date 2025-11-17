@@ -9,9 +9,9 @@ import TheFooter from "@/footer/views/TheFooter.vue";
     <Nav />
   </header>
 
-  <div class="body">
+  <main class="body">
     <RouterView />
-  </div>
+  </main>
 
   <footer><TheFooter /></footer>
 </template>
