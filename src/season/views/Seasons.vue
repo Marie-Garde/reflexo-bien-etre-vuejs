@@ -22,7 +22,7 @@ const seasons = [
   <main>
     <div class="header">
       <img
-        src="@/assets/background/seasonBackground.png"
+        src="@/assets/background/seasonBackground.jpg"
         alt="Illustration des saisons"
         class="header-image"
         fetchpriority="high"
@@ -323,6 +323,12 @@ const seasons = [
     z-index: 10;
     transition: color 0.3s ease;
 
+    h3 {
+      width: 80%;
+      height: 50%;
+      font-size: 1.8rem;
+    }
+
     &:hover .quarter-title {
       color: $brown-dark;
     }
@@ -385,6 +391,13 @@ const seasons = [
         width: 60vw;
         height: 60vw;
         margin-bottom: 30px;
+      }
+    }
+
+    .quarter-title {
+      &-center {
+        font-size: 2rem;
+        margin-right: 40px;
       }
     }
   }

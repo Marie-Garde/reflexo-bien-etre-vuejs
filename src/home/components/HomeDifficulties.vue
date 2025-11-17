@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import BodyPainImage from "@/assets/icons/Body-pain.png";
-import HeadacheImage from "@/assets/icons/Headache.png";
-import IsomniaImage from "@/assets/icons/Isomnia.png";
-import DigestiveSystemPainImage from "@/assets/icons/Digestive-system-pain.png";
-import StressImage from "@/assets/icons/Stress.png";
-import DiseaseImage from "@/assets/icons/Disease.png";
-
+import BodyPainImage from "@/assets/icons/Body-pain.webp";
+import HeadacheImage from "@/assets/icons/Headache.webp";
+import IsomniaImage from "@/assets/icons/Isomnia.webp";
+import DigestiveSystemPainImage from "@/assets/icons/Digestive-system-pain.webp";
+import StressImage from "@/assets/icons/Stress.webp";
+import DiseaseImage from "@/assets/icons/Disease.webp";
 const { t, tm } = useI18n();
 
 const difficultiesList = tm("home.difficulties.list");
