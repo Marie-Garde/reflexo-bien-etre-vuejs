@@ -40,7 +40,7 @@ function goToAppointment() {
   width: 100%;
   min-height: 40vh;
   height: auto;
-  background-image: url("/illustrations/homeCTA.webp");
+  background-image: url("/illustrations/homeCTA.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
