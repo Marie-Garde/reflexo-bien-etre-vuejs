@@ -35,7 +35,12 @@ const transitionEffect = computed(() => {
       aria-roledescription="slide"
       :aria-label="`Slide ${index + 1} de ${total}`"
     >
-      <img :src="urlFor(slide.image).url()" :alt="slide.description" />
+      <img
+        :src="urlFor(slide.image).url()"
+        :alt="slide.description"
+        fetchpriority="high"
+        decoding="async"
+      />
       <div class="carousel-item-informations">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>

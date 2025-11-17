@@ -15,26 +15,32 @@ const difficulties = [
   {
     image: BodyPainImage,
     text: difficultiesList[0],
+    alt: "Douleurs musculaires et articulaires",
   },
   {
     image: HeadacheImage,
     text: difficultiesList[1],
+    alt: "Maux de tête",
   },
   {
     image: IsomniaImage,
     text: difficultiesList[2],
+    alt: "Insomnie",
   },
   {
     image: DigestiveSystemPainImage,
     text: difficultiesList[3],
+    alt: "Troubles digestif",
   },
   {
     image: StressImage,
     text: difficultiesList[4],
+    alt: "Stress et anxiété",
   },
   {
     image: DiseaseImage,
     text: difficultiesList[5],
+    alt: "Fatigue",
   },
 ];
 </script>
@@ -46,7 +52,7 @@ const difficulties = [
 
     <div class="difficulties-list">
       <div v-for="(difficulty, index) in difficulties" :key="index" class="difficulties-list-item">
-        <img class="difficulties-list-item-img" :src="difficulty.image" />
+        <img class="difficulties-list-item-img" :src="difficulty.image" :alt="difficulty.alt" />
         <p>{{ difficulty.text }}</p>
       </div>
     </div>

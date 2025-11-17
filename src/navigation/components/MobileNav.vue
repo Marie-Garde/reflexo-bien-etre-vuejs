@@ -56,7 +56,11 @@ function goToHome() {
       <img :src="Logo" alt="Reflex'o bien-être logo" />
     </button>
 
-    <button class="mobile-nav__burger" @click="menuOpen = true">
+    <button
+      class="mobile-nav__burger"
+      @click="menuOpen = true"
+      aria-label="Ouvrir le menu de navigation"
+    >
       <BurgerMenuIcon />
     </button>
 
