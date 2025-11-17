@@ -14,6 +14,7 @@ const { t } = useI18n();
         src="/illustrations/ete.jpg"
         alt="Paysage d'été avec un champ de fleurs"
         class="header-image"
+        fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">

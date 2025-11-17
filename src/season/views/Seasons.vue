@@ -25,6 +25,7 @@ const seasons = [
         src="@/assets/background/seasonBackground.png"
         alt="Illustration des saisons"
         class="header-image"
+        fetchpriority="high"
       />
       <div class="header-overlay">
         <h1 class="title">{{ t("seasons.title") }}</h1>

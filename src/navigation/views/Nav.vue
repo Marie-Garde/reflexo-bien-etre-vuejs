@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import isMobile from "@/reactives/isMobile";
+import { useIsMobile } from "@/reactives/isMobile";
 import DesktopNav from "../components/DesktopNav.vue";
 import MobileNav from "../components/MobileNav.vue";
 import PhoneIcon from "@/assets/icons/phone.vue";
 import LocationIcon from "@/assets/icons/location.vue";
 
 const { t } = useI18n();
+const isMobile = useIsMobile();
 </script>
 
 <template>

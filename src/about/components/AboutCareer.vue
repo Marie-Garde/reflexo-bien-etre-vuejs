@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
-import isMobile from "../../reactives/isMobile";
+import { useIsMobile } from "../../reactives/isMobile";
 
 import careerImage from "/illustrations/about/professionnalCareer.png";
 import careerImageMobile from "/illustrations/about/professionnalCareerMobile.png";
 
 const { t, tm } = useI18n();
+const isMobile = useIsMobile();
 
 const careerImageSource = computed(() => {
   return isMobile.value ? careerImageMobile : careerImage;

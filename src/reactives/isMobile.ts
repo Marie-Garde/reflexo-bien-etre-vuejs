@@ -1,15 +1,23 @@
-import { readonly, ref } from "vue";
+import { ref, readonly, onMounted, onBeforeUnmount } from "vue";
 
-const isMobile = ref(false); // Default value for SSR
+const isMobile = ref(false);
 
-if (typeof window !== 'undefined') {
-  isMobile.value = window.innerWidth <= 768;
+export function useIsMobile() {
+  let mediaQuery: MediaQueryList;
 
-  const updateIsMobile = () => {
-    isMobile.value = window.innerWidth <= 768;
+  const update = (e: MediaQueryList | MediaQueryListEvent) => {
+    isMobile.value = e.matches;
   };
 
-  window.addEventListener("resize", updateIsMobile);
-}
+  onMounted(() => {
+    mediaQuery = window.matchMedia("(max-width: 768px)");
+    update(mediaQuery);
+    mediaQuery.addEventListener("change", update);
+  });
 
-export default readonly(isMobile);
+  onBeforeUnmount(() => {
+    mediaQuery?.removeEventListener("change", update);
+  });
+
+  return readonly(isMobile);
+}

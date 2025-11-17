@@ -14,6 +14,7 @@ const { t } = useI18n();
         src="/illustrations/spring.jpg"
         alt="Paysage de printemps avec des fleurs"
         class="header-image"
+        fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">

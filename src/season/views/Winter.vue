@@ -14,6 +14,7 @@ const { t } = useI18n();
         src="/illustrations/winter.jpg"
         alt="Paysage d'hiver avec de la neige"
         class="header-image"
+        fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">

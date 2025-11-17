@@ -14,6 +14,7 @@ const { t } = useI18n();
         src="/illustrations/fall.jpg"
         alt="Paysage d'automne avec des feuilles mortes oranges"
         class="header-image"
+        fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">
