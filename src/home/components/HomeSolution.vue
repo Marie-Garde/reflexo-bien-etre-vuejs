@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import LinkRouter from "@/components/LinkRouter.vue";
 import { practicesRoutesName } from "@/practices/routes/routesName";
-import TeaHerbsImage from "/illustrations/tea-herbs.png";
+import TeaHerbsImage from "/illustrations/tea-herbs.jpg";
 
 const { t, tm } = useI18n();
 
@@ -28,7 +28,7 @@ const practicesRouteName = practicesRoutesName.HOME;
 
         <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
       </div>
-      <img :src="TeaHerbsImage" />
+      <img :src="TeaHerbsImage" alt="Tasse de thé avec des herbes" />
     </div>
   </div>
 </template>

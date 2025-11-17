@@ -63,14 +63,14 @@ function goToHome() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InstagramIcon class="icon" />
+          <InstagramIcon class="icon" aria-label="Visitez notre page Instagram" />
         </a>
         <a
           href="https://www.facebook.com/people/Reflex%C3%B4-Bien-%C3%AAtre-Corr%C3%A8ze/61575998591423/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FacebookIcon class="icon" />
+          <FacebookIcon class="icon" aria-label="Visitez notre page Facebook" />
         </a>
       </div>
       <Button
