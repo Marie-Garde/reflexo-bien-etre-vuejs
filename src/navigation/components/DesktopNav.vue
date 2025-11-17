@@ -12,7 +12,7 @@ import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
-import Logo from "@/assets/logo/logo-horizontal-brown.png";
+import Logo from "@/assets/logo/logo-horizontal-brown.webp";
 
 const router = useRouter();
 const route = useRoute();

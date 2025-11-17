@@ -11,7 +11,7 @@ import { priceRoutesName } from "@/price/routes/routesName";
 import { seasonsRoutesName } from "@/season/routes/routesName";
 import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
-import Logo from "@/assets/logo/logo-horizontal-brown.png";
+import Logo from "@/assets/logo/logo-horizontal-brown.webp";
 import BurgerMenuIcon from "@/assets/icons/burger-menu.vue";
 import CrossIcon from "@/assets/icons/cross.vue";
 
