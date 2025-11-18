@@ -704,7 +704,7 @@
               {
                 "title": "Forfait Suivi – 3 séances",
                 "time": "3 séances de 45min",
-                "price": "120€",
+                "price": "125€",
                 "description": "Réparties sur 1 mois et demi. Idéal pour ancrer les bienfaits et accompagner le processus d’auto-régulation."
               }
             ]
@@ -733,7 +733,7 @@
               {
                 "title": "Forfait Suivi – 3 séances",
                 "time": "3 séances de 45min",
-                "price": "105€",
+                "price": "115€",
                 "description": "Réparties sur 1 mois et demi. Idéal pour ancrer les bienfaits et accompagner le processus d’auto-régulation."
               }
             ]
@@ -745,20 +745,20 @@
         "prices": [
           {
             "title": "Première séance",
-            "time": "1h30",
-            "price": "75€",
+            "time": "2h",
+            "price": "80€",
             "description": "Avec bilan énergétique."
           },
           {
             "title": "Séance de suivi",
-            "time": "1 séance de 60min",
-            "price": "60€",
+            "time": "1 séance de 1h30",
+            "price": "65€",
             "description": "Dans les 15 jours suivant la première séance."
           },
           {
             "title": "Forfait Suivi - 2 séances",
-            "time": "2 séances de 60min",
-            "price": "110€",
+            "time": "2 séances de 1h30",
+            "price": "125€",
             "description": "Espacées de 15 jours. Pour relancer, équilibrer et consolider les effets du soin."
           }
         ]

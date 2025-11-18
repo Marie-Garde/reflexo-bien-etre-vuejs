@@ -17,7 +17,7 @@
       </li>
       <li><strong>Directrice de la publication :</strong> Isabelle LAPORCHERIE</li>
       <li><strong>Nom de l'entreprise : </strong>Réflex'ô Bien-être Corrèze</li>
-      <li><strong>Numéro SIREN :</strong></li>
+      <li><strong>Numéro SIREN : 993 742 477</strong></li>
       <li><strong>Adresse :</strong> 7 place de l'église Saint Julien, 19600 Nespouls</li>
       <li><strong>Mail :</strong> contact@reflexo-bien-etre.fr</li>
       <li><strong>Adresse e-mail :</strong> 06 33 47 80 96</li>
