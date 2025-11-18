@@ -29,7 +29,7 @@ export const routes = [
     name: homeRoutesName.HOME,
     component: () => import("@/home/views/Home.vue"),
     meta: {
-      title: "Réflexô Bien-être - Accueil",
+      title: "Réflex'ô Bien-être Corrèze - Accueil",
       description:
         "Soulagez stress, anxiété et douleurs avec des séances de réflexologie et de médecine chinoise à Nespouls (19). Prenez rendez-vous pour retrouver équilibre et bien-être.",
     },
@@ -39,7 +39,7 @@ export const routes = [
     name: aboutRoutesName.HOME,
     component: () => import("@/about/views/About.vue"),
     meta: {
-      title: "Réflexô Bien-être - À propos",
+      title: "Réflex'ô Bien-être Corrèze - À propos",
       description:
         "Découvrez mon parcours de praticienne en réflexologie et médecine chinoise, ainsi que ma vision du bien-être global et de l'accompagnement personnalisé.",
     },
@@ -49,7 +49,7 @@ export const routes = [
     name: appointmentRoutesName.HOME,
     component: () => import("@/appointment/views/AppointmentView.vue"),
     meta: {
-      title: "Réflexô Bien-être - Rendez-vous",
+      title: "Réflex'ô Bien-être Corrèze - Rendez-vous",
       description:
         "Prenez rendez-vous en ligne pour une séance de réflexologie, massage Tuina ou de Qi Gong. Choisissez le créneau qui vous convient.",
     },
@@ -59,7 +59,7 @@ export const routes = [
     name: contactRoutesName.HOME,
     component: () => import("@/contact/views/ContactView.vue"),
     meta: {
-      title: "Réflexô Bien-être - Contact",
+      title: "Réflex'ô Bien-être Corrèze - Contact",
       description:
         "Contactez-moi pour toute question. Retrouvez ici téléphone, email et adresse du cabinet.",
     },
@@ -69,7 +69,7 @@ export const routes = [
     name: practicesRoutesName.HOME,
     component: () => import("@/practices/views/Practices.vue"),
     meta: {
-      title: "Réflexô Bien-être - Mes accompagnements",
+      title: "Réflex'ô Bien-être Corrèze - Mes accompagnements",
       description:
         "Explorez les différents accompagnements proposés : réflexologie plantaire, palmaire, faciale, dorsale, massages Tuina et Qi Gong.",
     },
@@ -79,7 +79,7 @@ export const routes = [
     name: practicesRoutesName.OFFICE,
     component: () => import("@/practices/views/OfficeSession.vue"),
     meta: {
-      title: "Réflexô Bien-être - Séance au cabinet",
+      title: "Réflex'ô Bien-être Corrèze - Séance au cabinet",
       description:
         "Déroulement d'une séance de réflexologie ou de massage Tuina au cabinet. Un temps d'échange suivi d'un soin personnalisé pour votre bien-être.",
     },
@@ -89,7 +89,7 @@ export const routes = [
     name: practicesRoutesName.OUTSIDE,
     component: () => import("@/practices/views/OutsideSession.vue"),
     meta: {
-      title: "Réflexô Bien-être - Séance extérieure",
+      title: "Réflex'ô Bien-être Corrèze - Séance extérieure",
       description: "Déroulement d'une séance de Qi Gong au cabinet ou en visio.",
     },
   },
@@ -98,7 +98,7 @@ export const routes = [
     name: priceRoutesName.HOME,
     component: () => import("@/price/views/Price.vue"),
     meta: {
-      title: "Réflexô Bien-être - Tarifs",
+      title: "Réflex'ô Bien-être Corrèze - Tarifs",
       description:
         "Consultez les tarifs des différentes prestations : séances de réflexologie, massages Tuina, et Qi Gong.",
     },
@@ -108,7 +108,7 @@ export const routes = [
     name: seasonsRoutesName.HOME,
     component: () => import("@/season/views/Seasons.vue"),
     meta: {
-      title: "Réflexô Bien-être - Saisons et conseils",
+      title: "Réflex'ô Bien-être Corrèze - Saisons et conseils",
       description:
         "Découvrez les conseils de la médecine traditionnelle chinoise pour vivre en harmonie avec chaque saison : alimentation, hygiène de vie et bien-être.",
     },
@@ -118,7 +118,7 @@ export const routes = [
     name: seasonsRoutesName.FALL,
     component: () => import("@/season/views/Fall.vue"),
     meta: {
-      title: "Réflexô Bien-être - Automne",
+      title: "Réflex'ô Bien-être Corrèze - Automne",
       description:
         "Conseils et astuces de la médecine chinoise pour aborder l'automne en pleine forme : alimentation, énergie et prévention des maux saisonniers.",
     },
@@ -128,7 +128,7 @@ export const routes = [
     name: seasonsRoutesName.WINTER,
     component: () => import("@/season/views/Winter.vue"),
     meta: {
-      title: "Réflexô Bien-être - Hiver",
+      title: "Réflex'ô Bien-être Corrèze - Hiver",
       description:
         "Conseils et astuces de la médecine chinoise pour aborder l'hiver en pleine forme : alimentation, énergie et prévention des maux saisonniers.",
     },
@@ -138,7 +138,7 @@ export const routes = [
     name: seasonsRoutesName.SPRING,
     component: () => import("@/season/views/Spring.vue"),
     meta: {
-      title: "Réflexô Bien-être - Printemps",
+      title: "Réflex'ô Bien-être Corrèze - Printemps",
       description:
         "Conseils et astuces de la médecine chinoise pour aborder le printemps en pleine forme : alimentation, énergie et prévention des maux saisonniers.",
     },
@@ -148,7 +148,7 @@ export const routes = [
     name: seasonsRoutesName.SUMMER,
     component: () => import("@/season/views/Summer.vue"),
     meta: {
-      title: "Réflexô Bien-être - Été",
+      title: "Réflex'ô Bien-être Corrèze - Été",
       description:
         "Conseils et astuces de la médecine chinoise pour aborder l'été en pleine forme : alimentation, énergie et prévention des maux saisonniers.",
     },
@@ -158,7 +158,7 @@ export const routes = [
     name: seasonsRoutesName.INTERSEASON,
     component: () => import("@/season/views/InterSeasons.vue"),
     meta: {
-      title: "Réflexô Bien-être - Intersaison",
+      title: "Réflex'ô Bien-être Corrèze - Intersaison",
       description:
         "Conseils et astuces de la médecine chinoise pour aborder l'intersaison en pleine forme : alimentation, énergie et prévention des maux saisonniers.",
     },
@@ -168,7 +168,7 @@ export const routes = [
     name: siteMapRoutesName.HOME,
     component: () => import("@/siteMap/views/siteMap.vue"),
     meta: {
-      title: "Réflexô Bien-être - Plan du site",
+      title: "Réflex'ô Bien-être Corrèze - Plan du site",
       description:
         "Retrouvez l'ensemble des pages du site reflexo-bien-etre.com pour naviguer plus facilement et accéder rapidement à l'information que vous cherchez.",
     },
@@ -178,7 +178,7 @@ export const routes = [
     name: notFoundRoutesName.HOME,
     component: () => import("@/notFound/views/notFound.vue"),
     meta: {
-      title: "Réflexô Bien-être - Page non trouvée",
+      title: "Réflex'ô Bien-être Corrèze - Page non trouvée",
       description:
         "La page que vous cherchez n'existe pas. Retournez à l'accueil pour découvrir les accompagnements en réflexologie et bien-être.",
     },
@@ -188,7 +188,7 @@ export const routes = [
     name: legalNoticeRoutesName.HOME,
     component: () => import("@/legalNotice/legalNotice.vue"),
     meta: {
-      title: "Réflexô Bien-être - Mentions Légales",
+      title: "Réflex'ô Bien-être Corrèze - Mentions Légales",
       description: "Consultez les mentions légales du site reflexo-bien-etre.com.",
     },
   },
