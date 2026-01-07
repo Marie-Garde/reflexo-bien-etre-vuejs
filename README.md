@@ -115,6 +115,10 @@ Son objectif principal : **renforcer la visibilité locale** du cabinet et fourn
 - **Section dynamique « recettes de cuisine »** en lien avec les conseils en diététique chinoise
 - **Optimisation avancée des performances** (lazy loading, compression d'images next-gen)
 - **Analytics** pour suivre le trafic et le comportement des visiteurs
+- **Optimisation du bundle Vite** :
+  - Réduction de la taille du fichier principal (actuellement 264kb)
+  - Code splitting des dépendances lourdes (Sanity, EmailJS)
+  - Amélioration du First Contentful Paint
 
 ---
 
