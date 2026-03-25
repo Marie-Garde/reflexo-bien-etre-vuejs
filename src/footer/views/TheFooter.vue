@@ -34,7 +34,7 @@ const warningBackgroundColorClass = computed(() => {
   };
 
   for (const color in colorMap) {
-    if (colorMap[color].includes(routeName)) {
+    if (colorMap[color]?.includes(routeName)) {
       return color;
     }
   }
