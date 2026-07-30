@@ -18,7 +18,9 @@ const { t, tm } = useI18n();
         <div class="about__training-date">{{ item.date }}</div>
         <div class="about__training-info">
           <p class="about__training-info-title">{{ item.title }}</p>
-          <p class="about__training-info-subtitle">{{ item.subtitle }}</p>
+          <p v-if="item.subtitle" class="about__training-info-subtitle">
+            {{ item.subtitle }}
+          </p>
         </div>
       </li>
     </ul>
@@ -93,7 +95,9 @@ const { t, tm } = useI18n();
       }
 
       &-subtitle {
-        margin: 0;
+        margin: 4px 0 0;
+        font-size: 0.9em;
+        opacity: 0.8;
       }
     }
   }

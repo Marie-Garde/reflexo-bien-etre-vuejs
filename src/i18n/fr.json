@@ -126,35 +126,59 @@
     },
     "training": {
       "title": "Mes formations",
-      "subtitle": "l’Institut Européen de Qi Gong & Yang Sheng du Docteur Yves Réquéna",
       "list": [
         {
-          "date": "Septembre 2018 – Novembre 2021",
-          "title": "Professeure de QI Gong"
+          "date": "Juin 2021",
+          "title": "Certification en Sciences Fondamentales Médicales pour la pratique des médecines non conventionnelles",
+          "subtitle": "Formation Professionnelle pour l’enseignement de la Santé Durable, sous la direction du Conseil Supérieur National de l’Acupuncture Traditionnelle"
         },
         {
-          "date": "Février 2020 – Février 2022",
-          "title": "Certification en Acupuncture"
+          "date": "Novembre 2021",
+          "title": "Diplôme de professeure de Qi Gong Yang Sheng",
+          "subtitle": "Institut Européen de Qi Gong (IEQG)"
         },
         {
-          "date": "Novembre 2022",
-          "title": "Diplôme d'Acupuncteur Traditionnel"
+          "date": "Février 2022",
+          "title": "Certificat de formation en Acupuncture",
+          "subtitle": "Institut Européen de Qi Gong (IEQG)"
         },
         {
-          "date": "Septembre 2021 – Juillet 2023",
-          "title": "Praticienne en massage Tuina"
+          "date": "Octobre 2022",
+          "title": "Diplôme National d’Acupuncture Traditionnelle"
         },
         {
-          "date": "Janvier 2023 – Avril 2024",
-          "title": "Réflexologue"
+          "date": "Juillet 2023",
+          "title": "Certificat de Massage Énergétique Chinois",
+          "subtitle": "Institut Européen de Qi Gong (IEQG)"
         },
         {
-          "date": "Septembre 2024 -  formation en cours",
-          "title": "Herboristerie, Plantes médicinales et Médecines douces"
+          "date": "Avril 2024",
+          "title": "Certificat de formation Réflexologue",
+          "subtitle": "ADNR"
         },
         {
-          "date": "Avril 2025 -  formation en cours",
-          "title": "Réseau Guolin France - Qi gong et cancer"
+          "date": "Avril 2026",
+          "title": "Spécialisation en Réflexologie obstétrique",
+          "subtitle": "ADNR"
+        },
+        {
+          "date": "Mai 2026",
+          "title": "Spécialisation en Réflexologie pédiatrique",
+          "subtitle": "ADNR"
+        },
+        {
+          "date": "Juin 2026",
+          "title": "Spécialisation en Réflexologie et endométriose"
+        },
+        {
+          "date": "Juillet 2026",
+          "title": "Certification Guolin Qi Gong",
+          "subtitle": "Réseau Guolin France – Qi Gong et cancer"
+        },
+        {
+          "date": "Depuis septembre 2024 – formation en cours",
+          "title": "Herboristerie, plantes médicinales et médecines douces",
+          "subtitle": "École Imderplan – 2ᵉ année validée"
         }
       ]
     }
