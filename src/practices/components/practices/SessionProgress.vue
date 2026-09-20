@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import type { PracticesSessionSection } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
-
-const sessionProgressList = tm("practices.sessionProgress.list");
+const props = defineProps({
+  section: { type: Object as PropType<PracticesSessionSection>, required: true },
+});
 </script>
 
 <template>
   <div class="sessionProgress">
     <div class="sessionProgress-content">
-      <h2>{{ t("practices.sessionProgress.title") }}</h2>
+      <h2>{{ props.section.title }}</h2>
 
       <div class="cards-container">
-        <div class="card" v-for="text in sessionProgressList" :key="text.title">
+        <div class="card" v-for="step in props.section.steps" :key="step._key">
           <div class="card-content">
-            <h3>{{ text.title }}</h3>
-            <p>{{ text.description }}</p>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
           </div>
         </div>
       </div>

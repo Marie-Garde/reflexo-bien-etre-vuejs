@@ -1,34 +1,58 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
 import LinkRouter from "@/components/LinkRouter.vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
 import { practicesRoutesName } from "@/practices/routes/routesName";
-import TeaHerbsImage from "/illustrations/tea-herbs.jpg";
+import type { SolutionSection } from "../interface/HomeContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<SolutionSection>, required: true },
+});
 
-const learnMoreLabel = t("home.solution.button");
 const practicesRouteName = practicesRoutesName.HOME;
+
+// La largeur intrinsèque de cette image pilote le partage de l'espace en flex :
+// l'agrandir rétrécirait la colonne de texte. On plafonne sans jamais suragrandir.
+const imageSrc = computed(() => {
+  const natural = props.section.image.naturalWidth ?? 1000;
+  return urlFor(props.section.image)
+    .width(Math.min(natural, 1000))
+    .format("webp")
+    .quality(80)
+    .url();
+});
 </script>
 
 <template>
   <div class="overlay">
     <div class="solution">
       <div class="solution-text">
-        <h2 class="title">{{ t("home.solution.title") }}</h2>
-        <p class="text">{{ tm("home.solution.text")[0] }}</p>
-        <p class="text">{{ tm("home.solution.text")[1] }}</p>
-        <p class="text">{{ tm("home.solution.text")[2] }}</p>
+        <h2 class="title">{{ props.section.title }}</h2>
+        <PortableText :blocks="props.section.intro" paragraph-class="text" />
         <ul>
-          <li v-for="(paragraph, index) in tm('home.solution.list')" :key="index">
-            <div v-html="paragraph"></div>
+          <li v-for="practice in props.section.practices" :key="practice._key">
+            <div>
+              <strong>{{ practice.name }} :</strong> {{ practice.description }}
+            </div>
           </li>
         </ul>
-        <p class="text">{{ tm("home.solution.text")[3] }}</p>
-        <p class="text">{{ tm("home.solution.text")[4] }}</p>
+        <PortableText :blocks="props.section.outro" paragraph-class="text" />
 
-        <LinkRouter class="link" :label="learnMoreLabel" is-underline :to="practicesRouteName" />
+        <LinkRouter
+          class="link"
+          :label="props.section.buttonLabel"
+          is-underline
+          :to="practicesRouteName"
+        />
       </div>
-      <img :src="TeaHerbsImage" alt="Tasse de thé avec des herbes" />
+      <img
+        :src="imageSrc"
+        :alt="props.section.image.alt ?? ''"
+        :width="props.section.image.naturalWidth"
+        :height="props.section.image.naturalHeight"
+        decoding="async"
+      />
     </div>
   </div>
 </template>
@@ -64,7 +88,9 @@ const practicesRouteName = practicesRoutesName.HOME;
     .title {
       margin-bottom: 30px;
     }
-    .text {
+    // Les paragraphes viennent de PortableText : le style scopé ne les atteint
+    // pas sans :deep().
+    :deep(.text) {
       margin-bottom: 20px;
       &:last-child {
         margin-bottom: 30px;

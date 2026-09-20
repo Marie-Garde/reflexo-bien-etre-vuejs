@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import Button from "@/components/Button.vue";
@@ -7,30 +7,22 @@ import calendarIcon from "@/assets/icons/calendar.png";
 import clockIcon from "@/assets/icons/clock.png";
 import peopleIcon from "@/assets/icons/people.png";
 import shirtIcon from "@/assets/icons/shirt.png";
+import type { OutsideSessionContent, PracticalIcon } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<OutsideSessionContent["how"]>, required: true },
+  buttonLabel: { type: String, required: true },
+});
+
 const router = useRouter();
 
-const infosList = tm("practices.outsideSessionPage.how.infos");
-
-const infos = [
-  {
-    icon: clockIcon,
-    text: infosList[0],
-  },
-  {
-    icon: calendarIcon,
-    text: infosList[1],
-  },
-  {
-    icon: peopleIcon,
-    text: infosList[2],
-  },
-  {
-    icon: shirtIcon,
-    text: infosList[3],
-  },
-];
+// Les fichiers d'icônes restent dans le code ; Sanity choisit laquelle afficher.
+const ICONS: Record<PracticalIcon, string> = {
+  clock: clockIcon,
+  calendar: calendarIcon,
+  people: peopleIcon,
+  shirt: shirtIcon,
+};
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -39,18 +31,18 @@ function goToAppointment() {
 
 <template>
   <div class="how">
-    <h2>{{ t("practices.outsideSessionPage.how.title") }}</h2>
+    <h2>{{ props.section.title }}</h2>
 
     <div class="infos">
-      <div class="infos-item" v-for="(info, index) in infos" :key="index">
-        <img class="infos-item-icon" :src="info.icon" />
+      <div class="infos-item" v-for="info in props.section.infos" :key="info._key">
+        <img class="infos-item-icon" :src="ICONS[info.icon]" :alt="''" />
         <p>{{ info.text }}</p>
       </div>
     </div>
 
     <Button
       class="how-button"
-      :label="t('practices.outsideSessionPage.buttonLabel')"
+      :label="props.buttonLabel"
       color="orange"
       @click="goToAppointment()"
     />

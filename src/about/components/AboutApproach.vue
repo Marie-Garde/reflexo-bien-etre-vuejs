@@ -1,47 +1,52 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { AboutApproachSection } from "../interface/AboutContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-import cabinetIllustration from "/illustrations/about/cabinet.jpg";
-import tuinaIllustration from "/illustrations/practices/inside/tuina-dos.jpg";
-import reflexoIllustration from "/illustrations/practices/inside/reflexo-main.png";
-import qiGongIllustration from "/illustrations/practices/outside/qi-gong-outside.jpg";
+const props = defineProps({
+  section: { type: Object as PropType<AboutApproachSection>, required: true },
+});
 
-const { t, tm } = useI18n();
+// Les vignettes sont affichées en 230x230 : on les recadre côté Sanity plutôt
+// que de télécharger l'original (l'une d'elles fait 6048px de large).
+function thumbnail(image: SanityImage) {
+  return urlFor(image).width(460).height(460).fit("crop").format("webp").quality(80).url();
+}
 </script>
 
 <template>
   <section class="about__approach">
-    <h2 class="about__section-title--left">{{ t("about.approach.title") }}</h2>
+    <h2 class="about__section-title--left">{{ props.section.title }}</h2>
     <div class="about__approach-top">
       <div class="about__approach-text">
-        <p>{{ tm("about.approach.text")[0] }}</p>
-        <p>{{ tm("about.approach.text")[1] }}</p>
-        <p>{{ tm("about.approach.text")[2] }}</p>
-        <p>{{ tm("about.approach.text")[3] }}</p>
-        <p>{{ tm("about.approach.text")[4] }}</p>
-        <p>{{ tm("about.approach.text")[5] }}</p>
+        <PortableText :blocks="props.section.body" />
       </div>
       <div class="about__approach-image-wrapper">
         <img
           class="about__approach-image"
-          :src="cabinetIllustration"
-          alt="Intérieur du cabinet de réflexologie"
+          :src="urlFor(props.section.image).width(1200).format('webp').quality(80).url()"
+          :alt="props.section.image.alt ?? ''"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
     <div class="about__approach-bottom">
       <div class="about__approach-gallery">
-        <figure class="about__approach-gallery-item">
-          <img :src="tuinaIllustration" alt="Massage Tui Na du dos" />
-          <figcaption>{{ tm("about.approach.list")[0] }}</figcaption>
-        </figure>
-        <figure class="about__approach-gallery-item">
-          <img :src="reflexoIllustration" alt="Réflexologie de la main" />
-          <figcaption>{{ tm("about.approach.list")[1] }}</figcaption>
-        </figure>
-        <figure class="about__approach-gallery-item">
-          <img :src="qiGongIllustration" alt="Cours de Qi Gong en extérieur" />
-          <figcaption>{{ tm("about.approach.list")[2] }}</figcaption>
+        <figure
+          v-for="item in props.section.gallery"
+          :key="item._key"
+          class="about__approach-gallery-item"
+        >
+          <img
+            :src="thumbnail(item.image)"
+            :alt="item.image.alt ?? ''"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{{ item.caption }}</figcaption>
         </figure>
       </div>
     </div>
@@ -73,7 +78,8 @@ const { t, tm } = useI18n();
     &-text {
       flex-basis: 50%;
 
-      p {
+      // Paragraphes rendus par PortableText : :deep() est nécessaire.
+      :deep(p) {
         margin-bottom: 20px;
       }
 

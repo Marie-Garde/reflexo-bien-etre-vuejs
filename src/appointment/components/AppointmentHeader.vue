@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import type { AppointmentContent } from "../interface/AppointmentContent";
 
-const { t } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<AppointmentContent["header"]>, required: true },
+});
 </script>
 
 <template>
   <header class="appointment__header">
     <div class="appointment__header-container">
       <div class="appointment__header-overlay">
-        <h1 class="appointment__title">{{ t("appointment.title") }}</h1>
-        <p>{{ t("appointment.description") }}</p>
+        <h1 class="appointment__title">{{ props.section.title }}</h1>
+        <p>{{ props.section.description }}</p>
       </div>
     </div>
   </header>

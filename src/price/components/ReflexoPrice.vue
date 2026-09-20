@@ -1,21 +1,36 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { tm } = useI18n();
+import type { PropType } from "vue";
+import { urlFor } from "@/sanityClient";
+import type { PriceContent } from "../interface/PriceContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-const pricesReflexo = tm("price.type")[0];
+const props = defineProps({
+  section: { type: Object as PropType<PriceContent["reflexo"]>, required: true },
+});
+
+// L'illustration est un filigrane posé en ::before : on la passe en variable CSS.
+function cardStyle(image: SanityImage) {
+  const url = urlFor(image).width(900).format("webp").quality(80).url();
+  return { "--card-image": `url("${url}")` };
+}
 </script>
 
 <template>
   <div class="type">
-    <h2>{{ pricesReflexo.title }}</h2>
-    <div v-for="(age, index) in pricesReflexo.age" :key="index" class="age">
-      <h3>{{ age.title }}</h3>
-      <div :class="['cards-container', `cards-container-${index}`]">
-        <div v-for="(price, index) in age.prices" :key="index" class="card">
-          <h3>{{ price.title }}</h3>
-          <p v-if="price.time" class="time">{{ price.time }}</p>
-          <p v-if="price.price" class="price">{{ price.price }}</p>
-          <p v-if="price.description" class="description">{{ price.description }}</p>
+    <h2>{{ props.section.title }}</h2>
+    <div v-for="group in props.section.groups" :key="group._key" class="age">
+      <h3>{{ group.title }}</h3>
+      <div class="cards-container">
+        <div
+          v-for="item in group.items"
+          :key="item._key"
+          class="card"
+          :style="cardStyle(item.image)"
+        >
+          <h3>{{ item.title }}</h3>
+          <p v-if="item.time" class="time">{{ item.time }}</p>
+          <p v-if="item.price" class="price">{{ item.price }}</p>
+          <p v-if="item.description" class="description">{{ item.description }}</p>
         </div>
       </div>
     </div>
@@ -84,6 +99,7 @@ const pricesReflexo = tm("price.type")[0];
       content: "";
       position: absolute;
       inset: 0;
+      background-image: var(--card-image);
       background-size: cover;
       background-position: center;
       transform-origin: center;
@@ -100,39 +116,6 @@ const pricesReflexo = tm("price.type")[0];
   }
 
   .age {
-    .cards-container-adult {
-      & > .card {
-        &:first-child::before {
-          background-image: url("/illustrations/price/reflexo1.png");
-        }
-        &:nth-child(2)::before {
-          background-image: url("/illustrations/price/reflexo2.png");
-        }
-        &:nth-child(3)::before {
-          background-image: url("/illustrations/price/reflexo3.png");
-        }
-        &:nth-child(4)::before {
-          background-image: url("/illustrations/price/reflexo4.png");
-        }
-      }
-    }
-
-    .cards-container-child {
-      & > .card {
-        &:first-child::before {
-          background-image: url("/illustrations/price/reflexo5.png");
-        }
-        &:nth-child(2)::before {
-          background-image: url("/illustrations/price/reflexo6.png");
-        }
-        &:nth-child(3)::before {
-          background-image: url("/illustrations/price/reflexo7.png");
-        }
-        &:nth-child(4)::before {
-          background-image: url("/illustrations/price/reflexo8.png");
-        }
-      }
-    }
   }
 }
 

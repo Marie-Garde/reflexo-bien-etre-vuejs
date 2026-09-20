@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import type { PracticesHeaderSection } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<PracticesHeaderSection>, required: true },
+});
 </script>
 
 <template>
   <div class="header">
     <div class="header-overlay">
-      <h1 class="title">{{ t("practices.title") }}</h1>
-      <h2 class="subTitle">{{ t("practices.presentation.title") }}</h2>
-      <p>{{ tm("practices.presentation.text")[0] }}</p>
-      <p>{{ tm("practices.presentation.text")[1] }}</p>
-      <p>{{ tm("practices.presentation.text")[2] }}</p>
+      <h1 class="title">{{ props.section.title }}</h1>
+      <h2 class="subTitle">{{ props.section.sectionTitle }}</h2>
+      <PortableText :blocks="props.section.body" />
     </div>
   </div>
 </template>
@@ -45,7 +47,8 @@ const { t, tm } = useI18n();
     margin-bottom: 40px;
   }
 
-  p {
+  // Paragraphes rendus par PortableText : :deep() est nécessaire.
+  :deep(p) {
     max-width: 60%;
     padding-bottom: 20px;
   }
@@ -80,7 +83,7 @@ const { t, tm } = useI18n();
       box-shadow: none;
       color: $brown-dark;
     }
-    p {
+    :deep(p) {
       max-width: 100%;
     }
   }

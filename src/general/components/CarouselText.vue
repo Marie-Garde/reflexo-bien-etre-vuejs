@@ -52,12 +52,7 @@ function switchSlide(index: number) {
 </script>
 
 <template>
-  <div
-    class="carousel"
-    role="region"
-    aria-roledescription="carousel"
-    :aria-label="ariaLabel"
-  >
+  <div class="carousel" role="region" aria-roledescription="carousel" :aria-label="ariaLabel">
     <div class="carousel-inner" aria-live="polite">
       <CarouselItemText
         v-for="(slide, index) in slides"

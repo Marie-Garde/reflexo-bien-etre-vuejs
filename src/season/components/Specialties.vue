@@ -1,23 +1,18 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import type { SeasonContent } from "../interface/SeasonContent";
 
 const props = defineProps({
-  season: { type: String, required: true },
+  section: { type: Object as PropType<SeasonContent["specialties"]>, required: true },
   background: { type: String, required: true },
 });
-
-const { t, tm } = useI18n();
-
-const title = t("seasons.season.subtitles.specialties");
-const text = tm(`seasons.season.${props.season}.specialties`);
 </script>
 
 <template>
-  <div :class="['specialties', `${background}`]">
-    <h2>{{ title }}</h2>
-    <div v-for="(paragraph, index) in text" :key="index" class="specialties-text">
-      <div v-html="paragraph"></div>
-    </div>
+  <div :class="['specialties', `${props.background}`]">
+    <h2>{{ props.section.title }}</h2>
+    <PortableText as="div" :blocks="props.section.body" paragraph-class="specialties-text" />
   </div>
 </template>
 
@@ -34,7 +29,8 @@ const text = tm(`seasons.season.${props.season}.specialties`);
   h2 {
     padding-bottom: 20px;
   }
-  &-text {
+  // Paragraphes rendus par PortableText : :deep() est nécessaire.
+  :deep(.specialties-text) {
     max-width: 1280px;
     margin-bottom: 20px;
   }
@@ -62,7 +58,7 @@ const text = tm(`seasons.season.${props.season}.specialties`);
 @media (max-width: 768px) {
   .specialties {
     width: 100%;
-    &-text {
+    :deep(.specialties-text) {
       max-width: 90%;
       margin: 0 auto;
     }

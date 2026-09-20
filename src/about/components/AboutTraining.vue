@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import type { AboutTrainingSection } from "../interface/AboutContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<AboutTrainingSection>, required: true },
+});
 </script>
 
 <template>
   <section class="about__training">
     <h2 class="about__section-title about__section-title--light">
-      {{ t("about.training.title") }}
+      {{ props.section.title }}
     </h2>
     <ul class="about__training-timeline">
-      <li
-        v-for="(item, index) in tm('about.training.list')"
-        :key="index"
-        class="about__training-item"
-      >
+      <li v-for="item in props.section.items" :key="item._key" class="about__training-item">
         <div class="about__training-date">{{ item.date }}</div>
         <div class="about__training-info">
           <p class="about__training-info-title">{{ item.title }}</p>

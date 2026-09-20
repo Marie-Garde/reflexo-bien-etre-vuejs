@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
 import { useRouter } from "vue-router";
 import Button from "@/components/Button.vue";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
+import { urlFor } from "@/sanityClient";
+import type { AppointmentSection } from "../interface/HomeContent";
 
-const { t } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<AppointmentSection>, required: true },
+});
+
 const router = useRouter();
 
-const takeAppointmentLabel = t("home.takeAppointment.buttonLabel");
+const backgroundStyle = computed(() => ({
+  backgroundImage: `url("${urlFor(props.section.backgroundImage).width(1600).format("webp").quality(75).url()}")`,
+}));
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -15,17 +22,17 @@ function goToAppointment() {
 </script>
 
 <template>
-  <div class="takeAppointment">
+  <div class="takeAppointment" :style="backgroundStyle">
     <div class="takeAppointment-content">
       <h2 class="takeAppointment-title">
-        {{ t("home.takeAppointment.title") }}
+        {{ props.section.title }}
       </h2>
       <p class="takeAppointment-text">
-        {{ t("home.takeAppointment.description") }}
+        {{ props.section.description }}
       </p>
       <Button
         class="button"
-        :label="takeAppointmentLabel"
+        :label="props.section.buttonLabel"
         background="orange"
         @click="goToAppointment()"
       />
@@ -40,7 +47,6 @@ function goToAppointment() {
   width: 100%;
   min-height: 40vh;
   height: auto;
-  background-image: url("/illustrations/homeCTA.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

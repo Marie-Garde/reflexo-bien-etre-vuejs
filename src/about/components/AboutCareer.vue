@@ -1,34 +1,41 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
+import { computed, type PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
 import { useIsMobile } from "../../reactives/isMobile";
+import type { AboutCareerSection } from "../interface/AboutContent";
 
-import careerImage from "/illustrations/about/professionnalCareer.png";
-import careerImageMobile from "/illustrations/about/professionnalCareerMobile.png";
+const props = defineProps({
+  section: { type: Object as PropType<AboutCareerSection>, required: true },
+});
 
-const { t, tm } = useI18n();
 const isMobile = useIsMobile();
 
-const careerImageSource = computed(() => {
-  return isMobile.value ? careerImageMobile : careerImage;
-});
+// Cadrage dédié au mobile s'il a été renseigné, sinon la photo principale.
+const careerImage = computed(() =>
+  isMobile.value ? (props.section.mobileImage ?? props.section.image) : props.section.image,
+);
+
+const careerImageSource = computed(() =>
+  urlFor(careerImage.value).width(1060).format("webp").quality(80).url(),
+);
 </script>
 
 <template>
   <section class="about__career">
     <div class="about__career-text">
-      <h2 class="about__section-title--left">{{ t("about.parcours.title") }}</h2>
+      <h2 class="about__section-title--left">{{ props.section.title }}</h2>
       <div class="about__career-description">
-        <p v-for="(paragraph, index) in tm('about.parcours.text')" :key="index">
-          {{ paragraph }}
-        </p>
+        <PortableText :blocks="props.section.body" />
       </div>
     </div>
     <div class="about__career-image-wrapper">
       <img
         class="about__career-image"
         :src="careerImageSource"
-        alt="Photo d'Isabelle, la praticienne"
+        :alt="careerImage.alt ?? ''"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </section>
@@ -56,7 +63,8 @@ const careerImageSource = computed(() => {
     }
 
     &-description {
-      p {
+      // Paragraphes rendus par PortableText : :deep() est nécessaire.
+      :deep(p) {
         margin-bottom: 20px;
       }
     }

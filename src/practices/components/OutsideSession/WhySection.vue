@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import type { OutsideSessionContent } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
-
-const whyReasonsList = tm("practices.outsideSessionPage.why.reasons");
+const props = defineProps({
+  section: { type: Object as PropType<OutsideSessionContent["why"]>, required: true },
+});
 </script>
 
 <template>
   <div class="why">
-    <h2>{{ t("practices.outsideSessionPage.why.title") }}</h2>
-    <p>{{ tm("practices.outsideSessionPage.why.text[0]") }}</p>
-    <p>{{ tm("practices.outsideSessionPage.why.text[1]") }}</p>
+    <h2>{{ props.section.title }}</h2>
+    <PortableText :blocks="props.section.body" />
     <ul class="why-list">
-      <li class="why-list-item" v-for="(reason, index) in whyReasonsList" :key="index">
+      <li class="why-list-item" v-for="reason in props.section.reasons" :key="reason">
         <p>{{ reason }}</p>
       </li>
     </ul>

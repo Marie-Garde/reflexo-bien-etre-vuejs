@@ -1,19 +1,32 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import { urlFor } from "@/sanityClient";
+import type { OutsideSessionContent } from "../../interface/PracticesContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<OutsideSessionContent["who"]>, required: true },
+});
 
-const peopleWhoList = tm("practices.outsideSessionPage.who.people");
+function background(image: SanityImage) {
+  const url = urlFor(image).width(640).format("webp").quality(80).url();
+  return { backgroundImage: `url("${url}")` };
+}
 </script>
 
 <template>
   <div class="who">
-    <h2>{{ t("practices.outsideSessionPage.who.title") }}</h2>
-    <p>{{ t("practices.outsideSessionPage.who.text") }}</p>
+    <h2>{{ props.section.title }}</h2>
+    <p>{{ props.section.text }}</p>
     <ul class="who-list">
-      <li class="who-list-item" v-for="(person, index) in peopleWhoList" :key="index">
+      <li
+        class="who-list-item"
+        v-for="person in props.section.people"
+        :key="person._key"
+        :style="background(person.image)"
+      >
         <div class="who-list-item-frame">
-          <div v-html="person"></div>
+          <div>{{ person.label }}</div>
         </div>
       </li>
     </ul>
@@ -57,19 +70,6 @@ const peopleWhoList = tm("practices.outsideSessionPage.who.people");
       text-align: center;
       font-weight: bold;
       transition: transform 0.3s ease;
-
-      &:first-child {
-        background-image: url("/illustrations/practices/outside/stress.png");
-      }
-      &:nth-child(2) {
-        background-image: url("/illustrations/practices/outside/illness.png");
-      }
-      &:nth-child(3) {
-        background-image: url("/illustrations/practices/outside/old.png");
-      }
-      &:nth-child(4) {
-        background-image: url("/illustrations/practices/outside/meditation.png");
-      }
 
       &:hover {
         transform: scale(1.05);

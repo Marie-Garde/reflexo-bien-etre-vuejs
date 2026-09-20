@@ -13,9 +13,18 @@ export const createApp = ViteSSG(
     routes,
     scrollBehavior,
   },
-  ({ app, router }) => {
-    app.use(createPinia());
+  ({ app, router, initialState }) => {
+    const pinia = createPinia();
+    app.use(pinia);
     app.use(i18n);
+
+    // Transporte l'état récupéré pendant la génération statique jusqu'au
+    // navigateur, pour que l'hydratation parte du même contenu que le HTML.
+    if (import.meta.env.SSR) {
+      initialState.pinia = pinia.state.value;
+    } else if (initialState.pinia) {
+      pinia.state.value = initialState.pinia;
+    }
 
     router.afterEach((to) => {
       if (!import.meta.env.SSR) {
@@ -34,5 +43,5 @@ export const createApp = ViteSSG(
         descriptionTag.setAttribute("content", description);
       }
     });
-  }
+  },
 );

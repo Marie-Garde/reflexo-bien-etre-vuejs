@@ -1,43 +1,47 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import AdvicesSeasons from "@/season/components/AdvicesSeasons.vue";
 import Recipes from "@/season/components/Recipes.vue";
+import { urlFor } from "@/sanityClient";
+import { useSeasonStore } from "../stores/seasonContent";
 
-const { t, tm } = useI18n();
+const store = useSeasonStore();
+const { seasons } = storeToRefs(store);
 
-const specialtiesTitle = t("seasons.season.interSeason.specialties.title");
-const specialtiesText = tm(`seasons.season.interSeason.specialties.text`);
+const content = computed(() => seasons.value.interSeason ?? null);
+
+onServerPrefetch(() => store.load("interSeason"));
+onMounted(() => store.load("interSeason"));
+
+const headerImage = computed(() =>
+  content.value
+    ? urlFor(content.value.headerImage).width(1920).format("webp").quality(75).url()
+    : "",
+);
 </script>
 
 <template>
-  <main>
+  <main v-if="content">
     <div class="header">
       <img
-        src="/illustrations/inter-saison.png"
-        alt="Illustration pour l'inter-saison"
+        :src="headerImage"
+        :alt="content.headerImage.alt ?? ''"
         class="header-image"
         fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">
-          <h1 class="title">{{ t("seasons.season.interSeason.title") }}</h1>
-          <p>{{ t("seasons.season.interSeason.subtitle") }}</p>
+          <h1 class="title">{{ content.title }}</h1>
+          <p>{{ content.subtitle }}</p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="specialties">
-        <h2>{{ specialtiesTitle }}</h2>
+      <AdvicesSeasons :section="content.advices" />
 
-        <div v-for="(paragraph, index) in specialtiesText" :key="index" class="specialties-text">
-          <div v-html="paragraph"></div>
-        </div>
-      </div>
-
-      <AdvicesSeasons season="interSeason" />
-
-      <Recipes season="interSeason" background="yellow" />
+      <Recipes :section="content.recipes" background="yellow" />
     </div>
   </main>
 </template>

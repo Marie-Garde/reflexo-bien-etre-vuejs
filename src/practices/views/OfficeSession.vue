@@ -1,35 +1,50 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
+import { urlFor } from "@/sanityClient";
 import WhySection from "@/practices/components/OfficeSession/WhySection.vue";
 import SummarySection from "@/practices/components/OfficeSession/SummarySection.vue";
 import SessionDetail from "@/practices/components/OfficeSession/SessionDetail.vue";
 import RhythmSection from "@/practices/components/OfficeSession/RhythmSection.vue";
 import AfterSection from "@/practices/components/OfficeSession/AfterSection.vue";
 import CheckUpSection from "../components/OfficeSession/CheckUpSection.vue";
+import { useOfficeSessionStore } from "../stores/sessionContent";
 
-const { t } = useI18n();
+const store = useOfficeSessionStore();
+const { content } = storeToRefs(store);
 
-const sessionTypes = ["reflexo", "tuina"];
+onServerPrefetch(store.load);
+onMounted(store.load);
+
+const headerBackground = computed(() => {
+  if (!content.value) return {};
+  const url = urlFor(content.value.header.backgroundImage)
+    .width(1920)
+    .format("webp")
+    .quality(75)
+    .url();
+  return { backgroundImage: `url("${url}")` };
+});
 </script>
 
 <template>
-  <div class="office-session">
-    <header class="office-session__header">
+  <div class="office-session" v-if="content">
+    <header class="office-session__header" :style="headerBackground">
       <div class="office-session__header-overlay">
-        <h1 class="office-session__title">{{ t("practices.insideSessionPage.title") }}</h1>
-        <p>{{ t("practices.insideSessionPage.subtitle") }}</p>
+        <h1 class="office-session__title">{{ content.header.title }}</h1>
+        <p>{{ content.header.subtitle }}</p>
       </div>
     </header>
 
-    <WhySection />
-    <SummarySection />
+    <WhySection :section="content.why" />
+    <SummarySection :section="content.summary" />
 
-    <div v-for="sessionType in sessionTypes" :key="sessionType">
-      <SessionDetail :session-type="sessionType" />
-      <RhythmSection :session-type="sessionType" />
+    <div v-for="session in content.sessions" :key="session._key">
+      <SessionDetail :session="session" />
+      <RhythmSection :rhythm="session.rhythm" />
     </div>
-    <CheckUpSection />
-    <AfterSection />
+    <CheckUpSection :section="content.checkup" />
+    <AfterSection :section="content.after" />
   </div>
 </template>
 

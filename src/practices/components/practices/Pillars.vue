@@ -1,30 +1,44 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { PracticesPillarsSection } from "../../interface/PracticesContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-const { t, tm } = useI18n();
-defineProps<{
-  goToInsideCare: () => void;
-  goToOutsideCare: () => void;
-}>();
+const props = defineProps({
+  section: { type: Object as PropType<PracticesPillarsSection>, required: true },
+  goToInsideCare: { type: Function as PropType<() => void>, required: true },
+  goToOutsideCare: { type: Function as PropType<() => void>, required: true },
+});
 
-const pillarsText = tm("practices.pillars.text");
+// Images de fond : le cadrage reste piloté par le CSS (cover, aligné en haut),
+// on se contente de servir une taille raisonnable.
+function background(image: SanityImage) {
+  const url = urlFor(image).width(1400).format("webp").quality(75).url();
+  return { backgroundImage: `url("${url}")` };
+}
+
+const officeBackground = computed(() => background(props.section.officeImage));
+const outsideBackground = computed(() => background(props.section.outsideImage));
 </script>
 
 <template>
   <div class="pillars">
     <div class="pillars-text">
-      <h2>{{ t("practices.pillars.title") }}</h2>
-      <div v-for="(paragraph, index) in pillarsText" :key="index" class="pillars-text-paragraph">
-        <div v-html="paragraph"></div>
-      </div>
+      <h2>{{ props.section.title }}</h2>
+      <PortableText
+        as="div"
+        :blocks="props.section.body"
+        paragraph-class="pillars-text-paragraph"
+      />
     </div>
 
     <ul class="pillars-list">
-      <li class="left" @click="goToInsideCare()">
-        <p class="pillars-list-label">{{ tm("practices.pillars.list")[0] }}</p>
+      <li class="left" :style="officeBackground" @click="props.goToInsideCare()">
+        <p class="pillars-list-label">{{ props.section.officeLabel }}</p>
       </li>
-      <li class="right" @click="goToOutsideCare()">
-        <p class="pillars-list-label">{{ tm("practices.pillars.list")[1] }}</p>
+      <li class="right" :style="outsideBackground" @click="props.goToOutsideCare()">
+        <p class="pillars-list-label">{{ props.section.outsideLabel }}</p>
       </li>
     </ul>
   </div>
@@ -42,7 +56,8 @@ const pillarsText = tm("practices.pillars.text");
     h2 {
       margin-bottom: 40px;
     }
-    &-paragraph {
+    // Paragraphes rendus par PortableText : :deep() est nécessaire.
+    :deep(.pillars-text-paragraph) {
       padding-bottom: 10px;
     }
   }
@@ -91,14 +106,12 @@ const pillarsText = tm("practices.pillars.text");
 
     .left {
       left: 0;
-      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
       clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
       transition: clip-path 0.4s ease-in-out;
     }
 
     .right {
       right: 0;
-      background-image: url("/illustrations/practices/outside/qi-gong-class.jpg");
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
       transition: clip-path 0.4s ease-in-out;
     }

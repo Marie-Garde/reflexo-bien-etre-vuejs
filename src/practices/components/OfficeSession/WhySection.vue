@@ -1,36 +1,27 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import tuinaBackImg from "/illustrations/practices/inside/tuina-dos.jpg";
-import reflexoHandImg from "/illustrations/practices/inside/relfexo-main.jpg";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { OfficeSessionContent } from "../../interface/PracticesContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<OfficeSessionContent["why"]>, required: true },
+});
 
-const sections = [
-  {
-    key: "tuina",
-    title: t("practices.insideSessionPage.why.tuina.title"),
-    text: tm("practices.insideSessionPage.why.tuina.text"),
-    image: tuinaBackImg,
-    alt: "Massage Tuina du dos",
-  },
-  {
-    key: "reflexo",
-    title: t("practices.insideSessionPage.why.reflexo.title"),
-    text: tm("practices.insideSessionPage.why.reflexo.text"),
-    image: reflexoHandImg,
-    alt: "Réflexologie de la main",
-  },
-];
+function cardImage(image: SanityImage) {
+  return urlFor(image).width(1280).format("webp").quality(80).url();
+}
 </script>
 
 <template>
   <section class="office-session__why">
-    <div v-for="section in sections" :key="section.key" class="why-card">
-      <img class="why-card__image" :src="section.image" :alt="section.alt" />
-      <h2 class="why-card__title-static">{{ section.title }}</h2>
+    <div v-for="card in props.section.cards" :key="card._key" class="why-card">
+      <img class="why-card__image" :src="cardImage(card.image)" :alt="card.image.alt ?? ''" />
+      <h2 class="why-card__title-static">{{ card.title }}</h2>
       <div class="why-card__text-hover">
-        <h2 class="why-card__title">{{ section.title }}</h2>
-        <p v-for="(p, i) in section.text" :key="i">{{ p }}</p>
+        <h2 class="why-card__title">{{ card.title }}</h2>
+        <PortableText :blocks="card.body" />
       </div>
     </div>
   </section>

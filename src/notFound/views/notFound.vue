@@ -1,25 +1,29 @@
 <script setup lang="ts">
-import Button from "@/components/Button.vue";
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
+import Button from "@/components/Button.vue";
 import { homeRoutesName } from "@/home/routes/routesName";
-import { useI18n } from "vue-i18n";
+import { useNotFoundStore } from "../stores/notFoundContent";
 
 const router = useRouter();
-const { t } = useI18n();
+const store = useNotFoundStore();
+const { content } = storeToRefs(store);
+
+onServerPrefetch(store.load);
+onMounted(store.load);
 
 const goToHome = () => {
   router.push({ name: homeRoutesName.HOME });
 };
-
-const buttonLabel = t("404.button");
 </script>
 
 <template>
-  <div class="content">
+  <div class="content" v-if="content">
     <div class="not-found">
-      <h1>{{ t("404.title") }}</h1>
-      <p>{{ t("404.text") }}</p>
-      <Button :label="buttonLabel" @click="goToHome" color="brown-dark" />
+      <h1>{{ content.title }}</h1>
+      <p>{{ content.text }}</p>
+      <Button :label="content.buttonLabel" @click="goToHome" color="brown-dark" />
     </div>
   </div>
 </template>

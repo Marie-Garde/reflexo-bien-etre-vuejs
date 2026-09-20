@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { storeToRefs } from "pinia";
 import { useIsMobile } from "@/reactives/isMobile";
 import DesktopNav from "../components/DesktopNav.vue";
 import MobileNav from "../components/MobileNav.vue";
 import PhoneIcon from "@/assets/icons/phone.vue";
 import LocationIcon from "@/assets/icons/location.vue";
+import { useSiteSettingsStore } from "@/general/stores/siteSettings";
 
-const { t } = useI18n();
 const isMobile = useIsMobile();
+const { settings } = storeToRefs(useSiteSettingsStore());
 </script>
 
 <template>
-  <header class="main-header">
+  <header class="main-header" v-if="settings">
     <div class="main-header__top-info">
       <div class="info">
         <LocationIcon class="info-icon" />
-        <p>{{ t("navigation.top.adress") }}</p>
+        <p>{{ settings.topBar.address }}</p>
       </div>
       <div class="info">
         <PhoneIcon class="info-icon" />
-        <p>{{ t("navigation.top.tel") }}</p>
+        <p>{{ settings.topBar.phone }}</p>
       </div>
     </div>
-    <DesktopNav v-if="!isMobile" />
-    <MobileNav v-else />
+    <DesktopNav v-if="!isMobile" :settings="settings" />
+    <MobileNav v-else :settings="settings" />
   </header>
 </template>
 

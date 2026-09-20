@@ -1,24 +1,18 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import type { SeasonContent } from "../interface/SeasonContent";
 
-defineProps({
+const props = defineProps({
+  section: { type: Object as PropType<SeasonContent["recipes"]>, required: true },
   background: { type: String, required: true },
-  // season: { type: String, required: true },
 });
-
-const { t } = useI18n();
-
-const title = t("seasons.season.subtitles.recipes");
-// const recipes = tm(`seasons.season.${props.season}.recipes`);
 </script>
 
 <template>
-  <div :class="['container', `${background}`]">
-    <h2>{{ title }}</h2>
-    <p>Cette partie est actuellement en construction ! Vous la retrouverez bientôt !</p>
-    <!-- <ul>
-      <li v-for="(recipe, index) in recipes" :key="index">{{ recipe }}</li>
-    </ul> -->
+  <div :class="['container', `${props.background}`]">
+    <h2>{{ props.section.title }}</h2>
+    <!-- La liste de recettes est saisie dans le Studio mais pas encore affichée. -->
+    <p>{{ props.section.placeholder }}</p>
   </div>
 </template>
 

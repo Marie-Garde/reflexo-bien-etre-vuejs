@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
 import type { PropType } from "vue";
+import { RouterLink } from "vue-router";
 import type { CarouselSlide } from "../../home/interface/Carousel";
 import { urlFor } from "@/sanityClient";
-import { useI18n } from "vue-i18n";
 
 const props = defineProps({
   slide: { type: Object as PropType<CarouselSlide>, required: true },
@@ -11,17 +11,30 @@ const props = defineProps({
   index: { type: Number, required: true },
   direction: { type: String, required: true },
   total: { type: Number, required: true },
+  linkLabel: { type: String, default: "" },
 });
 
 const { direction } = toRefs(props);
-
-const { t } = useI18n();
 
 const emit = defineEmits(["mouseEnter", "mouseLeave"]);
 
 const transitionEffect = computed(() => {
   return direction.value === "right" ? "slide-out" : "slide-in";
 });
+
+const IMAGE_WIDTHS = [640, 1024, 1600, 2000];
+
+function imageUrl(width: number) {
+  return urlFor(props.slide.image).width(width).format("webp").quality(80).url();
+}
+
+const imageSrc = computed(() => imageUrl(1600));
+
+const imageSrcset = computed(() =>
+  IMAGE_WIDTHS.map((width) => `${imageUrl(width)} ${width}w`).join(", "),
+);
+
+const isFirstSlide = computed(() => props.index === 0);
 </script>
 
 <template>
@@ -36,17 +49,19 @@ const transitionEffect = computed(() => {
       :aria-label="`Slide ${index + 1} de ${total}`"
     >
       <img
-        :src="urlFor(slide.image).url()"
+        :src="imageSrc"
+        :srcset="imageSrcset"
+        sizes="100vw"
         :alt="slide.description"
-        fetchpriority="high"
+        :fetchpriority="isFirstSlide ? 'high' : 'low'"
         decoding="async"
       />
       <div class="carousel-item-informations">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>
-        <a v-if="slide.link" :href="`${slide.link}`" class="carousel-item-link">{{
-          t("home.carousel.link")
-        }}</a>
+        <RouterLink v-if="slide.link" :to="slide.link" class="carousel-item-link">{{
+          props.linkLabel
+        }}</RouterLink>
       </div>
     </div>
   </Transition>

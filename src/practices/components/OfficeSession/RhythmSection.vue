@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import Button from "@/components/Button.vue";
+import type { PropType } from "vue";
 import { useRouter } from "vue-router";
+import Button from "@/components/Button.vue";
+import PortableText from "@/general/components/PortableText.vue";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
+import type { SessionDetail } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  rhythm: { type: Object as PropType<SessionDetail["rhythm"]>, required: true },
+});
+
 const router = useRouter();
-
-const props = defineProps<{
-  sessionType: string;
-}>();
-
-const rhythm = {
-  title: t(`practices.insideSessionPage.session.${props.sessionType}.rhythm.title`),
-  text: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.text`),
-  list: tm(`practices.insideSessionPage.session.${props.sessionType}.rhythm.list`),
-  cta: t("practices.insideSessionPage.session.reflexo.rhythm.CTA"),
-};
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -25,12 +19,12 @@ function goToAppointment() {
 
 <template>
   <section class="office-session__rhythm">
-    <h2 class="office-session__section-title">{{ rhythm.title }}</h2>
-    <p v-for="(p, i) in rhythm.text" :key="i">{{ p }}</p>
+    <h2 class="office-session__section-title">{{ props.rhythm.title }}</h2>
+    <PortableText :blocks="props.rhythm.body" />
     <ul>
-      <li v-for="(item, i) in rhythm.list" :key="i">{{ item }}</li>
+      <li v-for="point in props.rhythm.points" :key="point">{{ point }}</li>
     </ul>
-    <Button :label="rhythm.cta" color="orange" @click="goToAppointment()" />
+    <Button :label="props.rhythm.buttonLabel" color="orange" @click="goToAppointment()" />
   </section>
 </template>
 

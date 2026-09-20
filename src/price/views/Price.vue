@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import Button from "@/components/Button.vue";
 import Header from "../components/Header.vue";
@@ -7,13 +8,14 @@ import OutsidePrice from "../components/OutsidePrice.vue";
 import ReflexoPrice from "../components/ReflexoPrice.vue";
 import TuinaPrice from "../components/TuinaPrice.vue";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
+import { usePriceContentStore } from "../stores/priceContent";
 
-const { t } = useI18n();
 const router = useRouter();
+const store = usePriceContentStore();
+const { content } = storeToRefs(store);
 
-const labelButtonReflexo = t("price.buttonLabel.takeAppointmentReflexo");
-const labelButtonTuina = t("price.buttonLabel.takeAppointmentTuina");
-const labelButtonQiGong = t("price.buttonLabel.takeAppointmentQiGong");
+onServerPrefetch(store.load);
+onMounted(store.load);
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -21,18 +23,24 @@ function goToAppointment() {
 </script>
 
 <template>
-  <Header />
+  <template v-if="content">
+    <Header :section="content.header" />
 
-  <div class="content">
-    <div class="prices">
-      <ReflexoPrice />
-      <Button :label="labelButtonReflexo" color="brown-dark" @click="goToAppointment()" />
-      <TuinaPrice />
-      <Button :label="labelButtonTuina" color="brown-dark" @click="goToAppointment()" />
-      <OutsidePrice />
-      <Button :label="labelButtonQiGong" color="brown-dark" @click="goToAppointment()" />
+    <div class="content">
+      <div class="prices">
+        <ReflexoPrice :section="content.reflexo" />
+        <Button
+          :label="content.reflexo.buttonLabel"
+          color="brown-dark"
+          @click="goToAppointment()"
+        />
+        <TuinaPrice :section="content.tuina" />
+        <Button :label="content.tuina.buttonLabel" color="brown-dark" @click="goToAppointment()" />
+        <OutsidePrice :section="content.qiGong" />
+        <Button :label="content.qiGong.buttonLabel" color="brown-dark" @click="goToAppointment()" />
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <style scoped lang="scss">

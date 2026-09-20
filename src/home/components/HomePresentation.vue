@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
 import { useRouter } from "vue-router";
-import isabelleImage from "/illustrations/isabelle-small.png";
 import Button from "@/components/Button.vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
 import { aboutRoutesName } from "@/about/routes/routesName";
+import type { PresentationSection } from "../interface/HomeContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<PresentationSection>, required: true },
+});
+
 const router = useRouter();
-
-const aboutMeLabel = t("home.presentation.learnAboutMe");
-const presentationText = tm("home.presentation.text");
 
 function goToKnowMore() {
   router.push({ name: aboutRoutesName.HOME });
@@ -19,19 +21,28 @@ function goToKnowMore() {
 <template>
   <div class="presentation">
     <div class="presentation-image">
-      <img :src="isabelleImage" class="presentation-image-content" alt="Portrait d’Isabelle" />
+      <img
+        :src="urlFor(props.section.image).width(900).format('webp').quality(80).url()"
+        class="presentation-image-content"
+        :alt="props.section.image.alt ?? ''"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
 
     <div class="presentation-content">
-      <h2 class="presentation-content-title">{{ t("home.presentation.title") }}</h2>
-      <div
-        v-for="(paragraph, index) in presentationText"
-        :key="index"
-        class="presentation-content-text"
-      >
-        <div v-html="paragraph"></div>
-      </div>
-      <Button class="button" :label="aboutMeLabel" background="green" @click="goToKnowMore()" />
+      <h2 class="presentation-content-title">{{ props.section.title }}</h2>
+      <PortableText
+        as="div"
+        :blocks="props.section.body"
+        paragraph-class="presentation-content-text"
+      />
+      <Button
+        class="button"
+        :label="props.section.buttonLabel"
+        background="green"
+        @click="goToKnowMore()"
+      />
     </div>
   </div>
 </template>
@@ -80,7 +91,9 @@ function goToKnowMore() {
     &-title {
       margin-bottom: 20px;
     }
-    &-text {
+    // Les paragraphes sont rendus par PortableText : le style scopé ne les
+    // atteint pas sans :deep().
+    :deep(.presentation-content-text) {
       margin-bottom: 20px;
     }
     .button {

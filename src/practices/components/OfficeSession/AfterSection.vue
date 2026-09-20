@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import type { OfficeSessionContent } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
-
-const afterList = tm("practices.insideSessionPage.after.list");
-const text = tm("practices.insideSessionPage.after.text");
-const title = t("practices.insideSessionPage.after.title");
+const props = defineProps({
+  section: { type: Object as PropType<OfficeSessionContent["after"]>, required: true },
+});
 </script>
 
 <template>
   <section class="office-session__after">
-    <h2 class="office-session__section-title">{{ title }}</h2>
-    <p v-for="(p, i) in text" :key="i">{{ p }}</p>
+    <h2 class="office-session__section-title">{{ props.section.title }}</h2>
+    <PortableText :blocks="props.section.body" />
     <ul class="after-list">
-      <li v-for="(item, i) in afterList" :key="i">
+      <li v-for="item in props.section.items" :key="item._key">
         <p class="title">{{ item.title }}</p>
-        <p class="text">{{ item.text }}</p>
+        <p class="text">{{ item.description }}</p>
       </li>
     </ul>
   </section>

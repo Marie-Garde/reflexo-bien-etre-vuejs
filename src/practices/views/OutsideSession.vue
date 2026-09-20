@@ -1,33 +1,48 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import qiGongClassImg from "/illustrations/practices/outside/qi-gong-class.jpg";
-import qiGongOutsideImg from "/illustrations/practices/outside/qi-gong-outside.jpg";
+import { computed, onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
+import { urlFor } from "@/sanityClient";
 import PracticeSection from "@/practices/components/OutsideSession/PracticeSection.vue";
 import SessionSection from "@/practices/components/OutsideSession/SessionSection.vue";
 import WhySection from "@/practices/components/OutsideSession/WhySection.vue";
 import WhoSection from "@/practices/components/OutsideSession/WhoSection.vue";
 import HowSection from "@/practices/components/OutsideSession/HowSection.vue";
+import { useOutsideSessionStore } from "../stores/sessionContent";
 
-const { t } = useI18n();
+const store = useOutsideSessionStore();
+const { content } = storeToRefs(store);
+
+onServerPrefetch(store.load);
+onMounted(store.load);
+
+const headerBackground = computed(() => {
+  if (!content.value) return {};
+  const url = urlFor(content.value.header.backgroundImage)
+    .width(1920)
+    .format("webp")
+    .quality(75)
+    .url();
+  return { backgroundImage: `url("${url}")` };
+});
 </script>
 
 <template>
-  <div class="outside-session">
-    <header class="outside-session__header">
+  <div class="outside-session" v-if="content">
+    <header class="outside-session__header" :style="headerBackground">
       <div class="outside-session__header-overlay">
-        <h1 class="outside-session__title">{{ t("practices.outsideSessionPage.title") }}</h1>
-        <p>{{ t("practices.outsideSessionPage.subtitle") }}</p>
+        <h1 class="outside-session__title">{{ content.header.title }}</h1>
+        <p>{{ content.header.subtitle }}</p>
       </div>
     </header>
 
     <div class="infos">
-      <PracticeSection :image="qiGongClassImg" />
-      <SessionSection :image="qiGongOutsideImg" />
+      <PracticeSection :section="content.practice" />
+      <SessionSection :section="content.session" :button-label="content.buttonLabel" />
     </div>
 
-    <WhySection />
-    <WhoSection />
-    <HowSection />
+    <WhySection :section="content.why" />
+    <WhoSection :section="content.who" />
+    <HowSection :section="content.how" :button-label="content.buttonLabel" />
   </div>
 </template>
 
@@ -40,7 +55,6 @@ const { t } = useI18n();
     min-height: 60vh;
     height: auto;
     margin-top: 60px;
-    background-image: url("/illustrations/practices/outside/women-qi-gong.png");
     background-size: cover;
     background-position: top;
     position: relative;

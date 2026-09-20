@@ -1,21 +1,25 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import checkupImage from "/illustrations/practices/inside/bilan.png";
+import { computed, type PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { OfficeSessionContent } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<OfficeSessionContent["checkup"]>, required: true },
+});
 
-const text = tm("practices.insideSessionPage.checkup.text");
-const title = t("practices.insideSessionPage.checkup.title");
+const backgroundStyle = computed(() => {
+  const url = urlFor(props.section.backgroundImage).width(1920).format("webp").quality(75).url();
+  return { backgroundImage: `url("${url}")` };
+});
 </script>
 
 <template>
-  <section class="office-session__checkup" :style="{ backgroundImage: `url(${checkupImage})` }">
+  <section class="office-session__checkup" :style="backgroundStyle">
     <div class="office-session__checkup-overlay"></div>
     <div class="office-session__checkup-text">
-      <h2 class="office-session__checkup-title">{{ title }}</h2>
-      <p v-for="(paragraph, index) in text" :key="index">
-        {{ paragraph }}
-      </p>
+      <h2 class="office-session__checkup-title">{{ props.section.title }}</h2>
+      <PortableText :blocks="props.section.body" />
     </div>
   </section>
 </template>

@@ -1,33 +1,32 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
+import { urlFor } from "@/sanityClient";
+import type { OfficeSessionContent } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<OfficeSessionContent["summary"]>, required: true },
+});
 
-const summary = {
-  firstLine: tm("practices.insideSessionPage.summary.array.firstLine"),
-  secondLine: tm("practices.insideSessionPage.summary.array.secondLine"),
-  thirdLine: tm("practices.insideSessionPage.summary.array.thirdLine"),
-};
+const backgroundStyle = computed(() => {
+  const url = urlFor(props.section.backgroundImage).width(1400).format("webp").quality(80).url();
+  return { backgroundImage: `url("${url}")` };
+});
 </script>
 
 <template>
   <section class="office-session__summary">
-    <h2 class="office-session__section-title">
-      {{ t("practices.insideSessionPage.summary.title") }}
-    </h2>
-    <div class="summary-overlay">
+    <h2 class="office-session__section-title">{{ props.section.title }}</h2>
+    <div class="summary-overlay" :style="backgroundStyle">
       <div class="summary-table">
         <ul class="summary-row">
-          <li v-for="(item, i) in summary.firstLine" :key="i">{{ item }}</li>
+          <li v-for="(item, i) in props.section.headers" :key="i">{{ item }}</li>
         </ul>
-        <hr class="summary-separator" />
-        <ul class="summary-row">
-          <li v-for="(item, i) in summary.secondLine" :key="i">{{ item }}</li>
-        </ul>
-        <hr class="summary-separator" />
-        <ul class="summary-row">
-          <li v-for="(item, i) in summary.thirdLine" :key="i">{{ item }}</li>
-        </ul>
+        <template v-for="row in props.section.rows" :key="row._key">
+          <hr class="summary-separator" />
+          <ul class="summary-row">
+            <li v-for="(cell, i) in row.cells" :key="i">{{ cell }}</li>
+          </ul>
+        </template>
       </div>
     </div>
   </section>

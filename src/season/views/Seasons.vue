@@ -1,25 +1,41 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
 import { seasonsRoutesName } from "../routes/routesName";
+import { useSeasonsPageStore } from "../stores/seasonContent";
+import type { SeasonTile } from "../interface/SeasonContent";
 
-const { t, tm } = useI18n();
 const router = useRouter();
+const store = useSeasonsPageStore();
+const { content } = storeToRefs(store);
+
+onServerPrefetch(store.load);
+onMounted(store.load);
+
+// La géométrie du cercle reste dans la feuille de style ; seule la photo de
+// chaque part vient du Studio, passée en variable CSS.
+const ROUTES: Record<SeasonTile["destination"], string> = {
+  spring: seasonsRoutesName.SPRING,
+  summer: seasonsRoutesName.SUMMER,
+  fall: seasonsRoutesName.FALL,
+  winter: seasonsRoutesName.WINTER,
+};
+
+function tileStyle(tile: SeasonTile) {
+  const url = urlFor(tile.image).width(900).format("webp").quality(80).url();
+  return { "--tile-image": `url("${url}")` };
+}
 
 function goToSeason(route: string) {
   router.push({ name: route });
 }
-
-const seasons = [
-  { name: "Été", route: seasonsRoutesName.SUMMER, className: "top-left" },
-  { name: "Automne", route: seasonsRoutesName.FALL, className: "top-right" },
-  { name: "Hiver", route: seasonsRoutesName.WINTER, className: "bottom-right" },
-  { name: "Printemps", route: seasonsRoutesName.SPRING, className: "bottom-left" },
-];
 </script>
 
 <template>
-  <main>
+  <main v-if="content">
     <div class="header">
       <img
         src="@/assets/background/seasonBackground.webp"
@@ -28,11 +44,9 @@ const seasons = [
         fetchpriority="high"
       />
       <div class="header-overlay">
-        <h1 class="title">{{ t("seasons.title") }}</h1>
-        <h2 class="subTitle">{{ t("seasons.importance.title") }}</h2>
-        <p v-for="(paragraph, index) in tm('seasons.importance.text')" :key="index">
-          {{ paragraph }}
-        </p>
+        <h1 class="title">{{ content.header.title }}</h1>
+        <h2 class="subTitle">{{ content.header.sectionTitle }}</h2>
+        <PortableText :blocks="content.header.body" />
       </div>
     </div>
 
@@ -40,25 +54,24 @@ const seasons = [
       <div class="content">
         <div class="seasons-list">
           <div class="seasons-list-text">
-            <h2>{{ t("seasons.list.title") }}</h2>
-            <p v-for="(paragraph, index) in tm('seasons.list.text')" :key="index">
-              {{ paragraph }}
-            </p>
+            <h2>{{ content.circle.title }}</h2>
+            <PortableText :blocks="content.circle.body" />
           </div>
 
           <div class="circle">
             <div
-              v-for="season in seasons"
-              :key="season.name"
-              :class="['quarter', season.className]"
-              @click="goToSeason(season.route)"
+              v-for="tile in content.circle.tiles"
+              :key="tile._key"
+              :class="['quarter', tile.position]"
+              :style="tileStyle(tile)"
+              @click="goToSeason(ROUTES[tile.destination])"
             >
-              <h3 :class="['quarter-title', 'quarter-title-' + season.className]">
-                {{ season.name }}
+              <h3 :class="['quarter-title', 'quarter-title-' + tile.position]">
+                {{ tile.label }}
               </h3>
             </div>
             <div class="center-circle" @click="goToSeason(seasonsRoutesName.INTERSEASON)">
-              <h3 class="quarter-title quarter-title-center">Inter saison</h3>
+              <h3 class="quarter-title quarter-title-center">{{ content.circle.centerLabel }}</h3>
             </div>
           </div>
         </div>
@@ -106,7 +119,8 @@ const seasons = [
     margin-bottom: 40px;
   }
 
-  p {
+  // Paragraphes rendus par PortableText : :deep() est nécessaire.
+  :deep(p) {
     max-width: 50%;
     margin-bottom: 20px;
   }
@@ -205,7 +219,6 @@ const seasons = [
         left: 0,
       ),
       clip: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) calc(100% - 5px), 0 calc(100% - 5px)),
-      image: "ete.jpg",
       before: (
         width: 100%,
         height: 70%,
@@ -223,7 +236,6 @@ const seasons = [
         right: 0,
       ),
       clip: polygon(0 0, 100% 0, 100% calc(100% - 5px), 0 calc(100% - 5px)),
-      image: "fall.jpg",
       before: (
         width: 65%,
         height: 65%,
@@ -241,7 +253,6 @@ const seasons = [
         right: 0,
       ),
       clip: polygon(0 0, 100% 0, 100% 100%, 0 100%),
-      image: "winter.jpg",
       before: (
         width: 100%,
         height: 65%,
@@ -259,7 +270,6 @@ const seasons = [
         left: 0,
       ),
       clip: polygon(0 0, calc(100% - 5px) 0, calc(100% - 5px) 100%, 0 100%),
-      image: "spring.jpg",
       before: (
         width: 70%,
         height: 70%,
@@ -285,7 +295,7 @@ const seasons = [
       &::before {
         content: "";
         position: absolute;
-        background-image: url("/illustrations/#{map.get($props, image)}");
+        background-image: var(--tile-image);
         transform: rotate(-45deg) scale(#{map.get(map.get($props, before), scale)});
         background-repeat: no-repeat;
         z-index: -1;
@@ -339,7 +349,7 @@ const seasons = [
   .header {
     height: auto;
     padding: 40px 0;
-    p {
+    :deep(p) {
       max-width: 90%;
     }
   }
@@ -349,7 +359,7 @@ const seasons = [
     padding: 0 20px;
   }
 
-  p {
+  :deep(p) {
     width: 100%;
   }
   .container {

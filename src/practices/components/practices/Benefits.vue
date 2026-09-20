@@ -1,53 +1,78 @@
 <script setup lang="ts">
+import { computed, ref, type PropType } from "vue";
 import AccordionItem from "@/components/AccordionItem.vue";
-import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import { useIsMobile } from "../../../reactives/isMobile";
+import type { PracticesBenefitsSection } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<PracticesBenefitsSection>, required: true },
+});
 
-const benefitsList = tm("practices.benefits.list");
+const isMobile = useIsMobile();
 
-defineProps<{
-  benefitsImageSource: string;
-}>();
+const benefitsImage = computed(() =>
+  isMobile.value ? (props.section.mobileImage ?? props.section.image) : props.section.image,
+);
 
-const openAccordionIndex = ref<string | null>(null);
+// Sur grand écran, cette image n'a pas de largeur CSS : c'est sa taille propre
+// qui décide du partage de l'espace avec la liste. On ne la suragrandit donc pas.
+const benefitsImageSource = computed(() => {
+  const image = benefitsImage.value;
+  return urlFor(image)
+    .width(Math.min(image.naturalWidth ?? 1200, 1200))
+    .format("webp")
+    .quality(80)
+    .url();
+});
 
-const toggleAccordion = (index: string) => {
-  const currentlyOpen = openAccordionIndex.value;
+const openAccordionKey = ref<string | null>(null);
 
-  if (currentlyOpen === index) {
-    openAccordionIndex.value = null;
+const toggleAccordion = (accordionKey: string) => {
+  const currentlyOpen = openAccordionKey.value;
+
+  if (currentlyOpen === accordionKey) {
+    openAccordionKey.value = null;
   } else if (currentlyOpen !== null) {
-    openAccordionIndex.value = null;
+    openAccordionKey.value = null;
     setTimeout(() => {
-      openAccordionIndex.value = index;
+      openAccordionKey.value = accordionKey;
     }, 300);
   } else {
-    openAccordionIndex.value = index;
+    openAccordionKey.value = accordionKey;
   }
 };
 </script>
 
 <template>
   <div class="benefits">
-    <h2>{{ t("practices.benefits.title") }}</h2>
-    <p>{{ t("practices.benefits.subtitle") }}</p>
+    <h2>{{ props.section.title }}</h2>
+    <p>{{ props.section.subtitle }}</p>
     <div class="benefits-content">
-      <img :src="benefitsImageSource" class="benefits-image" />
+      <img
+        :src="benefitsImageSource"
+        class="benefits-image"
+        :alt="benefitsImage.alt ?? ''"
+        :width="benefitsImage.naturalWidth"
+        :height="benefitsImage.naturalHeight"
+        decoding="async"
+      />
       <ul class="benefits-list">
-        <li v-for="(benefit, index) in benefitsList" :key="index">
+        <li v-for="benefit in props.section.items" :key="benefit._key">
           <AccordionItem
-            :title="benefit.title"
-            :is-open="openAccordionIndex === index"
-            @toggle="toggleAccordion(index)"
+            :title="`<strong>${benefit.title}</strong>`"
+            :is-open="openAccordionKey === benefit._key"
+            @toggle="toggleAccordion(benefit._key)"
           >
-            <div class="benefits-list-text" v-html="benefit.text"></div>
+            <div class="benefits-list-text">
+              <PortableText as="div" :blocks="benefit.body" />
+            </div>
           </AccordionItem>
         </li>
       </ul>
     </div>
-    <p>{{ t("practices.benefits.text") }}</p>
+    <p>{{ props.section.conclusion }}</p>
   </div>
 </template>
 
@@ -81,6 +106,11 @@ const toggleAccordion = (index: string) => {
     margin: 0 auto;
     &-text {
       padding: 20px 0;
+
+      // Paragraphes rendus par PortableText : :deep() est nécessaire.
+      :deep(div + div) {
+        margin-top: 1em;
+      }
     }
   }
 }

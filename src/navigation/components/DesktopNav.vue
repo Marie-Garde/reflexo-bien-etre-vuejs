@@ -1,32 +1,25 @@
 <script setup lang="ts">
+import { computed, type PropType } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useI18n } from "vue-i18n";
 import { homeRoutesName } from "@/home/routes/routesName";
-import { aboutRoutesName } from "@/about/routes/routesName";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
-import { contactRoutesName } from "@/contact/routes/routesName";
-import { practicesRoutesName } from "@/practices/routes/routesName";
-import { priceRoutesName } from "@/price/routes/routesName";
-import { seasonsRoutesName } from "@/season/routes/routesName";
 import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
 import Logo from "@/assets/logo/logo-horizontal-brown.webp";
+import type { SiteSettings } from "@/general/interface/SiteSettings";
+
+const props = defineProps({
+  settings: { type: Object as PropType<SiteSettings>, required: true },
+});
 
 const router = useRouter();
 const route = useRoute();
-const { t } = useI18n();
 
-const navItems = [
-  { label: t("navigation.items.about"), routeName: aboutRoutesName.HOME },
-  { label: t("navigation.items.practices"), routeName: practicesRoutesName.HOME },
-  { label: t("navigation.items.seasons"), routeName: seasonsRoutesName.HOME },
-  { label: t("navigation.items.prices"), routeName: priceRoutesName.HOME },
-  { label: t("navigation.items.contact"), routeName: contactRoutesName.HOME },
-];
-
-const takeAppointmentLabel = t("navigation.items.takeAppointment");
+// Sur ordinateur, le logo ramène à l'accueil : l'entrée correspondante est
+// masquée, comme le prévoit le Studio.
+const navItems = computed(() => props.settings.navItems.filter((item) => !item.mobileOnly));
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -46,36 +39,28 @@ function goToHome() {
     <div class="desktop-nav__links">
       <LinkRouter
         v-for="item in navItems"
-        :key="item.routeName"
+        :key="item._key"
         :class="[
           'desktop-nav__link',
-          { active: route.path.startsWith(router.resolve({ name: item.routeName }).path) },
+          { active: route.path.startsWith(router.resolve({ name: item.destination }).path) },
         ]"
         :label="item.label"
-        :to="item.routeName"
+        :to="item.destination"
       />
     </div>
 
     <div class="desktop-nav__actions">
       <div class="desktop-nav__socials">
-        <a
-          href="https://www.instagram.com/reflex_o_bien_etre_correze"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a :href="props.settings.social.instagramUrl" target="_blank" rel="noopener noreferrer">
           <InstagramIcon class="icon" aria-label="Visitez notre page Instagram" />
         </a>
-        <a
-          href="https://www.facebook.com/people/Reflex%C3%B4-Bien-%C3%AAtre-Corr%C3%A8ze/61575998591423/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a :href="props.settings.social.facebookUrl" target="_blank" rel="noopener noreferrer">
           <FacebookIcon class="icon" aria-label="Visitez notre page Facebook" />
         </a>
       </div>
       <Button
         class="desktop-nav__button"
-        :label="takeAppointmentLabel"
+        :label="props.settings.appointmentLabel"
         @click="goToAppointment()"
       />
     </div>

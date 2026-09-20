@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
+import type { PriceContent } from "../interface/PriceContent";
 
-const { t } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<PriceContent["header"]>, required: true },
+});
 </script>
 
 <template>
   <header class="price__header">
     <div class="price__header-container">
       <div class="price__header-overlay">
-        <h1 class="price__title">{{ t("price.title") }}</h1>
-        <p>{{ t("price.subTitle") }}</p>
+        <h1 class="price__title">{{ props.section.title }}</h1>
+        <p>{{ props.section.subtitle }}</p>
       </div>
     </div>
   </header>

@@ -1,58 +1,42 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
 import BodyPainImage from "@/assets/icons/Body-pain.webp";
 import HeadacheImage from "@/assets/icons/Headache.webp";
 import IsomniaImage from "@/assets/icons/Isomnia.webp";
 import DigestiveSystemPainImage from "@/assets/icons/Digestive-system-pain.webp";
 import StressImage from "@/assets/icons/Stress.webp";
 import DiseaseImage from "@/assets/icons/Disease.webp";
-const { t, tm } = useI18n();
+import type { DifficultiesSection, SymptomIcon } from "../interface/HomeContent";
 
-const difficultiesList = tm("home.difficulties.list");
+const props = defineProps({
+  section: { type: Object as PropType<DifficultiesSection>, required: true },
+});
 
-const difficulties = [
-  {
-    image: BodyPainImage,
-    text: difficultiesList[0],
-    alt: "Douleurs musculaires et articulaires",
-  },
-  {
-    image: HeadacheImage,
-    text: difficultiesList[1],
-    alt: "Maux de tête",
-  },
-  {
-    image: IsomniaImage,
-    text: difficultiesList[2],
-    alt: "Insomnie",
-  },
-  {
-    image: DigestiveSystemPainImage,
-    text: difficultiesList[3],
-    alt: "Troubles digestif",
-  },
-  {
-    image: StressImage,
-    text: difficultiesList[4],
-    alt: "Stress et anxiété",
-  },
-  {
-    image: DiseaseImage,
-    text: difficultiesList[5],
-    alt: "Fatigue",
-  },
-];
+// Les fichiers d'icônes restent dans le code ; Sanity choisit laquelle afficher.
+const ICONS: Record<SymptomIcon, string> = {
+  bodyPain: BodyPainImage,
+  headache: HeadacheImage,
+  insomnia: IsomniaImage,
+  digestive: DigestiveSystemPainImage,
+  stress: StressImage,
+  fatigue: DiseaseImage,
+};
 </script>
 
 <template>
   <div class="difficulties">
-    <h2 class="difficulties-title">{{ t("home.difficulties.title") }}</h2>
-    <p>{{ t("home.difficulties.subtitle") }}</p>
+    <h2 class="difficulties-title">{{ props.section.title }}</h2>
+    <p>{{ props.section.subtitle }}</p>
 
     <div class="difficulties-list">
-      <div v-for="(difficulty, index) in difficulties" :key="index" class="difficulties-list-item">
-        <img class="difficulties-list-item-img" :src="difficulty.image" :alt="difficulty.alt" />
-        <p>{{ difficulty.text }}</p>
+      <div v-for="item in props.section.items" :key="item._key" class="difficulties-list-item">
+        <img
+          class="difficulties-list-item-img"
+          :src="ICONS[item.icon]"
+          :alt="item.label"
+          loading="lazy"
+        />
+        <p>{{ item.label }}</p>
       </div>
     </div>
   </div>

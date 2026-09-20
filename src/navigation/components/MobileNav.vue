@@ -1,34 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, type PropType } from "vue";
 import { useRouter } from "vue-router";
-import { useI18n } from "vue-i18n";
 import { homeRoutesName } from "@/home/routes/routesName";
-import { aboutRoutesName } from "@/about/routes/routesName";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
-import { contactRoutesName } from "@/contact/routes/routesName";
-import { practicesRoutesName } from "@/practices/routes/routesName";
-import { priceRoutesName } from "@/price/routes/routesName";
-import { seasonsRoutesName } from "@/season/routes/routesName";
 import Button from "@/components/Button.vue";
 import LinkRouter from "@/components/LinkRouter.vue";
 import Logo from "@/assets/logo/logo-horizontal-brown.webp";
 import BurgerMenuIcon from "@/assets/icons/burger-menu.vue";
 import CrossIcon from "@/assets/icons/cross.vue";
+import type { SiteSettings } from "@/general/interface/SiteSettings";
+
+const props = defineProps({
+  settings: { type: Object as PropType<SiteSettings>, required: true },
+});
 
 const router = useRouter();
-const { t } = useI18n();
 const menuOpen = ref(false);
-
-const navItems = [
-  { label: t("navigation.items.home"), routeName: homeRoutesName.HOME },
-  { label: t("navigation.items.about"), routeName: aboutRoutesName.HOME },
-  { label: t("navigation.items.practices"), routeName: practicesRoutesName.HOME },
-  { label: t("navigation.items.seasons"), routeName: seasonsRoutesName.HOME },
-  { label: t("navigation.items.prices"), routeName: priceRoutesName.HOME },
-  { label: t("navigation.items.contact"), routeName: contactRoutesName.HOME },
-];
-
-const takeAppointmentLabel = t("navigation.items.takeAppointment");
 
 function closeMenu() {
   menuOpen.value = false;
@@ -71,16 +58,16 @@ function goToHome() {
         </button>
         <div class="mobile-nav__links">
           <LinkRouter
-            v-for="item in navItems"
-            :key="item.routeName"
+            v-for="item in props.settings.navItems"
+            :key="item._key"
             class="mobile-nav__link"
             :label="item.label"
-            :to="item.routeName"
-            @click="handleLinkClick(item.routeName)"
+            :to="item.destination"
+            @click="handleLinkClick(item.destination)"
           />
           <Button
             class="mobile-nav__button"
-            :label="takeAppointmentLabel"
+            :label="props.settings.appointmentLabel"
             color="orange-light"
             @click="goToAppointment"
           />

@@ -1,8 +1,11 @@
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 export interface CarouselSlide {
-  image: string;
+  _id?: string;
+  image: SanityImageSource;
   title: string;
   description: string;
-  link: string;
+  link?: string;
 }
 
 export interface CarouselSlideText {

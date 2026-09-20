@@ -1,19 +1,35 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t, tm } = useI18n();
+import type { PropType } from "vue";
+import { urlFor } from "@/sanityClient";
+import type { PriceContent } from "../interface/PriceContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
+
+const props = defineProps({
+  section: { type: Object as PropType<PriceContent["qiGong"]>, required: true },
+});
+
+function cardStyle(image: SanityImage) {
+  const url = urlFor(image).width(900).format("webp").quality(80).url();
+  return { "--card-image": `url("${url}")` };
+}
 </script>
 
 <template>
   <div class="price-type">
     <div class="type">
-      <h2>{{ t("price.type[2].title") }}</h2>
+      <h2>{{ props.section.title }}</h2>
       <div class="cards-container">
-        <div v-for="(price, index) in tm('price.type[2].prices')" :key="index" class="card">
-          <h3>{{ price.title }}</h3>
-          <p class="label">{{ t("price.type[2].label.faceToFace") }}</p>
-          <p class="price">{{ price.faceToFace }}</p>
-          <p class="label">{{ t("price.type[2].label.online") }}</p>
-          <p class="price">{{ price.online }}</p>
+        <div
+          v-for="item in props.section.items"
+          :key="item._key"
+          class="card"
+          :style="cardStyle(item.image)"
+        >
+          <h3>{{ item.title }}</h3>
+          <p class="label">{{ props.section.faceToFaceLabel }}</p>
+          <p class="price">{{ item.faceToFace }}</p>
+          <p class="label">{{ props.section.onlineLabel }}</p>
+          <p class="price">{{ item.online }}</p>
         </div>
       </div>
     </div>
@@ -77,6 +93,7 @@ const { t, tm } = useI18n();
       content: "";
       position: absolute;
       inset: 0;
+      background-image: var(--card-image);
       background-size: cover;
       background-position: center;
       transform-origin: center;
@@ -94,15 +111,6 @@ const { t, tm } = useI18n();
 
   &:first-child {
     .card {
-      &:first-child::before {
-        background-image: url("/illustrations/price/QiGong1.png");
-      }
-      &:nth-child(2)::before {
-        background-image: url("/illustrations/price/Qigong2.png");
-      }
-      &:nth-child(3)::before {
-        background-image: url("/illustrations/price/Qigong3.png");
-      }
     }
   }
 }

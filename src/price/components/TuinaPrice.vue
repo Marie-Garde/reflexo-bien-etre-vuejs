@@ -1,19 +1,33 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { tm } = useI18n();
+import type { PropType } from "vue";
+import { urlFor } from "@/sanityClient";
+import type { PriceContent } from "../interface/PriceContent";
+import type { SanityImage } from "@/home/interface/HomeContent";
 
-const pricesTuina = tm("price.type")[1];
+const props = defineProps({
+  section: { type: Object as PropType<PriceContent["tuina"]>, required: true },
+});
+
+function cardStyle(image: SanityImage) {
+  const url = urlFor(image).width(900).format("webp").quality(80).url();
+  return { "--card-image": `url("${url}")` };
+}
 </script>
 
 <template>
   <div class="type">
-    <h2>{{ pricesTuina.title }}</h2>
+    <h2>{{ props.section.title }}</h2>
     <div class="cards-container">
-      <div v-for="(price, index) in pricesTuina.prices" :key="index" class="card">
-        <h3>{{ price.title }}</h3>
-        <p v-if="price.time" class="time">{{ price.time }}</p>
-        <p v-if="price.price" class="price">{{ price.price }}</p>
-        <p v-if="price.description" class="description">{{ price.description }}</p>
+      <div
+        v-for="item in props.section.items"
+        :key="item._key"
+        class="card"
+        :style="cardStyle(item.image)"
+      >
+        <h3>{{ item.title }}</h3>
+        <p v-if="item.time" class="time">{{ item.time }}</p>
+        <p v-if="item.price" class="price">{{ item.price }}</p>
+        <p v-if="item.description" class="description">{{ item.description }}</p>
       </div>
     </div>
   </div>
@@ -70,6 +84,7 @@ const pricesTuina = tm("price.type")[1];
       content: "";
       position: absolute;
       inset: 0;
+      background-image: var(--card-image);
       background-size: cover;
       background-position: center;
       transform-origin: center;
@@ -82,16 +97,6 @@ const pricesTuina = tm("price.type")[1];
 
     &:hover::before {
       transform: scale(1.08);
-    }
-
-    &:first-child::before {
-      background-image: url("/illustrations/price/tuina1.png");
-    }
-    &:nth-child(2)::before {
-      background-image: url("/illustrations/price/tuina2.png");
-    }
-    &:nth-child(3)::before {
-      background-image: url("/illustrations/price/tuina3.png");
     }
   }
 }

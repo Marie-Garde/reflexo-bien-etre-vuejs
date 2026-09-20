@@ -1,36 +1,39 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { computed, ref } from "vue";
-import type { Accordion } from "@/season/interface/Accordion";
+import { computed, ref, type PropType } from "vue";
 import AccordionItem from "@/components/AccordionItem.vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { SeasonContent } from "../interface/SeasonContent";
 
 const props = defineProps({
-  season: { type: String, required: true },
+  section: { type: Object as PropType<SeasonContent["advices"]>, required: true },
 });
 
-const { t, tm } = useI18n();
-
-const title = t("seasons.season.subtitles.advices");
-const advicesList: Accordion[] = tm(`seasons.season.${props.season}.advices`);
-
+// Cette image n'a pas de largeur CSS : sa taille propre décide de son rendu.
+// L'agrandir la ferait déborder, on plafonne donc à la taille d'origine.
 const imageUrl = computed(() => {
-  return `/illustrations/Seasons/${props.season}-advice.jpg`;
+  const image = props.section.image;
+  return urlFor(image)
+    .width(Math.min(image.naturalWidth ?? 1100, 1100))
+    .format("webp")
+    .quality(80)
+    .url();
 });
 
-const openAccordionIndex = ref<number | null>(null);
+const openAccordionKey = ref<string | null>(null);
 
-const toggleAccordion = (index: number) => {
-  const currentlyOpen = openAccordionIndex.value;
+const toggleAccordion = (accordionKey: string) => {
+  const currentlyOpen = openAccordionKey.value;
 
-  if (currentlyOpen === index) {
-    openAccordionIndex.value = null;
+  if (currentlyOpen === accordionKey) {
+    openAccordionKey.value = null;
   } else if (currentlyOpen !== null) {
-    openAccordionIndex.value = null;
+    openAccordionKey.value = null;
     setTimeout(() => {
-      openAccordionIndex.value = index;
+      openAccordionKey.value = accordionKey;
     }, 300);
   } else {
-    openAccordionIndex.value = index;
+    openAccordionKey.value = accordionKey;
   }
 };
 </script>
@@ -38,17 +41,22 @@ const toggleAccordion = (index: number) => {
 <template>
   <div class="advices-seasons">
     <div class="advices-seasons__container">
-      <img :src="imageUrl" :alt="season" class="advices-seasons__image" />
+      <img
+        :src="imageUrl"
+        :alt="props.section.image.alt ?? ''"
+        class="advices-seasons__image"
+        decoding="async"
+      />
       <div class="advices-seasons__content">
-        <h2 class="advices-seasons__title">{{ title }}</h2>
+        <h2 class="advices-seasons__title">{{ props.section.title }}</h2>
         <ul class="advices-seasons__list">
-          <li v-for="(advice, index) in advicesList" :key="index">
+          <li v-for="advice in props.section.items" :key="advice._key">
             <AccordionItem
               :title="advice.title"
-              :is-open="openAccordionIndex === index"
-              @toggle="toggleAccordion(index)"
+              :is-open="openAccordionKey === advice._key"
+              @toggle="toggleAccordion(advice._key)"
             >
-              <div v-html="advice.text"></div>
+              <PortableText as="div" :blocks="advice.body" />
             </AccordionItem>
           </li>
         </ul>

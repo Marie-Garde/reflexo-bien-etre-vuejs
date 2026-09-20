@@ -1,59 +1,52 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { SessionBlock, SessionDetail } from "../../interface/PracticesContent";
 
-const { t, tm } = useI18n();
+const props = defineProps({
+  session: { type: Object as PropType<SessionDetail>, required: true },
+});
 
-const props = defineProps<{
-  sessionType: string;
-}>();
+// Le cadrage était porté par des classes CSS dédiées à chaque photo ; il vient
+// maintenant du Studio, ce qui permet de changer l'image sans toucher au style.
+function imageStyle(block: SessionBlock) {
+  const url = urlFor(block.image).width(1280).format("webp").quality(80).url();
+  return {
+    backgroundImage: `url("${url}")`,
+    backgroundPosition: block.imagePosition ?? "top",
+  };
+}
 
-const session = {
-  key: props.sessionType,
-  title: t(`practices.insideSessionPage.session.${props.sessionType}.title`),
-  first: {
-    title: t(`practices.insideSessionPage.session.${props.sessionType}.first.title`),
-    text: tm(`practices.insideSessionPage.session.${props.sessionType}.first.text`),
-    hovering: t(`practices.insideSessionPage.session.${props.sessionType}.first.hovering`),
-    imageClass: props.sessionType === "reflexo" ? "reflexo-main" : "massage-dos",
-  },
-  second: {
-    title: t(`practices.insideSessionPage.session.${props.sessionType}.second.title`),
-    text: tm(`practices.insideSessionPage.session.${props.sessionType}.second.text`),
-    list: tm(`practices.insideSessionPage.session.${props.sessionType}.second.list`),
-    hovering: t(`practices.insideSessionPage.session.${props.sessionType}.second.hovering`),
-    imageClass: props.sessionType === "reflexo" ? "reflexo-visage" : "reflexo-dos",
-  },
-  theme: props.sessionType === "reflexo" ? "green" : "brown",
-};
+const firstImageStyle = computed(() => imageStyle(props.session.first));
+const secondImageStyle = computed(() => imageStyle(props.session.second));
 </script>
 
 <template>
   <section>
-    <h2 class="title">{{ session.title }}</h2>
+    <h2 class="title">{{ props.session.title }}</h2>
     <div class="top-section">
       <div class="top-section__text">
-        <h3>{{ session.first.title }}</h3>
+        <h3>{{ props.session.first.title }}</h3>
         <ul>
-          <li v-for="(item, i) in session.first.text" :key="i" v-html="item"></li>
+          <PortableText as="li" :blocks="props.session.first.body" />
         </ul>
       </div>
-      <div :class="['top-section__image', `top-section__image--${session.first.imageClass}`]">
+      <div class="top-section__image" :style="firstImageStyle">
         <div class="image-overlay">
-          <p class="citation">{{ session.first.hovering }}</p>
+          <p class="citation">{{ props.session.first.quote }}</p>
         </div>
       </div>
     </div>
     <div class="bottom-section">
-      <div
-        :class="['bottom-section__image', `bottom-section__image--${session.second.imageClass}`]"
-      >
+      <div class="bottom-section__image" :style="secondImageStyle">
         <div class="image-overlay">
-          <p class="citation">{{ session.second.hovering }}</p>
+          <p class="citation">{{ props.session.second.quote }}</p>
         </div>
       </div>
       <div class="bottom-section__text">
-        <h3>{{ session.second.title }}</h3>
-        <p class="text" v-for="(p, i) in session.second.text" :key="i">{{ p }}</p>
+        <h3>{{ props.session.second.title }}</h3>
+        <PortableText :blocks="props.session.second.body" paragraph-class="text" />
       </div>
     </div>
   </section>
@@ -87,23 +80,6 @@ const session = {
     background-size: cover;
     background-position: center;
     position: relative;
-
-    &--reflexo-main {
-      background-image: url("/illustrations/practices/inside/reflexo-main.png");
-      background-position: top;
-    }
-    &--reflexo-visage {
-      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
-      background-position: top;
-    }
-    &--massage-dos {
-      background-image: url("/illustrations/practices/inside/massage-dos.png");
-      background-position: top;
-    }
-    &--reflexo-dos {
-      background-image: url("/illustrations/practices/inside/reflexo-dos.png");
-      background-position: center;
-    }
   }
 
   &__text {
@@ -128,15 +104,6 @@ const session = {
     background-size: cover;
     background-position: center;
     position: relative;
-
-    &--reflexo-visage {
-      background-image: url("/illustrations/practices/inside/reflexo-visage.png");
-      background-position: top;
-    }
-    &--reflexo-dos {
-      background-image: url("/illustrations/practices/inside/reflexo-dos.png");
-      background-position: center;
-    }
   }
 
   &__text {
@@ -269,10 +236,10 @@ const session = {
 
       ul {
         padding: 0;
-        li {
-          list-style: none;
-          margin-bottom: 30px;
-        }
+      }
+      li {
+        list-style: none;
+        margin-bottom: 30px;
       }
 
       .text {
@@ -292,23 +259,6 @@ const session = {
       &--top {
         top: 0;
         bottom: auto;
-      }
-
-      &--reflexo-main {
-        background-image: url("/illustrations/practices/inside/reflexo-main.png");
-        background-position: top;
-      }
-      &--reflexo-visage {
-        background-image: url("/illustrations/practices/inside/reflexo-visage.png");
-        background-position: top;
-      }
-      &--massage-dos {
-        background-image: url("/illustrations/practices/inside/massage-dos.png");
-        background-position: top;
-      }
-      &--reflexo-dos {
-        background-image: url("/illustrations/practices/inside/reflexo-dos.png");
-        background-position: center;
       }
     }
 

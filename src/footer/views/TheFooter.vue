@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { useRoute } from "vue-router";
 import { computed } from "vue";
+import { storeToRefs } from "pinia";
+import { useRoute } from "vue-router";
 
 import PhoneIcon from "@/assets/icons/phone.vue";
 import MessageIcon from "@/assets/icons/message.vue";
@@ -16,9 +16,10 @@ import { contactRoutesName } from "@/contact/routes/routesName";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { practicesRoutesName } from "@/practices/routes/routesName";
 import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
+import { useSiteSettingsStore } from "@/general/stores/siteSettings";
 
-const { t } = useI18n();
 const route = useRoute();
+const { settings } = storeToRefs(useSiteSettingsStore());
 
 const warningBackgroundColorClass = computed(() => {
   const routeName = route.name as string;
@@ -44,37 +45,37 @@ const warningBackgroundColorClass = computed(() => {
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" v-if="settings">
     <p :class="['warning', warningBackgroundColorClass]">
-      {{ t("footer.warning") }}
+      {{ settings.footer.warning }}
     </p>
     <div class="container">
       <div class="first-line">
         <div class="informations">
           <h3 class="informations__title">
-            {{ t("footer.informations.name") }} -
-            {{ t("footer.informations.societyName") }}
+            {{ settings.footer.name }} -
+            {{ settings.footer.societyName }}
           </h3>
           <div class="informations__item">
             <PhoneIcon />
-            <p>{{ t("footer.informations.number") }}</p>
+            <p>{{ settings.footer.phone }}</p>
           </div>
           <div class="informations__item">
             <MessageIcon />
-            <p>contact@reflexo-bien-etre.fr</p>
+            <p>{{ settings.footer.email }}</p>
           </div>
           <div class="informations__item">
             <LocationIcon />
-            <p>{{ t("footer.informations.adress") }}</p>
+            <p>{{ settings.footer.address }}</p>
           </div>
         </div>
         <div class="social-media">
           <h3 class="social-media__title">
-            {{ t("footer.socialMedia.title") }}
+            {{ settings.social.title }}
           </h3>
           <div class="social-media__icons">
             <a
-              href="https://www.instagram.com"
+              :href="settings.social.instagramUrl"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visitez notre page Instagram"
@@ -82,7 +83,7 @@ const warningBackgroundColorClass = computed(() => {
               <InstagramIcon class="icon" />
             </a>
             <a
-              href="https://www.facebook.com"
+              :href="settings.social.facebookUrl"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visitez notre page Facebook"
@@ -93,25 +94,25 @@ const warningBackgroundColorClass = computed(() => {
         </div>
       </div>
       <div class="second-line">
-        <p>{{ t("footer.legal.copyright") }}</p>
+        <p>{{ settings.footer.legal.copyright }}</p>
         <LinkRouter
           class="link"
-          :label="t('footer.legal.siteMap')"
+          :label="settings.footer.legal.siteMapLabel"
           color="yellow"
           :to="siteMapRoutesName.HOME"
         />
         <LinkRouter
           class="link"
-          :label="t('footer.legal.legalPage')"
+          :label="settings.footer.legal.legalPageLabel"
           color="yellow"
           :to="legalNoticeRoutesName.HOME"
         />
         <a
-          href="https://www.lenvoleenumerique.com"
+          :href="settings.footer.legal.creatorUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="link"
-          >{{ t("footer.legal.creator") }}</a
+          >{{ settings.footer.legal.creatorLabel }}</a
         >
       </div>
     </div>

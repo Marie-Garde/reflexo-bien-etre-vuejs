@@ -1,22 +1,21 @@
 <script setup lang="ts">
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { practicesRoutesName } from "../routes/routesName";
-import { computed } from "vue";
-import { useIsMobile } from "../../reactives/isMobile";
-import benefitsImage from "/illustrations/practices/benefits.png";
-import benefitsMobile from "/illustrations/practices/benefitsMobile.png";
 
 import Header from "../components/practices/Header.vue";
 import Benefits from "../components/practices/Benefits.vue";
 import Pillars from "../components/practices/Pillars.vue";
 import SessionProgress from "../components/practices/SessionProgress.vue";
+import { usePracticesContentStore } from "../stores/practicesContent";
 
 const router = useRouter();
-const isMobile = useIsMobile();
+const store = usePracticesContentStore();
+const { content } = storeToRefs(store);
 
-const benefitsImageSource = computed(() => {
-  return isMobile.value ? benefitsMobile : benefitsImage;
-});
+onServerPrefetch(store.load);
+onMounted(store.load);
 
 function GoToInsideCare() {
   router.push({ name: practicesRoutesName.OFFICE });
@@ -28,8 +27,14 @@ function GoToOutsideCare() {
 </script>
 
 <template>
-  <Header />
-  <Benefits :benefitsImageSource="benefitsImageSource" />
-  <Pillars :goToInsideCare="GoToInsideCare" :goToOutsideCare="GoToOutsideCare" />
-  <SessionProgress />
+  <template v-if="content">
+    <Header :section="content.header" />
+    <Benefits :section="content.benefits" />
+    <Pillars
+      :section="content.pillars"
+      :goToInsideCare="GoToInsideCare"
+      :goToOutsideCare="GoToOutsideCare"
+    />
+    <SessionProgress :section="content.sessionProgress" />
+  </template>
 </template>

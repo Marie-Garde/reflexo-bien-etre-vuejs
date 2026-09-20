@@ -1,35 +1,50 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import Specialties from "@/season/components/Specialties.vue";
 import AdvicesSeasons from "@/season/components/AdvicesSeasons.vue";
 import Recipes from "@/season/components/Recipes.vue";
+import { urlFor } from "@/sanityClient";
+import { useSeasonStore } from "../stores/seasonContent";
 
-const { t } = useI18n();
+const store = useSeasonStore();
+const { seasons } = storeToRefs(store);
+
+const content = computed(() => seasons.value.summer ?? null);
+
+onServerPrefetch(() => store.load("summer"));
+onMounted(() => store.load("summer"));
+
+const headerImage = computed(() =>
+  content.value
+    ? urlFor(content.value.headerImage).width(1920).format("webp").quality(75).url()
+    : "",
+);
 </script>
 
 <template>
-  <main>
+  <main v-if="content">
     <div class="header">
       <img
-        src="/illustrations/ete.jpg"
-        alt="Paysage d'été avec un champ de fleurs"
+        :src="headerImage"
+        :alt="content.headerImage.alt ?? ''"
         class="header-image"
         fetchpriority="high"
       />
       <div class="header-container">
         <div class="header-overlay">
-          <h1 class="title">{{ t("seasons.season.summer.title") }}</h1>
-          <p>{{ t("seasons.season.summer.subtitle") }}</p>
+          <h1 class="title">{{ content.title }}</h1>
+          <p>{{ content.subtitle }}</p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <Specialties season="summer" background="yellow" />
+      <Specialties :section="content.specialties" background="yellow" />
 
-      <AdvicesSeasons season="summer" />
+      <AdvicesSeasons :section="content.advices" />
 
-      <Recipes season="summer" background="orange" />
+      <Recipes :section="content.recipes" background="orange" />
     </div>
   </main>
 </template>

@@ -1,15 +1,25 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
 import { useRouter } from "vue-router";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
 import Button from "@/components/Button.vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { OutsideSessionContent } from "../../interface/PracticesContent";
 
-defineProps<{
-  image: string;
-}>();
+const props = defineProps({
+  section: {
+    type: Object as PropType<OutsideSessionContent["session"]>,
+    required: true,
+  },
+  buttonLabel: { type: String, required: true },
+});
 
-const { t, tm } = useI18n();
 const router = useRouter();
+
+const imageSource = computed(() =>
+  urlFor(props.section.image).width(1200).format("webp").quality(80).url(),
+);
 
 function goToAppointment() {
   router.push({ name: appointmentRoutesName.HOME });
@@ -18,20 +28,11 @@ function goToAppointment() {
 
 <template>
   <div class="infos-session">
-    <img :src="image" alt="" />
+    <img :src="imageSource" :alt="props.section.image.alt ?? ''" loading="lazy" decoding="async" />
     <div class="text">
-      <h2>{{ t("practices.outsideSessionPage.session.title") }}</h2>
-      <p>{{ tm("practices.outsideSessionPage.session.text")[0] }}</p>
-      <p>{{ tm("practices.outsideSessionPage.session.text")[1] }}</p>
-      <p>{{ tm("practices.outsideSessionPage.session.text")[2] }}</p>
-      <p>{{ tm("practices.outsideSessionPage.session.text")[3] }}</p>
-      <p>{{ tm("practices.outsideSessionPage.session.text")[4] }}</p>
-      <Button
-        class="button"
-        :label="t('practices.outsideSessionPage.buttonLabel')"
-        color="orange"
-        @click="goToAppointment()"
-      />
+      <h2>{{ props.section.title }}</h2>
+      <PortableText :blocks="props.section.body" />
+      <Button class="button" :label="props.buttonLabel" color="orange" @click="goToAppointment()" />
     </div>
   </div>
 </template>
@@ -54,7 +55,8 @@ function goToAppointment() {
       margin-bottom: 40px;
     }
 
-    p {
+    // Paragraphes rendus par PortableText : :deep() est nécessaire.
+    :deep(p) {
       padding-bottom: 20px;
     }
 

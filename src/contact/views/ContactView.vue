@@ -1,19 +1,25 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import PhoneIcon from "@/assets/icons/phone-black.vue";
 import LocationIcon from "@/assets/icons/location-black.vue";
 import MessageIcon from "@/assets/icons/message-black.vue";
 import ContactForm from "@/contact/components/ContactForm.vue";
+import { useContactContentStore } from "../stores/contactContent";
 
-const { t } = useI18n();
+const store = useContactContentStore();
+const { content } = storeToRefs(store);
+
+onServerPrefetch(store.load);
+onMounted(store.load);
 </script>
 
 <template>
-  <div class="contact">
+  <div class="contact" v-if="content">
     <header class="contact__header">
       <div class="contact__header-container">
         <div class="contact__header-overlay">
-          <h1 class="contact__title">{{ t("contact.title") }}</h1>
+          <h1 class="contact__title">{{ content.title }}</h1>
         </div>
       </div>
     </header>
@@ -21,23 +27,23 @@ const { t } = useI18n();
     <main class="contact__content">
       <section class="contact__office">
         <div class="contact__office-text">
-          <h2 class="contact__office-title">{{ t("contact.office.title") }}</h2>
+          <h2 class="contact__office-title">{{ content.office.title }}</h2>
           <div class="contact__office-item">
             <LocationIcon />
-            <p>{{ t("contact.office.adress") }}</p>
+            <p>{{ content.office.address }}</p>
           </div>
           <div class="contact__office-item">
             <PhoneIcon />
-            <p>{{ t("contact.office.tel") }}</p>
+            <p>{{ content.office.phone }}</p>
           </div>
           <div class="contact__office-item">
             <MessageIcon />
-            <p>contact@reflexo-bien-etre.fr</p>
+            <p>{{ content.office.email }}</p>
           </div>
         </div>
         <iframe
           class="contact__office-map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d176.17498117165698!2d1.5027570951208709!3d45.0492863940753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1747646905303!5m2!1sfr!2sfr"
+          :src="content.office.mapEmbedUrl"
           width="600"
           height="450"
           style="border: 0"
@@ -47,7 +53,7 @@ const { t } = useI18n();
         ></iframe>
       </section>
 
-      <ContactForm />
+      <ContactForm :labels="content.form" :errors="content.errors" :feedback="content.feedback" />
     </main>
   </div>
 </template>

@@ -1,107 +1,29 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { onMounted, onServerPrefetch } from "vue";
+import { storeToRefs } from "pinia";
 import LinkRouter from "@/components/LinkRouter.vue";
-import { homeRoutesName } from "@/home/routes/routesName";
-import { aboutRoutesName } from "@/about/routes/routesName";
-import { appointmentRoutesName } from "@/appointment/routes/routesName";
-import { contactRoutesName } from "@/contact/routes/routesName";
-import { practicesRoutesName } from "@/practices/routes/routesName";
-import { seasonsRoutesName } from "@/season/routes/routesName";
-import { priceRoutesName } from "@/price/routes/routesName";
+import { useSiteMapContentStore } from "../stores/siteMapContent";
 
-const { t } = useI18n();
+const store = useSiteMapContentStore();
+const { content } = storeToRefs(store);
 
-const homeRouteName = homeRoutesName.HOME;
-const aboutRouteName = aboutRoutesName.HOME;
-const appointmentRouteName = appointmentRoutesName.HOME;
-const contactRouteName = contactRoutesName.HOME;
-const practicesRouteName = practicesRoutesName.HOME;
-const practicesOfficeRouteName = practicesRoutesName.OFFICE;
-const practicesOutsideRouteName = practicesRoutesName.OUTSIDE;
-const seasonsRouteName = seasonsRoutesName.HOME;
-const seasonsFallRouteName = seasonsRoutesName.FALL;
-const seasonsSpringRouteName = seasonsRoutesName.SPRING;
-const seasonsSummerRouteName = seasonsRoutesName.SUMMER;
-const seasonsWinterRouteName = seasonsRoutesName.WINTER;
-const seasonsInterSeasonRouteName = seasonsRoutesName.INTERSEASON;
-const priceRouteName = priceRoutesName.HOME;
+onServerPrefetch(store.load);
+onMounted(store.load);
 </script>
 
 <template>
-  <div class="container">
-    <h1>{{ t("siteMap.title") }}</h1>
-    <h2>
-      <LinkRouter class="link" :label="t('home.title')" :to="homeRouteName" />
-    </h2>
-    <h2><LinkRouter class="link" :label="t('navigation.items.about')" :to="aboutRouteName" /></h2>
-    <h2>
-      <LinkRouter class="link" :label="t('practices.title')" :to="practicesRouteName" />
-    </h2>
-    <div class="subCategory">
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('practices.OfficeSession.title')"
-          :to="practicesOfficeRouteName"
-        />
-      </h3>
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('practices.OutsideSession.title')"
-          :to="practicesOutsideRouteName"
-        />
-      </h3>
-    </div>
-    <h2>
-      <LinkRouter class="link" :label="t('seasons.title')" :to="seasonsRouteName" />
-    </h2>
-    <div class="subCategory">
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('seasons.season.fall.title')"
-          :to="seasonsFallRouteName"
-        />
-      </h3>
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('seasons.season.spring.title')"
-          :to="seasonsSpringRouteName"
-        />
-      </h3>
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('seasons.season.summer.title')"
-          :to="seasonsSummerRouteName"
-        />
-      </h3>
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('seasons.season.winter.title')"
-          :to="seasonsWinterRouteName"
-        />
-      </h3>
-      <h3>
-        <LinkRouter
-          class="link"
-          :label="t('seasons.season.interSeason.title')"
-          :to="seasonsInterSeasonRouteName"
-        />
-      </h3>
-    </div>
-    <h2>
-      <LinkRouter class="link" :label="t('price.title')" :to="priceRouteName" />
-    </h2>
-    <h2>
-      <LinkRouter class="link" :label="t('contact.title')" :to="contactRouteName" />
-    </h2>
-    <h2>
-      <LinkRouter class="link" :label="t('takeAppointment.title')" :to="appointmentRouteName" />
-    </h2>
+  <div class="container" v-if="content">
+    <h1>{{ content.title }}</h1>
+    <template v-for="entry in content.entries" :key="entry._key">
+      <h2>
+        <LinkRouter class="link" :label="entry.label" :to="entry.destination" />
+      </h2>
+      <div v-if="entry.children?.length" class="subCategory">
+        <h3 v-for="child in entry.children" :key="child._key">
+          <LinkRouter class="link" :label="child.label" :to="child.destination" />
+        </h3>
+      </div>
+    </template>
   </div>
 </template>
 

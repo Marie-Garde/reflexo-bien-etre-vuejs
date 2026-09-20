@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import type { PropType } from "vue";
 import { appointmentRoutesName } from "@/appointment/routes/routesName";
+import type { AboutCtaSection } from "../interface/AboutContent";
 
-const { t } = useI18n();
+const props = defineProps({
+  section: { type: Object as PropType<AboutCtaSection>, required: true },
+});
 </script>
 
 <template>
   <section class="about__cta">
     <div class="about__cta-content">
       <div class="about__cta-overlay">
-        <h2 class="about__section-title">{{ t("about.CTA.title") }}</h2>
-        <p>{{ t("about.CTA.description") }}</p>
+        <h2 class="about__section-title">{{ props.section.title }}</h2>
+        <p>{{ props.section.description }}</p>
         <router-link :to="{ name: appointmentRoutesName.HOME }" class="about__cta-button">
-          {{ t("about.CTA.buttonLabel") }}
+          {{ props.section.buttonLabel }}
         </router-link>
       </div>
     </div>

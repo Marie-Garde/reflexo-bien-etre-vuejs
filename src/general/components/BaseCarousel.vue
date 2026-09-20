@@ -9,6 +9,7 @@ import type { CarouselSlide } from "../../home/interface/Carousel";
 const props = defineProps({
   slides: { type: Array as PropType<CarouselSlide[]>, required: true },
   ariaLabel: { type: String, required: true },
+  linkLabel: { type: String, default: "" },
 });
 
 const { slides } = toRefs(props);
@@ -65,12 +66,7 @@ function switchSlide(index: number) {
 </script>
 
 <template>
-  <div
-    class="carousel"
-    role="region"
-    aria-roledescription="carousel"
-    :aria-label="ariaLabel"
-  >
+  <div class="carousel" role="region" aria-roledescription="carousel" :aria-label="ariaLabel">
     <div class="carousel-inner" aria-live="polite">
       <CarouselItem
         v-for="(slide, index) in slides"
@@ -80,6 +76,7 @@ function switchSlide(index: number) {
         :index="index"
         :direction="direction"
         :total="slides.length"
+        :link-label="linkLabel"
         @mouse-enter="stopSlideTimer"
         @mouse-Leave="startSlideTimer"
       />

@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, type PropType } from "vue";
 import emailjs from "emailjs-com";
+import type { ContactContent } from "../interface/ContactContent";
 
-const { t } = useI18n();
+const props = defineProps({
+  labels: { type: Object as PropType<ContactContent["form"]>, required: true },
+  errors: { type: Object as PropType<ContactContent["errors"]>, required: true },
+  feedback: { type: Object as PropType<ContactContent["feedback"]>, required: true },
+});
 
 const formValue = reactive({
   lastName: "",
@@ -14,7 +18,7 @@ const formValue = reactive({
   message: "",
 });
 
-const errors = reactive<Record<string, boolean | string>>({
+const fieldErrors = reactive<Record<string, boolean | string>>({
   lastName: false,
   firstName: false,
   mail: false,
@@ -49,51 +53,51 @@ function validatePhone(phone: string) {
 
 function validateForm() {
   // Reset errors
-  errors.lastName = false;
-  errors.firstName = false;
-  errors.mail = false;
-  errors.phone = false;
-  errors.subject = false;
-  errors.message = false;
-  errors.general = "";
+  fieldErrors.lastName = false;
+  fieldErrors.firstName = false;
+  fieldErrors.mail = false;
+  fieldErrors.phone = false;
+  fieldErrors.subject = false;
+  fieldErrors.message = false;
+  fieldErrors.general = "";
 
   let hasError = false;
 
   if (!formValue.lastName) {
-    errors.lastName = true;
-    if (!errors.general) errors.general = t("contact.form.error.lastName");
+    fieldErrors.lastName = true;
+    if (!fieldErrors.general) fieldErrors.general = props.errors.lastName;
     hasError = true;
   }
   if (!formValue.firstName) {
-    errors.firstName = true;
-    if (!errors.general) errors.general = t("contact.form.error.firstName");
+    fieldErrors.firstName = true;
+    if (!fieldErrors.general) fieldErrors.general = props.errors.firstName;
     hasError = true;
   }
   if (!formValue.subject) {
-    errors.subject = true;
-    if (!errors.general) errors.general = t("contact.form.error.subject");
+    fieldErrors.subject = true;
+    if (!fieldErrors.general) fieldErrors.general = props.errors.subject;
     hasError = true;
   }
   if (formValue.message.length < 15) {
-    errors.message = true;
-    if (!errors.general) errors.general = t("contact.form.error.message");
+    fieldErrors.message = true;
+    if (!fieldErrors.general) fieldErrors.general = props.errors.message;
     hasError = true;
   }
 
   if (!formValue.mail && !formValue.phone) {
-    errors.mail = true;
-    errors.phone = true;
-    if (!errors.general) errors.general = t("contact.form.error.mailOrPhone");
+    fieldErrors.mail = true;
+    fieldErrors.phone = true;
+    if (!fieldErrors.general) fieldErrors.general = props.errors.mailOrPhone;
     hasError = true;
   } else {
     if (formValue.mail && !validateEmail(formValue.mail)) {
-      errors.mail = true;
-      if (!errors.general) errors.general = t("contact.form.error.mail");
+      fieldErrors.mail = true;
+      if (!fieldErrors.general) fieldErrors.general = props.errors.mail;
       hasError = true;
     }
     if (formValue.phone && !validatePhone(formValue.phone)) {
-      errors.phone = true;
-      if (!errors.general) errors.general = t("contact.form.error.phone");
+      fieldErrors.phone = true;
+      if (!fieldErrors.general) fieldErrors.general = props.errors.phone;
       hasError = true;
     }
   }
@@ -129,35 +133,35 @@ function sendEmail() {
         subject: formValue.subject,
         message: formValue.message,
       },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
     )
     .then(
       () => {
         resetForm();
-        formSubmittedMessage.value = t("contact.form.sendMessage.success");
+        formSubmittedMessage.value = props.feedback.success;
       },
       () => {
-        formSubmittedMessage.value = t("contact.form.sendMessage.error");
-      }
+        formSubmittedMessage.value = props.feedback.error;
+      },
     )
     .finally(() => {
       isLoading.value = false;
     });
 }
 
-const formFields = [
-  { name: "lastName", type: "text", label: "contact.form.lastName", half: true },
-  { name: "firstName", type: "text", label: "contact.form.firstName", half: true },
-  { name: "mail", type: "email", label: "contact.form.mail", half: false },
-  { name: "phone", type: "tel", label: "contact.form.phone", half: false },
-  { name: "subject", type: "text", label: "contact.form.subject", half: false },
-  { name: "message", type: "textarea", label: "contact.form.message.label", half: false },
-];
+const formFields = computed(() => [
+  { name: "lastName", type: "text", label: props.labels.lastName, half: true },
+  { name: "firstName", type: "text", label: props.labels.firstName, half: true },
+  { name: "mail", type: "email", label: props.labels.mail, half: false },
+  { name: "phone", type: "tel", label: props.labels.phone, half: false },
+  { name: "subject", type: "text", label: props.labels.subject, half: false },
+  { name: "message", type: "textarea", label: props.labels.message, half: false },
+]);
 </script>
 
 <template>
   <section class="contact__form-container">
-    <h2 class="contact__section-title">{{ t("contact.form.title") }}</h2>
+    <h2 class="contact__section-title">{{ props.labels.title }}</h2>
     <form @submit.prevent="sendEmail" class="form">
       <div class="form__group form__group--horizontal">
         <div
@@ -165,43 +169,43 @@ const formFields = [
           :key="field.name"
           class="form__field"
         >
-          <label class="form__label" :for="field.name">{{ t(field.label) }}</label>
+          <label class="form__label" :for="field.name">{{ field.label }}</label>
           <input
-            :class="{ 'input-error': errors[field.name] }"
+            :class="{ 'input-error': fieldErrors[field.name] }"
             :id="field.name"
             v-model="formValue[field.name as keyof typeof formValue]"
             :type="field.type"
-            :placeholder="t(field.label)"
+            :placeholder="field.label"
           />
         </div>
       </div>
 
       <div v-for="field in formFields.filter((f) => !f.half)" :key="field.name" class="form__field">
-        <label class="form__label" :for="field.name">{{ t(field.label) }}</label>
+        <label class="form__label" :for="field.name">{{ field.label }}</label>
         <input
           v-if="field.type !== 'textarea'"
-          :class="{ 'input-error': errors[field.name] }"
+          :class="{ 'input-error': fieldErrors[field.name] }"
           :id="field.name"
           v-model="formValue[field.name as keyof typeof formValue]"
           :type="field.type"
-          :placeholder="t(field.label)"
+          :placeholder="field.label"
         />
         <textarea
           v-if="field.type === 'textarea'"
           :id="field.name"
           v-model="formValue[field.name as keyof typeof formValue]"
-          :placeholder="t('contact.form.message.placeholder')"
-          :class="{ 'input-error': errors[field.name] }"
+          :placeholder="props.labels.messagePlaceholder"
+          :class="{ 'input-error': fieldErrors[field.name] }"
         ></textarea>
       </div>
 
-      <p v-if="errors.general" class="form__error-message">{{ errors.general }}</p>
+      <p v-if="fieldErrors.general" class="form__error-message">{{ fieldErrors.general }}</p>
       <p v-if="formSubmittedMessage" class="form__success-message">
         {{ formSubmittedMessage }}
       </p>
 
       <button type="submit" :disabled="isSubmitDisabled || isLoading" class="form__submit">
-        <span v-if="!isLoading">Envoyer</span>
+        <span v-if="!isLoading">{{ props.labels.send }}</span>
         <span v-else class="loader"></span>
       </button>
     </form>

@@ -1,23 +1,28 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed, type PropType } from "vue";
+import PortableText from "@/general/components/PortableText.vue";
+import { urlFor } from "@/sanityClient";
+import type { OutsideSessionContent } from "../../interface/PracticesContent";
 
-defineProps<{
-  image: string;
-}>();
+const props = defineProps({
+  section: {
+    type: Object as PropType<OutsideSessionContent["practice"]>,
+    required: true,
+  },
+});
 
-const { t, tm } = useI18n();
-
-const practiceLabel = tm("practices.outsideSessionPage.practice.text");
+const imageSource = computed(() =>
+  urlFor(props.section.image).width(1200).format("webp").quality(80).url(),
+);
 </script>
 
 <template>
   <div class="infos-practices">
     <div class="text">
-      <h2>{{ t("practices.outsideSessionPage.practice.title") }}</h2>
-      <div class="first-line" v-html="practiceLabel[0]"></div>
-      <div v-html="practiceLabel[1]"></div>
+      <h2>{{ props.section.title }}</h2>
+      <PortableText as="div" :blocks="props.section.body" />
     </div>
-    <img :src="image" alt="" />
+    <img :src="imageSource" :alt="props.section.image.alt ?? ''" loading="lazy" decoding="async" />
   </div>
 </template>
 
@@ -38,7 +43,8 @@ const practiceLabel = tm("practices.outsideSessionPage.practice.text");
       margin-bottom: 40px;
     }
 
-    .first-line {
+    // Paragraphes rendus par PortableText : :deep() est nécessaire.
+    :deep(div:not(:last-child)) {
       margin-bottom: 20px;
     }
   }
