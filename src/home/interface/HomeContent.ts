@@ -40,7 +40,14 @@ export interface AppointmentSection {
   backgroundImage: SanityImage;
 }
 
+export interface LatestArticlesSection {
+  title: string;
+  linkLabel: string;
+}
+
 export interface HomeContent {
+  pageHeading: string;
+  latestArticles: LatestArticlesSection;
   carouselLinkLabel: string;
   difficulties: DifficultiesSection;
   solution: SolutionSection;

@@ -1,3 +1,25 @@
 {
+  "redirects": [
+    {
+      "source": "/saisons-et-conseils/été",
+      "destination": "/saisons-et-conseils/ete",
+      "permanent": true
+    },
+    {
+      "source": "/saisons-et-conseils/%C3%A9t%C3%A9",
+      "destination": "/saisons-et-conseils/ete",
+      "permanent": true
+    },
+    {
+      "source": "/mes-accompagnements/seances-extérieures",
+      "destination": "/mes-accompagnements/seances-exterieures",
+      "permanent": true
+    },
+    {
+      "source": "/mes-accompagnements/seances-ext%C3%A9rieures",
+      "destination": "/mes-accompagnements/seances-exterieures",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }

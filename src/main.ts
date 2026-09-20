@@ -5,7 +5,7 @@ import { createPinia } from "pinia";
 import i18n from "./i18n";
 
 import App from "./App.vue";
-import { routes, scrollBehavior } from "./router";
+import { legacyPathRedirects, routes, scrollBehavior } from "./router";
 
 export const createApp = ViteSSG(
   App,
@@ -25,6 +25,19 @@ export const createApp = ViteSSG(
     } else if (initialState.pinia) {
       pinia.state.value = initialState.pinia;
     }
+
+    router.beforeEach((to) => {
+      // `to.path` arrive encodé depuis la barre d'adresse : on le décode avant
+      // de chercher une ancienne adresse.
+      let decoded = to.path;
+      try {
+        decoded = decodeURI(to.path);
+      } catch {
+        // Chemin mal encodé : on le laisse tel quel.
+      }
+      const target = legacyPathRedirects[decoded];
+      return target ? { path: target, replace: true } : true;
+    });
 
     router.afterEach((to) => {
       if (!import.meta.env.SSR) {

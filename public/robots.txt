@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.reflexo-bien-etre.com/sitemap.xml
+Sitemap: https://reflexo-bien-etre.fr/sitemap.xml

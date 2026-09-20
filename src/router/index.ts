@@ -16,8 +16,20 @@ import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { siteMapRoutesPath } from "@/siteMap/routes/routesPath";
 import { notFoundRoutesName } from "@/notFound/routes/routesName";
 import { notFoundRoutesPath } from "@/notFound/routes/routesPath";
+import { articlesRoutesName } from "@/articles/routes/routesName";
+import { articlesRoutesPath } from "@/articles/routes/routesPath";
 import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
 import { legalNoticeRoutesPath } from "@/legalNotice/routes/routesPath";
+
+/**
+ * Anciennes adresses accentuées. Elles cassaient dès qu'un navigateur ou un
+ * moteur encodait l'accent ; on les redirige pour les liens déjà partagés et
+ * les pages déjà indexées.
+ */
+export const legacyPathRedirects: Record<string, string> = {
+  "/saisons-et-conseils/été": seasonsRoutesPath.SUMMER,
+  "/mes-accompagnements/seances-extérieures": practicesRoutesPath.OUTSIDE,
+};
 
 export const routes = [
   {
@@ -170,7 +182,29 @@ export const routes = [
     meta: {
       title: "Réflex'ô Bien-être Corrèze - Plan du site",
       description:
-        "Retrouvez l'ensemble des pages du site reflexo-bien-etre.com pour naviguer plus facilement et accéder rapidement à l'information que vous cherchez.",
+        "Retrouvez l'ensemble des pages du site reflexo-bien-etre.fr pour naviguer plus facilement et accéder rapidement à l'information que vous cherchez.",
+    },
+  },
+  {
+    path: articlesRoutesPath.HOME,
+    name: articlesRoutesName.HOME,
+    component: () => import("@/articles/views/ArticlesView.vue"),
+    meta: {
+      title: "Réflex'ô Bien-être Corrèze - Articles",
+      description:
+        "Conseils de réflexologie et de médecine traditionnelle chinoise : articles sur les saisons, le sommeil, le stress et la vitalité au quotidien.",
+    },
+  },
+  {
+    path: articlesRoutesPath.DETAIL,
+    name: articlesRoutesName.DETAIL,
+    component: () => import("@/articles/views/ArticleView.vue"),
+    meta: {
+      // Le titre et la description de chaque article sont écrits au build, à
+      // partir du contenu de la page (voir vite.config.ts).
+      title: "Réflex'ô Bien-être Corrèze - Article",
+      description:
+        "Conseils de réflexologie et de médecine traditionnelle chinoise par Isabelle Laporcherie, à Nespouls en Corrèze.",
     },
   },
   {
@@ -189,7 +223,7 @@ export const routes = [
     component: () => import("@/legalNotice/legalNotice.vue"),
     meta: {
       title: "Réflex'ô Bien-être Corrèze - Mentions Légales",
-      description: "Consultez les mentions légales du site reflexo-bien-etre.com.",
+      description: "Consultez les mentions légales du site reflexo-bien-etre.fr.",
     },
   },
 ];
@@ -199,7 +233,7 @@ import type { RouteLocationNormalized } from "vue-router";
 export const scrollBehavior = (
   to: RouteLocationNormalized,
   from: RouteLocationNormalized,
-  savedPosition: { left: number; top: number } | null
+  savedPosition: { left: number; top: number } | null,
 ) => {
   if (savedPosition) {
     return savedPosition;

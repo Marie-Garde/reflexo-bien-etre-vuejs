@@ -3,6 +3,7 @@ import { onMounted, onServerPrefetch } from "vue";
 import { RouterView } from "vue-router";
 import Nav from "@/navigation/views/Nav.vue";
 import TheFooter from "@/footer/views/TheFooter.vue";
+import StructuredData from "@/general/components/StructuredData.vue";
 import { useSiteSettingsStore } from "@/general/stores/siteSettings";
 
 // Menu et pied de page sont affichés partout : une seule requête pour tout le
@@ -13,6 +14,8 @@ onMounted(store.load);
 </script>
 
 <template>
+  <StructuredData />
+
   <header>
     <Nav />
   </header>
