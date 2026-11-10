@@ -10,7 +10,7 @@ const SETTINGS_QUERY = /* groq */ `*[_id == "siteSettings"][0]{
   social{title, instagramUrl, facebookUrl},
   footer{
     warning, name, societyName, phone, email, address,
-    legal{copyright, siteMapLabel, legalPageLabel, creatorLabel, creatorUrl}
+    legal{copyright, siteMapLabel, legalPageLabel, cgvPageLabel, creatorLabel, creatorUrl}
   }
 }`;
 

@@ -20,6 +20,8 @@ import { articlesRoutesName } from "@/articles/routes/routesName";
 import { articlesRoutesPath } from "@/articles/routes/routesPath";
 import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
 import { legalNoticeRoutesPath } from "@/legalNotice/routes/routesPath";
+import { cgvRoutesName } from "@/cgv/routes/routesName";
+import { cgvRoutesPath } from "@/cgv/routes/routesPath";
 
 /**
  * Anciennes adresses accentuées. Elles cassaient dès qu'un navigateur ou un
@@ -224,6 +226,16 @@ export const routes = [
     meta: {
       title: "Réflex'ô Bien-être Corrèze - Mentions Légales",
       description: "Consultez les mentions légales du site reflexo-bien-etre.fr.",
+    },
+  },
+  {
+    path: cgvRoutesPath.HOME,
+    name: cgvRoutesName.HOME,
+    component: () => import("@/cgv/views/Cgv.vue"),
+    meta: {
+      title: "Réflex'ô Bien-être Corrèze - Conditions générales de vente",
+      description:
+        "Conditions générales de vente des séances de réflexologie, massages Tui Na, cours de Qi Gong et ateliers proposés par Réflex'ô Bien-être Corrèze à Nespouls.",
     },
   },
 ];

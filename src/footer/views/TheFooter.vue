@@ -16,6 +16,7 @@ import { contactRoutesName } from "@/contact/routes/routesName";
 import { siteMapRoutesName } from "@/siteMap/routes/routesName";
 import { practicesRoutesName } from "@/practices/routes/routesName";
 import { legalNoticeRoutesName } from "@/legalNotice/routes/routesName";
+import { cgvRoutesName } from "@/cgv/routes/routesName";
 import { useSiteSettingsStore } from "@/general/stores/siteSettings";
 
 const route = useRoute();
@@ -106,6 +107,12 @@ const warningBackgroundColorClass = computed(() => {
           :label="settings.footer.legal.legalPageLabel"
           color="yellow"
           :to="legalNoticeRoutesName.HOME"
+        />
+        <LinkRouter
+          class="link"
+          :label="settings.footer.legal.cgvPageLabel"
+          color="yellow"
+          :to="cgvRoutesName.HOME"
         />
         <a
           :href="settings.footer.legal.creatorUrl"
@@ -212,6 +219,10 @@ const warningBackgroundColorClass = computed(() => {
     .second-line {
       display: flex;
       justify-content: center;
+      // Les liens passent à la ligne entière plutôt que de se tasser mot à mot
+      // quand la fenêtre est trop étroite pour les tenir tous côte à côte.
+      flex-wrap: wrap;
+      row-gap: 6px;
       width: 100%;
       margin-top: 24px;
       padding-top: 24px;

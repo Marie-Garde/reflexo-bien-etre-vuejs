@@ -23,6 +23,7 @@ export interface SiteSettings {
       copyright: string;
       siteMapLabel: string;
       legalPageLabel: string;
+      cgvPageLabel: string;
       creatorLabel: string;
       creatorUrl: string;
     };
